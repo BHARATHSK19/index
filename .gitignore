@@ -61,3 +61,4 @@ temp/
 firebase-debug.log*
 firestore-debug.log*
 ui-debug.log*
+FIX-GIT-AUTHOR.bat
