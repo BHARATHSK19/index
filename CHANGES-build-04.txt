@@ -1,0 +1,45 @@
+OJIX — Build 04  (28 Oct 2026)
+==============================
+
+1. The site is now a React app (Vite + React 19 + React Router)
+   - Source: web/   Built site: web/dist/   (run `npm run build` after every change)
+   - Pages:  web/src/generated/   (home, services, cookies, DPDP and the 7 original product pages,
+             converted 1:1 from the old HTML so the design is unchanged)
+             web/src/pages/       (Products page, 81 service pages from one template, new product pages, 404)
+   - Product list (names, order, menu text, images): web/src/data/products.jsx — one file now
+     drives the header menu, Products page, home page rows, "Product 04 / 11" and "Next product".
+   - New product page text: web/src/data/newProducts.js
+   - Page behaviour (menus, carousels, forms, cookie banner, theme): web/src/legacy/ — the old
+     scripts, now started and cleaned up by React on every page change.
+
+2. Products
+   - OJIX OS          -> Company Management System   (/company-management-system)
+   - AI proctX        -> School ERP                  (/school-erp)
+   - BuildOS          -> Construction Hub            (/construction-hub)
+   - NEW  University Management System  (/university-management-system)
+   - NEW  AI Proctoring                 (/ai-proctoring)
+   - NEW  Property Intelligence         (/property-intelligence)
+   Old addresses (/companyos, /campusos, /buildos, any *.html) redirect permanently to the new ones.
+
+3. URLs: no more ".html" anywhere (service pages are /services/<name>).
+
+4. Bugs fixed
+   - SECURITY: the server published the whole project folder — including data/ojix_secure.db
+     (enquiries, subscribers), server code and package files. Now only web/dist is public.
+   - Mobile: tapping "Services" on any page other than home did nothing (script error).
+   - Mobile: services sheet list was broken HTML (links not closed), so items nested inside each other.
+   - Footer links (Capabilities, How we work, FAQ...) only worked on the home page.
+   - Service pages: "Explore Capabilities" pointed to a section that does not exist; now goes to the
+     Enterprise assurance section. "Discuss This Service" stays on the page.
+   - Products menu was missing DPDP Privacy Vault on most pages; menus are now identical everywhere.
+   - GSTIN missing from the home page footer.
+   - Contact form receipt showed visitor text as raw HTML (could inject markup).
+   - Unknown URLs now return a real 404 page.
+   - Old service worker (could serve stale pages) is removed automatically for returning visitors.
+   - Removed unused 3D effects bundle (three.js) that every page downloaded.
+
+Deploy (VPS):  git pull && npm ci && npm run build && sudo systemctl restart <service>
+Local:         npm install && npm run build && npm start      -> http://localhost:3000
+Old root files no longer used (safe to delete later): *.html (except none needed), app.js, extras.js,
+home.js, products.js, product.js, carousel.js, theme.js, cookies.js, motion.js, *.css in the root,
+assets/ (moved to web/public/assets), services/ folder.

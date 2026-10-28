@@ -1,0 +1,1061 @@
+{
+ "/": {
+  "title": "OJIX | Enterprise Software & Custom ERP Development India",
+  "description": "OJIX is a Bengaluru enterprise software company building custom ERP, workflow automation, legal practice, campus and procurement platforms for Indian organisations.",
+  "canonical": "https://ojix.in/",
+  "ogImage": "https://ojix.in/assets/ojix-social-2026.png",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": [
+       "Organization",
+       "ProfessionalService"
+      ],
+      "@id": "https://ojix.in/#organization",
+      "name": "OJIX Engineering & Technology LLP",
+      "legalName": "OJIX Engineering & Technology LLP",
+      "alternateName": "OJIX",
+      "url": "https://ojix.in",
+      "logo": "https://ojix.in/assets/ojix-primary-transparent-onlight.svg",
+      "image": "https://ojix.in/assets/ojix-primary-light.png",
+      "taxID": "29AAKF03656Q1ZB",
+      "email": "info@ojix.in",
+      "address": {
+       "@type": "PostalAddress",
+       "streetAddress": "50/1, 5th Cross, Kalidasa Layout, Srinagar, Bangalore South",
+       "addressLocality": "Bengaluru",
+       "addressRegion": "Karnataka",
+       "postalCode": "560050",
+       "addressCountry": "IN"
+      },
+      "geo": {
+       "@type": "GeoCoordinates",
+       "latitude": 12.9467,
+       "longitude": 77.5562
+      },
+      "areaServed": [
+       "IN",
+       "US",
+       "GB",
+       "AE",
+       "SG"
+      ],
+      "knowsAbout": [
+       "Enterprise Operating Systems",
+       "Legal Operations Software (Nyaya Sethu)",
+       "Campus & School Management Systems (School ERP)",
+       "Gym & Wellness Studio Management (FitBiz)",
+       "Procurement & ERP Workflows (ProcureOS)",
+       "Construction Management Software (BuilderOS)",
+       "AI Workflow Automation",
+       "Digital Personal Data Protection Act 2023 Compliance",
+       "Cloud-Native Software Architecture"
+      ],
+      "contactPoint": [
+       {
+        "@type": "ContactPoint",
+        "email": "info@ojix.in",
+        "contactType": "customer support",
+        "availableLanguage": [
+         "English",
+         "Hindi",
+         "Kannada"
+        ]
+       },
+       {
+        "@type": "ContactPoint",
+        "email": "info@ojix.in",
+        "contactType": "data protection officer",
+        "description": "DPDP Act (2023) & DPDP Rules (2025) Grievance Redressal Officer - 48h SLA",
+        "availableLanguage": [
+         "English",
+         "Hindi",
+         "Kannada",
+         "Tamil",
+         "Telugu"
+        ]
+       }
+      ],
+      "hasOfferCatalog": {
+       "@type": "OfferCatalog",
+       "name": "OJIX Enterprise Platform Suite",
+       "itemListElement": [
+        {
+         "@type": "SoftwareApplication",
+         "name": "Nyaya Sethu",
+         "applicationCategory": "BusinessApplication",
+         "operatingSystem": "Web, Cloud",
+         "description": "Unified operating system for law firms, legal chambers, and corporate legal departments managing matter lifecycles, hearings, and compliance."
+        },
+        {
+         "@type": "SoftwareApplication",
+         "name": "Company Management System",
+         "applicationCategory": "ERPApplication",
+         "operatingSystem": "Web, Cloud",
+         "description": "Connected operating system for enterprise organizations integrating workforce, finance, projects, and executive governance."
+        },
+        {
+         "@type": "SoftwareApplication",
+         "name": "School ERP",
+         "applicationCategory": "EducationalApplication",
+         "operatingSystem": "Web, Cloud",
+         "description": "Comprehensive school and university administration platform managing student lifecycle, examinations, and attendance."
+        },
+        {
+         "@type": "SoftwareApplication",
+         "name": "ProcureOS",
+         "applicationCategory": "ProcurementApplication",
+         "operatingSystem": "Web, Cloud",
+         "description": "Procure-to-pay operating system covering inventory controls, vendor lifecycles, GST e-invoicing, and contract management."
+        },
+        {
+         "@type": "SoftwareApplication",
+         "name": "FitBiz",
+         "applicationCategory": "BusinessApplication",
+         "operatingSystem": "Web, Cloud",
+         "description": "Fitness centre and studio operations platform for member lifecycles, recurring renewals, and multi-centre telemetry."
+        }
+       ]
+      }
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://ojix.in/#website",
+      "url": "https://ojix.in",
+      "name": "OJIX — Systems for work that matters",
+      "publisher": {
+       "@id": "https://ojix.in/#organization"
+      },
+      "inLanguage": "en-IN"
+     },
+     {
+      "@type": "Service",
+      "@id": "https://ojix.in/#enterprise-software-development",
+      "name": "Enterprise software and custom ERP development",
+      "serviceType": "Custom enterprise software development, workflow automation and ERP engineering",
+      "provider": {
+       "@id": "https://ojix.in/#organization"
+      },
+      "areaServed": {
+       "@type": "Country",
+       "name": "India"
+      },
+      "description": "Product strategy, custom ERP development, AI workflow automation, systems integration and cloud-native engineering for organisations with complex operations."
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://ojix.in/#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "What distinguishes an OJIX Operating System from generic SaaS tools?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Generic SaaS tools force businesses to adapt real-world operations to rigid, one-size-fits-all software that produces disconnected silos. OJIX designs and engineers sovereign operating systems tailored around your organization’s actual roles, approval hierarchies, legal regulations, and operational reality—bringing cross-functional visibility, deterministic workflows, and executive clarity into one unified, sovereign environment."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Can OJIX integrate with or migrate legacy ERPs like SAP, Oracle, or Tally?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. OJIX platforms feature enterprise bi-directional connectors, transactional event streams, and certified API adapters for legacy ERPs (SAP ECC/S4 HANA, Oracle EBS, Microsoft Dynamics), accounting suites (Tally Prime, Zoho Books), Core Banking Systems, and statutory government gateways (GSTN, MCA21, e-Way bill). We can operate as an intelligent orchestration layer on top of existing software or execute staged, zero-downtime database migrations with automated mathematical reconciliation."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How modular is the deployment? Can an enterprise start with one department?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Every OJIX operating system is engineered around a composable micro-kernel architecture. Organizations frequently start with a single mission-critical capability—such as ProcureOS for automated 3-way invoice matching or Nyaya Sethu for contract automation—and progressively activate financial ledgering, inventory, or workforce management modules without code rewrites or platform migrations."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does OJIX comply with India’s DPDP Act, 2023 and the DPDP Rules, 2025?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "OJIX operates under strict compliance with the Digital Personal Data Protection Act, 2023 and MeitY DPDP Rules, 2025. All personal data is processed under explicit consent with itemized purpose notices, unbundled cookie preferences, compatibility with registered Consent Managers, AES-256/TLS 1.3 encryption in sovereign Indian data centers, and a designated Grievance Redressal Officer reachable at info@ojix.in with a guaranteed 48-hour response SLA and 72-hour breach reporting protocols."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Where is enterprise data stored and processed in OJIX platforms?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "100% of enterprise client data resides in sovereign MeitY-empanelled Tier-IV data centers physically located within India. We enforce client-isolated VPC tenancies, encryption at rest via AES-256-GCM, and TLS 1.3 in transit. OJIX commercial contracts provide strict statutory guarantees of zero cross-border telemetry leakage and zero third-party data monetization."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "What role-based access controls (RBAC) and audit capabilities are provided?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Every user interaction, state change, approval step, data query, and API modification is cryptographically hashed and recorded to an immutable append-only audit trail. Granular RBAC and Attribute-Based Access Control (ABAC) allow security administrators to restrict data visibility by department, geographic jurisdiction, role seniority, or client mandate."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does OJIX ensure reliable AI workflow automation without hallucinations?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "OJIX builds deterministic, human-in-the-loop AI pipelines. LLMs and foundation models are strictly confined to scoped sensory tasks: OCR document extraction, natural language classification, drafting, and semantic clause comparison. All mathematical computations, financial ledgers, policy verifications, and ERP database updates are executed through auditable deterministic code with mandatory human approval gates."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "/services": {
+  "title": "Services | OJIX",
+  "description": "Browse all 81 OJIX enterprise services across 10 specialized categories — custom software, ERPs, AI engineering, cloud infrastructure, and DPDP compliance.",
+  "canonical": "https://ojix.in/services",
+  "ogImage": "https://ojix.in/assets/ojix-social-2026.png",
+  "jsonLd": []
+ },
+ "/cookies": {
+  "title": "Cookie Policy | OJIX",
+  "description": "How OJIX uses cookies and browser storage, and how to change your choices.",
+  "canonical": "https://ojix.in/cookies",
+  "ogImage": "https://ojix.in/assets/ojix-social-2026.png",
+  "jsonLd": []
+ },
+ "/dpdp-compliance": {
+  "title": "DPDP Act 2023 & Rules 2025: Enterprise Technical Architecture Guide | OJIX",
+  "description": "Technical guide for enterprise Data Fiduciaries complying with India’s Digital Personal Data Protection Act, 2023 and MeitY DPDP Rules, 2025. Sovereign architecture, consent, and audit.",
+  "canonical": "https://ojix.in/dpdp-compliance",
+  "ogImage": "https://ojix.in/assets/og-image.png",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "TechArticle",
+      "@id": "https://ojix.in/dpdp-compliance#article",
+      "headline": "DPDP Act 2023 & DPDP Rules 2025: Enterprise Technical Architecture Guide for Data Fiduciaries",
+      "description": "Comprehensive engineering and regulatory guide for enterprise CTOs, Data Protection Officers, and General Counsels on implementing Indian data protection compliance.",
+      "author": {
+       "@type": "Organization",
+       "@id": "https://ojix.in/#organization",
+       "name": "OJIX Engineering & Technology LLP",
+       "url": "https://ojix.in"
+      },
+      "publisher": {
+       "@type": "Organization",
+       "@id": "https://ojix.in/#organization"
+      },
+      "datePublished": "2025-03-01T00:00:00+05:30",
+      "dateModified": "2026-10-10T00:00:00+05:30",
+      "inLanguage": "en-IN"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://ojix.in/dpdp-compliance#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ojix.in/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Resources & Compliance",
+        "item": "https://ojix.in/dpdp-compliance"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://ojix.in/dpdp-compliance#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "What are the core technical obligations for Data Fiduciaries under the DPDP Rules 2025?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "The DPDP Rules 2025 mandate: (1) itemized, non-bundled consent notices available in English and the 22 Eighth Schedule languages, (2) technical mechanisms for automated consent withdrawal, (3) data erasure and anonymization upon purpose fulfillment, (4) reasonable security safeguards including AES-256 encryption and tenant isolation, and (5) designated Grievance Officers with guaranteed 48-hour response SLAs."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "What is the statutory timeline for reporting a personal data breach under the DPDP Act?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Under Section 8(6) of the DPDP Act and the DPDP Rules 2025, Data Fiduciaries must notify the Data Protection Board of India (DPBI) and affected Data Principals within 72 hours of becoming aware of a confirmed personal data breach."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Does the DPDP Act require all personal data to be stored strictly in India?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "While cross-border transfer to non-blacklisted jurisdictions is permitted under Section 16, Indian sovereign cloud residency (such as MeitY-empanelled Tier-IV data centers in Bengaluru and Mumbai) is critical for Significant Data Fiduciaries (SDFs), government agencies, critical infrastructure, and defense/legal data."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "/company-management-system": {
+  "title": "Company Management System — Enterprise Operations, HR & Accounting | OJIX",
+  "description": "Company Management System is the purpose-built enterprise workspace for Indian enterprises. Unify multi-department workflows, role-based approvals, HR & payroll, attendance telemetry, and executive visibility.",
+  "canonical": "https://ojix.in/companyos",
+  "ogImage": "https://ojix.in/assets/og-image.png",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "SoftwareApplication",
+      "@id": "https://ojix.in/companyos#software",
+      "name": "Company Management System",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud / Web / MeitY-Empanelled Sovereign Cloud",
+      "description": "Enterprise operations and company management operating system engineered for Indian enterprises, multi-branch corporations, and growth firms. Unifies cross-department approvals, biometric attendance, Indian payroll, GST invoicing, and live executive telemetry.",
+      "creator": {
+       "@type": "Organization",
+       "@id": "https://ojix.in/#organization",
+       "name": "OJIX Engineering & Technology LLP",
+       "url": "https://ojix.in"
+      },
+      "offers": {
+       "@type": "Offer",
+       "priceCurrency": "INR",
+       "availability": "https://schema.org/InStock",
+       "price": "Custom Enterprise Scope",
+       "description": "Tailored enterprise on-premise or sovereign private cloud deployment for Indian enterprises and multi-entity conglomerates."
+      },
+      "featureList": [
+       "Multi-Department Workflow & Delegation Engine",
+       "Hierarchical Role-Based Approvals Matrix",
+       "Biometric & Geofenced Attendance Telemetry",
+       "Automated Indian Payroll, PF, ESI & TDS Processing",
+       "GST Invoicing & Inter-Branch Inventory Sync",
+       "Real-Time Executive Operations & P&L Cockpit"
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://ojix.in/companyos#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ojix.in/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms",
+        "item": "https://ojix.in/#platforms"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Company Management System (Enterprise Operations)",
+        "item": "https://ojix.in/companyos"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://ojix.in/companyos#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "How does Company Management System integrate with existing biometric attendance machines and turnstiles?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Company Management System connects seamlessly with industry-standard biometric turnstiles, RFID sensors, and facial recognition devices via edge gateways. Clock-in data synchronizes within sub-second intervals into central attendance rosters with automated shift rules and zero manual intervention."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Does Company Management System handle Indian statutory payroll compliance like PF, ESI, and TDS?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. Company Management System embeds all statutory calculation slabs for Employee Provident Fund (EPF), ESIC, Professional Tax across Indian states, and dual-regime Income Tax TDS. Monthly payroll generates one-click bank transfer NEFT/RTGS files and automated Form 16 statements."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Can Company Management System model complex multi-level approval hierarchies for CapEx and expenses?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. The platform provides a visual delegation of authority matrix where purchase orders, travel expenses, leave requests, and vendor agreements route automatically based on financial thresholds, departmental reporting lines, and escalation timers."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Is our corporate data hosted in India with sovereign compliance?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. All Company Management System instances are deployed in Tier-IV MeitY-empanelled data centers in Bengaluru and Mumbai. Your enterprise operations data remains 100% sovereign, adhering strictly to the DPDP Act 2023 with AES-256 encryption at rest."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Can we migrate our existing spreadsheets, legacy ERP, and Tally data into Company Management System?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. OJIX provides white-glove engineering migration. We sanitize, structure, and import existing employee masters, historical financial ledgers, inventory SKU lists, and vendor contracts with zero operational downtime."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "/legalos": {
+  "title": "Nyaya Sethu — Enterprise Legal Practice & Litigation OS | OJIX",
+  "description": "Nyaya Sethu is the purpose-built practice operating system for Indian law firms and litigation chambers. Automate cause lists, limitation dates, documents & billing.",
+  "canonical": "https://ojix.in/legalos",
+  "ogImage": "https://ojix.in/assets/og-image.png",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "SoftwareApplication",
+      "@id": "https://ojix.in/legalos#software",
+      "name": "Nyaya Sethu",
+      "applicationCategory": "LegalBusinessApplication",
+      "operatingSystem": "Cloud / Web / MeitY-Empanelled Sovereign Cloud",
+      "description": "Enterprise legal practice and litigation management operating system engineered for Indian law firms, senior advocates, and legal chambers. Integrates e-Courts cause lists, statutory limitation calculations, privileged document vaults, and GST invoicing.",
+      "creator": {
+       "@type": "Organization",
+       "@id": "https://ojix.in/#organization",
+       "name": "OJIX Engineering & Technology LLP",
+       "url": "https://ojix.in"
+      },
+      "offers": {
+       "@type": "Offer",
+       "priceCurrency": "INR",
+       "availability": "https://schema.org/InStock",
+       "price": "Custom Enterprise Scope",
+       "description": "Tailored enterprise on-premise or sovereign private cloud deployment for Indian legal chambers and partner firms."
+      },
+      "featureList": [
+       "Automated e-Courts & Cause List Scraping and Board Alerts",
+       "Limitation Act 1963 Statutory Deadline Tracking Engine",
+       "Sovereign Document Vault with Indian Data Residency (MeitY Tier-IV)",
+       "Privileged Access Control and Ethical Wall Enforcement",
+       "Advocate Time Tracking and Indian GST Legal Invoicing (SAC 9982)",
+       "Conflict-of-Interest Real-Time Screening Across Past Matters"
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://ojix.in/legalos#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ojix.in/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms",
+        "item": "https://ojix.in/#platforms"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Nyaya Sethu",
+        "item": "https://ojix.in/legalos"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://ojix.in/legalos#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Does Nyaya Sethu automatically sync with e-Courts Services and High Court cause lists?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. Nyaya Sethu connects with e-Courts Services, District Courts, State High Courts, NCLT, and the Supreme Court of India. It automatically updates daily cause lists, court hall numbers, item sequence numbers, and interim orders directly into your firm's case dashboard."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does Nyaya Sethu ensure client confidentiality and Bar Council compliance?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Nyaya Sethu is hosted exclusively in sovereign Tier-IV data centers inside India, adhering strictly to the Bar Council of India professional standards and the Digital Personal Data Protection (DPDP) Act, 2023. Client briefs are encrypted using AES-256 with tenant-isolated cryptographic keys, preventing cross-tenant access or external data harvesting."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does the statutory limitation tracking engine prevent missed court deadlines?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Nyaya Sethu embeds the statutory schedules of the Limitation Act, 1963, Commercial Courts Act, 2015, and arbitration rules. The system calculates precise filing windows, counts court vacations and gazetted holidays, and triggers multi-tier escalation notifications across senior partners and briefing associates."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Can our firm migrate existing litigation files from spreadsheets and consumer cloud drives?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. OJIX provides end-to-end data migration engineering. We sanitize, structure, and ingest historical case dossiers, past orders, client contact books, and fee ledgers from Excel, Google Sheets, or legacy servers into Nyaya Sethu with zero operational disruption."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Is Nyaya Sethu available as a single-tenant private cloud or on-premise installation?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. While we offer managed sovereign cloud hosting in Bengaluru and Mumbai, enterprise firms and senior advocate chambers can deploy Nyaya Sethu within a dedicated private VPC or on-premise infrastructure under full institutional ownership."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "/procureos": {
+  "title": "ProcureOS — Enterprise Procure-to-Pay & 3-Way Matching OS | OJIX",
+  "description": "ProcureOS eliminates supply chain revenue leakage with automated 3-way PO, GRN & GST e-invoice matching, real-time inventory signals, and vendor portals.",
+  "canonical": "https://ojix.in/procureos",
+  "ogImage": "https://ojix.in/assets/og-image.png",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "SoftwareApplication",
+      "@id": "https://ojix.in/procureos#software",
+      "name": "ProcureOS",
+      "applicationCategory": "ERPBusinessApplication",
+      "operatingSystem": "Cloud / Web / Dedicated VPC On-Premise",
+      "description": "Enterprise procure-to-pay and supply chain reconciliation operating system. Features automated 3-way matching across purchase orders, goods receipt notes, and GST e-invoices with GSTR-2B input tax credit validation.",
+      "creator": {
+       "@type": "Organization",
+       "@id": "https://ojix.in/#organization",
+       "name": "OJIX Engineering & Technology LLP",
+       "url": "https://ojix.in"
+      },
+      "offers": {
+       "@type": "Offer",
+       "priceCurrency": "INR",
+       "availability": "https://schema.org/InStock",
+       "price": "Custom Enterprise Scope",
+       "description": "Enterprise deployment for Indian manufacturers, multi-location retailers, and corporate supply chain operations."
+      },
+      "featureList": [
+       "Automated 3-Way Reconciliation (PO vs GRN vs Tax Invoice)",
+       "GST e-Invoice & GSTR-2B Input Tax Credit Real-Time Verification",
+       "Self-Service Vendor Lifecycle & Compliance Onboarding Portal",
+       "Multi-Warehouse Inventory Tracking with Dynamic Reorder Points",
+       "Delegation of Authority (DoA) Multi-Tier Purchase Approval Workflows",
+       "Bi-Directional ERP Connectors for SAP, TallyPrime, and Zoho Books"
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://ojix.in/procureos#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ojix.in/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms",
+        "item": "https://ojix.in/#platforms"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "ProcureOS",
+        "item": "https://ojix.in/procureos"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://ojix.in/procureos#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "How does automated 3-way matching work in ProcureOS?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "ProcureOS automatically cross-checks line items, quantities, agreed price rates, tax rates, and delivery milestones between the approved Purchase Order (PO), the warehouse Goods Receipt Note (GRN), and the vendor's GST e-invoice. If tolerances match within company policy, payment vouchers are generated automatically without manual data entry."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does ProcureOS safeguard GST Input Tax Credit (ITC) for Indian enterprises?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "ProcureOS validates the vendor's IRN (Invoice Reference Number) and QR code via the National e-Invoice Portal and reconciles line items against your live GSTR-2B feed. Payments are released only when the vendor's GST filing reflects accurately, preventing ITC clawbacks and penalties under Section 16(2)(aa) of the CGST Act."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Does ProcureOS integrate with existing accounting software like TallyPrime, SAP, or Zoho Books?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. ProcureOS features pre-engineered bidirectional connectors and webhook APIs. Approved bills, payment vouchers, and inventory adjustments synchronize directly with TallyPrime, SAP S/4HANA, Zoho Books, or Oracle NetSuite without disrupting your core general ledger."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Can ProcureOS enforce multi-level purchase approval hierarchies (Delegation of Authority)?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. You can configure granular Delegation of Authority (DoA) matrices based on department, cost center, project code, or invoice value thresholds. Requisitions trigger instant approval alerts via email, portal, or SMS with full tamper-evident audit trails."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does ProcureOS handle multi-location warehouse inventory and gate receipts?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "ProcureOS provides a mobile-ready Gate Inward module. Security and store managers record incoming vehicle numbers, physical gate passes, and perform batch/serial number inspections at the unloading bay, creating digital GRNs that immediately update inventory across all designated plant warehouses."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "/school-erp": {
+  "title": "School ERP — K-12 School Management & Academic ERP | OJIX",
+  "description": "School ERP is the unified operating system for Indian universities, colleges, and institutions. Connect student lifecycle, biometric attendance, fees & compliance.",
+  "canonical": "https://ojix.in/campusos",
+  "ogImage": "https://ojix.in/assets/og-image.png",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "SoftwareApplication",
+      "@id": "https://ojix.in/campusos#software",
+      "name": "School ERP",
+      "applicationCategory": "EducationalBusinessApplication",
+      "operatingSystem": "Cloud / Web / Sovereign Indian Cloud",
+      "description": "Enterprise campus management operating system for Indian universities, colleges, and multi-branch educational networks. Unifies student lifecycle records, biometric attendance, automated fee collections, examinations, and NAAC/NIRF reporting.",
+      "creator": {
+       "@type": "Organization",
+       "@id": "https://ojix.in/#organization",
+       "name": "OJIX Engineering & Technology LLP",
+       "url": "https://ojix.in"
+      },
+      "offers": {
+       "@type": "Offer",
+       "priceCurrency": "INR",
+       "availability": "https://schema.org/InStock",
+       "price": "Custom Institutional Scope",
+       "description": "Multi-campus enterprise deployment with biometric hardware integration and sovereign private cloud hosting."
+      },
+      "featureList": [
+       "End-to-End Student Lifecycle from Merit List to Convocation",
+       "Biometric & RFID Hardware Attendance Engine with SMS Alerts",
+       "Automated Fee Accounting with Split Payment Gateway & Fine Rules",
+       "Examination Controller Engine with Hall Tickets & Gradebook Workflows",
+       "One-Click NAAC, NIRF & AICTE Statutory Compliance Data Exports",
+       "Multi-Campus Centralized Executive Dashboard with Branch Isolation"
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://ojix.in/campusos#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ojix.in/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms",
+        "item": "https://ojix.in/#platforms"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "School ERP",
+        "item": "https://ojix.in/campusos"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://ojix.in/campusos#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Can School ERP scale across multiple college branches and university departments?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. School ERP is engineered with a multi-tenant, multi-entity architecture. A university chancellor or board of trustees can oversee aggregate admissions, financial health, and academic performance across 10+ campuses from a single pane of glass, while campus principals retain strict autonomy over their respective student cohorts."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does School ERP integrate with physical biometric and RFID attendance turnstiles?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "School ERP connects directly with leading biometric fingerprint, facial recognition, and RFID hardware via local gateway controllers and real-time WebSocket APIs. Morning gate punches synchronize in sub-second latency, triggering automated attendance registers and parent SMS notifications."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Does School ERP support NAAC, NIRF, and AICTE accreditation data compilation?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. Instead of spending weeks manually collecting faculty research papers, student retention numbers, and examination results, School ERP maintains an automated institutional data depository. You can export structured SSR (Self Study Report) datasets conforming to NAAC Criteria 1 through 7 with one click."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does the automated fee management engine handle scholarships and installment plans?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "School ERP allows finance offices to configure complex fee structures including merit concessions, government quota adjustments, installment schedules, and late fine algorithms. Parents pay through integrated payment gateways (UPI, net banking, cards) with real-time fee receipt generation and direct general ledger reconciliation."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How are student personal records and biometric data protected under the DPDP Act 2023?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Student and parent personal data is treated with institutional fiduciary care. Biometric hashes and academic records are stored strictly in MeitY-empanelled Tier-IV data centers in India with AES-256 encryption. School ERP includes native parental consent workflows for minors and data anonymization after graduation in accordance with the DPDP Rules 2025."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "/construction-hub": {
+  "title": "Construction Hub — Connected Construction, EPC & Site BOQ Platform | OJIX",
+  "description": "Construction Hub connects site engineers, project leads, and HQ accounts into a single real-time execution engine. Track BOQ items, automated DPRs, contractor RA bills, and material reconciliation.",
+  "canonical": "https://ojix.in/buildos",
+  "ogImage": "https://ojix.in/assets/og-image.png",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "SoftwareApplication",
+      "@id": "https://ojix.in/buildos#software",
+      "name": "Construction Hub",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud / Web / Mobile Edge",
+      "description": "Enterprise construction management operating system uniting site engineers, project leads, procurement teams, and subcontractor billing in real time.",
+      "creator": {
+       "@type": "Organization",
+       "@id": "https://ojix.in/#organization",
+       "name": "OJIX Engineering & Technology LLP",
+       "url": "https://ojix.in"
+      },
+      "offers": {
+       "@type": "Offer",
+       "priceCurrency": "INR",
+       "price": "0",
+       "description": "Enterprise deployment and site licensing"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ojix.in/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms",
+        "item": "https://ojix.in/#platforms"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Construction Hub",
+        "item": "https://ojix.in/buildos"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://ojix.in/buildos#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "Can site engineers submit Daily Progress Reports (DPR) offline?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. The Construction Hub Field Companion mobile app works completely offline. Site supervisors log labor headcounts, equipment hours, poured concrete batches, and geotagged photographs. Data synchronizes automatically as soon as mobile connectivity is restored."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does Construction Hub prevent subcontractor over-billing on Running Account (RA) bills?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Construction Hub maintains a single source of truth through Digital Measurement Books (M-Books). Subcontractor bill line items are systematically validated against certified site measurements, pre-agreed contract BOQ rates, and maximum allowable wastage limits before payment vouchers can be generated."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Does Construction Hub integrate with legacy ERPs like SAP and Tally?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. Construction Hub features bi-directional REST APIs and webhooks that interface smoothly with SAP S/4HANA, TallyPrime, Oracle Primavera, and Microsoft Dynamics for real-time ledger sync and inventory journal entries."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How are site photos verified against fraudulent uploads?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Every photo logged in Construction Hub must be captured live through the in-app camera. The system embeds encrypted EXIF metadata with real-time GPS coordinates, compass orientation, timestamp, and device ID, completely preventing gallery uploads of old photos."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How quickly can a new construction project be onboarded?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "A standard project site can be fully operational on Construction Hub within 5 to 7 working days. Our engineering deployment team uploads your master BOQ, configures user roles for PMs and site supervisors, sets up subcontractor master contracts, and conducts on-site training for engineers."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "/travelos": {
+  "title": "Travel OS — AI-Powered Travel Management System | OJIX",
+  "description": "Travel OS by RAKTIX & Eagle's Eye Destination: The AI-Powered Travel Management System Built for Modern Travel Businesses. Unify enquiries, quotations, bookings, travellers, suppliers, payments, and fleet operations.",
+  "canonical": "https://ojix.in/travelos",
+  "ogImage": "https://ojix.in/assets/og-image.png",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "SoftwareApplication",
+      "@id": "https://ojix.in/travelos#software",
+      "name": "TravelOS",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud / Web / Mobile Edge",
+      "description": "Enterprise AI-powered travel management system built for travel agencies, DMCs, and tour operators. Unifying enquiries, quotations, bookings, travellers, suppliers, payments, and fleet operations.",
+      "creator": {
+       "@type": "Organization",
+       "@id": "https://ojix.in/#organization",
+       "name": "OJIX Engineering & Technology LLP",
+       "url": "https://ojix.in"
+      },
+      "offers": {
+       "@type": "Offer",
+       "priceCurrency": "INR",
+       "price": "0",
+       "description": "Fleet-based licensing and private cloud deployment"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ojix.in/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms",
+        "item": "https://ojix.in/#platforms"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "TravelOS",
+        "item": "https://ojix.in/travelos"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://ojix.in/travelos#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "What is Travel OS and who is it built for?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Travel OS by RAKTIX and Eagle's Eye Destination is an all-in-one AI travel management system built for modern travel agencies, tour operators, DMCs, MICE planners, and corporate travel desks. It unifies enquiries, smart quotes, itineraries, visas, suppliers, fleet dispatch, and invoicing on a single platform."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does the Smart Quote Engine calculate transport and tour fares?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "The Smart Quote Engine automatically calculates point-to-point distance and travel duration, applies contracted vehicle rates, and adds a customizable 10 km, 15 km, or percentage-based buffer to generate an accurate, ready-to-send quote in under 60 seconds."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Can Travel OS handle both international holiday packages and domestic fleet dispatch?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. Travel OS supports international multi-day itineraries for destinations like Dubai, Bali, Thailand, Singapore, and Europe, alongside domestic outstation cab quoting, live GPS vehicle tracking, and automated driver assignments."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How much time and revenue can a travel agency save with Travel OS?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Businesses using Travel OS report up to 70% less manual administrative work, a 3X faster quote-to-booking turnaround time, and up to 40% higher profitability through automated margin protection, leakage prevention, and single-layer billing reconciliation."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Does Travel OS include a self-service portal for travellers and corporate clients?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. Every booking includes access to a Customer Travel Portal where travellers and corporate managers can view itineraries, upload passport and visa documents, download vouchers, and pay invoices online."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "/fitos": {
+  "title": "FitOS — Gym, Studio & Wellness Operating System | OJIX",
+  "description": "FitOS is the complete operating system for gyms, yoga studios, and fitness chains. Power branded member apps, front-desk operations, trainer management, lead CRM, recurring UPI billing, and multi-branch control.",
+  "canonical": "https://ojix.in/fitos",
+  "ogImage": "https://ojix.in/assets/og-image.png",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "SoftwareApplication",
+      "@id": "https://ojix.in/fitos#software",
+      "name": "FitOS",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud / Web / iOS / Android / Edge",
+      "description": "Comprehensive gym, studio, and wellness operating system uniting branded member applications, front-desk check-in terminals, trainer scheduling, sales CRM, recurring UPI billing, and multi-branch governance.",
+      "creator": {
+       "@type": "Organization",
+       "@id": "https://ojix.in/#organization",
+       "name": "OJIX Engineering & Technology LLP",
+       "url": "https://ojix.in"
+      },
+      "offers": {
+       "@type": "Offer",
+       "priceCurrency": "INR",
+       "price": "0",
+       "description": "Custom enterprise licensing for fitness studios, boutique clubs, and multi-branch chains"
+      }
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ojix.in/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Platforms",
+        "item": "https://ojix.in/#platforms"
+       },
+       {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "FitOS",
+        "item": "https://ojix.in/fitos"
+       }
+      ]
+     },
+     {
+      "@type": "FAQPage",
+      "@id": "https://ojix.in/fitos#faq",
+      "mainEntity": [
+       {
+        "@type": "Question",
+        "name": "What check-in options does FitOS support for front-desk and turnstile access?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "FitOS supports multi-modal check-in including time-expiring dynamic QR codes generated in the branded member app, RFID cards, NFC tags, biometric edge turnstiles with offline caching, and instant front-desk keyboard lookup by mobile or member ID."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does FitOS handle multi-branch chains and franchise operations?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "FitOS features multi-tier chain governance allowing headquarters to centrally define membership plans, tax rules, and pricing while granting branches independent shift and front-desk control. Roaming memberships allow members seamless cross-studio access with automated inter-branch revenue reconciliation."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How does the FitOS Lead CRM and trial booking workflow operate?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Leads from walk-ins, digital ads, and website forms route into a centralized visual pipeline. Prospects can select real-time trial slots on web or mobile, while automated WhatsApp triggers deliver booking reminders, rep follow-ups, and post-trial conversion links."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "How are personal training (PT) sessions tracked and trainer commissions calculated?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Trainers access a dedicated portal to view assigned clients, build workout routines, and record session completions verified via client dynamic QR or attendance check-in. FitOS automatically computes tiered commission payouts, package deductions, and payroll exports without manual spreadsheets."
+        }
+       },
+       {
+        "@type": "Question",
+        "name": "Does FitOS support Indian tax compliance (GST SAC 9997) and recurring UPI Autopay renewals?",
+        "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Yes. FitOS generates compliant SAC 9997 tax invoices with automated CGST, SGST, or IGST itemization. For recurring subscriptions, it integrates with NPCI UPI Autopay via Razorpay and Cashfree, executing automated subscription debits on due dates with automated retry logic."
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

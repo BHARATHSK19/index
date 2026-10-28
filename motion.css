@@ -1,0 +1,208 @@
+/* ==========================================================================
+   OJIX — MOTION LAYER  v1.2.0
+   1. Intro: light screen, OJIX wordmark wipes in slowly left→right, 0–100% counter.
+   2. Hover: the same soft left→right wipe on buttons, footer links and the logo.
+   3. Clean nav (fonts.ninja style): grey 500-weight links that go black on hover.
+   Plain CSS + small motion.js. Respects prefers-reduced-motion.
+   ========================================================================== */
+
+/* ---------- shared wipe mask ---------------------------------------------
+   Mask is 250% wide: opaque on the left third, wide soft edge to transparent.
+   Sliding mask-position 100% → 0% sweeps the content in smoothly from the left. */
+:root {
+  --ojx-ease: cubic-bezier(0.65, 0, 0.35, 1);
+  /* left → right: opaque on the LEFT of the mask, wide soft edge */
+  --ojx-mask: linear-gradient(90deg, #000 0%, #000 38%, transparent 68%, transparent 100%);
+  --ojx-mask-soft: linear-gradient(90deg, #000 0%, #000 36%, rgba(0, 0, 0, 0.22) 64%, rgba(0, 0, 0, 0.22) 100%);
+}
+
+@keyframes ojx-wipe-in {
+  from { -webkit-mask-position: 100% 0; mask-position: 100% 0; }
+  to   { -webkit-mask-position: 0 0;    mask-position: 0 0; }
+}
+
+/* ---------- 1. intro ----------------------------------------------------- */
+.ojx-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: grid;
+  place-items: center;
+  background: #f7f6f6;
+  cursor: pointer;
+  /* CSS-only fallback: leaves on its own even if JS never runs */
+  animation: ojx-intro-out 0.8s ease 3.6s forwards;
+}
+
+.ojx-intro.is-done {
+  animation: ojx-intro-out 0.6s ease forwards;
+}
+
+.ojx-intro.is-skipped {
+  display: none;
+}
+
+@keyframes ojx-intro-out {
+  to { opacity: 0; visibility: hidden; }
+}
+
+.ojx-intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.ojx-intro__mark {
+  display: block;
+  width: min(52vw, 280px);
+  height: auto;
+  -webkit-mask-image: var(--ojx-mask);
+          mask-image: var(--ojx-mask);
+  -webkit-mask-size: 250% 100%;
+          mask-size: 250% 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: 100% 0;
+          mask-position: 100% 0;
+  animation: ojx-wipe-in 2.6s cubic-bezier(0.45, 0, 0.2, 1) 0.2s forwards;
+}
+
+.ojx-intro__count {
+  min-width: 4ch;
+  text-align: center;
+  font: 500 11px/1 ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace !important;
+  letter-spacing: 0.04em !important;
+  color: #8e8e93;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 2. hover wipe (left → right) --------------------------------- */
+.brand img,
+.footer-brand img,
+.btn > span:not(.btn-arrow),
+.eleks-preview-cta > span,
+.site-footer .footer-col a,
+.site-footer .footer-address a,
+.back-to-top {
+  -webkit-mask-size: 250% 100%;
+          mask-size: 250% 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: 0 0;
+          mask-position: 0 0;
+}
+
+.brand:hover img,
+.footer-brand a:hover img,
+.btn:hover > span:not(.btn-arrow),
+.eleks-preview-cta:hover > span,
+.site-footer .footer-col a:hover,
+.site-footer .footer-address a:hover,
+.back-to-top:hover {
+  -webkit-mask-image: var(--ojx-mask-soft);
+          mask-image: var(--ojx-mask-soft);
+  animation: ojx-wipe-in 0.7s var(--ojx-ease);
+}
+
+/* arrow nudges with the wipe */
+.btn .btn-arrow,
+.eleks-preview-cta svg {
+  display: inline-block;
+  transition: transform 0.45s var(--ojx-ease);
+}
+
+.btn:hover .btn-arrow,
+.eleks-preview-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* ---------- reduced motion ---------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .ojx-intro { display: none !important; }
+
+  .brand:hover img,
+  .footer-brand a:hover img,
+  .btn:hover > span:not(.btn-arrow),
+  .eleks-preview-cta:hover > span,
+  .site-footer .footer-col a:hover,
+  .site-footer .footer-address a:hover,
+  .back-to-top:hover {
+    animation: none;
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
+}
+
+/* ---------- 3. clean nav (fonts.ninja style) ----------------------------- */
+.topline {
+  display: none !important;          /* repeated the company name + city */
+}
+
+.site-header,
+.site-header.is-scrolled {
+  background: rgba(247, 246, 246, 0.82) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+          backdrop-filter: saturate(180%) blur(20px) !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (min-width: 1024px) {
+  .site-header .main-nav {
+    gap: clamp(18px, 2vw, 32px) !important;
+  }
+
+  .site-header .nav-top-link {
+    background: none !important;
+    box-shadow: none !important;
+    padding: 6px 0 !important;
+  }
+
+  .site-header .nav-top-link .nav-link-text {
+    font-size: clamp(15px, 1.3vw, 19px) !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.012em !important;
+    color: #8e8e93 !important;
+    transition: color 0.25s ease;
+  }
+
+  .site-header .nav-top-link:hover .nav-link-text,
+  .site-header .nav-top-link:focus-visible .nav-link-text,
+  .site-header .nav-top-link.is-active .nav-link-text,
+  .site-header .nav-item-has-mega:hover > .nav-top-link .nav-link-text {
+    color: #121212 !important;
+  }
+
+  .site-header .nav-dot-indicator {
+    display: none !important;
+  }
+
+  .site-header .ojix-wa-nav-btn {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: #121212 !important;
+  }
+
+  .site-header .ojix-wa-pulse {
+    display: none !important;
+  }
+
+  .site-header .nav-cta {
+    background: #121212 !important;
+    color: #fff !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    box-shadow: none !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.01em !important;
+    padding: 10px 18px !important;
+    transition: background-color 0.25s ease !important;
+  }
+
+  .site-header .nav-cta:hover {
+    background: #3a3a3c !important;
+  }
+}

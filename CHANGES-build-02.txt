@@ -1,0 +1,18 @@
+OJIX — Build 02  (27 Oct 2026)
+==============================
+Install: extract inside the OJIX-main folder (where server.js is), choose "Replace", restart (npm start).
+Needs Build 01 installed first (it is already in your folder).
+
+1. SERVICES MENU — clicking "Services" now opens services.html, exactly like "Products" opens products.html.
+   Hover still shows the dropdown. (Mobile menu keeps its swipeable services panel.)
+   Services list rows now use the Products rhythm: one line per service, same hover image preview.
+2. DARK MODE EFFECT — switching theme now grows a circle out of the toggle button (Chrome, Edge, Safari 18+).
+   Firefox / reduced-motion: quick colour fade instead.
+3. INTRO LOADER — OJIX logo bigger (up to 400px). The orange dash now draws in solid, left to right;
+   the old soft mask left its right tip and the X faded.
+4. NEWSLETTER POPUP — same style as the footer "Notes from OJIX." block: "Your email" label, underline field,
+   SUBSCRIBE → in the display font, consent line with cookie & privacy policy link.
+5. COOKIE BANNER — Privacy Policy link removed (Cookie Policy and Manage kept).
+
+Files: app.js, cookies.js, theme.css, theme.js, service-worker.js, services.html + version bumps / Services link in all pages.
+Not browser-tested by Claude (per AGENTS.md) — please check: intro, toggle circle, newsletter popup (use an incognito window).

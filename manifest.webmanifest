@@ -1,0 +1,14 @@
+{
+  "name": "OJIX — Systems for work that matters",
+  "short_name": "OJIX",
+  "description": "Enterprise operating systems, custom software and AI-enabled workflows.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F7F7F5",
+  "theme_color": "#0F1C2E",
+  "icons": [
+    { "src": "assets/favicon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

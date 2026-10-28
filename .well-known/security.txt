@@ -1,0 +1,6 @@
+Contact: mailto:security@ojix.in
+Contact: mailto:info@ojix.in
+Preferred-Languages: en, hi, kn
+Policy: https://ojix.in/#security-trust
+Canonical: https://ojix.in/.well-known/security.txt
+Expires: 2027-10-10T00:00:00.000Z

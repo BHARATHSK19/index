@@ -1,0 +1,26 @@
+OJIX — Build 01  (27 Oct 2026)
+==============================
+Extract this zip INSIDE the OJIX-main folder (where server.js is) and choose "Replace".
+Then restart the server:  npm start
+
+1. DARK MODE — now works
+   - Cause: Helmet's security policy blocks inline <script>, so the theme script in <head> never ran;
+     the toggle had no click handler and no dark styles existed.
+   - New: theme-init.js (sets theme before paint), theme.js (toggle, remembers choice, logo swap),
+     theme.css (hand-tuned), theme-auto.css (generated navy remap of all site colours).
+   - Dark logo: assets/ojix-navbar-logo-dark.svg
+
+2. PREMIUM NAVY — light mode black (#121212) is now brand navy (#0F1C2E) for text, buttons and dark sections.
+
+3. COOKIE BANNER + NEWSLETTER — one system on all 93 pages (cookies.js v2)
+   - Removed 4 overlapping banners that used 2 storage keys (why the banner kept reappearing).
+   - Banner: Privacy Policy · Cookie Policy · Manage links, Decline / Accept →.
+   - Newsletter popup: no empty gap, email field with arrow button, close ×, privacy note.
+   - Accept now really enables first-party analytics (it never did before).
+
+4. BACKEND FIX — newsletter, admin login, /health, analytics, erasure
+   - db.js lost 8 functions when it moved to Neon. Added store.js (local SQLite in data/ojix_secure.db,
+     same tables, your existing data kept; JSON fallback on Node older than 22.5). Neon is unchanged.
+
+Not done (needs your settings): admin sign-in code email needs SMTP_* values in .env.
+Regenerate theme-auto.css after big CSS changes:  python tools/gen_theme.py .   (pip install tinycss2)

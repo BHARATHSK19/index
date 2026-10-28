@@ -1,0 +1,183 @@
+/* ==========================================================================
+   OJIX — PHONE & TABLET LAYER  v1.0.0   (all pages, ≤1023px)
+   Slim header, full-screen menu in the display face with staggered links,
+   consistent 20px gutters, tap feedback.
+   ========================================================================== */
+
+@font-face {
+  font-family: "OJX Display";
+  src: url("assets/fonts/archivo-wdth-latin.woff2") format("woff2-variations"),
+       url("assets/fonts/archivo-wdth-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+}
+
+@media (max-width: 1023px) {
+  /* ---------- gutters ---------- */
+  .shell {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* ---------- slim header ---------- */
+  .site-header .nav-wrap {
+    min-height: 60px !important;
+    height: 60px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .site-header .brand img {
+    width: 78px !important;
+    height: auto !important;
+  }
+
+  .menu-toggle {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* ---------- full-screen menu ---------- */
+  .main-nav.is-open {
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: calc(100dvh - 60px) !important;
+    max-height: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 12px 20px calc(28px + env(safe-area-inset-bottom)) !important;
+    overflow-y: auto !important;
+    background: #f7f6f6 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    animation: ojx-menu-fade 0.3s ease both !important;
+  }
+
+  .main-nav.is-open > a.nav-top-link,
+  .main-nav.is-open > .nav-item-has-mega > a.nav-top-link {
+    min-height: 0 !important;
+    padding: 14px 0 10px !important;
+    border-bottom: 1px solid rgba(18, 18, 18, 0.1) !important;
+    background: none !important;
+  }
+
+  .main-nav.is-open .nav-link-text {
+    font-family: "OJX Display", "Arial Narrow", sans-serif !important;
+    font-stretch: 62% !important;
+    font-weight: 800 !important;
+    font-size: clamp(40px, 11vw, 52px) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.01em !important;
+    text-transform: uppercase !important;
+    color: #121212 !important;
+  }
+
+  .main-nav.is-open .nav-top-link.is-active .nav-link-text { color: #C9662F !important; }
+  .main-nav.is-open .nav-dot-indicator { display: none !important; }
+
+  .main-nav.is-open > *,
+  .main-nav.is-open > .nav-item-has-mega,
+  .main-nav.is-open .nav-top-link {
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .main-nav.is-open .nav-top-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  /* links slide in one after another */
+  .main-nav.is-open > * {
+    animation: ojx-menu-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .main-nav.is-open > *:nth-child(1) { animation-delay: 0.04s; }
+  .main-nav.is-open > *:nth-child(2) { animation-delay: 0.08s; }
+  .main-nav.is-open > *:nth-child(3) { animation-delay: 0.12s; }
+  .main-nav.is-open > *:nth-child(4) { animation-delay: 0.16s; }
+  .main-nav.is-open > *:nth-child(5) { animation-delay: 0.20s; }
+  .main-nav.is-open > *:nth-child(6) { animation-delay: 0.24s; }
+  .main-nav.is-open > *:nth-child(7) { animation-delay: 0.28s; }
+  .main-nav.is-open > *:nth-child(8) { animation-delay: 0.32s; }
+  .main-nav.is-open > *:nth-child(9) { animation-delay: 0.36s; }
+
+  .main-nav.is-open .ojix-wa-nav-btn {
+    align-self: flex-start;
+    margin-top: 24px !important;
+    background: #fff !important;
+    border: 1px solid rgba(18, 18, 18, 0.1) !important;
+    color: #121212 !important;
+    box-shadow: none !important;
+  }
+
+  .main-nav.is-open .ojix-wa-pulse { display: none !important; }
+
+  .main-nav.is-open .nav-cta {
+    margin-top: 16px !important;
+    min-height: 54px !important;
+    justify-content: center !important;
+    border-radius: 999px !important;
+    background: #121212 !important;
+    color: #fff !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+
+  body.nav-open { overflow: hidden; }
+
+  /* ---------- tap feedback ---------- */
+  .btn:active,
+  .nav-cta:active,
+  .ojx-hero__cta:active,
+  .dx-row__link:active,
+  .dx-svc:active,
+  .ojx-hero__tab:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
+  }
+}
+
+@keyframes ojx-menu-fade { from { opacity: 0; } }
+@keyframes ojx-menu-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-nav.is-open, .main-nav.is-open > * { animation: none !important; }
+}
+
+/* v1.1 — one 20px gutter on phones (shell was 16px margin + 20px padding = 36px) */
+@media (max-width: 734px) {
+  main .shell,
+  .site-footer .shell,
+  .ojx-news .shell {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+  .site-header { height: auto !important; min-height: 0 !important; }
+}
+
+/* slide-in items never cause sideways scroll */
+.dx-services, .dx-products, .pd-rows { overflow-x: clip; }

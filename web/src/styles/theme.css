@@ -1,0 +1,344 @@
+/* OJIX — premium navy theme layer (v1.0.0)
+   Load order: after every other stylesheet, followed by theme-auto.css (generated colour remap).
+   Light mode = white + brand navy. Dark mode = deep navy surfaces + orange accents. */
+
+:root {
+  --ojx-navy: #0F1C2E;
+  --ojx-navy-2: #16263B;
+  --ojx-navy-deep: #09121E;
+  --ojx-orange: #C9662F;
+  --ojx-orange-2: #B65525;
+  --ojx-card: #FFFFFF;
+  --ojx-card-line: rgba(15, 28, 46, 0.09);
+  --ojx-ink: #0F1C2E;
+  --ojx-ink-2: #4B5A70;
+  --ojx-ink-3: #7A889C;
+  --ojx-field: #F4F6F9;
+  --ojx-shadow: 0 30px 70px -24px rgba(9, 18, 30, 0.38), 0 2px 6px rgba(9, 18, 30, 0.06);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ojx-card: #101E32;
+  --ojx-card-line: rgba(148, 170, 200, 0.16);
+  --ojx-ink: #EEF2F8;
+  --ojx-ink-2: #B4C0D0;
+  --ojx-ink-3: #8191A8;
+  --ojx-field: #0B1626;
+  --ojx-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(148, 170, 200, 0.08);
+  /* legacy design tokens used by styles.css */
+  --paper: #101E32;
+  --soft: #0B1626;
+  --ink: #EEF2F8;
+  --ink-secondary: #B4C0D0;
+  --muted: #8E9CB2;
+  --line: rgba(148, 170, 200, 0.16);
+  --line-subtle: rgba(148, 170, 200, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.45);
+}
+
+/* smooth switch only while toggling (no transition on first paint) */
+html.ojx-theme-anim *,
+html.ojx-theme-anim *::before,
+html.ojx-theme-anim *::after {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, fill 0.35s ease !important;
+}
+
+/* ---------------------------------------------------------------- theme toggle */
+.theme-toggle-btn {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 0 !important;
+  border: 1px solid rgba(15, 28, 46, 0.12);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ojx-navy);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.theme-toggle-btn:hover { background: rgba(15, 28, 46, 0.06); }
+.theme-toggle-btn:active { transform: scale(0.94); }
+.theme-toggle-btn:focus-visible { outline: 2px solid var(--ojx-orange); outline-offset: 2px; }
+.theme-toggle-btn svg { grid-area: 1 / 1; transition: opacity 0.3s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+.theme-toggle-btn .sun-icon { opacity: 0; transform: rotate(-90deg) scale(0.6); }
+.theme-toggle-btn .moon-icon { opacity: 1; transform: none; }
+html[data-theme="dark"] .theme-toggle-btn { color: #F2C29F; border-color: rgba(148, 170, 200, 0.22); }
+html[data-theme="dark"] .theme-toggle-btn:hover { background: rgba(148, 170, 200, 0.1); }
+html[data-theme="dark"] .theme-toggle-btn .sun-icon { opacity: 1; transform: none; }
+html[data-theme="dark"] .theme-toggle-btn .moon-icon { opacity: 0; transform: rotate(90deg) scale(0.6); }
+
+/* ---------------------------------------------------------------- dark base */
+html[data-theme="dark"],
+html[data-theme="dark"] body,
+html[data-theme="dark"] body.dxm { background: #0B1626 !important; color: #C2CCDA; }
+html[data-theme="dark"] ::selection { background: rgba(201, 102, 47, 0.45); color: #fff; }
+html[data-theme="dark"] img:not([src$=".svg"]):not(.dx-logos__track img) { filter: brightness(0.94); }
+/* client logos are dark artwork on transparent: render them light */
+html[data-theme="dark"] .dx-logos__track img,
+html[data-theme="dark"] .logo-loop img,
+html[data-theme="dark"] [class*="client"] img[src*="assets/clients"] { filter: brightness(0) invert(1); opacity: 0.72; }
+html[data-theme="dark"] .ojx-intro { background: #0B1626 !important; }
+/* logo swap before JS runs (Chrome/Safari/Edge); theme.js swaps src for other browsers */
+html[data-theme="dark"] .ojx-intro__mark { content: url("/assets/ojix-navbar-logo-dark.svg"); }
+html[data-theme="dark"] .site-header .brand img { content: url("/assets/ojix-navbar-logo-dark.svg"); }
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea { color-scheme: dark; }
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder { color: #6E7F98 !important; }
+
+/* ---------------------------------------------------------------- consent + newsletter */
+html body .ojx-sr {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0);
+  border: 0; white-space: nowrap;
+}
+
+html body .ojx-consent,
+html body .ojx-newsbox {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 9500;
+  box-sizing: border-box;
+  width: min(400px, calc(100vw - 48px));
+  margin: 0;
+  padding: 24px 24px 22px;
+  border: 1px solid var(--ojx-card-line);
+  border-radius: 16px;
+  background: var(--ojx-card);
+  color: var(--ojx-ink);
+  box-shadow: var(--ojx-shadow);
+  font-family: Inter, "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px) scale(0.985);
+  transition: opacity 0.4s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.4s;
+}
+html body .ojx-consent.is-visible,
+html body .ojx-newsbox.is-visible { opacity: 1; visibility: visible; transform: none; }
+
+/* thin orange rule on top — the OJIX signature */
+html body .ojx-consent::before,
+html body .ojx-newsbox::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 24px;
+  width: 44px; height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: var(--ojx-orange);
+}
+
+html body .ojx-consent__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px !important;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  color: var(--ojx-ink-3) !important;
+}
+html body .ojx-consent__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ojx-orange); box-shadow: 0 0 0 4px rgba(201, 102, 47, 0.16); }
+
+html body .ojx-consent__title,
+html body .ojx-newsbox__title {
+  margin: 0 0 8px !important;
+  font-family: "OJX Display", "Arial Narrow", Inter, sans-serif !important;
+  font-stretch: 62%;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: uppercase !important;
+  color: var(--ojx-ink) !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+html body .ojx-newsbox__title span { color: var(--ojx-orange) !important; -webkit-text-fill-color: var(--ojx-orange) !important; }
+
+html body .ojx-consent__text,
+html body .ojx-newsbox__text {
+  margin: 0 0 12px !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: var(--ojx-ink-2) !important;
+}
+
+html body .ojx-consent__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0 0 18px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  color: var(--ojx-ink-3) !important;
+}
+html body .ojx-consent a,
+html body .ojx-newsbox a {
+  color: var(--ojx-ink) !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(201, 102, 47, 0.6) !important;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.2s ease;
+}
+html body .ojx-consent a:hover,
+html body .ojx-newsbox a:hover { color: var(--ojx-orange) !important; }
+
+html body .ojx-consent__actions { display: grid; grid-template-columns: 1fr 1.25fr; gap: 10px; }
+
+html body .ojx-consent__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  margin: 0;
+  padding: 0 18px;
+  border: 1px solid rgba(15, 28, 46, 0.2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ojx-ink);
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+html body .ojx-consent__btn:hover { border-color: var(--ojx-ink); }
+html body .ojx-consent__btn:active { transform: scale(0.98); }
+html body .ojx-consent__btn--solid { border-color: var(--ojx-navy); background: var(--ojx-navy); color: #fff; }
+html body .ojx-consent__btn--solid:hover { border-color: var(--ojx-orange); background: var(--ojx-orange); }
+html body .ojx-consent__arrow { display: inline-flex; transition: transform 0.25s ease; }
+html body .ojx-consent__btn--solid:hover .ojx-consent__arrow { transform: translateX(3px); }
+html body .ojx-consent__btn:focus-visible,
+html body .ojx-newsbox .ojx-news__row button:focus-visible,
+html body .ojx-newsbox__close:focus-visible { outline: 2px solid var(--ojx-orange); outline-offset: 2px; }
+
+html[data-theme="dark"] body .ojx-consent__btn { border-color: rgba(148, 170, 200, 0.3); }
+html[data-theme="dark"] body .ojx-consent__btn:hover { border-color: #EEF2F8; }
+html[data-theme="dark"] body .ojx-consent__btn--solid { border-color: var(--ojx-orange); background: var(--ojx-orange); }
+html[data-theme="dark"] body .ojx-consent__btn--solid:hover { border-color: #DD7A42; background: #DD7A42; }
+
+/* newsletter */
+html body .ojx-newsbox__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ojx-ink-3);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+html body .ojx-newsbox__close:hover { background: rgba(15, 28, 46, 0.06); color: var(--ojx-ink); }
+html[data-theme="dark"] body .ojx-newsbox__close:hover { background: rgba(148, 170, 200, 0.12); }
+
+/* newsletter popup — same look as the footer "Notes from OJIX." block */
+html body .ojx-newsbox { width: min(460px, calc(100vw - 48px)); padding: 26px 28px 22px; border-radius: 6px; }
+html body .ojx-newsbox::before { left: 28px; }
+html body .ojx-newsbox .ojx-news__kicker { margin: 0 0 12px !important; }
+html body .ojx-newsbox__title { font-size: clamp(34px, 3.2vw, 44px) !important; line-height: 0.9 !important; margin-bottom: 10px !important; }
+html body .ojx-newsbox__title span { color: var(--ojx-ink-3) !important; -webkit-text-fill-color: var(--ojx-ink-3) !important; }
+html body .ojx-newsbox__text { margin-bottom: 22px !important; }
+html body .ojx-newsbox__form { margin: 0 !important; padding: 0; }
+html body .ojx-newsbox .ojx-news__label { color: var(--ojx-ink) !important; }
+html body .ojx-newsbox .ojx-news__row { border-bottom-color: var(--ojx-ink); }
+html body .ojx-newsbox .ojx-news__row:focus-within { border-bottom-color: var(--ojx-orange); }
+html body .ojx-newsbox .ojx-news__row input { font-size: 22px !important; color: var(--ojx-ink) !important; }
+html body .ojx-newsbox .ojx-news__row input::placeholder { color: var(--ojx-ink-3) !important; opacity: 0.75; }
+html body .ojx-newsbox .ojx-news__row button { font-size: 22px !important; color: var(--ojx-ink) !important; }
+html body .ojx-newsbox .ojx-news__row button:hover { color: var(--ojx-orange) !important; }
+html body .ojx-newsbox .ojx-news__note { color: var(--ojx-ink-3) !important; line-height: 1.45 !important; }
+html body .ojx-newsbox .ojx-news__note a { color: var(--ojx-ink-3) !important; font-weight: 400 !important; text-decoration-color: currentColor !important; text-decoration-thickness: 1px; }
+html body .ojx-newsbox .ojx-news__note a:hover { color: var(--ojx-orange) !important; }
+html body .ojx-newsbox__status { min-height: 0 !important; margin: 12px 0 0 !important; font-size: 14px !important; }
+html body .ojx-newsbox__status:empty { display: none; }
+html body .ojx-newsbox__status.is-error { color: #D04A3A !important; }
+html[data-theme="dark"] body .ojx-newsbox__status.is-error { color: #FF8A7A !important; }
+html body .ojx-newsbox__status.is-ok { color: var(--ojx-ink) !important; }
+
+@media (max-width: 734px) {
+html body .ojx-consent,
+html body .ojx-newsbox {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    padding: 22px 20px 20px;
+    border-radius: 18px;
+  }
+html body .ojx-consent__title,
+html body .ojx-newsbox__title { font-size: 34px !important; }
+html body .ojx-newsbox .ojx-news__row input,
+html body .ojx-newsbox .ojx-news__row button { font-size: 20px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+html body .ojx-consent,
+html body .ojx-newsbox,
+.theme-toggle-btn svg { transition: none; }
+}
+
+/* ---------------------------------------------------------------- services page = products page rhythm */
+@media (min-width: 735px) {
+  .px-page--services .px-line { grid-template-columns: 60px minmax(0, 1.9fr) minmax(0, 1fr) 170px; gap: 24px; padding: 18px 0; }
+  body.dxm .px-page--services .px-line__name {
+    font-size: clamp(26px, 2.7vw, 42px) !important;
+    line-height: 0.95 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  .px-page--services .px-line__desc { font-size: 15px !important; }
+  .px-page--services .px-line__who { text-align: right; white-space: normal; }
+}
+
+/* ---------------------------------------------------------------- intro loader: bigger logo, clean reveal
+   The old soft mask left the right tip of the orange dash (and the X) faded. A hard-edged clip reveal
+   draws it left to right and ends fully solid. */
+html body .ojx-intro__inner { gap: 22px; }
+html body .ojx-intro__mark {
+  width: min(78vw, 400px) !important;
+  -webkit-mask: none !important;
+          mask: none !important;
+  clip-path: inset(0 100% 0 0);
+  animation: ojx-intro-reveal 1.9s cubic-bezier(0.65, 0, 0.35, 1) 0.15s forwards !important;
+}
+@keyframes ojx-intro-reveal { to { clip-path: inset(0 0 0 0); } }
+html body .ojx-intro__count { font-size: 12px !important; }
+@media (prefers-reduced-motion: reduce) {
+  html body .ojx-intro__mark { clip-path: none; animation: none !important; }
+}
+
+/* ---------------------------------------------------------------- theme switch: circular reveal from the toggle */
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }

@@ -1,0 +1,6 @@
+OJIX — Build 03  (27 Oct 2026)
+==============================
+Services page: removed the category filter chips (All Disciplines, Software Development, ...).
+They never filtered anything: their inline script is blocked by the site security policy (CSP).
+Also removed their styles and the "Filter by category" sentence in the intro text.
+Files: services.html, service-worker.js

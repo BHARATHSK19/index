@@ -1,0 +1,608 @@
+[
+  {
+    "id": "software-development",
+    "title": "Software Development",
+    "kicker": "SOFTWARE DEVELOPMENT",
+    "heading": "Build Digital Solutions",
+    "description": "We create custom software, web and mobile applications, and backend systems that help your business grow, operate efficiently and serve your customers better.",
+    "bannerImg": "assets/generated/ui-company-system.jpg",
+    "badge": "Build • Scale • Grow",
+    "icon": "code",
+    "services": [
+      {
+        "title": "Custom Software & Enterprise Applications",
+        "desc": "Tailored applications for unique business requirements.",
+        "icon": "code",
+        "href": "/services"
+      },
+      {
+        "title": "Website & Mobile App Development",
+        "desc": "Responsive websites and mobile applications.",
+        "icon": "smartphone",
+        "href": "/services"
+      },
+      {
+        "title": "Backend, API & Microservices Development",
+        "desc": "Scalable backend systems and APIs.",
+        "icon": "server",
+        "href": "/services"
+      },
+      {
+        "title": "UI/UX Design & Prototyping",
+        "desc": "User-focused interface design and interactive prototypes.",
+        "icon": "palette",
+        "href": "/services"
+      },
+      {
+        "title": "Website, Mobile App & Branding Design",
+        "desc": "Consistent digital experiences and visual identity.",
+        "icon": "layout",
+        "href": "/services"
+      },
+      {
+        "title": "Usability & Accessibility Optimization",
+        "desc": "More accessible and easier-to-use interfaces.",
+        "icon": "accessibility",
+        "href": "/services"
+      },
+      {
+        "title": "E-commerce Website & Marketplace Development",
+        "desc": "Online stores and multi-vendor marketplaces.",
+        "icon": "shopping-bag",
+        "href": "/services"
+      },
+      {
+        "title": "Payment & Subscription Integration",
+        "desc": "Payment gateways, recurring billing and subscriptions.",
+        "icon": "credit-card",
+        "href": "/services"
+      },
+      {
+        "title": "Online Store Maintenance & Optimization",
+        "desc": "Improve store reliability, speed and usability.",
+        "icon": "shopping-cart",
+        "href": "/services"
+      },
+      {
+        "title": "Product Development",
+        "desc": "Take software products from concept to release.",
+        "icon": "cpu",
+        "href": "/services"
+      }
+    ]
+  },
+  {
+    "id": "business-applications",
+    "title": "Business Applications",
+    "kicker": "BUSINESS APPLICATIONS",
+    "heading": "Enterprise Operations & ERP",
+    "description": "Connect finance, purchasing, inventory, staff records, and daily business operations in one unified workspace.",
+    "bannerImg": "assets/generated/ui-purchase-system.jpg",
+    "badge": "Automate • Streamline",
+    "icon": "grid",
+    "services": [
+      {
+        "title": "ERP Solutions",
+        "desc": "Connect finance, purchasing, inventory and business operations.",
+        "icon": "layers",
+        "href": "/procureos"
+      },
+      {
+        "title": "CRM Solutions",
+        "desc": "Manage customer records, sales pipelines and relationships.",
+        "icon": "users",
+        "href": "/company-management-system"
+      },
+      {
+        "title": "HR Management Systems",
+        "desc": "Manage employees, recruitment, attendance and leave.",
+        "icon": "user-check",
+        "href": "/company-management-system"
+      },
+      {
+        "title": "Project & Task Management",
+        "desc": "Coordinate projects, responsibilities and deadlines.",
+        "icon": "check-square",
+        "href": "/company-management-system"
+      },
+      {
+        "title": "Workflow Automation",
+        "desc": "Automate approvals, reminders and repetitive processes.",
+        "icon": "git-merge",
+        "href": "/services"
+      },
+      {
+        "title": "Billing & Invoicing Systems",
+        "desc": "Manage invoices, payments and financial records.",
+        "icon": "receipt",
+        "href": "/procureos"
+      },
+      {
+        "title": "Inventory Management",
+        "desc": "Track stock, warehouses and inventory movements.",
+        "icon": "archive",
+        "href": "/procureos"
+      },
+      {
+        "title": "Document Management",
+        "desc": "Organize business documents, versions and permissions.",
+        "icon": "file-text",
+        "href": "/dpdp-compliance"
+      },
+      {
+        "title": "Booking & Reservation Systems",
+        "desc": "Manage appointments, availability and reservations.",
+        "icon": "calendar",
+        "href": "/travelos"
+      },
+      {
+        "title": "Business Reporting Systems",
+        "desc": "Present business performance and operational reports.",
+        "icon": "bar-chart-2",
+        "href": "/company-management-system"
+      }
+    ]
+  },
+  {
+    "id": "ai-and-data",
+    "title": "AI and Data",
+    "kicker": "AI & DATA ENGINEERING",
+    "heading": "Intelligent Systems & Analytics",
+    "description": "Transform raw organizational data into automated workflows, intelligent assistants, and predictive foresight.",
+    "bannerImg": "assets/generated/hero-campus-ai.jpg",
+    "badge": "Predict • Automate",
+    "icon": "brain",
+    "services": [
+      {
+        "title": "AI Integration",
+        "desc": "Add AI capabilities to existing software.",
+        "icon": "cpu",
+        "href": "/services"
+      },
+      {
+        "title": "AI Assistants & Chatbots",
+        "desc": "Build assistants for customer and employee support.",
+        "icon": "bot",
+        "href": "/services"
+      },
+      {
+        "title": "Enterprise Knowledge Systems",
+        "desc": "Search company documents and internal knowledge.",
+        "icon": "search",
+        "href": "/services"
+      },
+      {
+        "title": "Machine Learning Development",
+        "desc": "Build models for classification and prediction.",
+        "icon": "git-branch",
+        "href": "/services"
+      },
+      {
+        "title": "Predictive Analytics",
+        "desc": "Identify trends and estimate future outcomes.",
+        "icon": "trending-up",
+        "href": "/services"
+      },
+      {
+        "title": "Database Engineering",
+        "desc": "Design, migrate and optimize databases.",
+        "icon": "database",
+        "href": "/services"
+      },
+      {
+        "title": "Data Engineering & Pipelines",
+        "desc": "Collect, transform and process business data.",
+        "icon": "activity",
+        "href": "/services"
+      },
+      {
+        "title": "Data Warehousing",
+        "desc": "Consolidate data for reporting and analysis.",
+        "icon": "hard-drive",
+        "href": "/services"
+      },
+      {
+        "title": "Business Analytics",
+        "desc": "Analyze sales, finance and operational performance.",
+        "icon": "pie-chart",
+        "href": "/services"
+      },
+      {
+        "title": "Data Reconciliation",
+        "desc": "Detect inconsistencies between systems and records.",
+        "icon": "check-circle",
+        "href": "/services"
+      }
+    ]
+  },
+  {
+    "id": "integration-and-modernization",
+    "title": "Integration and Modernization",
+    "kicker": "INTEGRATION & MODERNIZATION",
+    "heading": "Connected Tools & Upgrades",
+    "description": "Unify disparate tools and migrate legacy applications to modern, decoupled microservice systems.",
+    "bannerImg": "assets/generated/ui-travel-system.jpg",
+    "badge": "Connect • Modernize",
+    "icon": "workflow",
+    "services": [
+      {
+        "title": "System Integration",
+        "desc": "Connect business applications and enterprise systems.",
+        "icon": "link",
+        "href": "/services"
+      },
+      {
+        "title": "API & Webhook Integration",
+        "desc": "Exchange data and trigger cross-system workflows.",
+        "icon": "webhook",
+        "href": "/services"
+      },
+      {
+        "title": "Legacy Software Modernization",
+        "desc": "Upgrade outdated applications and technology.",
+        "icon": "refresh-cw",
+        "href": "/services"
+      },
+      {
+        "title": "Microservices Migration",
+        "desc": "Restructure suitable systems into independently deployable services.",
+        "icon": "grid",
+        "href": "/services"
+      },
+      {
+        "title": "Data Migration",
+        "desc": "Transfer data safely between platforms.",
+        "icon": "corner-down-right",
+        "href": "/services"
+      },
+      {
+        "title": "Platform Customization",
+        "desc": "Adapt existing platforms to business requirements.",
+        "icon": "sliders",
+        "href": "/services"
+      }
+    ]
+  },
+  {
+    "id": "cloud-and-infrastructure",
+    "title": "Cloud and Infrastructure",
+    "kicker": "CLOUD & INFRASTRUCTURE",
+    "heading": "High-Availability Cloud Systems",
+    "description": "Provision and operate resilient Indian and global cloud environments with automated DevOps deployment pipelines.",
+    "bannerImg": "assets/generated/ui-privacy-vault.jpg",
+    "badge": "Scale • 99.99% Uptime",
+    "icon": "cloud",
+    "services": [
+      {
+        "title": "Cloud Infrastructure Management",
+        "desc": "Provision and manage cloud resources.",
+        "icon": "cloud",
+        "href": "/services"
+      },
+      {
+        "title": "Cloud Hosting & Deployment",
+        "desc": "Host applications and manage releases.",
+        "icon": "upload-cloud",
+        "href": "/services"
+      },
+      {
+        "title": "DevOps Engineering",
+        "desc": "Improve software delivery and operations.",
+        "icon": "terminal",
+        "href": "/services"
+      },
+      {
+        "title": "CI/CD Automation",
+        "desc": "Automate builds, tests and deployments.",
+        "icon": "play",
+        "href": "/services"
+      },
+      {
+        "title": "Containerization & Orchestration",
+        "desc": "Package and manage containerized applications.",
+        "icon": "box",
+        "href": "/services"
+      },
+      {
+        "title": "Network Management",
+        "desc": "Configure and maintain network connectivity.",
+        "icon": "wifi",
+        "href": "/services"
+      },
+      {
+        "title": "IT Infrastructure Management",
+        "desc": "Manage servers, devices and core IT systems.",
+        "icon": "server",
+        "href": "/services"
+      },
+      {
+        "title": "Cloud Cost Optimization",
+        "desc": "Reduce waste and improve resource utilization.",
+        "icon": "dollar-sign",
+        "href": "/services"
+      }
+    ]
+  },
+  {
+    "id": "quality-and-security",
+    "title": "Quality and Security",
+    "kicker": "QUALITY & SECURITY",
+    "heading": "Rigorous QA & Security Compliance",
+    "description": "Ensure software reliability, verify complex user journeys, and protect enterprise data under statutory DPDP Act standards.",
+    "bannerImg": "assets/generated/hero-legal-chamber.jpg",
+    "badge": "DPDP 2023 • ISO 27001",
+    "icon": "shield-check",
+    "services": [
+      {
+        "title": "Functional & Integration Testing",
+        "desc": "Verify features and system interactions.",
+        "icon": "check-square",
+        "href": "/security"
+      },
+      {
+        "title": "Test Automation",
+        "desc": "Automate repeatable software tests.",
+        "icon": "repeat",
+        "href": "/security"
+      },
+      {
+        "title": "API & End-to-End Testing",
+        "desc": "Validate APIs and complete user journeys.",
+        "icon": "navigation",
+        "href": "/security"
+      },
+      {
+        "title": "Performance Testing",
+        "desc": "Evaluate speed, concurrency and system capacity.",
+        "icon": "zap",
+        "href": "/security"
+      },
+      {
+        "title": "Security Auditing",
+        "desc": "Identify security weaknesses and configuration problems.",
+        "icon": "shield",
+        "href": "/dpdp-compliance"
+      },
+      {
+        "title": "Penetration Testing",
+        "desc": "Perform authorized testing for exploitable vulnerabilities.",
+        "icon": "key",
+        "href": "/security"
+      },
+      {
+        "title": "Application Security",
+        "desc": "Strengthen authentication, authorization and data protection.",
+        "icon": "lock",
+        "href": "/security"
+      },
+      {
+        "title": "Security Monitoring",
+        "desc": "Detect suspicious activity and investigate alerts.",
+        "icon": "eye",
+        "href": "/security"
+      }
+    ]
+  },
+  {
+    "id": "maintenance-and-support",
+    "title": "Maintenance and Support",
+    "kicker": "MAINTENANCE & SUPPORT",
+    "heading": "Reliable Support & System Health",
+    "description": "Keep applications dependable and secure with continuous monitoring, defect triage, and regular dependency updates.",
+    "bannerImg": "assets/generated/hero-overview-office.jpg",
+    "badge": "24/7 • Active SLA",
+    "icon": "settings",
+    "services": [
+      {
+        "title": "Software Maintenance",
+        "desc": "Keep applications stable and up to date.",
+        "icon": "wrench",
+        "href": "/services"
+      },
+      {
+        "title": "Bug Fixing & Enhancements",
+        "desc": "Resolve defects and add improvements.",
+        "icon": "tool",
+        "href": "/services"
+      },
+      {
+        "title": "Technical Support",
+        "desc": "Help users and teams solve technical problems.",
+        "icon": "headphones",
+        "href": "/contact"
+      },
+      {
+        "title": "Incident Management",
+        "desc": "Coordinate responses to production failures.",
+        "icon": "alert-triangle",
+        "href": "/services"
+      },
+      {
+        "title": "Application Monitoring",
+        "desc": "Track errors, performance and availability.",
+        "icon": "monitor",
+        "href": "/services"
+      },
+      {
+        "title": "Managed Application Services",
+        "desc": "Operate and maintain applications continuously.",
+        "icon": "settings",
+        "href": "/services"
+      },
+      {
+        "title": "Version Upgrades",
+        "desc": "Upgrade software frameworks, dependencies and platforms.",
+        "icon": "arrow-up-circle",
+        "href": "/services"
+      }
+    ]
+  },
+  {
+    "id": "marketing-and-growth",
+    "title": "Marketing and Growth",
+    "kicker": "MARKETING & GROWTH",
+    "heading": "Data-Driven Digital Growth",
+    "description": "Maximize acquisition, organic search visibility, and customer lifetime value with automated growth engines.",
+    "bannerImg": "assets/generated/ui-construction-system.jpg",
+    "badge": "Attract • Convert",
+    "icon": "trending-up",
+    "services": [
+      {
+        "title": "Digital Marketing",
+        "desc": "Plan and manage digital marketing campaigns.",
+        "icon": "send",
+        "href": "/contact"
+      },
+      {
+        "title": "Search Engine Optimization",
+        "desc": "Improve organic search visibility.",
+        "icon": "search",
+        "href": "/services"
+      },
+      {
+        "title": "Marketing Analytics",
+        "desc": "Measure campaigns, leads and conversions.",
+        "icon": "bar-chart",
+        "href": "/services"
+      },
+      {
+        "title": "Advertising Management",
+        "desc": "Manage paid advertising campaigns.",
+        "icon": "target",
+        "href": "/contact"
+      },
+      {
+        "title": "Content Marketing",
+        "desc": "Develop content to attract and inform customers.",
+        "icon": "feather",
+        "href": "/contact"
+      },
+      {
+        "title": "Email Automation",
+        "desc": "Automate email campaigns and follow-ups.",
+        "icon": "mail",
+        "href": "/services"
+      },
+      {
+        "title": "Conversion Optimization",
+        "desc": "Improve digital experiences and conversion rates.",
+        "icon": "trending-up",
+        "href": "/services"
+      }
+    ]
+  },
+  {
+    "id": "industry-solutions",
+    "title": "Industry Solutions",
+    "kicker": "INDUSTRY SOLUTIONS",
+    "heading": "Specialized Industry Software",
+    "description": "Engineered platforms tailored to the statutory, operational, and billing requirements of your business sector.",
+    "bannerImg": "assets/generated/ui-campus-system.jpg",
+    "badge": "Industry-Grade Systems",
+    "icon": "factory",
+    "services": [
+      {
+        "title": "Healthcare Software",
+        "desc": "Clinic, hospital, laboratory and patient applications.",
+        "icon": "activity",
+        "href": "/contact"
+      },
+      {
+        "title": "Education Software",
+        "desc": "School, college and learning management systems.",
+        "icon": "book",
+        "href": "/campusos"
+      },
+      {
+        "title": "Retail Software",
+        "desc": "Point-of-sale, inventory and retail operations.",
+        "icon": "shopping-cart",
+        "href": "/procureos"
+      },
+      {
+        "title": "Logistics Software",
+        "desc": "Shipment, delivery, fleet and warehouse management.",
+        "icon": "truck",
+        "href": "/procureos"
+      },
+      {
+        "title": "Manufacturing Software",
+        "desc": "Production planning and quality management.",
+        "icon": "settings",
+        "href": "/procureos"
+      },
+      {
+        "title": "Financial Software",
+        "desc": "Billing, reconciliation and financial operations.",
+        "icon": "credit-card",
+        "href": "/procureos"
+      },
+      {
+        "title": "Real Estate Software",
+        "desc": "Property listings, tenant and facility management.",
+        "icon": "home",
+        "href": "/buildos"
+      },
+      {
+        "title": "Construction Software",
+        "desc": "Project tracking, contractor coordination and cost management.",
+        "icon": "hammer",
+        "href": "/buildos"
+      },
+      {
+        "title": "Insurance Software",
+        "desc": "Policy, claims and customer management.",
+        "icon": "shield",
+        "href": "/legalos"
+      },
+      {
+        "title": "Industrial IoT Solutions",
+        "desc": "Device integration and equipment monitoring.",
+        "icon": "cpu",
+        "href": "/services"
+      }
+    ]
+  },
+  {
+    "id": "commercial-models",
+    "title": "Commercial Models",
+    "kicker": "COMMERCIAL MODELS",
+    "heading": "Transparent & Flexible Models",
+    "description": "Select the engagement structure that aligns with your delivery schedule, financial planning, and governance needs.",
+    "bannerImg": "assets/generated/ui-legal-system.jpg",
+    "badge": "Transparent • Zero Lock-In",
+    "icon": "file-text",
+    "services": [
+      {
+        "title": "Fixed-Price Projects",
+        "desc": "Deliver an agreed scope for a defined price.",
+        "icon": "tag",
+        "href": "/contact"
+      },
+      {
+        "title": "Time-Based Development",
+        "desc": "Provide development services based on agreed effort.",
+        "icon": "clock",
+        "href": "/contact"
+      },
+      {
+        "title": "Monthly Retainers",
+        "desc": "Provide recurring support or development capacity.",
+        "icon": "calendar",
+        "href": "/contact"
+      },
+      {
+        "title": "Managed Service Contracts",
+        "desc": "Take responsibility for agreed systems and service levels.",
+        "icon": "shield-check",
+        "href": "/contact"
+      },
+      {
+        "title": "Consulting Engagements",
+        "desc": "Provide specialist advice and technical assessments.",
+        "icon": "message-square",
+        "href": "/contact"
+      }
+    ]
+  }
+]

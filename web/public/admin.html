@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>OJIX Admin</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="stylesheet" href="admin.css?v=1.0.0" />
+</head>
+<body>
+  <!-- ============ SIGN IN ============ -->
+  <main class="ad-auth" id="ad-auth">
+    <div class="ad-auth__box">
+      <img class="ad-logo" src="assets/ojix-navbar-logo.svg" alt="OJIX" width="96" height="46" />
+      <h1 class="ad-display">Admin</h1>
+
+      <form id="ad-login" class="ad-form" autocomplete="on">
+        <p class="ad-step">Step 1 of 2 · Password</p>
+        <label for="ad-user">Username</label>
+        <input id="ad-user" name="username" autocomplete="username" required />
+        <label for="ad-pass">Password</label>
+        <input id="ad-pass" name="password" type="password" autocomplete="current-password" required />
+        <button type="submit" class="ad-btn">Continue</button>
+        <p class="ad-msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <form id="ad-code" class="ad-form" hidden>
+        <p class="ad-step">Step 2 of 2 · Email code</p>
+        <p class="ad-note">We sent a 6-digit code to <b data-sent-to></b>. It expires in 10 minutes.</p>
+        <label for="ad-otp">Sign-in code</label>
+        <input id="ad-otp" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required />
+        <button type="submit" class="ad-btn">Sign in</button>
+        <button type="button" class="ad-link" data-restart>Start again</button>
+        <p class="ad-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <!-- ============ DASHBOARD ============ -->
+  <div class="ad-app" id="ad-app" hidden>
+    <header class="ad-top">
+      <a href="/" class="ad-top__brand"><img src="assets/ojix-navbar-logo.svg" alt="OJIX" width="74" height="36" /><span>Admin</span></a>
+      <nav class="ad-top__nav" aria-label="Sections">
+        <a href="#overview">Overview</a>
+        <a href="#pages">Pages</a>
+        <a href="#subscribers">Subscribers</a>
+        <a href="#cookies">Cookies</a>
+        <a href="#logins">Sign-ins</a>
+        <a href="#enquiries">Enquiries</a>
+      </nav>
+      <div class="ad-top__actions">
+        <button type="button" class="ad-link" id="ad-refresh">Refresh</button>
+        <button type="button" class="ad-btn ad-btn--sm" id="ad-logout">Sign out</button>
+      </div>
+    </header>
+
+    <main class="ad-main">
+      <section id="overview">
+        <p class="ad-kicker">Last 30 days · updated <span data-updated>—</span></p>
+        <div class="ad-kpis" data-kpis></div>
+      </section>
+
+      <section id="pages" class="ad-grid2">
+        <div>
+          <h2 class="ad-h2">Most visited pages</h2>
+          <p class="ad-sub">Counted only for visitors who accepted cookies.</p>
+          <ol class="ad-bars" data-top-pages></ol>
+        </div>
+        <div>
+          <h2 class="ad-h2">Visits per day</h2>
+          <p class="ad-sub">Last 14 days</p>
+          <div class="ad-cols" data-daily></div>
+        </div>
+      </section>
+
+      <section id="subscribers">
+        <div class="ad-head">
+          <h2 class="ad-h2">Newsletter subscribers</h2>
+          <a class="ad-btn ad-btn--sm" href="/api/admin/subscribers.csv">Download CSV</a>
+        </div>
+        <div class="ad-table-wrap"><table class="ad-table"><thead><tr><th>Email</th><th>Subscribed</th><th>Status</th></tr></thead><tbody data-subscribers></tbody></table></div>
+      </section>
+
+      <section id="cookies">
+        <h2 class="ad-h2">Cookie choices</h2>
+        <p class="ad-sub" data-consent-split></p>
+        <div class="ad-table-wrap"><table class="ad-table"><thead><tr><th>Choice</th><th>Page</th><th>When</th><th>Visitor</th></tr></thead><tbody data-consents></tbody></table></div>
+      </section>
+
+      <section id="logins">
+        <h2 class="ad-h2">Admin sign-ins</h2>
+        <p class="ad-sub">Every password and code attempt. Visitor is a one-way fingerprint of the IP address.</p>
+        <div class="ad-table-wrap"><table class="ad-table"><thead><tr><th>When</th><th>Step</th><th>Result</th><th>Visitor</th><th>Browser</th></tr></thead><tbody data-logins></tbody></table></div>
+      </section>
+
+      <section id="enquiries">
+        <h2 class="ad-h2">Project enquiries</h2>
+        <div class="ad-table-wrap"><table class="ad-table"><thead><tr><th>When</th><th>Name</th><th>Email</th><th>Organisation</th><th>Interest</th></tr></thead><tbody data-inquiries></tbody></table></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js?v=1.0.0" defer></script>
+</body>
+</html>

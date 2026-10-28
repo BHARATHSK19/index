@@ -1,0 +1,36 @@
+/* Additions for the React build (Build 04). */
+
+/* Page wrapper must not affect layout. */
+.ojx-page { display: contents; }
+.ojx-page-loading { min-height: 100vh; }
+
+/* "New" tag on the products added in Build 04 (header mega-menu). */
+.eleks-subtab-new {
+  margin-left: auto;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #C9662F;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  flex: none;
+}
+
+/* 404 page links */
+.ojx-notfound__links { margin-top: 18px; font-size: 17px; }
+.ojx-notfound__links a { color: #C9662F; font-weight: 600; }
+
+/* Mega-menu preview text was cut off on one line (white-space: nowrap inherited from the nav). */
+.eleks-mega-right, .eleks-mega-right * { white-space: normal; }
+
+/* Text fields: no outlined focus box (the orange underline already marks the active field). */
+input:not([type="checkbox"]):not([type="radio"]):focus,
+input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+select:focus, select:focus-visible,
+textarea:focus, textarea:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

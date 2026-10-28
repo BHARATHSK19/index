@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-IN" data-theme="dark">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>DPDP Act 2023 &amp; Rules 2025: Enterprise Technical Architecture Guide | OJIX</title>
+  <meta name="description" content="Technical guide for enterprise Data Fiduciaries complying with India’s Digital Personal Data Protection Act, 2023 and MeitY DPDP Rules, 2025. Sovereign architecture, consent, and audit." />
+  <meta name="keywords" content="DPDP Act 2023 compliance guide, DPDP Rules 2025 technical architecture, data fiduciary requirements India, MeitY sovereign cloud residency, data principal grievance redressal 48 hours" />
+  <meta name="author" content="OJIX Engineering &amp; Technology LLP" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://ojix.in/dpdp-compliance" />
+
+  <!-- GEO TAGS -->
+  <meta name="geo.region" content="IN-KA" />
+  <meta name="geo.placename" content="Bengaluru" />
+  <meta name="geo.position" content="12.9467;77.5562" />
+  <meta name="ICBM" content="12.9467, 77.5562" />
+
+  <!-- OPEN GRAPH / SOCIAL -->
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="OJIX — Systems for work that matters" />
+  <meta property="og:title" content="DPDP Act 2023 &amp; Rules 2025: Enterprise Technical Architecture Guide | OJIX" />
+  <meta property="og:description" content="Comprehensive engineering blueprint for Data Fiduciaries: consent architectures, 22-language notices, MeitY cloud residency, 72h breach reporting, and 48h grievance workflows." />
+  <meta property="og:url" content="https://ojix.in/dpdp-compliance" />
+  <meta property="og:image" content="https://ojix.in/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- TWITTER CARDS -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DPDP Act 2023 &amp; Rules 2025: Technical Guide | OJIX" />
+  <meta name="twitter:description" content="How Indian enterprises must engineer their databases, consent workflows, and cloud infrastructure under the DPDP Act 2023 &amp; 2025 Rules." />
+  <meta name="twitter:image" content="https://ojix.in/assets/og-image.png" />
+
+  <!-- PWA & ICONS -->
+  <link rel="icon" type="image/svg+xml" href="/assets/ojix-icon-navy.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0F1C2E" />
+
+  <!-- FONTS & STYLES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="/theme-init.js?v=1.0.0"></script>
+<link rel="stylesheet" href="/styles.css?v=5.2.0" />
+  <link rel="stylesheet" href="/responsive.css?v=1.0.6" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/typography.css?v=1.0.0" />
+  <link rel="stylesheet" href="/motion.css?v=1.1.0" />
+  <link rel="stylesheet" href="/mobile.css?v=1.2.0" />
+  <link rel="stylesheet" href="/extras.css?v=1.6.4" />
+  <link rel="stylesheet" href="/home.css?v=1.3.0" />
+    <link rel="stylesheet" href="/products.css?v=1.1.0" />
+  <link rel="stylesheet" href="/product.css?v=1.4.0" />
+
+  <style>
+    /* System Fixed Style: 100% Left-Aligned Product Hero */
+    .pillar-hero-21 .hero-21-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      text-align: left !important;
+      max-width: var(--shell) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .pillar-hero-21 .hero-21-header {
+      align-self: flex-start !important;
+      align-items: flex-start !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      text-align: left !important;
+      width: auto !important;
+    }
+    .pillar-hero-21 .hero-eyebrow-pill {
+      align-self: flex-start !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      text-align: left !important;
+    }
+    .pillar-hero-21 .hero-21-title {
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      max-width: 26ch !important;
+      width: 100% !important;
+    }
+    .pillar-hero-21 .hero-21-title span,
+    .pillar-hero-21 .hero-21-title em,
+    .pillar-hero-21 .hero-gradient-text {
+      color: #C9662F !important;
+      background: none !important;
+      -webkit-text-fill-color: #C9662F !important;
+    }
+    .pillar-hero-21 .hero-21-lede {
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      max-width: 54ch !important;
+      width: 100% !important;
+      margin-bottom: 22px !important;
+    }
+    .pillar-hero-21 .hero-21-actions {
+      justify-content: flex-start !important;
+      align-items: center !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      margin-bottom: 20px !important;
+      width: 100% !important;
+    }
+    .pillar-hero-21 .hero-21-proof {
+      justify-content: flex-start !important;
+      align-items: center !important;
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      margin-bottom: 20px !important;
+      max-width: 54ch !important;
+    }
+    .pillar-hero-21 .hero-21-platform-strip {
+      justify-content: flex-start !important;
+      align-items: center !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      width: 100% !important;
+    }
+    .pillar-hero-21 .hero-engine-surface,
+    .pillar-hero-21 .hero-gradient-card {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      text-align: left !important;
+    }
+  </style>
+
+  <!-- APP INTERACTIVITY SCRIPT -->
+  <script src="/extras.js?v=1.5.0" defer></script>
+  <script src="/home.js?v=1.1.0" defer></script>
+  <script src="/product.js?v=1.1.0" defer></script>
+  <script src="/app.js?v=5.2.1" defer></script>
+
+  <!-- STRUCTURED DATA: Article, Breadcrumbs & FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://ojix.in/dpdp-compliance#article",
+        "headline": "DPDP Act 2023 & DPDP Rules 2025: Enterprise Technical Architecture Guide for Data Fiduciaries",
+        "description": "Comprehensive engineering and regulatory guide for enterprise CTOs, Data Protection Officers, and General Counsels on implementing Indian data protection compliance.",
+        "author": {
+          "@type": "Organization",
+          "@id": "https://ojix.in/#organization",
+          "name": "OJIX Engineering & Technology LLP",
+          "url": "https://ojix.in"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://ojix.in/#organization"
+        },
+        "datePublished": "2025-03-01T00:00:00+05:30",
+        "dateModified": "2026-10-10T00:00:00+05:30",
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ojix.in/dpdp-compliance#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ojix.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Resources & Compliance",
+            "item": "https://ojix.in/dpdp-compliance"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ojix.in/dpdp-compliance#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are the core technical obligations for Data Fiduciaries under the DPDP Rules 2025?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The DPDP Rules 2025 mandate: (1) itemized, non-bundled consent notices available in English and the 22 Eighth Schedule languages, (2) technical mechanisms for automated consent withdrawal, (3) data erasure and anonymization upon purpose fulfillment, (4) reasonable security safeguards including AES-256 encryption and tenant isolation, and (5) designated Grievance Officers with guaranteed 48-hour response SLAs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the statutory timeline for reporting a personal data breach under the DPDP Act?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under Section 8(6) of the DPDP Act and the DPDP Rules 2025, Data Fiduciaries must notify the Data Protection Board of India (DPBI) and affected Data Principals within 72 hours of becoming aware of a confirmed personal data breach."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the DPDP Act require all personal data to be stored strictly in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While cross-border transfer to non-blacklisted jurisdictions is permitted under Section 16, Indian sovereign cloud residency (such as MeitY-empanelled Tier-IV data centers in Bengaluru and Mumbai) is critical for Significant Data Fiduciaries (SDFs), government agencies, critical infrastructure, and defense/legal data."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="/cookies.css?v=1.0.0" />
+  <link rel="stylesheet" href="/theme-auto.css?v=1.0.0" />
+  <link rel="stylesheet" href="/theme.css?v=1.1.0" />
+</head>
+<body id="top" class="dxm">
+  <div class="ojx-intro" id="ojx-intro" aria-hidden="true">
+    <div class="ojx-intro__inner">
+      <img class="ojx-intro__mark" src="/assets/ojix-navbar-logo.svg" alt="OJIX" width="280" height="135" />
+      <span class="ojx-intro__count">0%</span>
+    </div>
+  </div>
+  <script src="/motion.js?v=1.2.0"></script>
+    <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- TOPLINE -->
+  <div class="topline"><span class="topline-dot"></span> OJIX Engineering &amp; Technology LLP <span class="topline-sep">·</span> Bengaluru, India</div>
+
+  <!-- SITE HEADER -->
+  <header class="site-header eleks-header">
+    <div class="nav-wrap shell">
+      <a href="/" class="brand" aria-label="OJIX home"><img src="/assets/ojix-navbar-logo.svg" alt="OJIX" width="110" height="53" /></a>
+      <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+      <nav class="main-nav eleks-nav" id="main-nav" aria-label="Main navigation">
+        <a href="/" class="nav-top-link"><span class="nav-link-text">Home</span><span class="nav-dot-indicator" aria-hidden="true"></span></a>
+        <!-- MEGA-MENU 1: PRODUCTS -->
+        <div class="nav-item-has-mega" data-mega="platforms">
+          <a href="/products" data-page-link class="nav-top-link is-active" aria-haspopup="true" aria-expanded="false">
+            <span class="nav-link-text">Products</span>
+            <span class="nav-dot-indicator" aria-hidden="true"></span>
+          </a>
+          <div class="eleks-mega-dropdown" role="region" aria-label="Products subtabs">
+            <div class="eleks-mega-inner">
+              <div class="eleks-mega-left" role="tablist" aria-label="Select product">
+                <a href="/companyos" class="eleks-subtab" role="tab" aria-selected="false"
+                   data-preview-title="Company Management System"
+                   data-preview-desc="Run your daily office work in one place—staff attendance, monthly salaries, accounting, GST billing, and team approvals."
+                   data-preview-badge="ALL-IN-ONE OFFICE &amp; ERP"
+                   data-preview-img="/assets/generated/ui-company-system.jpg">
+                  <span class="eleks-subtab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z"/><path d="M12 12L20 7.5M12 12V21M12 12L4 7.5"/></svg>
+                  </span>
+                  <span class="eleks-subtab-label">Company Management</span>
+                </a>
+                <a href="/legalos" class="eleks-subtab" role="tab" aria-selected="false"
+                   data-preview-title="Legal Practice System"
+                   data-preview-desc="Help your law firm track court hearing dates, case files, client updates, and legal billing without missing a single deadline."
+                   data-preview-badge="LAW FIRMS &amp; ADVOCATES"
+                   data-preview-img="/assets/generated/ui-legal-system.jpg">
+                  <span class="eleks-subtab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+                  </span>
+                  <span class="eleks-subtab-label">Legal Practice System</span>
+                </a>
+                <a href="/procureos" class="eleks-subtab" role="tab" aria-selected="false"
+                   data-preview-title="Purchase &amp; Inventory System"
+                   data-preview-desc="Manage supplier quotes, purchase orders, warehouse stock, and incoming GST bills so you only pay for what was actually delivered."
+                   data-preview-badge="PURCHASING &amp; WAREHOUSE"
+                   data-preview-img="/assets/generated/ui-purchase-system.jpg">
+                  <span class="eleks-subtab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                  </span>
+                  <span class="eleks-subtab-label">Purchase &amp; Inventory</span>
+                </a>
+                <a href="/campusos" class="eleks-subtab" role="tab" aria-selected="false"
+                   data-preview-title="School &amp; College System"
+                   data-preview-desc="Manage student admissions, daily attendance, fee payments, timetables, and exam report cards in one easy dashboard."
+                   data-preview-badge="SCHOOLS &amp; COLLEGES"
+                   data-preview-img="/assets/generated/ui-campus-system.jpg">
+                  <span class="eleks-subtab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                  </span>
+                  <span class="eleks-subtab-label">School &amp; College System</span>
+                </a>
+                <a href="/buildos" class="eleks-subtab" role="tab" aria-selected="false"
+                   data-preview-title="Construction Management System"
+                   data-preview-desc="Track daily work at construction sites, monitor cement and steel usage, verify contractor bills, and keep project budgets on track."
+                   data-preview-badge="BUILDERS &amp; CONTRACTORS"
+                   data-preview-img="/assets/generated/ui-construction-system.jpg">
+                  <span class="eleks-subtab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg>
+                  </span>
+                  <span class="eleks-subtab-label">Construction System</span>
+                </a>
+                <a href="/travelos" class="eleks-subtab" role="tab" aria-selected="false"
+                   data-preview-title="Travel &amp; Booking System"
+                   data-preview-desc="Handle customer trip enquiries, tour packages, hotel and flight bookings, and driver schedules from one clean screen."
+                   data-preview-badge="TRAVEL AGENCIES &amp; TOURS"
+                   data-preview-img="/assets/generated/ui-travel-system.jpg">
+                  <span class="eleks-subtab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  </span>
+                  <span class="eleks-subtab-label">Travel &amp; Booking</span>
+                </a>
+                <a href="/fitos" class="eleks-subtab" role="tab" aria-selected="false"
+                   data-preview-title="Gym &amp; Fitness System"
+                   data-preview-desc="Manage member check-ins, biometric entry gates, trainer schedules, and automatic membership renewal reminders effortlessly."
+                   data-preview-badge="GYMS &amp; FITNESS STUDIOS"
+                   data-preview-img="/assets/generated/ui-gym-system.jpg">
+                  <span class="eleks-subtab-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                  </span>
+                  <span class="eleks-subtab-label">Gym &amp; Fitness System</span>
+                </a>
+              </div>
+              <div class="eleks-mega-right" aria-live="polite">
+                <div class="eleks-mega-preview-head">
+                  <span class="eleks-preview-kicker">Secure file &amp; privacy vault</span>
+                  <h3 class="eleks-preview-title">Data Privacy &amp; Document Vault</h3>
+                  <p class="eleks-preview-desc">Store important company and customer files safely with clear access permissions and built-in Indian data privacy compliance.</p>
+                  <a href="/dpdp-compliance" class="eleks-preview-cta"><span>Explore Platform</span> <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <a href="/dpdp-compliance" class="eleks-mega-preview-media" aria-label="Explore Data Privacy Vault">
+                  <img src="/assets/generated/ui-privacy-vault.jpg" alt="Data Privacy &amp; Document Vault preview" class="eleks-preview-img" loading="lazy" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                <!-- MEGA-MENU 2: SERVICES -->
+        <div class="nav-item-has-mega" data-mega="capabilities">
+          <a href="/services" data-page-link class="nav-top-link" aria-haspopup="true" aria-expanded="false"
+            aria-controls="services-mobile-submenu">
+            <span class="nav-link-text">Services</span>
+            <span class="nav-dot-indicator" aria-hidden="true"></span>
+          </a>
+          <div class="eleks-mega-dropdown services-catalog-dropdown" id="services-mobile-submenu" role="region" aria-label="Services catalog">
+            <div class="eleks-mega-inner services-mega-inner">
+              <div class="eleks-mega-left services-mega-sidebar" role="tablist" aria-label="Our Services" aria-orientation="vertical">
+                <div class="services-sidebar-header">Our Services</div>
+                <div class="services-category-nav" role="none"></div>
+              </div>
+              <div class="eleks-mega-right services-mega-right" id="services-panel" role="tabpanel" aria-live="polite">
+                <!-- Populated dynamically by app.js from the centralized service catalog -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="/process" class="nav-top-link"><span class="nav-link-text">How we work</span><span class="nav-dot-indicator" aria-hidden="true"></span></a>
+        <a href="/security" class="nav-top-link"><span class="nav-link-text">Security</span><span class="nav-dot-indicator" aria-hidden="true"></span></a>
+        <a href="/about" class="nav-top-link"><span class="nav-link-text">About OJIX</span><span class="nav-dot-indicator" aria-hidden="true"></span></a>
+        <a href="https://wa.me/919008877883" class="ojix-wa-nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with OJIX on WhatsApp" title="Chat on WhatsApp">
+          <span class="ojix-wa-pulse" aria-hidden="true"></span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.461 3.484 1.336 5.008L2 22l5.156-1.352a9.932 9.932 0 0 0 4.875 1.289h.004c5.516 0 9.965-4.453 9.965-9.969 0-2.664-1.039-5.168-2.922-7.051C17.199 3.039 14.695 2 12.031 2zm5.824 14.27c-.242.684-1.414 1.309-1.957 1.387-.504.074-1.141.105-1.844-.117-.426-.137-.973-.316-1.676-.621-2.953-1.273-4.883-4.25-5.031-4.449-.148-.195-1.203-1.602-1.203-3.055 0-1.453.762-2.168 1.031-2.465.27-.293.59-.367.785-.367.195 0 .395.004.566.012.184.008.426-.07.668.508.246.59.836 2.039.91 2.188.074.148.121.32.023.516-.098.199-.148.32-.293.492-.148.172-.312.383-.445.516-.148.148-.301.309-.129.605.172.293.766 1.262 1.645 2.047 1.129 1.008 2.082 1.32 2.379 1.469.293.148.465.125.641-.074.172-.199.738-.863.934-1.156.195-.297.395-.246.664-.148.27.098 1.723.813 2.016.961.297.148.492.223.566.344.074.125.074.715-.168 1.398z"/>
+          </svg>
+        </a>
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle color theme" type="button" title="Toggle color theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+<a class="nav-cta eleks-nav-cta" href="/contact">Discuss a project <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+    <div class="eleks-header-backdrop" id="eleks-header-backdrop" aria-hidden="true"></div>
+  </header>
+
+  <main id="main" class="pd-page" data-product="DPDP Privacy Vault">
+    <section class="pd-hero" aria-label="DPDP Privacy Vault">
+      <img class="pd-hero__img" src="/assets/images/products/dpdp-hero.webp" alt="DPDP Privacy Vault interface" width="1600" height="1000" fetchpriority="high" decoding="async" />
+      <div class="pd-hero__top shell">
+        <p class="pd-hero__k">Product 08 / 08</p>
+        <p class="pd-hero__k">Secure documents &amp; privacy</p>
+      </div>
+      <h1 class="pd-hero__name">DPDP Privacy Vault</h1>
+      <a class="pd-hero__scroll" href="#pd-overview">Scroll <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="pd-intro" id="pd-overview" aria-labelledby="pd-s1">
+      <div class="shell pd-intro__grid">
+        <div class="pd-intro__copy dx-reveal">
+          <p class="dx-kicker"><b>01</b> Overview</p>
+          <h2 class="pd-h2 pd-intro__title" id="pd-s1">DPDP Act 2023 &amp; Rules 2025: <span>Enterprise Technical Architecture.</span></h2>
+          <p class="pd-lede">India’s data protection regime transforms privacy from a legal checkbox into an architectural mandate. How enterprise CTOs, DPOs, and engineering leaders must build compliant, sovereign data systems.</p>
+          <div class="pd-actions">
+            <a class="ojx-hero__cta" href="#contact" data-discuss data-topic="DPDP Privacy Vault" data-mode="demo">Explore Technical Checklist</a>
+            <a class="ojx-hero__link" href="#framework">Consult Our Engineers <span aria-hidden="true">›</span></a>
+          </div>
+        </div>
+        <div class="pd-intro__visual dx-reveal"><div class="pv" aria-label="Privacy Vault preview (illustrative)" role="img">
+          <div class="pv-win">
+            <div class="pv-top"><span class="pv-dots"><i></i><i></i><i></i></span><span class="pv-url">app.ojix.in/vault</span><span class="pv-live">Live</span></div>
+            <div class="pv-head"><span class="pv-mark">P</span><strong>Privacy Vault</strong><span class="pv-badge">DPDP ready</span></div>
+            <div class="pv-kpis"><div class="pv-kpi" style="--i:0"><b>18,420</b><span>Consents on record</span></div><div class="pv-kpi" style="--i:1"><b>3</b><span>Erasure requests</span></div><div class="pv-kpi" style="--i:2"><b>1,206</b><span>File views today</span></div></div>
+            <div class="pv-panel"><p class="pv-panel__t">Access log</p><ul class="pv-list"><li style="--i:0"><div><strong>HR / Salaries 2026.xlsx</strong><small>Viewed by Anita R. · 10:42</small></div><span class="pv-chip pv-chip--ok">Allowed</span></li><li style="--i:1"><div><strong>Clients / KYC folder</strong><small>Download blocked · intern</small></div><span class="pv-chip pv-chip--on">Blocked</span></li><li style="--i:2"><div><strong>Consent #CN-8812</strong><small>Withdrawn by customer</small></div><span class="pv-chip pv-chip--off">Erase</span></li></ul></div>
+          </div>
+          <div class="pv-phone"><div class="pv-phone__screen">
+            <div class="pv-status"><span>9:41</span><span class="pv-status__icons"><i></i><i></i><i></i></span></div>
+            <div class="pv-papp"><span class="pv-mark pv-mark--sm">P</span><b>Privacy Vault</b></div>
+            <div class="pv-note"><span class="pv-note__dot"></span><div><strong>Erasure request</strong><small>Due within 48 hours · auto-tracked</small></div></div>
+            <div class="pv-pkpi"><span>Consents on record</span><b>18,420</b></div>
+            <div class="pv-pkpi"><span>Erasure requests</span><b>3</b></div>
+            <span class="pv-home"></span>
+          </div></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="pd-stats" aria-label="DPDP Privacy Vault in numbers">
+      <div class="shell"><div class="pd-stats__grid"><div class="pd-stat"><p class="pd-stat__num">22</p><p class="pd-stat__label">8th Schedule Languages</p><p class="pd-stat__desc">Statutory notice availability in English and all official Indian languages.</p></div><div class="pd-stat"><p class="pd-stat__num">48h</p><p class="pd-stat__label">Grievance Response SLA</p><p class="pd-stat__desc">Guaranteed statutory inquiry acknowledgement under Section 13.</p></div><div class="pd-stat"><p class="pd-stat__num">72h</p><p class="pd-stat__label">Breach Reporting Window</p><p class="pd-stat__desc">Automated incident telemetry dispatched to DPBI within the statutory limit.</p></div><div class="pd-stat"><p class="pd-stat__num">₹250 Cr</p><p class="pd-stat__label">Maximum Statutory Penalty</p><p class="pd-stat__desc">Eliminated via provable cryptographic compliance and immutable audit logs.</p></div></div></div>
+    </section>
+
+    <section class="pd-rows" id="framework" aria-labelledby="pd-s2">
+      <div class="shell">
+        <div class="pd-head dx-reveal">
+          <p class="dx-kicker"><b>02</b> Architectural imperatives</p>
+          <h2 class="pd-h2" id="pd-s2">The Six Pillars of DPDP 2025 <span>Enterprise Compliance.</span></h2>
+          <p class="pd-lede">Indian law enforces strict technical boundaries. Here is how enterprise database and application layers must be designed to withstand regulatory audits by the Data Protection Board of India (DPBI).</p>
+        </div>
+          <article class="pd-row dx-reveal">
+            <div class="pd-row__left">
+              <p class="pd-row__kicker"><b>01</b></p>
+              <h3 class="pd-row__title">Itemized Consent Architecture</h3>
+            </div>
+            <span class="pd-row__dot" aria-hidden="true"></span>
+            <div class="pd-row__right">
+              <p class="pd-row__desc">Section 6(1) bans bundled, pre-ticked consent. Systems must record verifiable timestamps, specific lawful purposes, and offer notices in English and 22 Indian constitutional languages with instant withdrawal APIs.</p>
+              <ul class="pd-row__tags"><li>Rule 3 Notice Engine</li><li>Opt-Out Webhooks</li><li>Immutable Consent Logs</li></ul>
+            </div>
+          </article>
+          <article class="pd-row dx-reveal">
+            <div class="pd-row__left">
+              <p class="pd-row__kicker"><b>02</b></p>
+              <h3 class="pd-row__title">Automated Retention &amp; Erasure</h3>
+            </div>
+            <span class="pd-row__dot" aria-hidden="true"></span>
+            <div class="pd-row__right">
+              <p class="pd-row__desc">Section 8(7) requires automatic data erasure as soon as the specified commercial purpose is fulfilled. Databases must enforce automated lifecycle policies that delete or anonymize records without manual intervention.</p>
+              <ul class="pd-row__tags"><li>TTL Row Policies</li><li>Cryptographic Shredding</li><li>Anonymization Pipelines</li></ul>
+            </div>
+          </article>
+          <article class="pd-row dx-reveal">
+            <div class="pd-row__left">
+              <p class="pd-row__kicker"><b>03</b></p>
+              <h3 class="pd-row__title">Sovereign Security Safeguards</h3>
+            </div>
+            <span class="pd-row__dot" aria-hidden="true"></span>
+            <div class="pd-row__right">
+              <p class="pd-row__desc">Section 8(5) mandates reasonable security measures to prevent personal data breaches. Implementation requires AES-256 encryption at rest, tenant key rotation, TLS 1.3 in transit, and role-based access control (RBAC).</p>
+              <ul class="pd-row__tags"><li>Tenant Key Isolation</li><li>Zero-Trust Network</li><li>HMAC Tamper Proofing</li></ul>
+            </div>
+          </article>
+          <article class="pd-row dx-reveal">
+            <div class="pd-row__left">
+              <p class="pd-row__kicker"><b>04</b></p>
+              <h3 class="pd-row__title">48-Hour Grievance Redressal</h3>
+            </div>
+            <span class="pd-row__dot" aria-hidden="true"></span>
+            <div class="pd-row__right">
+              <p class="pd-row__desc">Data Principals have a statutory right to grievance redressal. The enterprise must publish a designated Grievance Officer and implement ticketing workflows guaranteeing acknowledgement within 48 hours.</p>
+              <ul class="pd-row__tags"><li>Section 13 Compliance</li><li>48h SLA Tracking</li><li>DPBI Escalation Ready</li></ul>
+            </div>
+          </article>
+          <article class="pd-row dx-reveal">
+            <div class="pd-row__left">
+              <p class="pd-row__kicker"><b>05</b></p>
+              <h3 class="pd-row__title">72-Hour Breach Notification</h3>
+            </div>
+            <span class="pd-row__dot" aria-hidden="true"></span>
+            <div class="pd-row__right">
+              <p class="pd-row__desc">Section 8(6) requires immediate notification of any breach to the Data Protection Board of India and affected individuals. Automated SIEM anomaly detection must alert security teams in real time.</p>
+              <ul class="pd-row__tags"><li>Section 8(6) Alerts</li><li>Forensic Audit Trails</li><li>DPBI Notice Templates</li></ul>
+            </div>
+          </article>
+          <article class="pd-row dx-reveal">
+            <div class="pd-row__left">
+              <p class="pd-row__kicker"><b>06</b></p>
+              <h3 class="pd-row__title">Protection of Minor &amp; Child Data</h3>
+            </div>
+            <span class="pd-row__dot" aria-hidden="true"></span>
+            <div class="pd-row__right">
+              <p class="pd-row__desc">Section 9 strictly prohibits tracking, behavioral monitoring, or targeted advertising directed at children under 18. Verifiable parental consent mechanisms must be enforced at registration.</p>
+              <ul class="pd-row__tags"><li>Verifiable Parental Consent</li><li>Zero Behavioral Profiling</li><li>Campus Data Hardening</li></ul>
+            </div>
+          </article>
+      </div>
+    </section>
+    <section class="pd-cmp" aria-labelledby="pd-s3">
+      <div class="shell">
+        <div class="pd-head dx-reveal">
+          <p class="dx-kicker dx-kicker--light"><b>03</b> Architectural benchmark</p>
+          <h2 class="pd-h2" id="pd-s3">Legacy IT Checkbox Approach <span>vs OJIX DPDP-Native Systems.</span></h2>
+          <p class="pd-lede">Treating DPDP 2025 as a legal checkbox creates catastrophic compliance liability. Compare architectural paradigms below.</p>
+        </div>
+        <div class="pd-cmp__grid dx-reveal">
+          <div class="pd-cmp__col">
+            <p class="pd-cmp__badge">Legacy checkbox approach</p>
+            <h3 class="pd-cmp__title">Fragmented Compliance</h3>
+            <ul><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>Bundled, pre-checked checkboxes buried in 40-page terms of service.</span></li><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>Indefinite database retention with no automated row-level expiration triggers.</span></li><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>Payloads replicated across overseas SaaS servers with uncertain foreign jurisdictions.</span></li><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>Unmonitored shared inboxes where compliance and privacy notices sit unread for weeks.</span></li><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>Breach discovery delayed by months, exposing leadership to Section 33 penalties up to ₹250 Cr.</span></li></ul>
+          </div>
+          <div class="pd-cmp__col is-good">
+            <p class="pd-cmp__badge">OJIX native architecture</p>
+            <h3 class="pd-cmp__title">Cryptographic Sovereignty</h3>
+            <ul><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>Granular, itemized consent with SHA-256 tokens and multi-lingual notices in 22 languages.</span></li><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>Automated TTL row-level expiration and cryptographic shredding upon purpose completion.</span></li><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>100% Indian sovereign cloud residency in MeitY-empanelled Tier-IV data centers.</span></li><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>Statutory Grievance Redressal ticketing portal with guaranteed 48-hour SLA timers.</span></li><li><span class="pd-cmp__mark" aria-hidden="true"></span><span>Automated SIEM intrusion telemetry with instant 72-hour DPBI reporting templates.</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pd-table" id="audit-checklist" aria-labelledby="pd-s4">
+      <div class="shell">
+        <div class="pd-head dx-reveal">
+          <p class="dx-kicker"><b>04</b> Enterprise audit benchmark</p>
+          <h2 class="pd-h2" id="pd-s4">DPDP 2025 Technical Readiness <span>Self-Assessment Checklist.</span></h2>
+          <p class="pd-lede">Evaluate your enterprise stack against the core statutory requirements of the DPDP Act and 2025 Rules.</p>
+        </div>
+        <div class="pd-table__wrap dx-reveal"><table>
+          <thead><tr><th>Compliance Domain</th><th>Statutory Requirement</th><th>OJIX Operating Systems Implementation</th></tr></thead>
+          <tbody><tr><td>Consent Notices</td><td>Rule 3: Non-bundled, itemized purposes in English &amp; 8th Schedule languages</td><td>Native Consent Engine with multi-lingual notice generation</td></tr><tr><td>Data Residency</td><td>Zero unpermitted cross-border transfer of sensitive enterprise data</td><td>100% Indian Sovereign Cloud (MeitY Empanelled Tier-IV)</td></tr><tr><td>Storage Encryption</td><td>Section 8(5): Reasonable technical safeguards against unauthorized access</td><td>AES-256 Storage with firm-isolated cryptographic keys</td></tr><tr><td>Grievance Officer</td><td>Section 13: Accessible contact details with prompt redressal mechanisms</td><td>Statutory 48h SLA via dedicated grievance portal &amp; officer</td></tr><tr><td>Data Erasure</td><td>Section 8(7): Deletion upon consent withdrawal or purpose fulfillment</td><td>Automated Data Lifecycle triggers that purge unneeded records</td></tr><tr><td>Child Data Protection</td><td>Section 9: Zero behavioral tracking, profiling, or targeted advertisements</td><td>Strict Age Verification and zero-tracking campus databases</td></tr></tbody>
+        </table></div>
+      </div>
+    </section>
+    <section class="pd-faq" id="faq" aria-labelledby="pd-s5">
+      <div class="shell pd-faq__grid">
+        <div class="pd-head dx-reveal">
+          <p class="dx-kicker"><b>05</b> Regulatory &amp; technical FAQs</p>
+          <h2 class="pd-h2" id="pd-s5">Direct answers for DPOs, <span>CTOs &amp; General Counsels.</span></h2>
+          <p class="pd-lede">Statutory interpretations and engineering best practices under India’s digital data protection framework.</p>
+          <a class="pd-mail" href="mailto:info@ojix.in">info@ojix.in <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="pd-faq__list dx-reveal"><details class="pd-faq__item" open><summary><span>What are the core technical obligations for Data Fiduciaries under the DPDP Rules 2025?</span><i aria-hidden="true"></i></summary><p>The DPDP Rules 2025 mandate: (1) itemized, non-bundled consent notices available in English and the 22 Eighth Schedule languages, (2) technical mechanisms for automated consent withdrawal, (3) data erasure and anonymization upon purpose fulfillment, (4) reasonable security safeguards including AES-256 encryption and tenant isolation, and (5) designated Grievance Officers with guaranteed 48-hour response SLAs.</p></details><details class="pd-faq__item"><summary><span>What is the statutory timeline for reporting a personal data breach under the DPDP Act?</span><i aria-hidden="true"></i></summary><p>Under Section 8(6) of the DPDP Act and the DPDP Rules 2025, Data Fiduciaries must notify the Data Protection Board of India (DPBI) and affected Data Principals within 72 hours of becoming aware of a confirmed personal data breach.</p></details><details class="pd-faq__item"><summary><span>Does the DPDP Act require all personal data to be stored strictly in India?</span><i aria-hidden="true"></i></summary><p>While cross-border transfer to non-blacklisted jurisdictions is permitted under Section 16, Indian sovereign cloud residency (such as MeitY-empanelled Tier-IV data centers in Bengaluru and Mumbai) is critical for Significant Data Fiduciaries (SDFs), government agencies, critical infrastructure, and defense/legal data.</p></details></div>
+      </div>
+    </section>
+    <section class="ojx-cta" id="contact-advisory" aria-labelledby="ojx-cta-title">
+      <div class="shell ojx-cta__grid">
+        <div class="dx-reveal">
+          <p class="dx-kicker dx-kicker--light"><b>—</b> Book a demo · DPDP Privacy Vault</p>
+          <h2 class="ojx-cta__title" id="ojx-cta-title">Audit your enterprise data <span>architecture.</span></h2>
+          <p class="ojx-cta__text">Schedule a confidential assessment to verify your consent management, data residency, retention schedules, and grievance infrastructure against the DPDP Act 2023 and Rules 2025.</p>
+        </div>
+        <div class="ojx-cta__actions dx-reveal">
+          <button type="button" class="ojx-cta__btn" data-discuss data-topic="DPDP Privacy Vault" data-mode="demo">Book a DPDP Privacy Vault demo <span aria-hidden="true">→</span></button>
+          <a class="ojx-cta__mail" href="mailto:info@ojix.in">or write to info@ojix.in</a>
+          <p class="ojx-cta__note">We reply within one working day.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pd-next" aria-label="Next product">
+      <a class="pd-next__link" href="/companyos" data-name="OJIX OS">
+        <img src="/assets/images/products/companyos-hero.webp" alt="" loading="lazy" decoding="async" />
+        <span class="pd-next__k">Next product</span>
+        <span class="pd-next__name">OJIX OS <span aria-hidden="true">→</span></span>
+      </a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <section class="ojx-news" aria-labelledby="ojx-news-title">
+    <div class="shell ojx-news__grid">
+      <div>
+        <p class="ojx-news__kicker"><b>—</b> Newsletter</p>
+        <h2 class="ojx-news__title" id="ojx-news-title">Notes from <span>OJIX.</span></h2>
+        <p class="ojx-news__text">One short email when we ship something worth reading—product updates, build notes and lessons from Indian businesses. No spam. Unsubscribe anytime.</p>
+      </div>
+      <form class="ojx-news__form" id="ojx-news-form" novalidate>
+        <label class="ojx-news__label" for="ojx-news-email">Your email</label>
+        <div class="ojx-news__row">
+          <input type="email" id="ojx-news-email" name="email" required autocomplete="email" inputmode="email" placeholder="you@company.com" />
+          <button type="submit">Subscribe <span aria-hidden="true">→</span></button>
+        </div>
+        <input type="text" name="_hp_check" class="ojx-news__hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <p class="ojx-news__note">By subscribing you agree to receive emails from OJIX. Read our <a href="/cookies">cookie &amp; privacy policy</a>.</p>
+        <p class="ojx-news__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+    <footer class="site-footer">
+    <div class="shell footer-main">
+      <div class="footer-brand">
+        <a href="/" aria-label="OJIX home"><img src="/assets/ojix-primary-transparent-ondark.svg" alt="OJIX"
+            width="130" height="63" /></a>
+        <p>Systems for work that matters.</p>
+        <p class="footer-brand-descriptor">Custom Software · AI · Engineering</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-label">Explore</span>
+        <a href="/products">Products</a>
+        <a href="/#capabilities">Capabilities</a>
+        <a href="/#process">How we work</a>
+        <a href="/#security-trust">Security &amp; Sovereignty</a>
+        <a href="/#about">About OJIX</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-label">Legal &amp; Privacy</span>
+        <a href="/dpdp-compliance" data-open-modal="privacy-modal">Privacy Policy (DPDP 2025)</a>
+        <a href="/cookies">Cookie Policy</a>
+        <button type="button" class="footer-link-btn" data-open-modal="cookie-modal">Consent &amp; Preferences</button>
+        <a href="mailto:info@ojix.in">Grievance Redressal (48h SLA) <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-label">Resources</span>
+        <a href="/#faq">Enterprise FAQ</a>
+      </div>
+      <div class="footer-address">
+        <span class="footer-label">Let's Talk</span>
+        <p class="footer-address-lead">Have a business challenge to solve?</p>
+        <a href="mailto:info@ojix.in">info@ojix.in <span aria-hidden="true">↗</span></a>
+        <p>50/1, 5th Cross, Kalidasa Layout,<br />Srinagar, Bengaluru — 560050</p>
+        <a href="/#contact">Get in touch <span aria-hidden="true">→</span></a>
+        <small>GSTIN: 29AAKF03656Q1ZB</small>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <span class="footer-bottom-copy">© <span id="year">2026</span> OJIX Engineering &amp; Technology LLP</span>
+      <span class="footer-bottom-built">Built for work that matters.</span>
+      <a href="#top" class="back-to-top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  
+
+
+  <!-- COOKIE PREFERENCES MODAL -->
+  <div id="cookie-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title" hidden>
+    <div class="modal-window">
+      <div class="modal-head">
+        <div>
+          <span class="modal-kicker">DPDP Act (2023) Section 6</span>
+          <h2 id="cookie-modal-title">Cookie &amp; Consent Preferences</h2>
+        </div>
+        <button type="button" class="modal-close" data-close-modal="cookie-modal" aria-label="Close consent preferences">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-lede">Configure your consent preferences. Notice is available in English and 22 Indian Eighth Schedule languages.</p>
+        <div class="cookie-category">
+          <div class="category-info">
+            <strong>1. Strictly Necessary Cookies (Essential)</strong>
+            <p>Required for fundamental website security, session navigation, and storing your consent preferences. Cannot be disabled.</p>
+            <span class="category-badge">Mandatory · Zero Tracking</span>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="cookie-essential" checked disabled aria-label="Strictly Necessary Cookies (Essential)" />
+            <label for="cookie-essential" class="toggle-slider"><span class="sr-only">Strictly Necessary Cookies (Essential)</span></label>
+          </div>
+        </div>
+        <div class="cookie-category">
+          <div class="category-info">
+            <strong>2. Functional &amp; Preference Cookies</strong>
+            <p>Enables remembered language choices and preference states.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="cookie-functional" checked aria-label="Functional &amp; Preference Cookies" />
+            <label for="cookie-functional" class="toggle-slider"><span class="sr-only">Functional &amp; Preference Cookies</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button type="button" id="cookie-save-prefs" class="btn btn-orange">Save preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY MODAL -->
+  <div id="privacy-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" hidden>
+    <div class="modal-window modal-window-wide">
+      <div class="modal-head">
+        <div>
+          <span class="modal-kicker">Statutory privacy notice · DPDP Rules 2025</span>
+          <h2 id="privacy-modal-title">Privacy Policy &amp; Notice</h2>
+        </div>
+        <button type="button" class="modal-close" data-close-modal="privacy-modal" aria-label="Close privacy policy">✕</button>
+      </div>
+      <div class="modal-body legal-document">
+        <div class="legal-effective">Effective Date: March 2025 | Version 3.0 (DPDP Act 2023 &amp; Rules 2025 Aligned)</div>
+        <p>This statutory notice is issued by <strong>OJIX Engineering &amp; Technology LLP</strong> (GSTIN: 29AAKF03656Q1ZB). For any privacy grievance, contact our designated Grievance Officer at <a href="mailto:info@ojix.in">info@ojix.in</a> with guaranteed 48-hour statutory response.</p>
+        <h3>1. Lawful Basis &amp; Purpose Specification</h3>
+        <p>Under Section 4 and Section 6 of the DPDP Act 2023, personal data is processed solely for specified, lawful business purposes with affirmative consent.</p>
+        <h3>2. Data Principal Rights</h3>
+        <p>You have the right to access, rectify, erase, and withdraw consent at any time without penalty.</p>
+        <h3>3. Grievance Redressal SLA</h3>
+        <p>Email our Grievance Officer at <a href="mailto:info@ojix.in">info@ojix.in</a>. All statutory inquiries are resolved within 48 business hours.</p>
+      </div>
+      <div class="modal-foot">
+        <button type="button" class="btn btn-outline" data-close-modal="privacy-modal">Close Notice</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/assets/vendor/visual-effects.js?v=3.8.0"></script>
+
+  <!-- MOBILE-ONLY SERVICE CATEGORY CAROUSEL MODAL (Full-screen browsing experience for mobile) -->
+  <div id="ojix-mobile-services-modal" class="ojix-mobile-services-modal" role="dialog" aria-modal="true" aria-label="Services Catalog" hidden>
+    <div class="mobile-services-backdrop" data-close-mobile-services></div>
+    <div class="mobile-services-sheet">
+      <!-- Sticky Mobile Header -->
+      <header class="mobile-services-header">
+        <a href="#top" class="mobile-services-brand" aria-label="OJIX home">
+          <img src="/assets/ojix-navbar-logo.svg" alt="OJIX" width="96" height="46" />
+        </a>
+        <button type="button" class="mobile-services-close-btn" data-close-mobile-services aria-label="Close services panel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </header>
+
+      <!-- Sticky Category Bar: Heading + Counter + Horizontal Category Tabs -->
+      <div class="mobile-services-nav-bar">
+        <div class="mobile-services-nav-top">
+          <span class="mobile-services-eyebrow">OUR SERVICES</span>
+          <span class="mobile-services-counter" aria-live="polite">
+            <span class="mobile-counter-current">01</span><span class="mobile-counter-sep">/</span><span class="mobile-counter-total">10</span>
+          </span>
+        </div>
+        <div class="mobile-services-tabs-scroll" role="tablist" aria-label="Service Categories" tabindex="0">
+          <!-- Populated dynamically by app.js from SERVICES_CATALOG -->
+        </div>
+      </div>
+
+      <!-- Main Carousel Area -->
+      <div class="mobile-services-carousel-wrap">
+        <div class="mobile-services-carousel" id="mobile-services-carousel" tabindex="0" role="region" aria-label="Service category carousel">
+          <!-- Slides populated dynamically by app.js from SERVICES_CATALOG -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/theme.js?v=1.1.0" defer></script>
+  <script src="/cookies.js?v=2.1.0" defer></script>
+</body>
+</html>

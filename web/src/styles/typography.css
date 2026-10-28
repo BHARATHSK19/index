@@ -1,0 +1,307 @@
+/* ==========================================================================
+   OJIX — TYPOGRAPHY LAYER (Apple-style)  v1.0.0
+   Loaded after styles.css + responsive.css on every page.
+   SF Pro on Apple devices, Inter everywhere else. Calm weights, tight
+   headline tracking, sentence-case labels, neutral two-tone headlines.
+   ========================================================================== */
+
+:root {
+  --font-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  --ink: #1d1d1f;
+  --ink-secondary: #6e6e73;
+  --muted: #6e6e73;
+  --type-accent: #86868b;        /* second half of two-tone headlines (light bg) */
+  --type-accent-dark: #c7c7cc;   /* same, on dark bg */
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html, body, button, input, select, textarea,
+h1, h2, h3, h4, h5, h6, p, a, span, li, small, strong, label, summary, div, dt, dd, th, td {
+  font-family: var(--font-body) !important;
+}
+
+h1, h2, h3,
+.hero-21-title, .eleks-slide-title, .faq-main-title {
+  font-family: var(--font-heading) !important;
+}
+
+/* No shouting: labels are sentence case everywhere, no wide tracking */
+body * {
+  text-transform: none !important;
+}
+
+body {
+  letter-spacing: -0.011em;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+body *:not(h1):not(h2):not(h3):not(h4) {
+  letter-spacing: -0.008em !important;
+}
+
+/* --------------------------------------------------------------------------
+   Headlines
+   -------------------------------------------------------------------------- */
+h1,
+.hero-21-title,
+.eleks-slide-title,
+.pillar-hero-section h1 {
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.06 !important;
+}
+
+html body .hero.pillar-hero-21 h1.hero-21-title,
+html body .hero-21-title {
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+}
+
+html body .hero.pillar-hero-21 h1.hero-21-title {
+  font-size: clamp(40px, 4.4vw, 60px) !important;
+  line-height: 1.05 !important;
+}
+
+h2 {
+  font-weight: 600 !important;
+  letter-spacing: -0.026em !important;
+  line-height: 1.08 !important;
+}
+
+.section-heading h2,
+.faq-main-title,
+.contact-copy h2,
+.about-section h2,
+.trust-section h2,
+.client-section h2,
+.capabilities-section h2,
+.process-section h2,
+.platform-section h2,
+main section > .shell > h2 {
+  font-size: clamp(32px, 4.2vw, 52px) !important;
+}
+
+h3, h4 {
+  font-weight: 600 !important;
+  letter-spacing: -0.016em !important;
+  line-height: 1.22 !important;
+}
+
+/* Two-tone headlines: the accent phrase goes quiet grey, not orange */
+h1 em, h2 em, h3 em,
+.hero-21-title em,
+.hero-gradient-text,
+.pillar-hero-21 .hero-gradient-text,
+.faq-main-title em,
+.pillar-hero-section h1 em {
+  font-style: normal !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: var(--type-accent) !important;
+  font-weight: inherit !important;
+}
+
+/* Product-page heroes carry an inline orange rule — beat it with specificity */
+html body .pillar-hero-21 .hero-21-title span,
+html body .pillar-hero-21 .hero-21-title em,
+html body .pillar-hero-21 .hero-gradient-text,
+html body .pillar-hero-21 .aurora-gradient-text {
+  color: var(--type-accent) !important;
+  -webkit-text-fill-color: var(--type-accent) !important;
+  background: none !important;
+}
+
+/* Dark surfaces */
+.eleks-title-accent,
+.contact-section h2 em,
+.contact-copy h2 em,
+.principles-copy h2 em,
+.site-footer h2 em,
+.eleks-hero-section h1 em,
+.eleks-hero-section .hero-gradient-text {
+  color: var(--type-accent-dark) !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Heavy 800/900 weights → calm 600 */
+.about-values div strong, .about-values strong, .arch-stat-num,
+.comparison-card h3, .discovery-heading, .discovery-meta-title,
+.eleks-award-badge strong, .enterprise-center strong, .impact-stat,
+.metric-value, .pathway-num, .result-title, .spec-comparison-card h3,
+.stack-title-wrap h3, .stat-strip-val, .trust-num, .result-pill {
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.stat-strip-val, .trust-num, .impact-stat, .metric-value, .arch-stat-num {
+  letter-spacing: -0.03em !important;
+}
+
+.proof-ribbon-intro h2 {
+  font-size: clamp(30px, 3.2vw, 44px) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Body copy
+   -------------------------------------------------------------------------- */
+p {
+  line-height: 1.5 !important;
+}
+
+.hero-21-lede,
+.eleks-slide-desc,
+.section-heading p,
+.proof-ribbon-intro p,
+.faq-subtitle,
+.about-copy p,
+.contact-copy > p {
+  font-size: clamp(17px, 1.35vw, 21px) !important;
+  font-weight: 400 !important;
+  line-height: 1.42 !important;
+  letter-spacing: -0.012em !important;
+}
+
+.eleks-hero-section .eleks-slide-desc,
+.eleks-hero-section .hero-21-lede {
+  font-size: clamp(17px, 1.25vw, 19px) !important;
+}
+
+strong, b {
+  font-weight: 600 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Labels / eyebrows / kickers — sentence case, quiet
+   -------------------------------------------------------------------------- */
+.eyebrow {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--orange, #C9662F) !important;
+}
+
+.eyebrow-light,
+.contact-section .eyebrow {
+  color: #F2A36B !important;
+}
+
+.pill-label, .pill-loc, .cookie-badge, .modal-kicker,
+.eleks-preview-kicker, .enterprise-trust-kicker, .proof-ribbon-index,
+.flow-step-num, .step-count, .faq-category-tag, .discipline-tag,
+.view-kicker, .stat-label, .arch-hub-badge {
+  font-weight: 500 !important;
+  letter-spacing: -0.005em !important;
+  font-size: max(12px, 0.8125rem) !important;
+}
+
+.footer-label {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.005em !important;
+  color: #f5f5f7 !important;
+  opacity: 0.9;
+}
+
+.site-footer a,
+.site-footer p,
+.site-footer small,
+.site-footer .footer-link-btn,
+.footer-bottom span {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.006em !important;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation + buttons
+   -------------------------------------------------------------------------- */
+.site-header nav a,
+.site-header .nav-link,
+.site-header a:not(.btn):not([class*="logo"]) {
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.btn,
+button.btn,
+a.btn,
+.hero-btn-glow,
+.hero-btn-ambient {
+  font-weight: 500 !important;
+  letter-spacing: -0.012em !important;
+}
+
+/* Form fields */
+input, select, textarea {
+  font-size: 16px !important;   /* also prevents iOS zoom-on-focus */
+  letter-spacing: -0.01em !important;
+}
+
+label {
+  font-weight: 500 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile
+   -------------------------------------------------------------------------- */
+@media (max-width: 734px) {
+  html body .hero.pillar-hero-21 h1.hero-21-title {
+    font-size: clamp(32px, 9vw, 40px) !important;
+    line-height: 1.08 !important;
+  }
+
+  /* product-page hero had no side gutter on phones */
+  html body .pillar-hero-21 .shell.hero-21-content {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .cookie-banner h2,
+  .modal h2,
+  [role="dialog"] h2 {
+    font-size: 21px !important;
+    line-height: 1.2 !important;
+  }
+
+  h1,
+  .hero-21-title,
+  .eleks-slide-title {
+    font-size: clamp(32px, 9vw, 40px) !important;
+    letter-spacing: -0.025em !important;
+    line-height: 1.08 !important;
+  }
+
+  .section-heading h2,
+  .proof-ribbon-intro h2,
+  .faq-main-title,
+  .contact-copy h2,
+  .about-section h2,
+  .trust-section h2,
+  .client-section h2,
+  .capabilities-section h2,
+  .process-section h2,
+  .platform-section h2,
+  h2 {
+    font-size: clamp(28px, 7.6vw, 34px) !important;
+    line-height: 1.12 !important;
+  }
+
+  .hero-21-lede,
+  .eleks-slide-desc,
+  .section-heading p,
+  .proof-ribbon-intro p,
+  .faq-subtitle,
+  .contact-copy > p {
+    font-size: 17px !important;
+  }
+}
