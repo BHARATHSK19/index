@@ -64,3 +64,4 @@ ui-debug.log*
 FIX-GIT-AUTHOR.bat
 REFRESH-GITHUB.bat
 PUSH-TO-INDEX.bat
+PUSH-UPDATE.bat

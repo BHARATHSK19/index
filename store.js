@@ -12,7 +12,8 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const DATA_DIR = path.join(__dirname, 'data');
+// On Vercel the project folder is read-only; /tmp is the only writable place (not permanent).
+const DATA_DIR = process.env.VERCEL ? '/tmp/ojix-data' : path.join(__dirname, 'data');
 const DB_FILE = path.join(DATA_DIR, 'ojix_secure.db');
 const JSON_FILE = path.join(DATA_DIR, 'ojix_store.json');
 const SALT = process.env.DPDP_SALT || 'ojix-local-salt-change-me';

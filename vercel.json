@@ -1,24 +1,77 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "version": 2,
-  "builds": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "web/dist",
+  "installCommand": "npm install",
+  "framework": null,
+  "redirects": [
     {
-      "src": "server.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": [
-          "web/dist/**",
-          "web/src/data/serviceSlugs.json",
-          "data/**"
-        ]
-      }
+      "source": "/companyos",
+      "destination": "/company-management-system",
+      "permanent": true
+    },
+    {
+      "source": "/campusos",
+      "destination": "/school-erp",
+      "permanent": true
+    },
+    {
+      "source": "/buildos",
+      "destination": "/construction-hub",
+      "permanent": true
+    },
+    {
+      "source": "/dpdp",
+      "destination": "/dpdp-compliance",
+      "permanent": true
+    },
+    {
+      "source": "/index\\.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/companyos\\.html",
+      "destination": "/company-management-system",
+      "permanent": true
+    },
+    {
+      "source": "/campusos\\.html",
+      "destination": "/school-erp",
+      "permanent": true
+    },
+    {
+      "source": "/buildos\\.html",
+      "destination": "/construction-hub",
+      "permanent": true
+    },
+    {
+      "source": "/services/:slug([a-z0-9-]+)\\.html",
+      "destination": "/services/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/:page(products|services|cookies|legalos|procureos|travelos|fitos|dpdp-compliance)\\.html",
+      "destination": "/:page",
+      "permanent": true
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/server.js"
+      "source": "/api/:path*",
+      "destination": "/api"
+    },
+    {
+      "source": "/health",
+      "destination": "/api"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
-  ],
-  "buildCommand": "npm run build"
+  ]
 }
