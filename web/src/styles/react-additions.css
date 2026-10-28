@@ -34,3 +34,11 @@ textarea:focus, textarea:focus-visible {
   outline: none !important;
   box-shadow: none !important;
 }
+
+/* Phones/tablets: light/dark switch sits in the header next to the menu (hamburger) icon,
+   instead of inside the drop-down menu. */
+.ojx-theme-mobile { display: none !important; }
+@media (max-width: 1023px) {
+  .ojx-theme-mobile { display: inline-grid !important; margin-left: auto; margin-right: 6px; }
+  .main-nav .theme-toggle-btn { display: none !important; }
+}
