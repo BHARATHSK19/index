@@ -1850,21 +1850,16 @@ megaContainers.forEach((container) => {
 
   // Common Dropdown Hover and Dismissal Interactions
   if (topLink) {
-    // Remove link navigation when clicking Services navbar option
+    // Disable click navigation on Services navbar option; only hover opens the mega-menu
     if (megaType === 'capabilities') {
-      // Services works like Products: hover opens the mega-menu, click opens the Services page.
-      const servicesHref = (window.location.pathname.indexOf('/services/') !== -1 ? '../' : '') + 'services.html';
-      topLink.setAttribute('href', servicesHref);
-      topLink.removeAttribute('role');
-      topLink.style.cursor = 'pointer';
+      topLink.setAttribute('href', 'javascript:void(0)');
+      topLink.setAttribute('role', 'button');
+      topLink.style.cursor = 'default';
 
       topLink.addEventListener('click', (e) => {
-        if (window.innerWidth > 1023) {
-          return; // normal navigation to services.html
-        }
         e.preventDefault();
-        e.stopPropagation();
-        {
+        if (window.innerWidth <= 1023) {
+          e.stopPropagation();
           closeNavigation();
           openMobileServicesModal();
         }

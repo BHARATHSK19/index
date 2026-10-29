@@ -297,6 +297,11 @@ html:not([data-theme="dark"]) [data-mega="platforms"] .eleks-mega-right {
     transform: translateY(0) !important;
   }
 
+  /* Services top link: hover only, click disabled */
+  .nav-item-has-mega[data-mega="capabilities"] > .nav-top-link {
+    cursor: default !important;
+  }
+
   /* Two-Column Grid: Left Sidebar (392px, +40% from 280px) + Right Content Panel */
   .eleks-mega-dropdown[data-mega="capabilities"] .eleks-mega-inner,
   [data-mega="capabilities"] .services-mega-inner {
