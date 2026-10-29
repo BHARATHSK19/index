@@ -1641,6 +1641,9 @@ function initServicesMegaMenu(container) {
   const firstHref = firstCat.services && firstCat.services.length ? firstCat.services[0].href : '/services';
   rightPanel.setAttribute('aria-live', 'polite');
   rightPanel.innerHTML = `
+    <a href="${firstHref}" class="eleks-mega-preview-media" aria-label="Explore ${firstCat.title}" tabindex="-1">
+      <img src="${resolveImgSrc(firstCat.bannerImg)}" alt="${firstCat.title} preview" class="eleks-preview-img" loading="lazy" />
+    </a>
     <div class="eleks-mega-preview-head">
       <span class="eleks-preview-kicker">${firstCat.kicker || 'OUR SERVICES'}</span>
       <h3 class="eleks-preview-title">${firstCat.title}</h3>
@@ -1652,9 +1655,6 @@ function initServicesMegaMenu(container) {
         </svg>
       </a>
     </div>
-    <a href="${firstHref}" class="eleks-mega-preview-media" aria-label="Explore ${firstCat.title}">
-      <img src="${resolveImgSrc(firstCat.bannerImg)}" alt="${firstCat.title} preview" class="eleks-preview-img" loading="lazy" />
-    </a>
   `;
 
   // 3. Hover / Focus activation with smooth transition
