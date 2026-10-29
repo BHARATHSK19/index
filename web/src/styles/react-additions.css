@@ -41,9 +41,9 @@
   padding: 0 !important;
   margin: 0 !important;
   border-top: none !important;
-  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 1px solid var(--navbar-dark-border, rgba(148, 170, 200, 0.16)) !important;
   border-radius: 0 18px 18px 0 !important;
-  background: #09121E !important;
+  background: var(--navbar-dark-solid, #0C1829) !important;
   overflow: hidden !important;
   height: 100% !important;
   min-height: 460px !important;
@@ -66,7 +66,7 @@
   border-radius: 0 !important;
   border: none !important;
   box-shadow: none !important;
-  background: #09121E !important;
+  background: var(--navbar-dark-solid, #0C1829) !important;
   overflow: hidden !important;
   z-index: 1 !important;
   display: block !important;
@@ -111,10 +111,10 @@
   height: 100% !important;
   background: linear-gradient(
     135deg,
-    rgba(8, 15, 26, 0.94) 0%,
-    rgba(8, 15, 26, 0.82) 38%,
-    rgba(8, 15, 26, 0.58) 68%,
-    rgba(8, 15, 26, 0.32) 100%
+    rgba(12, 24, 41, 0.95) 0%,
+    rgba(12, 24, 41, 0.84) 38%,
+    rgba(12, 24, 41, 0.60) 68%,
+    rgba(12, 24, 41, 0.32) 100%
   ) !important;
   z-index: 2 !important;
   pointer-events: none !important;
@@ -236,7 +236,7 @@ html:not([data-theme="dark"]) [data-mega="platforms"] .eleks-preview-desc {
 
 html[data-theme="light"] [data-mega="platforms"] .eleks-mega-right,
 html:not([data-theme="dark"]) [data-mega="platforms"] .eleks-mega-right {
-  background: #09121E !important;
+  background: #1E1D28 !important;
   border-top: none !important;
 }
 
@@ -863,29 +863,92 @@ html[data-theme="light"] [data-mega="capabilities"] .services-cta-button:hover {
 
 
 /* ==========================================================================
-   THEME 2: DARK MODE (html[data-theme="dark"])
+   THEME 2: DARK MODE (html[data-theme="dark"]) — MATCHING NAVBAR DARK NAVY (#0C1829)
    ========================================================================== */
+
+/* 1. PRODUCTS MEGA-MENU (PLATFORMS) IN DARK MODE */
+html[data-theme="dark"] .eleks-mega-dropdown[data-mega="platforms"],
+html[data-theme="dark"] .nav-item-has-mega[data-mega="platforms"] .eleks-mega-dropdown {
+  background: var(--navbar-dark-solid, #0C1829) !important;
+  border: 1px solid var(--navbar-dark-border, rgba(148, 170, 200, 0.16)) !important;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.65), 0 0 1px var(--navbar-dark-border, rgba(148, 170, 200, 0.16)) !important;
+}
+
+html[data-theme="dark"] [data-mega="platforms"] .eleks-mega-inner,
+html[data-theme="dark"] .eleks-mega-dropdown[data-mega="platforms"] .eleks-mega-inner {
+  background: var(--navbar-dark-solid, #0C1829) !important;
+  border-radius: 18px !important;
+}
+
+html[data-theme="dark"] .eleks-mega-dropdown[data-mega="platforms"] .eleks-mega-left,
+html[data-theme="dark"] .nav-item-has-mega[data-mega="platforms"] .eleks-mega-left,
+html[data-theme="dark"] [data-mega="platforms"] .eleks-mega-left {
+  background: var(--navbar-dark-solid, #0C1829) !important;
+  border-right: 1px solid var(--navbar-dark-border, rgba(148, 170, 200, 0.16)) !important;
+}
+
+html[data-theme="dark"] [data-mega="platforms"] .eleks-subtab {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+}
+
+html[data-theme="dark"] [data-mega="platforms"] .eleks-subtab:hover,
+html[data-theme="dark"] [data-mega="platforms"] .eleks-subtab:focus-visible {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(148, 170, 200, 0.22) !important;
+}
+
+html[data-theme="dark"] [data-mega="platforms"] .eleks-subtab.is-active,
+html[data-theme="dark"] .eleks-nav [data-mega="platforms"] .eleks-subtab.is-active {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(201, 102, 47, 0.45) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] [data-mega="platforms"] .eleks-subtab.is-active .eleks-subtab-icon {
+  background: rgba(201, 102, 47, 0.18) !important;
+  border-color: rgba(201, 102, 47, 0.5) !important;
+  color: var(--orange, #C9662F) !important;
+}
+
+html[data-theme="dark"] .eleks-mega-dropdown[data-mega="platforms"] .eleks-mega-right,
+html[data-theme="dark"] .nav-item-has-mega[data-mega="platforms"] .eleks-mega-right,
+html[data-theme="dark"] [data-mega="platforms"] .eleks-mega-right {
+  background: var(--navbar-dark-solid, #0C1829) !important;
+  border-left: 1px solid var(--navbar-dark-border, rgba(148, 170, 200, 0.16)) !important;
+}
+
+html[data-theme="dark"] .eleks-mega-dropdown[data-mega="platforms"] .eleks-mega-preview-media,
+html[data-theme="dark"] .nav-item-has-mega[data-mega="platforms"] .eleks-mega-preview-media,
+html[data-theme="dark"] [data-mega="platforms"] .eleks-mega-preview-media {
+  background: var(--navbar-dark-solid, #0C1829) !important;
+}
+
+/* 2. SERVICES MEGA-MENU (CAPABILITIES) IN DARK MODE */
 html[data-theme="dark"] .eleks-mega-dropdown[data-mega="capabilities"],
 html[data-theme="dark"] .nav-item-has-mega[data-mega="capabilities"] .eleks-mega-dropdown {
-  background: #09121E !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.65), 0 0 1px rgba(255, 255, 255, 0.15) !important;
+  background: var(--navbar-dark-solid, #0C1829) !important;
+  border: 1px solid var(--navbar-dark-border, rgba(148, 170, 200, 0.16)) !important;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.65), 0 0 1px var(--navbar-dark-border, rgba(148, 170, 200, 0.16)) !important;
 }
 
 html[data-theme="dark"] [data-mega="capabilities"] .services-mega-inner {
-  background: #09121E !important;
+  background: var(--navbar-dark-solid, #0C1829) !important;
 }
 
 html[data-theme="dark"] [data-mega="capabilities"] .services-mega-sidebar,
 html[data-theme="dark"] .eleks-mega-dropdown[data-mega="capabilities"] .eleks-mega-left,
 html[data-theme="dark"] .nav-item-has-mega[data-mega="capabilities"] .eleks-mega-left,
 html[data-theme="dark"] [data-mega="capabilities"] .eleks-mega-left {
-  background: #060D18 !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: var(--navbar-dark-solid, #0C1829) !important;
+  border-right: 1px solid var(--navbar-dark-border, rgba(148, 170, 200, 0.16)) !important;
 }
 
 html[data-theme="dark"] [data-mega="capabilities"] .services-sidebar-eyebrow {
-  color: #94A3B8 !important;
+  color: #8E9CB2 !important;
 }
 
 /* Inactive category tab (Dark Mode) */
@@ -897,8 +960,8 @@ html[data-theme="dark"] [data-mega="capabilities"] .services-cat-tab {
 
 html[data-theme="dark"] [data-mega="capabilities"] .services-cat-tab:hover,
 html[data-theme="dark"] [data-mega="capabilities"] .services-cat-tab:focus-visible {
-  background: rgba(255, 255, 255, 0.07) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(148, 170, 200, 0.22) !important;
 }
 
 html[data-theme="dark"] [data-mega="capabilities"] .services-cat-icon {
@@ -914,7 +977,7 @@ html[data-theme="dark"] [data-mega="capabilities"] .services-cat-count {
 }
 
 html[data-theme="dark"] [data-mega="capabilities"] .services-cat-arrow {
-  color: #94A3B8 !important;
+  color: #8E9CB2 !important;
 }
 
 html[data-theme="dark"] [data-mega="capabilities"] .services-cat-tab:hover .services-cat-arrow {
@@ -947,7 +1010,7 @@ html[data-theme="dark"] [data-mega="capabilities"] .services-cat-tab.is-active .
 /* Right Panel (Dark Mode) */
 html[data-theme="dark"] [data-mega="capabilities"] .services-mega-right,
 html[data-theme="dark"] .eleks-mega-dropdown[data-mega="capabilities"] .eleks-mega-right {
-  background: #09121E !important;
+  background: var(--navbar-dark-solid, #0C1829) !important;
 }
 
 html[data-theme="dark"] [data-mega="capabilities"] .services-panel-kicker {

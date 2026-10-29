@@ -7171,16 +7171,16 @@ html[data-theme="dark"] .eleks-mega-dropdown {
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.45), 0 0 1px rgba(0, 0, 0, 0.3);
 }
 html[data-theme="dark"] .eleks-mega-inner {
-  background: #101E32;
+  background: #0C1829;
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.45), 0 0 1px rgba(0, 0, 0, 0.3);
 }
 html[data-theme="dark"] .eleks-mega-left {
-  background: #060D18;
+  background: #0C1829;
 }
 html[data-theme="dark"] .eleks-mega-dropdown[data-mega="capabilities"] .eleks-mega-left,
 html[data-theme="dark"] .nav-item-has-mega[data-mega="capabilities"] .eleks-mega-left,
 html[data-theme="dark"] [data-mega="capabilities"] .eleks-mega-left {
-  background: #060D18 !important;
+  background: #0C1829 !important;
 }
 html[data-theme="dark"] [data-mega="capabilities"] .eleks-subtab-icon {
   border: 1px solid rgba(255, 255, 255, 0.45) !important;
