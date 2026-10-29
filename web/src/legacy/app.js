@@ -1605,6 +1605,7 @@ export default function init(__ctx) {
   ];
 
   // Initialize Services Mega-Menu (10 Categories in Products-style 2-column layout + Preview)
+  // Initialize Services Mega-Menu (Clean Light Two-Column Layout: Categories Sidebar + Services Grid + CTA)
   function initServicesMegaMenu(container) {
     const sidebar = container.querySelector('.eleks-mega-left');
     const rightPanel = container.querySelector('.eleks-mega-right');
@@ -1612,116 +1613,165 @@ export default function init(__ctx) {
     if (!sidebar || !rightPanel) return;
 
     let activeIndex = 0;
-    const isSubdir = window.location.pathname.includes('/services/');
-    const resolveImgSrc = (src) => {
-      if (!src) return '';
-      if (src.startsWith('http://') || src.startsWith('https://')) return src;
-      const clean = src.replace(/^(\.\.\/|\/)/, '');
-      return `/${clean}`;
-    };
 
-    // 1. Build the left panel with all 10 service categories in products mega-menu style
+    // 1. Build the left panel with all 10 service categories in vertical list
     sidebar.setAttribute('role', 'tablist');
-    sidebar.setAttribute('aria-label', 'Select service category');
-    sidebar.innerHTML = SERVICES_CATALOG.map((cat, idx) => {
-      const primaryHref = cat.services && cat.services.length ? cat.services[0].href : '/services';
-      return `
-        <a href="${primaryHref}" class="eleks-subtab ${idx === 0 ? 'is-active' : ''}"
+    sidebar.setAttribute('aria-label', 'Service Categories');
+    sidebar.innerHTML = `
+      <div class="services-sidebar-eyebrow">OUR SERVICES</div>
+      ${SERVICES_CATALOG.map((cat, idx) => `
+        <button type="button" class="services-cat-tab ${idx === 0 ? 'is-active' : ''}"
           role="tab"
-          id="services-subtab-${cat.id}"
+          id="services-cat-tab-${cat.id}"
           aria-selected="${idx === 0 ? 'true' : 'false'}"
-          data-preview-title="${cat.title}"
-          data-preview-desc="${cat.description}"
-          data-preview-badge="${cat.kicker || 'OUR SERVICES'}"
-          data-preview-img="${resolveImgSrc(cat.bannerImg)}"
-          data-preview-href="${primaryHref}"
+          aria-controls="services-panel-content"
           data-cat-index="${idx}">
-          <span class="eleks-subtab-icon" aria-hidden="true">
+          <span class="services-cat-icon" aria-hidden="true">
             ${renderIcon(cat.icon)}
           </span>
-          <span class="eleks-subtab-info">
-            <span class="eleks-subtab-label">${cat.title}</span>
-            <span class="eleks-subtab-count">${cat.services.length} Services</span>
+          <span class="services-cat-text">
+            <span class="services-cat-title">${cat.title}</span>
+            <span class="services-cat-count">${cat.services.length} Services</span>
           </span>
-        </a>
-      `;
-    }).join('');
-
-    // 2. Build the right preview card in products mega-menu style
-    const firstCat = SERVICES_CATALOG[0];
-    const firstHref = firstCat.services && firstCat.services.length ? firstCat.services[0].href : '/services';
-    rightPanel.setAttribute('aria-live', 'polite');
-    rightPanel.innerHTML = `
-      <a href="${firstHref}" class="eleks-mega-preview-media" aria-label="Explore ${firstCat.title}" tabindex="-1">
-        <img src="${resolveImgSrc(firstCat.bannerImg)}" alt="${firstCat.title} preview" class="eleks-preview-img" loading="lazy" />
-      </a>
-      <div class="eleks-mega-preview-head">
-        <span class="eleks-preview-kicker">${firstCat.kicker || 'OUR SERVICES'}</span>
-        <h3 class="eleks-preview-title">${firstCat.title}</h3>
-        <p class="eleks-preview-desc">${firstCat.description}</p>
-        <a href="${firstHref}" class="eleks-preview-cta">
-          <span>Explore Services</span>
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
+          <span class="services-cat-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </span>
+        </button>
+      `).join('')}
     `;
 
-    // 3. Hover / Focus activation with smooth transition
-    const subtabs = sidebar.querySelectorAll('.eleks-subtab');
-    const previewKicker = rightPanel.querySelector('.eleks-preview-kicker');
-    const previewTitle = rightPanel.querySelector('.eleks-preview-title');
-    const previewDesc = rightPanel.querySelector('.eleks-preview-desc');
-    const previewImg = rightPanel.querySelector('.eleks-preview-img');
-    const previewLinks = rightPanel.querySelectorAll('a');
-
-    const activateSubtab = (subtab) => {
-      if (!subtab) return;
-      const idx = parseInt(subtab.getAttribute('data-cat-index'), 10);
-      if (idx === activeIndex && subtab.classList.contains('is-active')) return;
-      activeIndex = idx;
-
-      subtabs.forEach((tab) => {
-        const active = tab === subtab;
-        tab.classList.toggle('is-active', active);
-        tab.setAttribute('aria-selected', String(active));
-      });
-
+    // 2. Render right panel for a selected category
+    const renderRightPanel = (idx) => {
       const cat = SERVICES_CATALOG[idx];
       if (!cat) return;
-      const primaryHref = cat.services && cat.services.length ? cat.services[0].href : '/services';
 
-      rightPanel.classList.add('is-switching');
-      if (previewKicker) previewKicker.textContent = cat.kicker || 'OUR SERVICES';
-      if (previewTitle) previewTitle.textContent = cat.title;
-      if (previewDesc) previewDesc.textContent = cat.description;
-      if (previewImg) {
-        previewImg.src = resolveImgSrc(cat.bannerImg);
-        previewImg.alt = `${cat.title} preview`;
-      }
-      previewLinks.forEach((link) => {
-        link.setAttribute('href', primaryHref);
-        link.setAttribute('aria-label', `Explore ${cat.title}`);
-      });
+      rightPanel.setAttribute('aria-live', 'polite');
+      rightPanel.innerHTML = `
+        <div class="services-panel-inner" id="services-panel-content" role="tabpanel" aria-labelledby="services-cat-tab-${cat.id}">
+          <div class="services-panel-head">
+            <span class="services-panel-kicker">${cat.kicker || 'OUR SERVICES'}</span>
+            <h3 class="services-panel-title">${cat.heading || cat.title}</h3>
+            <p class="services-panel-desc">${cat.description}</p>
+            <h4 class="services-panel-subhead">Our ${cat.title} Services</h4>
+          </div>
 
-      setTimeout(() => rightPanel.classList.remove('is-switching'), 160);
+          <div class="services-items-grid">
+            ${cat.services.map((svc) => `
+              <a href="${svc.href}" class="services-item-card" data-service-slug="${svc.slug}" data-cat-id="${cat.id}" title="${svc.title}">
+                <span class="services-item-icon" aria-hidden="true">
+                  ${renderIcon(svc.icon)}
+                </span>
+                <span class="services-item-body">
+                  <strong class="services-item-title">${svc.title}</strong>
+                  <span class="services-item-desc">${svc.desc}</span>
+                </span>
+              </a>
+            `).join('')}
+          </div>
+
+          <div class="services-panel-cta">
+            <div class="services-cta-left">
+              <div class="services-cta-bulb" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+                  <path d="M9 18h6"/><path d="M10 22h4"/>
+                </svg>
+              </div>
+              <div class="services-cta-text">
+                <span class="services-cta-eyebrow">LET'S BUILD SOMETHING GREAT</span>
+                <strong class="services-cta-heading">Need a Custom Solution?</strong>
+                <p class="services-cta-sub">Tell us about your idea and our team will help you turn it into a powerful digital product.</p>
+              </div>
+            </div>
+            <a href="#contact" class="services-cta-button" data-discuss="" data-mode="consult" data-topic="${cat.title}">
+              <span>Get a Free Consultation</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      `;
     };
 
-    subtabs.forEach((subtab) => {
-      subtab.addEventListener('pointerenter', () => activateSubtab(subtab));
-      subtab.addEventListener('focus', () => activateSubtab(subtab));
-      subtab.addEventListener('click', () => {
-        container.classList.remove('is-mega-open');
-        const hdr = document.querySelector('.eleks-header');
-        if (hdr) hdr.classList.remove('has-mega-open');
-        if (topLink) topLink.setAttribute('aria-expanded', 'false');
+    // Initial render of first category
+    renderRightPanel(0);
+
+    // 3. Category activation logic (hover & click & focus)
+    const tabs = sidebar.querySelectorAll('.services-cat-tab');
+
+    const activateCategory = (idx) => {
+      if (idx === activeIndex && tabs[idx] && tabs[idx].classList.contains('is-active')) return;
+      activeIndex = idx;
+
+      tabs.forEach((tab, i) => {
+        const isAct = i === idx;
+        tab.classList.toggle('is-active', isAct);
+        tab.setAttribute('aria-selected', String(isAct));
+      });
+
+      renderRightPanel(idx);
+    };
+
+    tabs.forEach((tab) => {
+      const idx = parseInt(tab.getAttribute('data-cat-index'), 10);
+      tab.addEventListener('pointerenter', () => activateCategory(idx));
+      tab.addEventListener('focus', () => activateCategory(idx));
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        activateCategory(idx);
       });
     });
 
-    // Keyboard navigation within tablist
+    // 4. Right panel click handling: Service item navigation & CTA click
+    rightPanel.addEventListener('click', (e) => {
+      const serviceLink = e.target.closest('.services-item-card');
+      if (serviceLink) {
+        const slug = serviceLink.getAttribute('data-service-slug');
+        const catId = serviceLink.getAttribute('data-cat-id');
+        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+
+        // Close dropdown
+        container.classList.remove('is-mega-open');
+        if (eleksHeader) eleksHeader.classList.remove('has-mega-open');
+        if (topLink) topLink.setAttribute('aria-expanded', 'false');
+
+        // If currently on /services, smooth scroll to the target service or category
+        if (currentPath === '/services') {
+          const target = document.getElementById(slug) || document.getElementById(catId);
+          if (target) {
+            e.preventDefault();
+            const gallery = document.getElementById('px-gallery');
+            const cards = gallery ? Array.from(gallery.querySelectorAll('.px-card')) : [];
+            const card = target.closest('.px-card') || target;
+            const cardIdx = cards.indexOf(card);
+            if (gallery && cardIdx !== -1) {
+              const total = gallery.offsetHeight - window.innerHeight;
+              const targetY = gallery.offsetTop + (cardIdx / Math.max(1, cards.length - 1)) * total;
+              window.scrollTo({ top: targetY, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+            } else {
+              target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+            }
+            try {
+              history.pushState(null, '', '/services#' + slug);
+            } catch (err) {}
+            return;
+          }
+        }
+        // Otherwise allow link interception / standard navigation to /services/:slug
+      }
+
+      const ctaBtn = e.target.closest('.services-cta-button');
+      if (ctaBtn) {
+        container.classList.remove('is-mega-open');
+        if (eleksHeader) eleksHeader.classList.remove('has-mega-open');
+        if (topLink) topLink.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // 5. Keyboard navigation within category list
     sidebar.addEventListener('keydown', (e) => {
-      const buttons = Array.from(sidebar.querySelectorAll('.eleks-subtab'));
+      const buttons = Array.from(sidebar.querySelectorAll('.services-cat-tab'));
       const currentBtn = document.activeElement;
       const currentIndex = buttons.indexOf(currentBtn);
       if (currentIndex === -1) return;
@@ -1730,20 +1780,20 @@ export default function init(__ctx) {
         e.preventDefault();
         const nextIdx = (currentIndex + 1) % buttons.length;
         buttons[nextIdx].focus();
-        activateSubtab(buttons[nextIdx]);
+        activateCategory(nextIdx);
       } else if (e.key === 'ArrowUp') {
         e.preventDefault();
         const prevIdx = (currentIndex - 1 + buttons.length) % buttons.length;
         buttons[prevIdx].focus();
-        activateSubtab(buttons[prevIdx]);
+        activateCategory(prevIdx);
       } else if (e.key === 'Home') {
         e.preventDefault();
         buttons[0].focus();
-        activateSubtab(buttons[0]);
+        activateCategory(0);
       } else if (e.key === 'End') {
         e.preventDefault();
         buttons[buttons.length - 1].focus();
-        activateSubtab(buttons[buttons.length - 1]);
+        activateCategory(buttons.length - 1);
       }
     });
   }

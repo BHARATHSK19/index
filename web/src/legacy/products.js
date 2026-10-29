@@ -70,6 +70,23 @@ export default function init(__ctx) {
     onScroll(); onSwipe();
     if (active < 0) setActive(0);
 
+    function scrollToHash() {
+      var hash = (window.location.hash || '').replace(/^#/, '');
+      if (!hash) return;
+      var target = document.getElementById(hash);
+      if (!target) return;
+      var card = target.closest('.px-card') || target;
+      var cardIdx = cards.indexOf(card);
+      if (cardIdx !== -1) {
+        var total = gallery.offsetHeight - window.innerHeight;
+        var targetY = gallery.offsetTop + (cardIdx / Math.max(1, cards.length - 1)) * total;
+        window.scrollTo({ top: targetY, behavior: reduce ? 'auto' : 'smooth' });
+        setActive(cardIdx);
+      }
+    }
+    setTimeout(scrollToHash, 250);
+    __on(window, 'hashchange', scrollToHash);
+
     // open transition: the card image grows to fill the screen, then the page changes
     function openProduct(e, link) {
       if (reduce || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
