@@ -4,7 +4,6 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 const mobilePerformanceMode = window.matchMedia('(max-width: 1023px), (hover: none), (pointer: coarse)').matches;
 
 const SECTION_ROUTES = {
-  '/products': 'platforms',
   '/services': 'capabilities',
   '/about': 'about',
   '/contact': 'contact',
@@ -802,15 +801,21 @@ if (menuToggle && mainNav) {
     const parentLink = event.target.closest('.nav-top-link[aria-haspopup="true"]');
     if (!parentLink || window.innerWidth > 1023) return;
 
+    const container = parentLink.closest('.nav-item-has-mega');
+    if (!container) return;
+
+    // On phones the Products mega-menu has no visible dropdown, so "Products" simply opens the Products page.
+    if (container.getAttribute('data-mega') !== 'capabilities') {
+      closeNavigation();
+      return;
+    }
+
     const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
     const isHomepageDocument = currentPath === '/' || currentPath === '/index.html' || Boolean(SECTION_ROUTES[currentPath]);
     if (!isHomepageDocument) return;
 
     event.preventDefault();
     event.stopImmediatePropagation();
-
-    const container = parentLink.closest('.nav-item-has-mega');
-    if (!container) return;
 
     // Mobile-Only Service Category Carousel Trigger
     if (container.getAttribute('data-mega') === 'capabilities') {
