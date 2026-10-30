@@ -96,7 +96,18 @@ export default function Header({ active }) {
           {" "}
           {" "}
           <div className="nav-item-has-mega" data-mega="capabilities">
-            <a href="/services" data-page-link="" className={"nav-top-link" + (active === "services" ? " is-active" : "")} aria-haspopup="true" aria-expanded="false" aria-controls="services-mobile-submenu">
+            <a
+              href="javascript:void(0)"
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+              data-page-link=""
+              className={"nav-top-link" + (active === "services" ? " is-active" : "")}
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="services-mobile-submenu"
+              style={{ cursor: "default" }}
+            >
               <span className="nav-link-text">
                 Services
               </span>
