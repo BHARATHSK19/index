@@ -4,6 +4,11 @@
    text index with cursor-follow preview · image expands into the product page.
    ========================================================================== */
 
+:root {
+  --px-reveal-duration: 220ms;
+  --px-reveal-ease: linear;
+}
+
 .px-page { background: #f7f6f6; }
 
 /* ---------- head ---------- */
@@ -106,7 +111,24 @@ body.dxm .px-title {
   filter: saturate(0.9);
 }
 
-.px-card:hover .px-card__media img { transform: translateX(var(--px-shift, 0px)) scale(1.08); filter: saturate(1.05); }
+/* Secondary image reveal layer: slides upward from the bottom on hover */
+.px-card__reveal {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transform: translate3d(0, 100%, 0);
+  transition: transform var(--px-reveal-duration, 220ms) var(--px-reveal-ease, linear);
+  will-change: transform;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (hover: hover) {
+  .px-card:hover .px-card__reveal,
+  .px-card:focus-within .px-card__reveal {
+    transform: translate3d(0, 0, 0);
+  }
+}
 
 .px-card__meta {
   display: flex;
@@ -152,6 +174,7 @@ body.dxm .px-card__name {
   font-weight: 500 !important;
   transform: scale(0);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 5;
 }
 
 .px-card:hover .px-card__open,
@@ -335,7 +358,7 @@ body.dxm .px-line__name {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .px-card, .px-card__media img, .px-line, .px-open, .px-open__name { transition: none !important; }
+  .px-card, .px-card__media img, .px-line, .px-open, .px-open__name, .px-card__reveal { transition: none !important; }
 }
 
 /* ==========================================================================

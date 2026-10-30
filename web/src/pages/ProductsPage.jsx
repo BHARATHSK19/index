@@ -25,6 +25,7 @@ export default function ProductsPage() {
               <a key={p.slug} className={"px-card" + (i === 0 ? " is-active" : "")} href={"/" + p.slug} data-name={p.name}>
                 <span className="px-card__media">
                   <img
+                    className="px-card__img"
                     src={p.heroImg}
                     alt={p.name + " interface"}
                     width="1600"
@@ -32,6 +33,17 @@ export default function ProductsPage() {
                     {...(i === 0 ? { fetchPriority: "high" } : { loading: "lazy" })}
                     decoding="async"
                   />
+                  <span className="px-card__reveal" aria-hidden="true">
+                    <img
+                      className="px-card__reveal-img"
+                      src={p.hoverImg || p.heroImg}
+                      alt=""
+                      width="1600"
+                      height="1000"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
                   <span className="px-card__open">Open</span>
                 </span>
                 <span className="px-card__meta">
