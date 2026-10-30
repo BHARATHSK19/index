@@ -9,8 +9,8 @@
 .cookie-banner.ojx-news-popup,
 .ojix-cookie-banner {
   position: fixed !important;
-  left: 20px !important;
-  right: auto !important;
+  right: 20px !important;
+  left: auto !important;
   bottom: 20px !important;
   top: auto !important;
   z-index: 9000 !important;
@@ -190,24 +190,24 @@
 }
 
 .ojx-news__kicker {
-  margin: 0 0 20px;
+  margin: 0 0 14px;
   font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace !important;
   font-size: 12px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.06em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   color: #666;
 }
 
-.ojx-news__kicker b { color: #C9662F; margin-right: 8px; font-weight: 500 !important; }
+.ojx-news__kicker b { color: #C9662F; margin-right: 8px; font-weight: 600 !important; }
 
 .ojx-news__title {
   margin: 0;
   font-family: "OJX Display", "Arial Narrow", Impact, sans-serif !important;
   font-stretch: 62% !important;
   font-weight: 800 !important;
-  font-size: clamp(56px, 8vw, 120px) !important;
-  line-height: 0.86 !important;
+  font-size: clamp(30px, 3vw, 36px) !important;
+  line-height: 1.12 !important;
   letter-spacing: -0.01em !important;
   text-transform: uppercase !important;
   color: #121212 !important;
@@ -216,9 +216,9 @@
 .ojx-news__title span { color: #8e8e93 !important; -webkit-text-fill-color: #8e8e93 !important; text-transform: uppercase !important; letter-spacing: inherit !important; }
 
 .ojx-news__text {
-  margin: 24px 0 0;
+  margin: 18px 0 0;
   max-width: 44ch;
-  font-size: 17px !important;
+  font-size: 15px !important;
   line-height: 1.5 !important;
   color: #6e6e73;
 }
@@ -252,7 +252,7 @@
   background: transparent !important;
   box-shadow: none !important;
   outline: none !important;
-  font-size: clamp(20px, 2.2vw, 28px) !important;
+  font-size: 16px !important;
   font-weight: 400 !important;
   color: #121212 !important;
 }
@@ -268,8 +268,8 @@
   font-family: "OJX Display", "Arial Narrow", sans-serif !important;
   font-stretch: 62%;
   font-weight: 800 !important;
-  font-size: clamp(20px, 2vw, 26px) !important;
-  letter-spacing: 0.02em !important;
+  font-size: 15px !important;
+  letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
   cursor: pointer;
 }
@@ -310,11 +310,11 @@
 }
 
 @media (max-width: 734px) {
-  .ojx-news { padding: 72px 0; }
-  .ojx-news__title { font-size: clamp(48px, 14vw, 64px) !important; }
-  .ojx-news__text { font-size: 16px !important; }
-  .ojx-news__row input { font-size: 18px !important; }
-  .ojx-news__row button { font-size: 18px !important; }
+  .ojx-news { padding: 56px 0; }
+  .ojx-news__title { font-size: clamp(24px, 6.5vw, 28px) !important; line-height: 1.14 !important; }
+  .ojx-news__text { font-size: 14.5px !important; }
+  .ojx-news__row input { font-size: 15.5px !important; }
+  .ojx-news__row button { font-size: 15px !important; }
 }
 
 /* ---------- 3. header: hides on scroll down, slides back over on scroll up ---------- */
@@ -381,10 +381,11 @@
 .ojx-pm__close:hover { background: rgba(18, 18, 18, 0.12); }
 
 .ojx-pm__k {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace !important;
   font-size: 12px !important;
-  letter-spacing: 0.06em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   color: #C9662F;
 }
@@ -394,15 +395,15 @@
   font-family: "OJX Display", "Arial Narrow", Impact, sans-serif !important;
   font-stretch: 62% !important;
   font-weight: 800 !important;
-  font-size: clamp(44px, 6vw, 72px) !important;
-  line-height: 0.88 !important;
+  font-size: clamp(30px, 3.6vw, 40px) !important;
+  line-height: 1.12 !important;
   letter-spacing: -0.01em !important;
   text-transform: uppercase !important;
   color: #121212 !important;
 }
 .ojx-pm__title span { color: #8e8e93 !important; }
 
-.ojx-pm__sub { margin: 0 0 28px; font-size: 16px !important; color: #6e6e73; }
+.ojx-pm__sub { margin: 0 0 22px; font-size: 15px !important; color: #6e6e73; }
 
 .ojx-pm__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; }
 .ojx-pm__f { display: block; min-width: 0; }
@@ -581,38 +582,38 @@ body.dxm .trust-section .trust-card {
 }
 
 /* ---------- 8. v1.6 CTA band (replaces the repeated contact forms) ---------- */
-.ojx-cta { padding: clamp(88px, 11vw, 160px) 0; background: #050505; color: #fff; }
+.ojx-cta { padding: clamp(64px, 8vw, 110px) 0; background: #050505; color: #fff; }
 .ojx-cta__grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: end; }
 html body .ojx-cta h2.ojx-cta__title:not(#a1):not(#a2) {
   margin: 0;
   font-family: "OJX Display", "Arial Narrow", Impact, sans-serif !important;
   font-stretch: 62% !important;
   font-weight: 800 !important;
-  font-size: clamp(56px, 7.4vw, 120px) !important;
-  line-height: 0.86 !important;
+  font-size: clamp(38px, 3.8vw, 46px) !important;
+  line-height: 1.10 !important;
   letter-spacing: -0.01em !important;
   text-transform: uppercase !important;
   color: #fff !important;
 }
-.ojx-cta__text { margin: 26px 0 0; max-width: 46ch; font-size: 18px !important; line-height: 1.5 !important; color: #a1a1a6 !important; }
-.ojx-cta__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.ojx-cta__text { margin: 18px 0 0; max-width: 46ch; font-size: 16px !important; line-height: 1.5 !important; color: #a1a1a6 !important; }
+.ojx-cta__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 .ojx-cta__btn {
   display: inline-flex; align-items: center; gap: 10px;
-  min-height: 60px; padding: 0 30px;
+  min-height: 54px; padding: 0 28px;
   border: 0; border-radius: 999px;
   background: #fff; color: #121212;
-  font-size: 18px !important; font-weight: 500 !important;
+  font-size: 16px !important; font-weight: 600 !important;
   cursor: pointer;
   transition: background 0.25s ease, transform 0.25s ease;
 }
 .ojx-cta__btn:hover { background: #C9662F; color: #fff; }
 .ojx-cta__btn span { display: inline-block; transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
 .ojx-cta__btn:hover span { transform: translateX(5px); }
-.ojx-cta__mail { color: #fff !important; font-size: 16px !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255, 255, 255, 0.35); }
-.ojx-cta__note { margin: 0; font-size: 14px !important; color: #8e8e93 !important; }
+.ojx-cta__mail { color: #fff !important; font-size: 15px !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255, 255, 255, 0.35); }
+.ojx-cta__note { margin: 0; font-size: 13px !important; color: #8e8e93 !important; }
 
 /* ---------- 9. v1.6 simple homepage FAQ ---------- */
-.ojx-faq { padding: clamp(80px, 10vw, 140px) 0; background: #fff; border-top: 1px solid rgba(18, 18, 18, 0.08); }
+.ojx-faq { padding: clamp(64px, 8vw, 110px) 0; background: #fff; border-top: 1px solid rgba(18, 18, 18, 0.08); }
 .ojx-faq__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
 .ojx-faq__head { position: sticky; top: 110px; }
 html body .ojx-faq h2.ojx-faq__title:not(#a1):not(#a2) {
@@ -620,36 +621,36 @@ html body .ojx-faq h2.ojx-faq__title:not(#a1):not(#a2) {
   font-family: "OJX Display", "Arial Narrow", Impact, sans-serif !important;
   font-stretch: 62% !important;
   font-weight: 800 !important;
-  font-size: clamp(44px, 5vw, 80px) !important;
-  line-height: 0.88 !important;
+  font-size: clamp(36px, 3.6vw, 44px) !important;
+  line-height: 1.10 !important;
   text-transform: uppercase !important;
   color: #121212 !important;
 }
-.ojx-faq__sub { margin: 22px 0 0; max-width: 44ch; font-size: 17px !important; line-height: 1.5 !important; color: #6e6e73; }
-.ojx-faq__ask { margin-top: 28px; padding: 0 0 4px; border: 0; border-bottom: 1px solid #121212; background: none; font-size: 17px !important; font-weight: 500 !important; color: #121212; cursor: pointer; }
+.ojx-faq__sub { margin: 18px 0 0; max-width: 44ch; font-size: 16px !important; line-height: 1.5 !important; color: #6e6e73; }
+.ojx-faq__ask { margin-top: 22px; padding: 0 0 4px; border: 0; border-bottom: 1px solid #121212; background: none; font-size: 15px !important; font-weight: 500 !important; color: #121212; cursor: pointer; }
 .ojx-faq__ask span { display: inline-block; transition: transform 0.3s ease; }
 .ojx-faq__ask:hover span { transform: translateX(4px); }
 .ojx-faq__list { border-top: 1px solid #121212; }
 .ojx-faq__item { border-bottom: 1px solid rgba(18, 18, 18, 0.12); }
-.ojx-faq__item summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; list-style: none; cursor: pointer; font-size: 18px !important; font-weight: 500 !important; line-height: 1.4 !important; color: #121212; }
+.ojx-faq__item summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 0; list-style: none; cursor: pointer; font-size: 17px !important; font-weight: 500 !important; line-height: 1.4 !important; color: #121212; }
 .ojx-faq__item summary::-webkit-details-marker { display: none; }
 .ojx-faq__item summary i { flex: none; position: relative; width: 14px; height: 14px; }
 .ojx-faq__item summary i::before, .ojx-faq__item summary i::after { content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 2px; background: #121212; transition: transform 0.35s ease; }
 .ojx-faq__item summary i::after { transform: rotate(90deg); }
 .ojx-faq__item[open] summary i::after { transform: rotate(0deg); }
-.ojx-faq__item p { margin: 0 0 24px; max-width: 64ch; font-size: 16px !important; line-height: 1.6 !important; color: #6e6e73; }
+.ojx-faq__item p { margin: 0 0 20px; max-width: 64ch; font-size: 15.5px !important; line-height: 1.6 !important; color: #6e6e73; }
 
 @media (max-width: 900px) {
   .ojx-cta__grid, .ojx-faq__grid { grid-template-columns: minmax(0, 1fr); }
   .ojx-faq__head { position: static; }
 }
 @media (max-width: 734px) {
-  .ojx-cta, .ojx-faq { padding: 72px 0; }
-  html body .ojx-cta h2.ojx-cta__title:not(#a1):not(#a2) { font-size: clamp(44px, 13vw, 60px) !important; }
-  html body .ojx-faq h2.ojx-faq__title:not(#a1):not(#a2) { font-size: clamp(38px, 11vw, 50px) !important; }
-  .ojx-cta__text { font-size: 16px !important; }
-  .ojx-cta__btn { width: 100%; justify-content: center; min-height: 56px; font-size: 17px !important; }
-  .ojx-faq__item summary { font-size: 16px !important; }
+  .ojx-cta, .ojx-faq { padding: 56px 0; }
+  html body .ojx-cta h2.ojx-cta__title:not(#a1):not(#a2) { font-size: clamp(28px, 7.8vw, 32px) !important; line-height: 1.12 !important; }
+  html body .ojx-faq h2.ojx-faq__title:not(#a1):not(#a2) { font-size: clamp(28px, 7.5vw, 32px) !important; line-height: 1.12 !important; }
+  .ojx-cta__text { font-size: 15px !important; margin-top: 14px !important; }
+  .ojx-cta__btn { width: 100%; justify-content: center; min-height: 50px; font-size: 15.5px !important; }
+  .ojx-faq__item summary { font-size: 15.5px !important; }
 }
 
 /* no pause button on the homepage slideshow */

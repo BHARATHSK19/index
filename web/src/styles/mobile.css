@@ -181,3 +181,82 @@
 
 /* slide-in items never cause sideways scroll */
 .dx-services, .dx-products, .pd-rows { overflow-x: clip; }
+
+
+/* ==========================================================================
+   HOMEPAGE PRODUCT SHOWCASE TABS — MOBILE HORIZONTAL TOUCH SCROLL (<= 768px)
+   Clean single horizontal line with momentum scrolling, no wrapping/stacking
+   ========================================================================== */
+@media (max-width: 768px) {
+  .ojx-hero__controls {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .ojx-hero__tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    padding: 10px 16px !important;
+    gap: 14px !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+  }
+
+  .ojx-hero__tabs::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .ojx-hero__tab {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    min-width: max-content !important;
+    scroll-snap-align: start;
+    color: #C9662F !important;
+    -webkit-text-fill-color: #C9662F !important;
+  }
+
+  .ojx-hero__tab-label {
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    display: inline-block !important;
+    color: #C9662F !important;
+    -webkit-text-fill-color: #C9662F !important;
+    font-weight: 600 !important;
+  }
+
+  .ojx-hero__tab:hover,
+  .ojx-hero__tab.is-active {
+    color: #C9662F !important;
+    -webkit-text-fill-color: #C9662F !important;
+  }
+
+  .ojx-hero__tab:hover .ojx-hero__tab-label,
+  .ojx-hero__tab.is-active .ojx-hero__tab-label {
+    color: #C9662F !important;
+    -webkit-text-fill-color: #C9662F !important;
+    font-weight: 600 !important;
+  }
+
+  .ojx-hero__bar {
+    background: rgba(201, 102, 47, 0.25) !important;
+  }
+
+  .ojx-hero__bar i,
+  .ojx-hero__tab.is-active .ojx-hero__bar i,
+  .ojx-hero__tab.is-done .ojx-hero__bar i {
+    background: #C9662F !important;
+  }
+}

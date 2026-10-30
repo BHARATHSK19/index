@@ -39,8 +39,8 @@ app.use(
         scriptSrc: ["'self'"],
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        imgSrc: ["'self'", "data:", "https://images.unsplash.com"],
-        connectSrc: ["'self'"],
+        imgSrc: ["'self'", "data:", "https://images.unsplash.com", "https://unpkg.com"],
+        connectSrc: ["'self'", "https://unpkg.com"],
         manifestSrc: ["'self'"],
         workerSrc: ["'self'"],
         upgradeInsecureRequests: IS_PROD ? [] : null

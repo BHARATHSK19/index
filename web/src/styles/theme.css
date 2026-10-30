@@ -107,7 +107,8 @@ html body .ojx-sr {
 html body .ojx-consent,
 html body .ojx-newsbox {
   position: fixed;
-  left: 24px;
+  right: 24px;
+  left: auto;
   bottom: 24px;
   z-index: 9500;
   box-sizing: border-box;

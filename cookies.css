@@ -119,8 +119,8 @@ body.dxm .ck-text h2 {
 /* ---------- Cookie banner support (.ojix-cookie-banner & .ojix-newsletter-popup) ---------- */
 .ojix-cookie-banner {
   position: fixed !important;
-  left: 20px !important;
-  right: auto !important;
+  right: 20px !important;
+  left: auto !important;
   bottom: 20px !important;
   top: auto !important;
   z-index: 9000 !important;

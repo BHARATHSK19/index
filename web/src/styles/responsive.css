@@ -1061,3 +1061,187 @@ html.mobile-services-modal-open {
     background: #B55825;
   }
 }
+
+
+/* ==========================================================================
+   HOMEPAGE CTA 3D INTERACTIVE GLOBE (globe.gl)
+   ========================================================================== */
+html body .ojx-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+html body .ojx-cta .ojx-cta__grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) !important;
+  gap: clamp(32px, 5vw, 64px) !important;
+  align-items: center !important;
+}
+
+.ojx-cta__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ojx-cta__content .ojx-cta__actions {
+  margin-top: clamp(28px, 4vw, 40px);
+}
+
+.ojx-cta__globe-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 600px;
+}
+
+.ojx-globe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 24px;
+  background: radial-gradient(circle at 50% 50%, rgba(15, 28, 46, 0.45) 0%, rgba(5, 5, 5, 0) 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y !important;
+}
+
+.ojx-globe-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y !important;
+}
+
+.ojx-globe-container:active {
+  cursor: grabbing;
+}
+
+.ojx-globe-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+  touch-action: pan-y !important;
+}
+
+.ojx-globe-placeholder {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 102, 47, 0.15) 0%, rgba(9, 18, 30, 0.6) 70%, transparent 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: ojx-placeholder-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes ojx-placeholder-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.96); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.ojx-globe-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(9, 18, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 999px;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #E2E8F0;
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.ojx-globe-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 10px #FFFFFF, 0 0 4px #FFFFFF;
+  animation: ojx-pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes ojx-pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+.scene-tooltip {
+  z-index: 1000 !important;
+  pointer-events: none !important;
+}
+
+/* Responsive breakpoint adjustments */
+@media (max-width: 1023px) {
+  html body .ojx-cta .ojx-cta__grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 40px !important;
+  }
+
+  .ojx-cta__globe-col {
+    height: 480px;
+  }
+
+  .ojx-globe-wrapper {
+    height: 480px !important;
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ojx-cta__content .ojx-cta__actions {
+    margin-top: 24px;
+  }
+
+  .ojx-cta__globe-col {
+    height: 360px !important;
+    min-height: 360px !important;
+  }
+
+  .ojx-globe-wrapper {
+    height: 360px !important;
+    min-height: 360px !important;
+    max-width: 100%;
+    border-radius: 18px;
+    touch-action: pan-y !important;
+  }
+
+  .ojx-globe-container {
+    touch-action: pan-y !important;
+  }
+
+  .ojx-globe-container canvas {
+    touch-action: pan-y !important;
+  }
+
+  .ojx-globe-badge {
+    bottom: 10px;
+    left: 10px;
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+}

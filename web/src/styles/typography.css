@@ -305,3 +305,120 @@ label {
     font-size: 17px !important;
   }
 }
+
+
+/* ==========================================================================
+   ENTERPRISE GLASSMORPHISM PILL STYLING
+   Applies to all eyebrows, kickers, and section markers
+   ========================================================================== */
+html body .section-eyebrow,
+html body .platform-kicker,
+html body .dx-products__kicker,
+html body [class*="kicker"]:not(.no-pill),
+html body [class*="eyebrow"]:not(.no-pill) {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  padding: 5px 14px 5px 12px !important;
+  background: rgba(201, 102, 47, 0.08) !important;
+  border: 1px solid rgba(201, 102, 47, 0.3) !important;
+  border-radius: 9999px !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  color: #E2E8F0 !important;
+  -webkit-text-fill-color: #E2E8F0 !important;
+  font-family: var(--font-mono, "JetBrains Mono", ui-monospace, monospace) !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  margin-bottom: 16px;
+  box-sizing: border-box !important;
+}
+
+/* Light mode theme: High-contrast deep navy text for light backgrounds */
+html[data-theme="light"] body .section-eyebrow,
+html[data-theme="light"] body .platform-kicker,
+html[data-theme="light"] body .dx-products__kicker,
+html[data-theme="light"] body [class*="kicker"]:not(.no-pill),
+html[data-theme="light"] body [class*="eyebrow"]:not(.no-pill),
+html:not([data-theme="dark"]) body .section-eyebrow,
+html:not([data-theme="dark"]) body .platform-kicker,
+html:not([data-theme="dark"]) body .dx-products__kicker,
+html:not([data-theme="dark"]) body [class*="kicker"]:not(.no-pill),
+html:not([data-theme="dark"]) body [class*="eyebrow"]:not(.no-pill),
+body.light .section-eyebrow,
+body.light .platform-kicker,
+body.light .dx-products__kicker,
+body.light [class*="kicker"]:not(.no-pill),
+body.light [class*="eyebrow"]:not(.no-pill) {
+  color: #0F1C2E !important;
+  -webkit-text-fill-color: #0F1C2E !important;
+  font-weight: 700 !important;
+  background: rgba(201, 102, 47, 0.08) !important;
+  border: 1px solid rgba(201, 102, 47, 0.35) !important;
+  box-shadow: 0 2px 8px rgba(15, 28, 46, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Dark mode theme: Crisp light text for dark backgrounds */
+html[data-theme="dark"] body .section-eyebrow,
+html[data-theme="dark"] body .platform-kicker,
+html[data-theme="dark"] body .dx-products__kicker,
+html[data-theme="dark"] body [class*="kicker"]:not(.no-pill),
+html[data-theme="dark"] body [class*="eyebrow"]:not(.no-pill) {
+  color: #E2E8F0 !important;
+  -webkit-text-fill-color: #E2E8F0 !important;
+  font-weight: 600 !important;
+  background: rgba(201, 102, 47, 0.08) !important;
+  border: 1px solid rgba(201, 102, 47, 0.3) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+html body .section-eyebrow::before,
+html body .platform-kicker::before,
+html body .dx-products__kicker::before,
+html body [class*="kicker"]:not(.no-pill)::before,
+html body [class*="eyebrow"]:not(.no-pill)::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  min-width: 6px !important;
+  min-height: 6px !important;
+  border-radius: 50% !important;
+  background: #C9662F !important;
+  box-shadow: 0 0 8px #C9662F, 0 0 3px #C9662F !important;
+  flex-shrink: 0 !important;
+}
+
+html body .section-eyebrow b,
+html body .platform-kicker b,
+html body .dx-products__kicker b,
+html body [class*="kicker"] b,
+html body [class*="eyebrow"] b,
+html body .section-eyebrow strong,
+html body .platform-kicker strong,
+html body .dx-products__kicker strong,
+html body [class*="kicker"] strong,
+html body [class*="eyebrow"] strong {
+  color: #C9662F !important;
+  -webkit-text-fill-color: #C9662F !important;
+  font-weight: 700 !important;
+  margin-right: 2px !important;
+  font-family: inherit !important;
+  letter-spacing: inherit !important;
+}
+
+html body .section-eyebrow:hover,
+html body .platform-kicker:hover,
+html body .dx-products__kicker:hover,
+html body [class*="kicker"]:not(.no-pill):hover,
+html body [class*="eyebrow"]:not(.no-pill):hover {
+  background: rgba(201, 102, 47, 0.14) !important;
+  border-color: rgba(201, 102, 47, 0.5) !important;
+  box-shadow: 0 4px 16px rgba(201, 102, 47, 0.15) !important;
+}

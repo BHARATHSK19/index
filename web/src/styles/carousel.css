@@ -26,10 +26,14 @@
   pointer-events: none;
 }
 
-.ojx-hero__eyebrow {
+.ojx-hero__eyebrow,
+.hero-tag,
+.hero-eyebrow,
+.hero-badge {
   margin: 0 0 18px;
   font-size: 15px !important;
   font-weight: 500 !important;
+  text-transform: capitalize;
   color: #8e8e93;
 }
 
@@ -141,6 +145,136 @@
 
 .ojx-hero__media.is-active img { transform: scale(1); }
 
+/* ---------- glassmorphism product overlay badge ------------------------ */
+.ojx-hero__overlay {
+  position: absolute;
+  top: clamp(14px, 2.5vw, 24px);
+  left: clamp(14px, 2.5vw, 24px);
+  z-index: 3;
+  max-width: min(90%, 340px);
+  padding: 12px 16px;
+  background: rgba(15, 28, 46, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+  pointer-events: auto;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.ojx-overlay-title {
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+}
+
+.ojx-overlay-sub {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 9px;
+}
+
+.ojx-overlay-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 650;
+  color: #ffffff !important;
+  background: #C9662F;
+  padding: 5px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ojx-overlay-link:hover {
+  background: #E67E22;
+  transform: translateX(2px);
+  color: #ffffff !important;
+}
+
+.ojx-overlay-link span[aria-hidden="true"] {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.ojx-overlay-link:hover span[aria-hidden="true"] {
+  transform: translateX(2px);
+}
+
+/* ---------- sleek product name + hover arrow overlay (matches pd-next design) --- */
+.ojx-hero__overlay-link {
+  position: absolute;
+  top: clamp(20px, 4vw, 42px);
+  left: clamp(20px, 4vw, 42px);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(10px, 1.5vw, 18px);
+  text-decoration: none !important;
+  color: #ffffff !important;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  filter: drop-shadow(0 3px 14px rgba(0, 0, 0, 0.8));
+  transition: opacity 0.3s ease;
+}
+
+.ojx-hero__overlay-title {
+  font-family: var(--dx-display, "Manrope", sans-serif) !important;
+  font-stretch: 62% !important;
+  font-weight: 800 !important;
+  font-size: clamp(28px, 4.5vw, 64px) !important;
+  line-height: 0.9 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.ojx-hero__overlay-arrow {
+  display: inline-block;
+  font-family: var(--dx-display, "Manrope", sans-serif);
+  font-size: clamp(30px, 4.8vw, 68px);
+  font-weight: 700;
+  line-height: 0.9;
+  color: #ffffff;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+}
+
+.ojx-hero__overlay-link:hover .ojx-hero__overlay-arrow {
+  transform: translateX(14px);
+  color: #C9662F;
+}
+
+.ojx-hero__overlay-link:hover .ojx-hero__overlay-title {
+  color: #ffffff;
+}
+
+.ojx-hero__overlay {
+  position: absolute;
+  top: clamp(20px, 4vw, 42px);
+  left: clamp(20px, 4vw, 42px);
+  z-index: 3;
+  pointer-events: auto;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+}
+
 /* ---------- tabs + progress -------------------------------------------- */
 .ojx-hero__controls {
   display: flex;
@@ -152,8 +286,8 @@
 .ojx-hero__tabs {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 2vw, 28px);
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  gap: clamp(6px, 1.1vw, 16px);
 }
 
 .ojx-hero__tab {
@@ -240,12 +374,19 @@
 .ojx-hero.is-paused .ojx-hero__pause .i-pause,
 .ojx-hero.is-static .ojx-hero__pause .i-pause { display: none; }
 
+/* ---------- tablets ----------------------------------------------------- */
+@media (min-width: 735px) and (max-width: 1024px) {
+  .ojx-hero__tabs { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+}
+
 /* ---------- phones ------------------------------------------------------ */
 @media (max-width: 734px) {
   .ojx-hero__title { font-size: clamp(38px, 11vw, 52px) !important; }
   .ojx-hero__stage { aspect-ratio: 4 / 5; }
-  .ojx-hero__tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-  .ojx-hero__tab-label { font-size: 12px !important; }
+  .ojx-hero__tabs { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; overflow-y: hidden !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; padding: 10px 16px !important; gap: 12px; }
+  .ojx-hero__tabs::-webkit-scrollbar { display: none !important; }
+  .ojx-hero__tab { flex: 0 0 auto !important; white-space: nowrap !important; width: auto !important; min-width: max-content !important; }
+  .ojx-hero__tab-label { font-size: 12px !important; white-space: nowrap !important; }
   .ojx-hero__controls { gap: 12px; }
 }
 
@@ -292,11 +433,11 @@
     gap: 10px;
   }
   .ojx-hero__tabs { gap: 8px; }
-  .ojx-hero__tab { color: rgba(255, 255, 255, 0.7); padding-top: 0; }
-  .ojx-hero__tab:hover, .ojx-hero__tab.is-active { color: #fff; }
-  .ojx-hero__tab-label { font-size: 12px !important; }
-  .ojx-hero__bar { margin-top: 8px; background: rgba(255, 255, 255, 0.3); }
-  .ojx-hero__bar i { background: #fff; }
+  .ojx-hero__tab { color: #C9662F; padding-top: 0; }
+  .ojx-hero__tab:hover, .ojx-hero__tab.is-active { color: #C9662F; }
+  .ojx-hero__tab-label { font-size: 12px !important; color: #C9662F !important; -webkit-text-fill-color: #C9662F !important; font-weight: 600 !important; }
+  .ojx-hero__bar { margin-top: 8px; background: rgba(201, 102, 47, 0.25); }
+  .ojx-hero__bar i { background: #C9662F; }
   .ojx-hero__pause { width: 32px; height: 32px; background: rgba(255, 255, 255, 0.2); color: #fff; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
   .ojx-hero__pause svg { width: 13px; height: 13px; }
 

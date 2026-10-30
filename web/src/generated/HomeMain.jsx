@@ -1,5 +1,8 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
+import { Suspense, lazy } from "react";
 import ProductRows from "../components/ProductRows.jsx";
+
+const InteractiveGlobe = lazy(() => import("../components/InteractiveGlobe.jsx"));
 
 export default function HomeMain() {
   return (
@@ -9,9 +12,9 @@ export default function HomeMain() {
         <section className="ojx-hero" id="ojx-hero" aria-roledescription="carousel" aria-label="OJIX products">
           <div className="shell">
             <div className="ojx-hero__copy">
-              <div className="ojx-hero__text is-active" data-slide="0" id="ojx-hero-panel-0" role="tabpanel" aria-labelledby="ojx-hero-tab-0">
+              <div className="ojx-hero__text is-active" data-slide="0" id="ojx-hero-panel-0" data-product="company-management-system" data-category="company-management-system" role="tabpanel" aria-labelledby="ojx-hero-tab-0">
                 <p className="ojx-hero__eyebrow">
-                  Business management software
+                  Company Management System · Office, HR & Accounting
                 </p>
                 {" "}
                 <h1 className="ojx-hero__title">
@@ -22,12 +25,12 @@ export default function HomeMain() {
                 </h1>
                 {" "}
                 <p className="ojx-hero__lede">
-                  Easy-to-use business software, company systems and smart automation that help your team work faster—without messy spreadsheets.
+                  Run your daily office work in one place—staff attendance, monthly salaries, accounting, GST billing, and team approvals.
                 </p>
                 {" "}
                 <div className="ojx-hero__actions">
-                  <a className="ojx-hero__cta" href="#platforms">
-                    Explore our products
+                  <a className="ojx-hero__cta" href="/company-management-system">
+                    Explore Company Management System
                   </a>
                   {" "}
                   <a className="ojx-hero__link" href="#contact">
@@ -45,39 +48,9 @@ export default function HomeMain() {
                 </div>
               </div>
               {" "}
-              <div className="ojx-hero__text" data-slide="1" id="ojx-hero-panel-1" role="tabpanel" aria-labelledby="ojx-hero-tab-1" hidden>
+              <div className="ojx-hero__text" data-slide="1" id="ojx-hero-panel-1" data-product="legalos" data-category="legalos" role="tabpanel" aria-labelledby="ojx-hero-tab-1" hidden>
                 <p className="ojx-hero__eyebrow">
-                  Company Management System · ProcureOS
-                </p>
-                {" "}
-                <h2 className="ojx-hero__title">
-                  Run your whole business{" "}
-                  <span>
-                    from one screen.
-                  </span>
-                </h2>
-                {" "}
-                <p className="ojx-hero__lede">
-                  Payroll, purchasing, inventory and GST billing—every daily operation in one connected place.
-                </p>
-                {" "}
-                <div className="ojx-hero__actions">
-                  <a className="ojx-hero__cta" href="/company-management-system">
-                    Explore Company Management System
-                  </a>
-                  {" "}
-                  <a className="ojx-hero__link" href="/procureos">
-                    ProcureOS{" "}
-                    <span aria-hidden="true">
-                      ›
-                    </span>
-                  </a>
-                </div>
-              </div>
-              {" "}
-              <div className="ojx-hero__text" data-slide="2" id="ojx-hero-panel-2" role="tabpanel" aria-labelledby="ojx-hero-tab-2" hidden>
-                <p className="ojx-hero__eyebrow">
-                  {"Nyaya Sethu · Law firms & chambers"}
+                  Nyaya Sethu · Law Practice Management
                 </p>
                 {" "}
                 <h2 className="ojx-hero__title">
@@ -88,7 +61,7 @@ export default function HomeMain() {
                 </h2>
                 {" "}
                 <p className="ojx-hero__lede">
-                  Daily cause-list updates, secure case files, deadline alerts and client billing for advocates and legal teams.
+                  Help your law firm track court hearing dates, case files, client updates, and legal billing without missing a single deadline.
                 </p>
                 {" "}
                 <div className="ojx-hero__actions">
@@ -105,20 +78,50 @@ export default function HomeMain() {
                 </div>
               </div>
               {" "}
-              <div className="ojx-hero__text" data-slide="3" id="ojx-hero-panel-3" role="tabpanel" aria-labelledby="ojx-hero-tab-3" hidden>
+              <div className="ojx-hero__text" data-slide="2" id="ojx-hero-panel-2" data-product="procureos" data-category="procureos" role="tabpanel" aria-labelledby="ojx-hero-tab-2" hidden>
                 <p className="ojx-hero__eyebrow">
-                  {"School ERP · Schools & colleges"}
+                  ProcureOS · Purchasing & Warehouse
                 </p>
                 {" "}
                 <h2 className="ojx-hero__title">
-                  The whole campus.{" "}
+                  Every rupee of buying.{" "}
                   <span>
-                    One calm system.
+                    Under control.
                   </span>
                 </h2>
                 {" "}
                 <p className="ojx-hero__lede">
-                  Admissions, attendance, fees and exams—with AI that reads forms and paperwork for you.
+                  Manage supplier quotes, purchase orders, warehouse stock, and incoming GST bills so you only pay for what was actually delivered.
+                </p>
+                {" "}
+                <div className="ojx-hero__actions">
+                  <a className="ojx-hero__cta" href="/procureos">
+                    Explore ProcureOS
+                  </a>
+                  {" "}
+                  <a className="ojx-hero__link" href="#contact">
+                    Book a demo{" "}
+                    <span aria-hidden="true">
+                      ›
+                    </span>
+                  </a>
+                </div>
+              </div>
+              {" "}
+              <div className="ojx-hero__text" data-slide="3" id="ojx-hero-panel-3" data-product="school-erp" data-category="school-erp" role="tabpanel" aria-labelledby="ojx-hero-tab-3" hidden>
+                <p className="ojx-hero__eyebrow">
+                  School ERP · Schools & K-12
+                </p>
+                {" "}
+                <h2 className="ojx-hero__title">
+                  Admission to report card.{" "}
+                  <span>
+                    In one place.
+                  </span>
+                </h2>
+                {" "}
+                <p className="ojx-hero__lede">
+                  Manage student admissions, daily attendance, fee payments, timetables, and exam report cards in one easy dashboard.
                 </p>
                 {" "}
                 <div className="ojx-hero__actions">
@@ -134,66 +137,385 @@ export default function HomeMain() {
                   </a>
                 </div>
               </div>
+              {" "}
+              <div className="ojx-hero__text" data-slide="4" id="ojx-hero-panel-4" data-product="university-management-system" data-category="university-management-system" role="tabpanel" aria-labelledby="ojx-hero-tab-4" hidden>
+                <p className="ojx-hero__eyebrow">
+                  University Management System · Multi-Campus
+                </p>
+                {" "}
+                <h2 className="ojx-hero__title">
+                  Every campus and department.{" "}
+                  <span>
+                    Connected.
+                  </span>
+                </h2>
+                {" "}
+                <p className="ojx-hero__lede">
+                  Run admissions, academics, examinations, accreditation data and finance across every campus and department from one university-wide system.
+                </p>
+                {" "}
+                <div className="ojx-hero__actions">
+                  <a className="ojx-hero__cta" href="/university-management-system">
+                    Explore University Management System
+                  </a>
+                  {" "}
+                  <a className="ojx-hero__link" href="#contact">
+                    Book a demo{" "}
+                    <span aria-hidden="true">
+                      ›
+                    </span>
+                  </a>
+                </div>
+              </div>
+              {" "}
+              <div className="ojx-hero__text" data-slide="5" id="ojx-hero-panel-5" data-product="ai-proctoring" data-category="ai-proctoring" role="tabpanel" aria-labelledby="ojx-hero-tab-5" hidden>
+                <p className="ojx-hero__eyebrow">
+                  AI Proctoring · Online Exams & Assessments
+                </p>
+                {" "}
+                <h2 className="ojx-hero__title">
+                  Fair online exams.{" "}
+                  <span>
+                    Watched by AI.
+                  </span>
+                </h2>
+                {" "}
+                <p className="ojx-hero__lede">
+                  Run secure online exams with identity checks, live webcam monitoring, browser lockdown and AI flags your invigilators can review in seconds.
+                </p>
+                {" "}
+                <div className="ojx-hero__actions">
+                  <a className="ojx-hero__cta" href="/ai-proctoring">
+                    Explore AI Proctoring
+                  </a>
+                  {" "}
+                  <a className="ojx-hero__link" href="#contact">
+                    Book a demo{" "}
+                    <span aria-hidden="true">
+                      ›
+                    </span>
+                  </a>
+                </div>
+              </div>
+              {" "}
+              <div className="ojx-hero__text" data-slide="6" id="ojx-hero-panel-6" data-product="construction-hub" data-category="construction-hub" role="tabpanel" aria-labelledby="ojx-hero-tab-6" hidden>
+                <p className="ojx-hero__eyebrow">
+                  Construction Hub · Builders & Contractors
+                </p>
+                {" "}
+                <h2 className="ojx-hero__title">
+                  Every site and bag of cement.{" "}
+                  <span>
+                    In view.
+                  </span>
+                </h2>
+                {" "}
+                <p className="ojx-hero__lede">
+                  Track daily work at construction sites, monitor cement and steel usage, verify contractor bills, and keep project budgets on track.
+                </p>
+                {" "}
+                <div className="ojx-hero__actions">
+                  <a className="ojx-hero__cta" href="/construction-hub">
+                    Explore Construction Hub
+                  </a>
+                  {" "}
+                  <a className="ojx-hero__link" href="#contact">
+                    Book a demo{" "}
+                    <span aria-hidden="true">
+                      ›
+                    </span>
+                  </a>
+                </div>
+              </div>
+              {" "}
+              <div className="ojx-hero__text" data-slide="7" id="ojx-hero-panel-7" data-product="property-intelligence" data-category="property-intelligence" role="tabpanel" aria-labelledby="ojx-hero-tab-7" hidden>
+                <p className="ojx-hero__eyebrow">
+                  Property Intelligence · Real Estate & Property
+                </p>
+                {" "}
+                <h2 className="ojx-hero__title">
+                  Every property, unit and lease.{" "}
+                  <span>
+                    Measured.
+                  </span>
+                </h2>
+                {" "}
+                <p className="ojx-hero__lede">
+                  See every property, unit, lease and rupee of rent in one place—with price insights, occupancy trends and maintenance tracking.
+                </p>
+                {" "}
+                <div className="ojx-hero__actions">
+                  <a className="ojx-hero__cta" href="/property-intelligence">
+                    Explore Property Intelligence
+                  </a>
+                  {" "}
+                  <a className="ojx-hero__link" href="#contact">
+                    Book a demo{" "}
+                    <span aria-hidden="true">
+                      ›
+                    </span>
+                  </a>
+                </div>
+              </div>
+              {" "}
+              <div className="ojx-hero__text" data-slide="8" id="ojx-hero-panel-8" data-product="travelos" data-category="travelos" role="tabpanel" aria-labelledby="ojx-hero-tab-8" hidden>
+                <p className="ojx-hero__eyebrow">
+                  TravelOS · Travel Agencies & Tours
+                </p>
+                {" "}
+                <h2 className="ojx-hero__title">
+                  Every enquiry to trip voucher.{" "}
+                  <span>
+                    Automated.
+                  </span>
+                </h2>
+                {" "}
+                <p className="ojx-hero__lede">
+                  Handle customer trip enquiries, tour packages, hotel and flight bookings, and driver schedules from one clean screen.
+                </p>
+                {" "}
+                <div className="ojx-hero__actions">
+                  <a className="ojx-hero__cta" href="/travelos">
+                    Explore TravelOS
+                  </a>
+                  {" "}
+                  <a className="ojx-hero__link" href="#contact">
+                    Book a demo{" "}
+                    <span aria-hidden="true">
+                      ›
+                    </span>
+                  </a>
+                </div>
+              </div>
+              {" "}
+              <div className="ojx-hero__text" data-slide="9" id="ojx-hero-panel-9" data-product="fitos" data-category="fitos" role="tabpanel" aria-labelledby="ojx-hero-tab-9" hidden>
+                <p className="ojx-hero__eyebrow">
+                  FitOS · Gyms & Fitness Studios
+                </p>
+                {" "}
+                <h2 className="ojx-hero__title">
+                  Run one gym or a whole chain.{" "}
+                  <span>
+                    Organized.
+                  </span>
+                </h2>
+                {" "}
+                <p className="ojx-hero__lede">
+                  Manage member check-ins, biometric entry gates, trainer schedules, and automatic membership renewal reminders effortlessly.
+                </p>
+                {" "}
+                <div className="ojx-hero__actions">
+                  <a className="ojx-hero__cta" href="/fitos">
+                    Explore FitOS
+                  </a>
+                  {" "}
+                  <a className="ojx-hero__link" href="#contact">
+                    Book a demo{" "}
+                    <span aria-hidden="true">
+                      ›
+                    </span>
+                  </a>
+                </div>
+              </div>
+              {" "}
+              <div className="ojx-hero__text" data-slide="10" id="ojx-hero-panel-10" data-product="dpdp-compliance" data-category="dpdp-compliance" role="tabpanel" aria-labelledby="ojx-hero-tab-10" hidden>
+                <p className="ojx-hero__eyebrow">
+                  DPDP Privacy Vault · Secure File & Privacy Vault
+                </p>
+                {" "}
+                <h2 className="ojx-hero__title">
+                  Your files.{" "}
+                  <span>
+                    Locked, logged and lawful.
+                  </span>
+                </h2>
+                {" "}
+                <p className="ojx-hero__lede">
+                  Store important company and customer files safely with clear access permissions and built-in Indian data privacy compliance.
+                </p>
+                {" "}
+                <div className="ojx-hero__actions">
+                  <a className="ojx-hero__cta" href="/dpdp-compliance">
+                    Explore DPDP Vault
+                  </a>
+                  {" "}
+                  <a className="ojx-hero__link" href="#contact">
+                    Book a demo{" "}
+                    <span aria-hidden="true">
+                      ›
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
             {" "}
             <div className="ojx-hero__stage">
-              <picture className="ojx-hero__media is-active" data-slide="0" data-fallback-label="Company Management System · Overview">
-                <source media="(max-width: 734px)" srcSet="/assets/generated/hero-showcase-overview-mobile.jpg" />
+              <a href="/company-management-system" className="ojx-hero__overlay-link" id="ojx-overlay-link" aria-label="Explore Company Management System">
+                <span className="ojx-hero__overlay-title" id="ojx-overlay-title">COMPANY MANAGEMENT SYSTEM</span>
+                <span className="ojx-hero__overlay-arrow" aria-hidden="true">→</span>
+              </a>
+              <picture className="ojx-hero__media is-active" data-slide="0" data-fallback-label="Company Management System · Business ERP">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/companyos-hero.webp" />
                 {" "}
-                <img src="/assets/generated/hero-showcase-overview.jpg" alt="Bright modern meeting room with large windows" width="1600" height="900" fetchPriority="high" decoding="async" />
+                <img src="/assets/images/products/companyos-hero.webp" alt="Company Management System connected enterprise dashboard" width="1600" height="900" fetchPriority="high" decoding="async" />
               </picture>
               {" "}
-              <picture className="ojx-hero__media" data-slide="1" data-fallback-label={"Business Operations · ProcureOS & Construction Hub"}>
-                <source media="(max-width: 734px)" srcSet="/assets/generated/hero-showcase-business-mobile.jpg" />
+              <picture className="ojx-hero__media" data-slide="1" data-fallback-label="Nyaya Sethu · Law Practice Management">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/legalos-hero.webp" />
                 {" "}
-                <img src="/assets/generated/hero-showcase-business.jpg" alt="Modern open-plan office with glass meeting rooms" width="1600" height="900" loading="lazy" decoding="async" />
+                <img src="/assets/images/products/legalos-hero.webp" alt="Nyaya Sethu digital legal practice dashboard" width="1600" height="900" loading="lazy" decoding="async" />
               </picture>
               {" "}
-              <picture className="ojx-hero__media" data-slide="2" data-fallback-label={"Legal Tech · Nyaya Sethu & DPDP Vault"}>
-                <source media="(max-width: 734px)" srcSet="/assets/generated/hero-showcase-legal-mobile.jpg" />
+              <picture className="ojx-hero__media" data-slide="2" data-fallback-label="ProcureOS · Purchasing & Warehouse">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/procureos-hero.webp" />
                 {" "}
-                <img src="/assets/generated/hero-showcase-legal.jpg" alt="Library of old law books and marble busts" width="1600" height="900" loading="lazy" decoding="async" />
+                <img src="/assets/images/products/procureos-hero.webp" alt="ProcureOS procure-to-pay suite" width="1600" height="900" loading="lazy" decoding="async" />
               </picture>
               {" "}
-              <picture className="ojx-hero__media" data-slide="3" data-fallback-label="Campus Management · School ERP">
-                <source media="(max-width: 734px)" srcSet="/assets/generated/hero-showcase-campus-mobile.jpg" />
+              <picture className="ojx-hero__media" data-slide="3" data-fallback-label="School ERP · Schools & K-12">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/campusos-hero.webp" />
                 {" "}
-                <img src="/assets/generated/hero-showcase-campus.jpg" alt="Sunlit empty classroom with wooden desks" width="1600" height="900" loading="lazy" decoding="async" />
+                <img src="/assets/images/products/campusos-hero.webp" alt="School ERP school management platform" width="1600" height="900" loading="lazy" decoding="async" />
+              </picture>
+              {" "}
+              <picture className="ojx-hero__media" data-slide="4" data-fallback-label="University Management System · Multi-Campus">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/university-hero.webp" />
+                {" "}
+                <img src="/assets/images/products/university-hero.webp" alt="University Management System multi-campus dashboard" width="1600" height="900" loading="lazy" decoding="async" />
+              </picture>
+              {" "}
+              <picture className="ojx-hero__media" data-slide="5" data-fallback-label="AI Proctoring · Online Exams">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/proctoring-hero.webp" />
+                {" "}
+                <img src="/assets/images/products/proctoring-hero.webp" alt="AI Proctoring automated exam surveillance and review" width="1600" height="900" loading="lazy" decoding="async" />
+              </picture>
+              {" "}
+              <picture className="ojx-hero__media" data-slide="6" data-fallback-label="Construction Hub · Builders & Contractors">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/buildos-hero.webp" />
+                {" "}
+                <img src="/assets/images/products/buildos-hero.webp" alt="Construction Hub construction site management platform" width="1600" height="900" loading="lazy" decoding="async" />
+              </picture>
+              {" "}
+              <picture className="ojx-hero__media" data-slide="7" data-fallback-label="Property Intelligence · Real Estate">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/property-hero.webp" />
+                {" "}
+                <img src="/assets/images/products/property-hero.webp" alt="Property Intelligence real estate analytics dashboard" width="1600" height="900" loading="lazy" decoding="async" />
+              </picture>
+              {" "}
+              <picture className="ojx-hero__media" data-slide="8" data-fallback-label="TravelOS · Travel Agencies & Tours">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/travelos-hero.webp" />
+                {" "}
+                <img src="/assets/images/products/travelos-hero.webp" alt="TravelOS tour operations and itinerary management suite" width="1600" height="900" loading="lazy" decoding="async" />
+              </picture>
+              {" "}
+              <picture className="ojx-hero__media" data-slide="9" data-fallback-label="FitOS · Gyms & Fitness Studios">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/fitos-hero.webp" />
+                {" "}
+                <img src="/assets/images/products/fitos-hero.webp" alt="FitOS gym and fitness studio management platform" width="1600" height="900" loading="lazy" decoding="async" />
+              </picture>
+              {" "}
+              <picture className="ojx-hero__media" data-slide="10" data-fallback-label="DPDP Privacy Vault · Data Privacy & Compliance">
+                <source media="(max-width: 734px)" srcSet="/assets/images/products/dpdp-hero.webp" />
+                {" "}
+                <img src="/assets/images/products/dpdp-hero.webp" alt="DPDP Privacy Vault sovereign document and compliance management system" width="1600" height="900" loading="lazy" decoding="async" />
               </picture>
             </div>
             {" "}
             <div className="ojx-hero__controls">
               <div className="ojx-hero__tabs" role="tablist" aria-label="Choose a product">
-                <button type="button" className="ojx-hero__tab is-active" role="tab" id="ojx-hero-tab-0" aria-controls="ojx-hero-panel-0" aria-selected="true" data-slide="0">
+                <button type="button" className="ojx-hero__tab is-active" role="tab" id="ojx-hero-tab-0" aria-controls="ojx-hero-panel-0" aria-selected="true" data-slide="0" data-product="company-management-system" data-product-slug="company-management-system" data-category="company-management-system">
                   <span className="ojx-hero__tab-label">
-                    Overview
+                    Company Management System
                   </span>
                   <span className="ojx-hero__bar">
                     <i />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-1" aria-controls="ojx-hero-panel-1" aria-selected="false" tabIndex="-1" data-slide="1">
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-1" aria-controls="ojx-hero-panel-1" aria-selected="false" tabIndex="-1" data-slide="1" data-product="legalos" data-product-slug="legalos" data-category="legalos">
                   <span className="ojx-hero__tab-label">
-                    Business
+                    Nyaya Sethu
                   </span>
                   <span className="ojx-hero__bar">
                     <i />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-2" aria-controls="ojx-hero-panel-2" aria-selected="false" tabIndex="-1" data-slide="2">
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-2" aria-controls="ojx-hero-panel-2" aria-selected="false" tabIndex="-1" data-slide="2" data-product="procureos" data-product-slug="procureos" data-category="procureos">
                   <span className="ojx-hero__tab-label">
-                    Legal
+                    ProcureOS
                   </span>
                   <span className="ojx-hero__bar">
                     <i />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-3" aria-controls="ojx-hero-panel-3" aria-selected="false" tabIndex="-1" data-slide="3">
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-3" aria-controls="ojx-hero-panel-3" aria-selected="false" tabIndex="-1" data-slide="3" data-product="school-erp" data-product-slug="school-erp" data-category="school-erp">
                   <span className="ojx-hero__tab-label">
-                    Campus
+                    School ERP
+                  </span>
+                  <span className="ojx-hero__bar">
+                    <i />
+                  </span>
+                </button>
+                {" "}
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-4" aria-controls="ojx-hero-panel-4" aria-selected="false" tabIndex="-1" data-slide="4" data-product="university-management-system" data-product-slug="university-management-system" data-category="university-management-system">
+                  <span className="ojx-hero__tab-label">
+                    University Management System
+                  </span>
+                  <span className="ojx-hero__bar">
+                    <i />
+                  </span>
+                </button>
+                {" "}
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-5" aria-controls="ojx-hero-panel-5" aria-selected="false" tabIndex="-1" data-slide="5" data-product="ai-proctoring" data-product-slug="ai-proctoring" data-category="ai-proctoring">
+                  <span className="ojx-hero__tab-label">
+                    AI Proctoring
+                  </span>
+                  <span className="ojx-hero__bar">
+                    <i />
+                  </span>
+                </button>
+                {" "}
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-6" aria-controls="ojx-hero-panel-6" aria-selected="false" tabIndex="-1" data-slide="6" data-product="construction-hub" data-product-slug="construction-hub" data-category="construction-hub">
+                  <span className="ojx-hero__tab-label">
+                    Construction Hub
+                  </span>
+                  <span className="ojx-hero__bar">
+                    <i />
+                  </span>
+                </button>
+                {" "}
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-7" aria-controls="ojx-hero-panel-7" aria-selected="false" tabIndex="-1" data-slide="7" data-product="property-intelligence" data-product-slug="property-intelligence" data-category="property-intelligence">
+                  <span className="ojx-hero__tab-label">
+                    Property Intelligence
+                  </span>
+                  <span className="ojx-hero__bar">
+                    <i />
+                  </span>
+                </button>
+                {" "}
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-8" aria-controls="ojx-hero-panel-8" aria-selected="false" tabIndex="-1" data-slide="8" data-product="travelos" data-product-slug="travelos" data-category="travelos">
+                  <span className="ojx-hero__tab-label">
+                    TravelOS
+                  </span>
+                  <span className="ojx-hero__bar">
+                    <i />
+                  </span>
+                </button>
+                {" "}
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-9" aria-controls="ojx-hero-panel-9" aria-selected="false" tabIndex="-1" data-slide="9" data-product="fitos" data-product-slug="fitos" data-category="fitos">
+                  <span className="ojx-hero__tab-label">
+                    FitOS
+                  </span>
+                  <span className="ojx-hero__bar">
+                    <i />
+                  </span>
+                </button>
+                {" "}
+                <button type="button" className="ojx-hero__tab" role="tab" id="ojx-hero-tab-10" aria-controls="ojx-hero-panel-10" aria-selected="false" tabIndex="-1" data-slide="10" data-product="dpdp-compliance" data-product-slug="dpdp-compliance" data-category="dpdp-compliance">
+                  <span className="ojx-hero__tab-label">
+                    DPDP Privacy Vault
                   </span>
                   <span className="ojx-hero__bar">
                     <i />
@@ -377,7 +699,7 @@ export default function HomeMain() {
                 </span>
               </h2>
               {" "}
-              <p className="dx-intro__sub">
+              <p className="dx-intro__sub ojx-entity-badge">
                 {"OJIX Engineering & Technology LLP · Bengaluru"}
               </p>
             </div>
@@ -873,9 +1195,9 @@ export default function HomeMain() {
           </div>
         </section>
         {" "}
-        <section className="ojx-cta" id="contact" aria-labelledby="ojx-cta-title">
-          <div className="shell ojx-cta__grid">
-            <div className="dx-reveal">
+        <section className="ojx-cta cta-section" id="contact" aria-labelledby="ojx-cta-title">
+          <div className="shell ojx-cta__grid grid grid-cols-1 lg:grid-cols-2 gap-8 items-center" id="start-a-project">
+            <div className="ojx-cta__content dx-reveal">
               <p className="dx-kicker dx-kicker--light">
                 <b>
                   —
@@ -893,23 +1215,35 @@ export default function HomeMain() {
               <p className="ojx-cta__text">
                 Tell us what slows your team down, what needs to connect, or what you wish existed. We’ll start with the problem—not a preselected stack.
               </p>
+              {" "}
+              <div className="ojx-cta__actions">
+                <button type="button" className="ojx-cta__btn" data-discuss="">
+                  Discuss a project{" "}
+                  <span aria-hidden="true">
+                    →
+                  </span>
+                </button>
+                {" "}
+                <a className="ojx-cta__mail" href="mailto:info@ojix.in">
+                  or write to info@ojix.in
+                </a>
+                {" "}
+                <p className="ojx-cta__note">
+                  We reply within one working day.
+                </p>
+              </div>
             </div>
             {" "}
-            <div className="ojx-cta__actions dx-reveal">
-              <button type="button" className="ojx-cta__btn" data-discuss="">
-                Discuss a project{" "}
-                <span aria-hidden="true">
-                  →
-                </span>
-              </button>
-              {" "}
-              <a className="ojx-cta__mail" href="mailto:info@ojix.in">
-                or write to info@ojix.in
-              </a>
-              {" "}
-              <p className="ojx-cta__note">
-                We reply within one working day.
-              </p>
+            <div className="ojx-cta__globe-col dx-reveal w-full h-[360px] lg:h-[600px]">
+              <Suspense
+                fallback={
+                  <div className="ojx-globe-wrapper w-full h-[360px] lg:h-[600px]">
+                    <div className="ojx-globe-placeholder" />
+                  </div>
+                }
+              >
+                <InteractiveGlobe />
+              </Suspense>
             </div>
           </div>
         </section>
