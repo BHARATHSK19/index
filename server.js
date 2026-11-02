@@ -7,6 +7,9 @@
 'use strict';
 
 require('dotenv').config();
+try {
+  require('dotenv').config({ path: require('path').resolve(__dirname, '.env.local'), override: true });
+} catch (_) {}
 const path = require('path');
 const express = require('express');
 const helmet = require('helmet');
@@ -364,10 +367,10 @@ app.post('/api/contact', submissionLimiter, async (req, res) => {
     const full_name = sanitizeString(b.full_name || b.name || '', 150);
     const email = String(b.email || '').trim().toLowerCase();
     const phone = sanitizeString(b.phone || '', 50);
-    const company = sanitizeString(b.company || '', 150);
-    const interested_in = sanitizeString(b.interested_in || b.interest || '', 100);
+    const company = sanitizeString(b.company || b.organization || '', 150);
+    const interested_in = sanitizeString(b.interested_in || b.interest || b.service || b.interestedIn || '', 100);
     const requirement = sanitizeString(b.requirement || b.message || '', 2500);
-    const consent_agreed = Boolean(b.consent_agreed ?? b.consent);
+    const consent_agreed = Boolean(b.consent_agreed ?? b.consent ?? b.consentAgreed);
 
     // Validate required fields
     if (!full_name || !email) {
@@ -400,8 +403,33 @@ app.post('/api/contact', submissionLimiter, async (req, res) => {
       consent_agreed
     ];
 
-    const result = await db.query(insertSql, params);
-    const leadId = result.rows && result.rows[0] ? result.rows[0].id : null;
+    let leadId = null;
+    try {
+      if (process.env.DATABASE_URL || process.env.POSTGRES_URL || process.env.NEON_DATABASE_URL) {
+        const result = await db.query(insertSql, params);
+        leadId = result.rows && result.rows[0] ? result.rows[0].id : null;
+      }
+    } catch (neonErr) {
+      console.warn('[POST /api/contact] Postgres query skipped or failed:', neonErr.message);
+    }
+    // Always record in local sovereign store (SQLite / JSON)
+    let refId = leadId;
+    try {
+      if (db && typeof db.recordInquiry === 'function') {
+        const rec = db.recordInquiry({
+          name: full_name,
+          email,
+          organization: company,
+          interest: interested_in,
+          message: [phone ? 'Phone: ' + phone : '', requirement].filter(Boolean).join('\n'),
+          ip: clientIp(req),
+          userAgent: req.get('user-agent') || ''
+        });
+        refId = (rec && rec.referenceId) || leadId;
+      }
+    } catch (storeErr) {
+      console.warn('[POST /api/contact] Sovereign store record failed:', storeErr.message);
+    }
 
     // Also trigger email notification asynchronously if mailer is configured
     if (mailer && typeof mailer.sendEnquiryMails === 'function') {
@@ -412,20 +440,21 @@ app.post('/api/contact', submissionLimiter, async (req, res) => {
         organization: company,
         interest: interested_in,
         message: requirement,
-        referenceId: leadId
+        referenceId: refId || leadId
       }).catch((err) => console.warn('[OJIX MAIL] Failed to send enquiry email:', err.message));
     }
 
     return res.status(201).json({
       success: true,
       message: 'Enquiry submitted successfully',
-      id: leadId
+      id: leadId,
+      referenceId: refId
     });
   } catch (err) {
     console.error('[POST /api/contact ERROR]:', err);
     return res.status(500).json({
       success: false,
-      error: 'An error occurred while saving your enquiry. Please try again.'
+      error: err.message || 'An error occurred while saving your enquiry. Please try again.'
     });
   }
 });
@@ -441,11 +470,11 @@ app.post('/api/project', submissionLimiter, async (req, res) => {
     if (!isValidEmail(email)) return res.status(400).json({ success: false, error: 'Please enter a valid email address.' });
     if (!b.consent && !b.consent_agreed) return res.status(400).json({ success: false, error: 'Please tick the consent box so we can reply.' });
 
-    const company = sanitizeString(b.company || '', 150);
+    const company = sanitizeString(b.company || b.organization || '', 150);
     const phone = sanitizeString(b.phone || '', 50);
     const interest = sanitizeString(b.interested_in || (b.mode === 'demo' ? 'Demo request — ' : '') + (b.interest || 'Discuss a project'), 100);
     const requirement = sanitizeString(b.requirement || b.message || '', 2500);
-    const consent_agreed = Boolean(b.consent_agreed ?? b.consent);
+    const consent_agreed = Boolean(b.consent_agreed ?? b.consent ?? b.consentAgreed);
 
     // 1. Always insert into Neon PostgreSQL contact_leads table
     let leadId = null;
@@ -504,6 +533,7 @@ app.post('/api/project', submissionLimiter, async (req, res) => {
     return res.status(201).json({
       success: true,
       id: leadId,
+      referenceId: refId,
       referenceId: refId,
       message: mailer && typeof mailer.isConfigured === 'function' && mailer.isConfigured()
         ? 'Thank you. We’ve emailed you a confirmation — our team will get in touch shortly.'

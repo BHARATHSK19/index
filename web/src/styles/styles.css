@@ -10641,6 +10641,13 @@ body.modal-open {
     pointer-events: auto;
     transform: translateY(0);
   }
+
+  .nav-item-has-mega.is-closed>.eleks-mega-dropdown {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(8px) !important;
+  }
 }
 
 .eleks-mega-inner {

@@ -59,7 +59,7 @@
       .then(function (d) {
         if (!d.__ok || !d.success) return msg(loginForm, d.error || 'Could not sign in.', true);
         challenge = d.challenge;
-        $('[data-sent-to]').textContent = d.sentTo || 'the admin email';
+        $('[data-sent-to]').textContent = d.sentTo || 'kiran@ojix.in';
         loginForm.hidden = true; codeForm.hidden = false; msg(codeForm, '');
         $('#ad-otp').focus();
       })

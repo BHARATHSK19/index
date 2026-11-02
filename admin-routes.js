@@ -20,12 +20,12 @@ const { sendAdminOTP } = require('./mailer');
 
 const BOT = /bot|crawl|spider|slurp|headless|lighthouse|preview|monitor|curl|wget|python|axios/i;
 const SESSION_HOURS = 8;
-const OTP_MINUTES = 10;
+const OTP_MINUTES = 5;
 
 module.exports = function mountAdmin(app, { db, mailer, isProd }) {
   const ADMIN_USER = process.env.ADMIN_USER || 'admin';
   const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
-  const OTP_TO = process.env.ADMIN_OTP_EMAIL || 'info@ojix.in';
+  const OTP_TO = process.env.CONTACT_RECEIVER || process.env.ADMIN_OTP_EMAIL || 'kiran@ojix.in';
 
   if (!process.env.ADMIN_PASSWORD) {
     console.warn('[OJIX ADMIN] Using the default admin password. Set ADMIN_PASSWORD in .env.');
@@ -88,7 +88,7 @@ module.exports = function mountAdmin(app, { db, mailer, isProd }) {
   });
 
   // ---------------------------------------------------------------- sign-in
-  app.post('/api/admin/login', loginLimiter, async (req, res) => {
+  app.post(['/api/admin/login', '/api/admin/send-otp'], loginLimiter, async (req, res) => {
     const { username = '', password = '' } = req.body || {};
     const ok = same(username, ADMIN_USER) && same(password, ADMIN_PASSWORD);
     db.recordAdminLogin({ username, step: 'password', success: ok, ip: clientIp(req), userAgent: req.get('user-agent') });
@@ -104,12 +104,12 @@ module.exports = function mountAdmin(app, { db, mailer, isProd }) {
     } catch (err) {
       console.error('[OJIX ADMIN] Failed to dispatch verification code:', err.message || err);
       challenges.delete(challenge);
-      return res.status(500).json({ success: false, error: 'Failed to dispatch verification code.' });
+      return res.status(500).json({ success: false, error: err.message || 'Failed to dispatch verification code.' });
     }
     return res.json({ success: true, challenge, sentTo: mask(OTP_TO) });
   });
 
-  app.post('/api/admin/verify', loginLimiter, (req, res) => {
+  app.post(['/api/admin/verify', '/api/admin/verify-otp'], loginLimiter, (req, res) => {
     const { challenge = '', code = '' } = req.body || {};
     const c = challenges.get(String(challenge));
     const fail = (msg) => {

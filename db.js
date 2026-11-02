@@ -1,5 +1,8 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '.env') });
+try {
+  require('dotenv').config({ path: path.resolve(__dirname, '.env.local'), override: true });
+} catch (_) {}
 const { Pool } = require('@neondatabase/serverless');
 
 const rawConnectionString =

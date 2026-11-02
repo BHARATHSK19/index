@@ -43,7 +43,7 @@ export default function init(__ctx) {
             say(res.d.error || 'Something went wrong. Please try again.', false);
           }
         })
-        .catch(function () { say('Couldn’t reach the server. Please try again in a moment.', false); })
+        .catch(function (err) { say('Couldn’t reach the server. Please try again in a moment.', false); })
         .then(function () { btn.disabled = false; });
     });
   })();
@@ -125,7 +125,7 @@ export default function init(__ctx) {
     var modal = null, lastFocus = null;
 
     function build() {
-      var opts = PRODUCTS.map(function (p) { return '<option>' + p + '</option>'; }).join('');
+      var opts = PRODUCTS.map(function (p) { return '<option class="bg-[#0F1C2E] text-white" value="' + p.replace(/"/g, '&quot;') + '">' + p + '</option>'; }).join('');
       modal = document.createElement('div');
       modal.className = 'ojx-pm';
       modal.setAttribute('aria-hidden', 'true');
@@ -143,7 +143,7 @@ export default function init(__ctx) {
               '<label class="ojx-pm__f"><span>Email</span><input name="email" type="email" autocomplete="email" inputmode="email" required placeholder="you@company.com"></label>' +
               '<label class="ojx-pm__f"><span>Phone <i>(optional)</i></span><input name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+91"></label>' +
               '<label class="ojx-pm__f"><span>Company <i>(optional)</i></span><input name="company" autocomplete="organization" maxlength="120"></label>' +
-              '<label class="ojx-pm__f ojx-pm__f--full"><span>Interested in</span><select name="interest">' + opts + '</select></label>' +
+              '<label class="ojx-pm__f ojx-pm__f--full"><span>Interested in</span><select name="interest" class="[&>option]:bg-[#0F1C2E] [&>option]:text-white">' + opts + '</select></label>' +
               '<label class="ojx-pm__f ojx-pm__f--full"><span>Your requirement</span><textarea name="message" maxlength="2500" placeholder="What should the system do? Who will use it?"></textarea></label>' +
             '</div>' +
             '<input type="hidden" name="mode" value="">' +
@@ -212,13 +212,21 @@ export default function init(__ctx) {
       var form = e.target, msg = form.querySelector('.ojx-pm__msg'), btn = form.querySelector('.ojx-pm__send');
       var f = function (n) { return form.elements.namedItem(n); };
       var payload = {
+        name: f('name').value.trim(),
         full_name: f('name').value.trim(),
         email: f('email').value.trim(),
         phone: f('phone').value.trim(),
         company: f('company').value.trim(),
+        organization: f('company').value.trim(),
+        service: f('interest').value,
+        interest: f('interest').value,
         interested_in: f('interest').value,
+        interestedIn: f('interest').value,
+        message: f('message').value.trim(),
         requirement: f('message').value.trim(),
+        consent: f('consent').checked,
         consent_agreed: f('consent').checked,
+        consentAgreed: f('consent').checked,
         _hp_check: f('_hp_check').value,
         mode: f('mode').value
       };
@@ -255,8 +263,8 @@ export default function init(__ctx) {
         })
         .then(function (res) {
           if (!res.__ok || !res.success) {
-            msg.textContent = res.error || 'Something went wrong. Please try again.';
-            alert(res.error || 'Failed to submit enquiry. Please try again.');
+            msg.textContent = res.error || (res.message && res.message !== 'Enquiry submitted successfully' ? res.message : null) || 'Something went wrong. Please try again.';
+            // Inline message used without alert popup
             btn.disabled = false;
             btn.textContent = form.elements.namedItem('mode').value === 'demo' ? 'Request demo →' : 'Send requirement →';
             return;
@@ -283,9 +291,9 @@ export default function init(__ctx) {
             close();
           }, 3000);
         })
-        .catch(function () {
-          msg.textContent = 'Couldn’t reach the server. Please email info@ojix.in.';
-          alert('Could not reach the server. Please check your network connection.');
+        .catch(function (err) {
+          msg.textContent = (err && err.message) ? err.message : 'Couldn’t reach the server. Please email info@ojix.in.';
+
           btn.disabled = false;
           btn.textContent = form.elements.namedItem('mode').value === 'demo' ? 'Request demo →' : 'Send requirement →';
         });
@@ -447,7 +455,7 @@ export default function init(__ctx) {
                 if (submitBtn) submitBtn.disabled = false;
               }
             })
-            .catch(function () {
+            .catch(function (err) {
               say('Couldn’t reach the server. Please try again in a moment.', false);
               if (submitBtn) submitBtn.disabled = false;
             });

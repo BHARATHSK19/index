@@ -428,6 +428,10 @@
   transition: border-color 0.25s ease;
 }
 .ojx-pm__f textarea { min-height: 84px; resize: vertical; }
+.ojx-pm__f select option {
+  background-color: #0F1C2E !important;
+  color: #F8FAFC !important;
+}
 .ojx-pm__f input:focus, .ojx-pm__f select:focus, .ojx-pm__f textarea:focus { border-color: #C9662F !important; }
 .ojx-pm__f input::placeholder, .ojx-pm__f textarea::placeholder { color: #b5b5ba; }
 

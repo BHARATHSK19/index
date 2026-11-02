@@ -8,9 +8,7 @@ export function Newsletter() {
         <div className="shell ojx-news__grid">
           <div>
             <p className="ojx-news__kicker">
-              <b>
-                —
-              </b>
+
               {" "}Newsletter
             </p>
             {" "}

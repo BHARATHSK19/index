@@ -1,17 +1,101 @@
+import { useEffect, useRef, useState, useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { PRODUCTS } from "../data/products.jsx";
 
 /** Site header with the Products and Services mega-menus.
  * Markup matches the original site so the existing CSS and menu behaviour (legacy/app.js) apply.
  * `active` = "home" | "products" | "services" | null highlights the current top link. */
 export default function Header({ active }) {
+  const location = useLocation();
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isClosed, setIsClosed] = useState(false);
+  const headerRef = useRef(null);
+
+  const closeMenu = useCallback(() => {
+    setActiveDropdown(null);
+    setIsClosed(true);
+    if (typeof document !== "undefined") {
+      document.querySelectorAll(".nav-item-has-mega").forEach((el) => {
+        el.classList.remove("is-mega-open");
+        el.classList.add("is-closed");
+      });
+      document.querySelectorAll(".eleks-header").forEach((el) => {
+        el.classList.remove("has-mega-open");
+      });
+      document.querySelectorAll(".eleks-header-backdrop").forEach((el) => {
+        el.classList.remove("is-active");
+      });
+      document.querySelectorAll('.nav-top-link[aria-expanded="true"]').forEach((el) => {
+        el.setAttribute("aria-expanded", "false");
+      });
+      const mainNav = document.getElementById("main-nav");
+      if (mainNav) mainNav.classList.remove("is-open");
+      const menuToggle = document.querySelector(".menu-toggle");
+      if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+      if (document.activeElement && typeof document.activeElement.blur === "function") {
+        document.activeElement.blur();
+      }
+    }
+  }, []);
+
+  const handleMouseEnter = useCallback((type) => {
+    setIsClosed(false);
+    setActiveDropdown(type);
+    if (typeof document !== "undefined") {
+      document.querySelectorAll(".nav-item-has-mega").forEach((el) => {
+        el.classList.remove("is-closed");
+      });
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setActiveDropdown(null);
+    setIsClosed(false);
+    if (typeof document !== "undefined") {
+      document.querySelectorAll(".nav-item-has-mega").forEach((el) => {
+        el.classList.remove("is-mega-open");
+        el.classList.remove("is-closed");
+      });
+      document.querySelectorAll(".eleks-header").forEach((el) => {
+        el.classList.remove("has-mega-open");
+      });
+      document.querySelectorAll('.nav-top-link[aria-expanded="true"]').forEach((el) => {
+        el.setAttribute("aria-expanded", "false");
+      });
+    }
+  }, []);
+
+  // 1. Route Change Cleanup: listen to location.pathname and dismiss open menus
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname, closeMenu]);
+
+  // 3. Outside Click: dismiss menu when clicking outside headerRef
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (headerRef.current && !headerRef.current.contains(e.target)) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("touchstart", handleOutsideClick);
+    };
+  }, [closeMenu]);
+
   const dark = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") !== "light";
   const logo = dark ? "/assets/ojix-navbar-logo-dark.svg" : "/assets/ojix-navbar-logo.svg";
+
   return (
-    <header className="site-header eleks-header">
+    <header className="site-header eleks-header" ref={headerRef}>
       <div className="nav-wrap shell">
-        <a href="/" className="brand" aria-label="OJIX home">
+        <Link to="/" className="brand" aria-label="OJIX home" onClick={closeMenu}>
           <img src={logo} alt="OJIX" width="110" height="53" />
-        </a>
+        </Link>
         {" "}
         <button className="theme-toggle-btn ojx-theme-mobile" type="button" aria-label="Toggle color theme" title="Toggle color theme">
           <svg className="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -28,35 +112,67 @@ export default function Header({ active }) {
         </button>
         {" "}
         <nav className="main-nav eleks-nav" id="main-nav" aria-label="Main navigation">
-          <a href="/" className={"nav-top-link" + (active === "home" ? " is-active" : "")}>
+          <Link to="/" className={"nav-top-link" + (active === "home" ? " is-active" : "")} onClick={closeMenu}>
             <span className="nav-link-text">
               Home
             </span>
             <span className="nav-dot-indicator" aria-hidden="true" />
-          </a>
+          </Link>
           {" "}
           {" "}
-          <div className="nav-item-has-mega" data-mega="platforms">
-            <a href="/products" data-page-link="" className={"nav-top-link" + (active === "products" ? " is-active" : "")} aria-haspopup="true" aria-expanded="false" aria-controls="products-mobile-submenu">
+          <div
+            className={"nav-item-has-mega" + (isClosed ? " is-closed" : "") + (activeDropdown === "platforms" ? " is-mega-open" : "")}
+            data-mega="platforms"
+            onMouseEnter={() => handleMouseEnter("platforms")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link
+              to="/products"
+              data-page-link=""
+              className={"nav-top-link" + (active === "products" ? " is-active" : "")}
+              aria-haspopup="true"
+              aria-expanded={activeDropdown === "platforms" ? "true" : "false"}
+              aria-controls="products-mobile-submenu"
+              onClick={closeMenu}
+            >
               <span className="nav-link-text">
                 Products
               </span>
               {" "}
               <span className="nav-dot-indicator" aria-hidden="true" />
-            </a>
+            </Link>
             {" "}
-            <div className="eleks-mega-dropdown" id="products-mobile-submenu" role="region" aria-label="Products subtabs">
+            <div
+              className="eleks-mega-dropdown"
+              id="products-mobile-submenu"
+              role="region"
+              aria-label="Products subtabs"
+              onClick={(e) => {
+                if (e.target.closest("a, button")) closeMenu();
+              }}
+            >
               <div className="eleks-mega-inner">
                 <div className="eleks-mega-left" role="tablist" aria-label="Select product">
                   {PRODUCTS.map((p, i) => (
-                    <a key={p.slug} href={"/" + p.slug} className={"eleks-subtab" + (i === 0 ? " is-active" : "")} role="tab" aria-selected={i === 0 ? "true" : "false"} data-preview-title={p.name} data-preview-desc={p.megaDesc} data-preview-badge={p.megaBadge} data-preview-img={p.megaImg}>
+                    <Link
+                      key={p.slug}
+                      to={"/" + p.slug}
+                      className={"eleks-subtab" + (i === 0 ? " is-active" : "")}
+                      role="tab"
+                      aria-selected={i === 0 ? "true" : "false"}
+                      data-preview-title={p.name}
+                      data-preview-desc={p.megaDesc}
+                      data-preview-badge={p.megaBadge}
+                      data-preview-img={p.megaImg}
+                      onClick={closeMenu}
+                    >
                       <span className="eleks-subtab-icon" aria-hidden="true">
                         {p.icon}
                       </span>
                       <span className="eleks-subtab-label">
                         {p.name}
                       </span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 {" "}
@@ -74,7 +190,7 @@ export default function Header({ active }) {
                       {PRODUCTS[0].megaDesc}
                     </p>
                     {" "}
-                    <a href={"/" + PRODUCTS[0].slug} className="eleks-preview-cta">
+                    <Link to={"/" + PRODUCTS[0].slug} className="eleks-preview-cta" onClick={closeMenu}>
                       <span>
                         Explore Platform
                       </span>
@@ -82,19 +198,24 @@ export default function Header({ active }) {
                       <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                   {" "}
-                  <a href={"/" + PRODUCTS[0].slug} className="eleks-mega-preview-media" aria-label={"Explore " + PRODUCTS[0].name}>
+                  <Link to={"/" + PRODUCTS[0].slug} className="eleks-mega-preview-media" aria-label={"Explore " + PRODUCTS[0].name} onClick={closeMenu}>
                     <img src={PRODUCTS[0].megaImg} alt={PRODUCTS[0].name + " dashboard preview"} className="eleks-preview-img" loading="lazy" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
           {" "}
           {" "}
-          <div className="nav-item-has-mega" data-mega="capabilities">
+          <div
+            className={"nav-item-has-mega" + (isClosed ? " is-closed" : "") + (activeDropdown === "capabilities" ? " is-mega-open" : "")}
+            data-mega="capabilities"
+            onMouseEnter={() => handleMouseEnter("capabilities")}
+            onMouseLeave={handleMouseLeave}
+          >
             <a
               href="javascript:void(0)"
               onClick={(e) => {
@@ -103,7 +224,7 @@ export default function Header({ active }) {
               data-page-link=""
               className={"nav-top-link" + (active === "services" ? " is-active" : "")}
               aria-haspopup="true"
-              aria-expanded="false"
+              aria-expanded={activeDropdown === "capabilities" ? "true" : "false"}
               aria-controls="services-mobile-submenu"
               style={{ cursor: "default" }}
             >
@@ -114,7 +235,15 @@ export default function Header({ active }) {
               <span className="nav-dot-indicator" aria-hidden="true" />
             </a>
             {" "}
-            <div className="eleks-mega-dropdown services-catalog-dropdown" id="services-mobile-submenu" role="region" aria-label="Services catalog">
+            <div
+              className="eleks-mega-dropdown services-catalog-dropdown"
+              id="services-mobile-submenu"
+              role="region"
+              aria-label="Services catalog"
+              onClick={(e) => {
+                if (e.target.closest("a, button")) closeMenu();
+              }}
+            >
               <div className="eleks-mega-inner services-mega-inner">
                 <div className="eleks-mega-left services-mega-sidebar" role="tablist" aria-label="Our Services" aria-orientation="vertical">
                   <div className="services-sidebar-header">
@@ -129,28 +258,28 @@ export default function Header({ active }) {
             </div>
           </div>
           {" "}
-          <a href="/process" className="nav-top-link">
+          <Link to="/process" className="nav-top-link" onClick={closeMenu}>
             <span className="nav-link-text">
               How we work
             </span>
             <span className="nav-dot-indicator" aria-hidden="true" />
-          </a>
+          </Link>
           {" "}
-          <a href="/security" className="nav-top-link">
+          <Link to="/security" className="nav-top-link" onClick={closeMenu}>
             <span className="nav-link-text">
               Security
             </span>
             <span className="nav-dot-indicator" aria-hidden="true" />
-          </a>
+          </Link>
           {" "}
-          <a href="/about" className="nav-top-link">
+          <Link to="/about" className="nav-top-link" onClick={closeMenu}>
             <span className="nav-link-text">
               About OJIX
             </span>
             <span className="nav-dot-indicator" aria-hidden="true" />
-          </a>
+          </Link>
           {" "}
-          <a href="https://wa.me/919008877883" className="ojix-wa-nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with OJIX on WhatsApp" title="Chat on WhatsApp">
+          <a href="https://wa.me/919008877883" className="ojix-wa-nav-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with OJIX on WhatsApp" title="Chat on WhatsApp" onClick={closeMenu}>
             <span className="ojix-wa-pulse" aria-hidden="true" />
             {" "}
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
@@ -184,16 +313,16 @@ export default function Header({ active }) {
             </svg>
           </button>
           {" "}
-          <a className="nav-cta eleks-nav-cta" href="/contact">
+          <Link className="nav-cta eleks-nav-cta" to="/contact" onClick={closeMenu}>
             Discuss a project{" "}
             <span aria-hidden="true">
               ↗
             </span>
-          </a>
+          </Link>
         </nav>
       </div>
       {" "}
-      <div className="eleks-header-backdrop" id="eleks-header-backdrop" aria-hidden="true" />
+      <div className="eleks-header-backdrop" id="eleks-header-backdrop" aria-hidden="true" onClick={closeMenu} />
     </header>
   );
 }

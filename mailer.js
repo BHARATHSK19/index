@@ -9,13 +9,14 @@
 'use strict';
 
 require('dotenv').config();
+try {
+  require('dotenv').config({ path: require('path').resolve(process.cwd(), '.env.local'), override: true });
+} catch (_) {}
 const nodemailer = require('nodemailer');
 
 // 1. REUSABLE SMTP TRANSPORTER (Google Workspace / Gmail SMTP)
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'smtp.gmail.com',
-  port: Number(process.env.SMTP_PORT) || 465,
-  secure: true,
+  service: 'gmail',
   auth: {
     user: process.env.SMTP_USER,
     pass: (process.env.SMTP_PASS || process.env.SMTP_PASSWORD || '').replace(/\s+/g, '')
@@ -43,8 +44,13 @@ function esc(v) {
  * @returns {Promise<object>} nodemailer send info
  */
 async function sendAdminOTP(otp) {
-  const fromUser = process.env.SMTP_USER || 'info@ojix.in';
-  const toEmail = process.env.ADMIN_OTP_EMAIL || 'info@ojix.in';
+  const fromUser = process.env.SMTP_USER || 'kiran@ojix.in';
+  const toEmail = process.env.CONTACT_RECEIVER || process.env.ADMIN_OTP_EMAIL || 'kiran@ojix.in';
+  const pass = (process.env.SMTP_PASS || process.env.SMTP_PASSWORD || '').replace(/\s+/g, '');
+  if (!fromUser || !pass) {
+    throw new Error('SMTP credentials missing (SMTP_USER or SMTP_PASS not set).');
+  }
+  await transporter.verify();
   const subject = `OJIX Admin 2FA Verification Code: ${otp}`;
 
   const text = [
@@ -271,7 +277,7 @@ async function sendEnquiryMails(d) {
   });
 
   // 3. Team notification
-  const team = process.env.ENQUIRY_NOTIFY_EMAIL || from;
+  const team = process.env.CONTACT_RECEIVER || process.env.ENQUIRY_NOTIFY_EMAIL || from;
   await transporter.sendMail({
     from: `"OJIX website" <${from}>`,
     to: team,
@@ -292,7 +298,7 @@ function isConfigured() {
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS || process.env.SMTP_PASSWORD;
-  return Boolean(host && user && pass);
+  return Boolean(user && pass);
 }
 
 module.exports = {

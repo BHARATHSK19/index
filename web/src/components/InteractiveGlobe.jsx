@@ -248,10 +248,6 @@ export default function InteractiveGlobe() {
         }}
         aria-label="Interactive 3D Globe showing OJIX global network: USA and India"
       />
-      <div className="ojx-globe-badge">
-        <span className="ojx-globe-badge-dot" />
-        <span>USA · INDIA</span>
-      </div>
     </div>
   );
 }
