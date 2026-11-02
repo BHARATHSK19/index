@@ -79,7 +79,6 @@ export const PRODUCTS = [
     rowDesc: "Admissions to convocation across colleges and campuses, with outcome-based exams, NAAC and NIRF data, and fee accounting in one place.",
     rowTags: ["Multi-campus admissions", "OBE & examinations", "NAAC / NIRF data", "Fees & finance"],
     icon: svg(<><path d="M3 21h18" /><path d="M5 21V10M9.5 21V10M14.5 21V10M19 21V10" /><path d="M2 10 12 4l10 6" /></>),
-    isNew: true,
   },
   {
     slug: "ai-proctoring",
@@ -94,7 +93,6 @@ export const PRODUCTS = [
     rowDesc: "Face and ID checks before the exam, live AI monitoring during it, and a flagged-moments report your examiners can review after.",
     rowTags: ["Identity check", "Live AI monitoring", "Browser lockdown", "Review reports"],
     icon: svg(<><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" /><circle cx="12" cy="10" r="3" /><path d="M7 18c1.2-2 2.9-3 5-3s3.8 1 5 3" /></>),
-    isNew: true,
   },
   {
     slug: "construction-hub",
@@ -123,7 +121,6 @@ export const PRODUCTS = [
     rowDesc: "A live map of your portfolio with unit inventory, leases and rent collection, plus price and demand insights for every micro-market you sell in.",
     rowTags: ["Portfolio map", "Leases & rent", "Price insights", "Maintenance"],
     icon: svg(<><path d="M3 11 12 4l9 7" /><path d="M5 10v10h14V10" /><path d="m8.5 16 2.5-2.5 2 2 3-3" /></>),
-    isNew: true,
   },
   {
     slug: "travelos",

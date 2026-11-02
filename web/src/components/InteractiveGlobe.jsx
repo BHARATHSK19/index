@@ -4,56 +4,31 @@ import * as THREE from "three";
 
 /**
  * Two primary network hubs:
- * 1. Bengaluru, India (Core Engineering HQ)
- * 2. San Francisco, USA (North America Gateway)
+ * 1. USA (lat: 40.7128, lng: -74.0060)
+ * 2. India (lat: 12.9716, lng: 77.5946)
  */
 const places = [
-  { name: "Bengaluru, India", lat: 12.9716, lng: 77.5946, size: 1.0, color: "#FFFFFF", hub: "Core Engineering HQ" },
-  { name: "San Francisco, USA", lat: 37.7749, lng: -122.4194, size: 0.9, color: "#FFFFFF", hub: "North America Hub" },
-];
-
-const usaPlace = [places[1]];
-
-/**
- * 3D Billboard Labels for USA and Bengaluru.
- */
-const labels = [
-  { name: "San Francisco, USA", lat: 37.7749, lng: -122.4194 },
-  { name: "Bengaluru, India", lat: 12.9716, lng: 77.5946 },
+  { name: "USA", lat: 40.7128, lng: -74.0060, size: 0.8, color: "#FFFFFF" },
+  { name: "INDIA", lat: 12.9716, lng: 77.5946, size: 0.9, color: "#FFFFFF" }
 ];
 
 /**
- * Single great-circle trajectory arc connecting USA to Bengaluru.
+ * Single great-circle trajectory arc originating from USA and terminating at India.
  */
 const arcs = [
   {
-    startLat: 37.7749,
-    startLng: -122.4194,
+    startLat: 40.7128,
+    startLng: -74.0060,
     endLat: 12.9716,
     endLng: 77.5946,
-    color: ["#FFFFFF", "#FFFFFF"],
-  },
+    color: ["#FFFFFF", "#FFFFFF"]
+  }
 ];
 
-const arcUSAToBlr = arcs[0];
-
 /**
- * Compute device-aware camera altitude based on viewport width:
- * - Desktop (>= 1024px): 1.55 (large, immersive scale)
- * - Tablet (768px - 1023px): 1.85
- * - Mobile (< 768px): 2.15 (zoomed out to fit screen cleanly without overflow)
- */
-const getDeviceAltitude = () => {
-  if (typeof window === "undefined") return 1.55;
-  const w = window.innerWidth;
-  if (w < 768) return 2.15;
-  if (w < 1024) return 1.85;
-  return 1.55;
-};
-
-/**
- * Interactive 3D Globe with exclusive USA -> Bengaluru trajectory,
- * glowing white arcs, touch-safe mobile controls, and responsive camera altitude.
+ * Interactive 3D Globe with static bilateral view (USA <-> India),
+ * lite brand orange continents (#F39C6B), deep navy sphere (#09121E),
+ * solid glowing white arc, and custom glassmorphic HTML location pin badges.
  */
 export default function InteractiveGlobe() {
   const containerRef = useRef(null);
@@ -65,10 +40,6 @@ export default function InteractiveGlobe() {
     const el = containerRef.current;
     const initialWidth = el.clientWidth || 500;
     const initialHeight = el.clientHeight || 500;
-    let currentAlt = getDeviceAltitude();
-
-    // Track all choreography timers for safe lifecycle cleanup
-    const timers = [];
 
     // Initialize Globe instance
     const globe = new Globe(el, { animateIn: false });
@@ -94,13 +65,13 @@ export default function InteractiveGlobe() {
     });
     globe.globeMaterial(sphereMaterial);
 
-    // Glowing atmosphere in OJIX brand color
+    // Glowing atmosphere in lite brand orange
     globe
       .showAtmosphere(true)
-      .atmosphereColor("#C9662F")
-      .atmosphereAltitude(0.22);
+      .atmosphereColor("#F39C6B")
+      .atmosphereAltitude(0.18);
 
-    // Continents in OJIX Brand Orange (#C9662F) via GeoJSON polygons
+    // Continents in Lite Brand Orange (#F39C6B) via GeoJSON polygons
     fetch("/datasets/ne_110m_admin_0_countries.geojson")
       .then((res) => {
         if (!res.ok) throw new Error("Local dataset not found");
@@ -114,58 +85,38 @@ export default function InteractiveGlobe() {
         if (!globeInstanceRef.current || !countries?.features) return;
         globeInstanceRef.current
           .polygonsData(countries.features.filter((d) => d.properties?.ISO_A2 !== "AQ"))
-          .polygonCapColor(() => "#C9662F")
-          .polygonSideColor(() => "rgba(201, 102, 47, 0.25)")
-          .polygonStrokeColor(() => "rgba(201, 102, 47, 0.4)")
+          .polygonCapColor(() => "#F39C6B")
+          .polygonSideColor(() => "rgba(243, 156, 107, 0.4)")
+          .polygonStrokeColor(() => "rgba(243, 156, 107, 0.4)")
           .polygonAltitude(0.01);
       })
       .catch((err) => console.warn("Could not load continent polygons:", err));
 
-    // Glowing White Trajectory Arc Styling
+    // Glowing White Trajectory Arc Styling (Solid static line from USA to India)
     globe
+      .arcsData(arcs)
       .arcStartLat((d) => d.startLat)
       .arcStartLng((d) => d.startLng)
       .arcEndLat((d) => d.endLat)
       .arcEndLng((d) => d.endLng)
       .arcColor(() => ["#FFFFFF", "#FFFFFF"])
-      .arcAltitude(0.28)
-      .arcStroke(1.8);
+      .arcAltitude(0.32)
+      .arcStroke(1.8)
+      .arcDashLength(1)
+      .arcDashGap(0);
 
-    // White City Marker Dots
+    // White City Marker Dots at Surface
     globe
       .pointsData(places)
       .pointLat("lat")
       .pointLng("lng")
       .pointColor(() => "#FFFFFF")
       .pointRadius("size")
-      .pointAltitude(0.015)
-      .pointLabel(
-        (d) => `
-        <div style="background: rgba(9, 18, 30, 0.95); border: 1px solid rgba(255, 255, 255, 0.35); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 8px 12px; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; line-height: 1.4; color: #FFFFFF; box-shadow: 0 8px 24px rgba(0,0,0,0.7); pointer-events: none;">
-          <div style="font-weight: 700; font-size: 13px; color: #FFFFFF; display: flex; align-items: center; gap: 6px;">
-            <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 8px #FFFFFF;"></span>
-            ${d.name}
-          </div>
-          <div style="color: #94A3B8; font-size: 11px; margin-top: 2px;">${d.hub}</div>
-          <div style="color: #64748B; font-size: 10px; font-family: monospace;">${d.lat.toFixed(4)}°, ${d.lng.toFixed(4)}°</div>
-        </div>
-      `
-      );
-
-    // Clean 3D Billboard Labels for USA & Bengaluru
-    globe
-      .labelsData(labels)
-      .labelLat("lat")
-      .labelLng("lng")
-      .labelText("name")
-      .labelSize(1.35)
-      .labelDotRadius(0.5)
-      .labelColor(() => "#FFFFFF")
-      .labelAltitude(0.02)
-      .labelResolution(2);
+      .pointAltitude(0.015);
 
     // Pulsating White Radar Rings
     globe
+      .ringsData(places)
       .ringLat("lat")
       .ringLng("lng")
       .ringColor(() => "#FFFFFF")
@@ -174,7 +125,54 @@ export default function InteractiveGlobe() {
       .ringRepeatPeriod(1000)
       .ringAltitude(0.012);
 
-    // OrbitControls: Disable scroll-zoom trap so mobile page scroll is touch-safe
+    // Custom Glassmorphic HTML Location Pins & Badges
+    globe
+      .htmlElementsData(places)
+      .htmlLat("lat")
+      .htmlLng("lng")
+      .htmlAltitude(0.02)
+      .htmlElement((d) => {
+        const markerEl = document.createElement("div");
+        markerEl.style.pointerEvents = "none";
+        markerEl.style.userSelect = "none";
+        markerEl.innerHTML = `
+          <div style="
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            background: rgba(15, 28, 46, 0.9);
+            border: 1px solid rgba(243, 156, 107, 0.6);
+            box-shadow: 0 0 12px rgba(201, 102, 47, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 9999px;
+            transform: translate(-50%, -100%);
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+          ">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#F39C6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; display: block;">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span style="
+              color: #FFFFFF;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              font-weight: 700;
+              font-size: 11px;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              line-height: 1;
+            ">
+              ${d.name}
+            </span>
+          </div>
+        `;
+        return markerEl;
+      });
+
+    // OrbitControls: Disable auto-rotation completely and scroll-zoom trap
     const controls = globe.controls();
     if (controls) {
       controls.autoRotate = false;
@@ -183,61 +181,8 @@ export default function InteractiveGlobe() {
       controls.dampingFactor = 0.08;
     }
 
-    // =========================================================================
-    // Phase 1: Initial USA View (0s - 1.2s)
-    // Instantly centered on USA with device-aware altitude
-    // =========================================================================
-    globe.pointOfView({ lat: 37.7749, lng: -122.4194, altitude: currentAlt }, 0);
-    globe.ringsData(usaPlace);
-    globe.arcsData([]);
-
-    // =========================================================================
-    // Phase 2: Flight & Synchronized Rotation (1.2s - 4.2s)
-    // White arc shoots across to Bengaluru; camera rotates to Bengaluru over 3000ms.
-    // =========================================================================
-    timers.push(
-      setTimeout(() => {
-        if (!globeInstanceRef.current) return;
-        globe
-          .arcsData([arcUSAToBlr])
-          .arcDashLength(0.5)
-          .arcDashGap(2)
-          .arcDashAnimateTime(3000);
-
-        globe.pointOfView({ lat: 12.9716, lng: 77.5946, altitude: getDeviceAltitude() }, 3000);
-      }, 1200)
-    );
-
-    // =========================================================================
-    // Phase 3: Arrival at Bengaluru (4.2s onwards)
-    // Camera settles on Bengaluru; activates pulsating radar rings.
-    // =========================================================================
-    timers.push(
-      setTimeout(() => {
-        if (!globeInstanceRef.current) return;
-        globe.ringsData(places);
-      }, 4200)
-    );
-
-    // =========================================================================
-    // Phase 4: Static Locked State (5.2s onwards)
-    // Freeze arc into solid permanent glowing white line; gentle subtle rotation.
-    // =========================================================================
-    timers.push(
-      setTimeout(() => {
-        if (!globeInstanceRef.current) return;
-        globe
-          .arcDashLength(1)
-          .arcDashGap(0)
-          .arcDashAnimateTime(0);
-
-        const activeControls = globe.controls();
-        if (activeControls) {
-          activeControls.autoRotate = true;
-          activeControls.autoRotateSpeed = 0.2;
-        }
-      }, 5200)
-    );
+    // Static Viewport & Camera Angle centered between North America and India
+    globe.pointOfView({ lat: 38, lng: 8, altitude: 2.1 }, 0);
 
     // ResizeObserver: dynamically handles orientation changes and screen resizing
     const resizeObserver = new ResizeObserver((entries) => {
@@ -246,24 +191,12 @@ export default function InteractiveGlobe() {
       if (width > 0 && height > 0 && globeInstanceRef.current) {
         globeInstanceRef.current.width(width);
         globeInstanceRef.current.height(height);
-
-        // Adjust camera altitude if screen size category changed
-        const newAlt = getDeviceAltitude();
-        if (Math.abs(newAlt - currentAlt) > 0.1) {
-          currentAlt = newAlt;
-          const currentPov = globeInstanceRef.current.pointOfView();
-          globeInstanceRef.current.pointOfView(
-            { lat: currentPov.lat, lng: currentPov.lng, altitude: newAlt },
-            400
-          );
-        }
       }
     });
     resizeObserver.observe(el);
 
     // Cleanup on unmount
     return () => {
-      timers.forEach(clearTimeout);
       resizeObserver.disconnect();
       if (globeInstanceRef.current) {
         const inst = globeInstanceRef.current;
@@ -313,11 +246,11 @@ export default function InteractiveGlobe() {
           position: "relative",
           touchAction: "pan-y",
         }}
-        aria-label="Interactive 3D Globe showing OJIX global network: USA and Bengaluru"
+        aria-label="Interactive 3D Globe showing OJIX global network: USA and India"
       />
       <div className="ojx-globe-badge">
         <span className="ojx-globe-badge-dot" />
-        <span>USA · BENGALURU</span>
+        <span>USA · INDIA</span>
       </div>
     </div>
   );

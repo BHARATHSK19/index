@@ -168,10 +168,6 @@ export function Footer() {
                 →
               </span>
             </a>
-            {" "}
-            <small>
-              GSTIN: 29AAKF03656Q1ZB
-            </small>
           </div>
         </div>
         {" "}

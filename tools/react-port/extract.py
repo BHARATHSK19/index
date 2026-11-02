@@ -8,6 +8,7 @@ import os
 import re
 import sys
 
+# pyrefly: ignore[missing-import]
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -117,9 +118,7 @@ footer = (footer
           .replace('href="#about"', 'href="/about"')
           .replace('href="#faq"', 'href="/#faq"')
           .replace('href="#contact"', 'href="/contact"'))
-if "GSTIN" not in footer:  # every page except the old home page showed it
-    footer = re.sub(r'(<a href="/contact">Get in touch <span aria-hidden="true">→</span></a>)', r'\1\n        <small>GSTIN: 29AAKF03656Q1ZB</small>', footer)
-    assert "GSTIN" in footer
+# GSTIN removed from footer per requirement
 footer = footer.replace('<span id="year">2026</span>', '<span id="year"><ojx-slot name="Year" /></span>')
 
 

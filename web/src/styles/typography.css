@@ -322,40 +322,45 @@ html body [class*="eyebrow"]:not(.no-pill) {
   width: fit-content !important;
   max-width: 100% !important;
   padding: 5px 14px 5px 12px !important;
-  background: rgba(201, 102, 47, 0.08) !important;
-  border: 1px solid rgba(201, 102, 47, 0.3) !important;
+  background: rgba(15, 28, 46, 0.75) !important;
+  border: 1px solid rgba(243, 156, 107, 0.35) !important;
   border-radius: 9999px !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
-  color: #E2E8F0 !important;
-  -webkit-text-fill-color: #E2E8F0 !important;
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
   font-family: var(--font-mono, "JetBrains Mono", ui-monospace, monospace) !important;
   font-size: 11.5px !important;
   font-weight: 600 !important;
   line-height: 1.4 !important;
   letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
   margin-bottom: 16px;
   box-sizing: border-box !important;
 }
 
-/* Light mode theme: High-contrast deep navy text for light backgrounds */
-html[data-theme="light"] body .section-eyebrow,
-html[data-theme="light"] body .platform-kicker,
-html[data-theme="light"] body .dx-products__kicker,
-html[data-theme="light"] body [class*="kicker"]:not(.no-pill),
-html[data-theme="light"] body [class*="eyebrow"]:not(.no-pill),
-html:not([data-theme="dark"]) body .section-eyebrow,
-html:not([data-theme="dark"]) body .platform-kicker,
-html:not([data-theme="dark"]) body .dx-products__kicker,
-html:not([data-theme="dark"]) body [class*="kicker"]:not(.no-pill),
-html:not([data-theme="dark"]) body [class*="eyebrow"]:not(.no-pill),
-body.light .section-eyebrow,
-body.light .platform-kicker,
-body.light .dx-products__kicker,
-body.light [class*="kicker"]:not(.no-pill),
-body.light [class*="eyebrow"]:not(.no-pill) {
+/* Light mode theme: Retain dark navy text (#0F1C2E) ONLY for pills displayed on plain white/light body backgrounds */
+html[data-theme="light"] body:not(.theme--dark) .section-eyebrow:not(.dx-kicker--light):not(.pill-on-dark),
+html[data-theme="light"] body:not(.theme--dark) .platform-kicker:not(.dx-kicker--light):not(.pill-on-dark),
+html[data-theme="light"] body:not(.theme--dark) .dx-products__kicker:not(.dx-kicker--light):not(.pill-on-dark),
+html[data-theme="light"] body:not(.theme--dark) [class*="kicker"]:not(.no-pill):not(.dx-kicker--light):not(.pill-on-dark),
+html[data-theme="light"] body:not(.theme--dark) [class*="eyebrow"]:not(.no-pill):not(.dx-kicker--light):not(.pill-on-dark),
+html:not([data-theme="dark"]) body:not(.theme--dark) .section-eyebrow:not(.dx-kicker--light):not(.pill-on-dark),
+html:not([data-theme="dark"]) body:not(.theme--dark) .platform-kicker:not(.dx-kicker--light):not(.pill-on-dark),
+html:not([data-theme="dark"]) body:not(.theme--dark) .dx-products__kicker:not(.dx-kicker--light):not(.pill-on-dark),
+html:not([data-theme="dark"]) body:not(.theme--dark) [class*="kicker"]:not(.no-pill):not(.dx-kicker--light):not(.pill-on-dark),
+html:not([data-theme="dark"]) body:not(.theme--dark) [class*="eyebrow"]:not(.no-pill):not(.dx-kicker--light):not(.pill-on-dark),
+body.light:not(.theme--dark) .section-eyebrow:not(.dx-kicker--light):not(.pill-on-dark),
+body.light:not(.theme--dark) .platform-kicker:not(.dx-kicker--light):not(.pill-on-dark),
+body.light:not(.theme--dark) .dx-products__kicker:not(.dx-kicker--light):not(.pill-on-dark),
+body.light:not(.theme--dark) [class*="kicker"]:not(.no-pill):not(.dx-kicker--light):not(.pill-on-dark),
+body.light:not(.theme--dark) [class*="eyebrow"]:not(.no-pill):not(.dx-kicker--light):not(.pill-on-dark),
+html.light body:not(.theme--dark) .section-eyebrow:not(.dx-kicker--light):not(.pill-on-dark),
+html.light body:not(.theme--dark) .platform-kicker:not(.dx-kicker--light):not(.pill-on-dark),
+html.light body:not(.theme--dark) .dx-products__kicker:not(.dx-kicker--light):not(.pill-on-dark),
+html.light body:not(.theme--dark) [class*="kicker"]:not(.no-pill):not(.dx-kicker--light):not(.pill-on-dark),
+html.light body:not(.theme--dark) [class*="eyebrow"]:not(.no-pill):not(.dx-kicker--light):not(.pill-on-dark) {
   color: #0F1C2E !important;
   -webkit-text-fill-color: #0F1C2E !important;
   font-weight: 700 !important;
@@ -369,13 +374,147 @@ html[data-theme="dark"] body .section-eyebrow,
 html[data-theme="dark"] body .platform-kicker,
 html[data-theme="dark"] body .dx-products__kicker,
 html[data-theme="dark"] body [class*="kicker"]:not(.no-pill),
-html[data-theme="dark"] body [class*="eyebrow"]:not(.no-pill) {
-  color: #E2E8F0 !important;
-  -webkit-text-fill-color: #E2E8F0 !important;
+html[data-theme="dark"] body [class*="eyebrow"]:not(.no-pill),
+body.dark .section-eyebrow,
+body.dark .platform-kicker,
+body.dark .dx-products__kicker,
+body.dark [class*="kicker"]:not(.no-pill),
+body.dark [class*="eyebrow"]:not(.no-pill) {
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
   font-weight: 600 !important;
-  background: rgba(201, 102, 47, 0.08) !important;
-  border: 1px solid rgba(201, 102, 47, 0.3) !important;
+  background: rgba(15, 28, 46, 0.75) !important;
+  border: 1px solid rgba(243, 156, 107, 0.35) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+/* ==========================================================================
+   Pill Contrast in Dark Cards, Media Overlays & Background-Image Sections
+   Ensure pills inside dark cards or sections with background images
+   (such as .dx-intro__card "YOUR BUSINESS HAS GROWN...", .ojx-cta, .ojx-hero)
+   retain #F8FAFC font color and dark glass background (rgba(15, 28, 46, 0.75))
+   even when html.light or body.light is active.
+   ========================================================================== */
+html body .dx-kicker--light,
+html body .dx-intro .dx-kicker,
+html body .dx-intro [class*="kicker"],
+html body .dx-intro [class*="eyebrow"],
+html body .dx-intro__card [class*="kicker"],
+html body .dx-intro__card [class*="eyebrow"],
+html body .ojx-hero [class*="kicker"],
+html body .ojx-hero [class*="eyebrow"],
+html body .ojx-hero__eyebrow,
+html body .ojx-cta [class*="kicker"],
+html body .ojx-cta [class*="eyebrow"],
+html body .cta-section [class*="kicker"],
+html body .cta-section [class*="eyebrow"],
+html body .pillar-hero [class*="kicker"],
+html body .pillar-hero-21 [class*="kicker"],
+html body .pillar-hero-21 [class*="eyebrow"],
+html body [class*="dark-card"] [class*="kicker"],
+html body [class*="dark-card"] [class*="eyebrow"],
+html body [class*="dark-section"] [class*="kicker"],
+html body [class*="dark-section"] [class*="eyebrow"],
+html body [class*="media-card"] [class*="kicker"],
+html body [class*="media-card"] [class*="eyebrow"],
+html body [class*="card--dark"] [class*="kicker"],
+html body [class*="card--dark"] [class*="eyebrow"],
+html body .has-bg-img [class*="kicker"],
+html body .has-bg-image [class*="kicker"],
+html body [data-theme="dark"] [class*="kicker"]:not(.no-pill),
+html body [data-theme="dark"] [class*="eyebrow"]:not(.no-pill),
+/* Light mode overrides - ensure dark sections never flip to navy text */
+html[data-theme="light"] body .dx-kicker--light,
+html[data-theme="light"] body .dx-intro [class*="kicker"],
+html[data-theme="light"] body .dx-intro [class*="eyebrow"],
+html[data-theme="light"] body .dx-intro__card [class*="kicker"],
+html[data-theme="light"] body .dx-intro__card [class*="eyebrow"],
+html[data-theme="light"] body .ojx-hero [class*="kicker"],
+html[data-theme="light"] body .ojx-hero [class*="eyebrow"],
+html[data-theme="light"] body .ojx-hero__eyebrow,
+html[data-theme="light"] body .ojx-cta [class*="kicker"],
+html[data-theme="light"] body .ojx-cta [class*="eyebrow"],
+html[data-theme="light"] body .cta-section [class*="kicker"],
+html[data-theme="light"] body .cta-section [class*="eyebrow"],
+html[data-theme="light"] body .pillar-hero-21 [class*="kicker"],
+html[data-theme="light"] body .pillar-hero-21 [class*="eyebrow"],
+html[data-theme="light"] body [class*="dark-card"] [class*="kicker"],
+html[data-theme="light"] body [class*="dark-section"] [class*="kicker"],
+html[data-theme="light"] body [class*="media-card"] [class*="kicker"],
+html[data-theme="light"] body [class*="card--dark"] [class*="kicker"],
+html:not([data-theme="dark"]) body .dx-kicker--light,
+html:not([data-theme="dark"]) body .dx-intro [class*="kicker"],
+html:not([data-theme="dark"]) body .dx-intro [class*="eyebrow"],
+html:not([data-theme="dark"]) body .dx-intro__card [class*="kicker"],
+html:not([data-theme="dark"]) body .dx-intro__card [class*="eyebrow"],
+html:not([data-theme="dark"]) body .ojx-hero [class*="kicker"],
+html:not([data-theme="dark"]) body .ojx-hero [class*="eyebrow"],
+html:not([data-theme="dark"]) body .ojx-hero__eyebrow,
+html:not([data-theme="dark"]) body .ojx-cta [class*="kicker"],
+html:not([data-theme="dark"]) body .ojx-cta [class*="eyebrow"],
+html:not([data-theme="dark"]) body .cta-section [class*="kicker"],
+html:not([data-theme="dark"]) body .cta-section [class*="eyebrow"],
+html:not([data-theme="dark"]) body .pillar-hero-21 [class*="kicker"],
+html:not([data-theme="dark"]) body .pillar-hero-21 [class*="eyebrow"],
+html:not([data-theme="dark"]) body [class*="dark-card"] [class*="kicker"],
+html:not([data-theme="dark"]) body [class*="dark-section"] [class*="kicker"],
+html:not([data-theme="dark"]) body [class*="media-card"] [class*="kicker"],
+html:not([data-theme="dark"]) body [class*="card--dark"] [class*="kicker"],
+body.light .dx-kicker--light,
+body.light .dx-intro [class*="kicker"],
+body.light .dx-intro [class*="eyebrow"],
+body.light .dx-intro__card [class*="kicker"],
+body.light .dx-intro__card [class*="eyebrow"],
+body.light .ojx-hero [class*="kicker"],
+body.light .ojx-hero [class*="eyebrow"],
+body.light .ojx-hero__eyebrow,
+body.light .ojx-cta [class*="kicker"],
+body.light .ojx-cta [class*="eyebrow"],
+body.light .cta-section [class*="kicker"],
+body.light .cta-section [class*="eyebrow"],
+body.light .pillar-hero-21 [class*="kicker"],
+body.light .pillar-hero-21 [class*="eyebrow"],
+body.light [class*="dark-card"] [class*="kicker"],
+body.light [class*="dark-section"] [class*="kicker"],
+body.light [class*="media-card"] [class*="kicker"],
+body.light [class*="card--dark"] [class*="kicker"],
+html.light body .dx-kicker--light,
+html.light body .dx-intro [class*="kicker"],
+html.light body .dx-intro [class*="eyebrow"],
+html.light body .dx-intro__card [class*="kicker"],
+html.light body .dx-intro__card [class*="eyebrow"],
+html.light body .ojx-hero [class*="kicker"],
+html.light body .ojx-hero [class*="eyebrow"],
+html.light body .ojx-hero__eyebrow,
+html.light body .ojx-cta [class*="kicker"],
+html.light body .ojx-cta [class*="eyebrow"],
+html.light body .cta-section [class*="kicker"],
+html.light body .cta-section [class*="eyebrow"],
+html.light body .pillar-hero-21 [class*="kicker"],
+html.light body .pillar-hero-21 [class*="eyebrow"],
+html.light body [class*="dark-card"] [class*="kicker"],
+html.light body [class*="dark-section"] [class*="kicker"],
+html.light body [class*="media-card"] [class*="kicker"],
+html.light body [class*="card--dark"] [class*="kicker"] {
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
+  font-weight: 600 !important;
+  background: rgba(15, 28, 46, 0.75) !important;
+  border: 1px solid rgba(243, 156, 107, 0.35) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+html body .dx-kicker--light:hover,
+html body .dx-intro [class*="kicker"]:hover,
+html body .dx-intro__card [class*="kicker"]:hover,
+html body .ojx-hero [class*="kicker"]:hover,
+html body .ojx-cta [class*="kicker"]:hover,
+html body .cta-section [class*="kicker"]:hover {
+  background: rgba(15, 28, 46, 0.88) !important;
+  border-color: rgba(243, 156, 107, 0.55) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
 }
 
 html body .section-eyebrow::before,

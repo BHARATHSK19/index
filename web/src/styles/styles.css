@@ -15677,3 +15677,32 @@ body.dxm .ojx-entity-badge,
     box-shadow: 0 0 16px rgba(201, 102, 47, 0.35) !important;
   }
 }
+
+
+/* ==========================================================================
+   Ensure Mega-Menu "New" Badges Are Hidden
+   ========================================================================== */
+.eleks-subtab-new,
+.eleks-mega-dropdown [class*="new"],
+.eleks-mega-dropdown [class*="New"],
+.eleks-subtab [class*="new"],
+.eleks-subtab [class*="New"] {
+  display: none !important;
+}
+
+
+/* ==========================================================================
+   White Logo Contrast in Light Mode
+   ========================================================================== */
+html:not([data-theme="dark"]) .dx-logos__track img[src*="novus"],
+html[data-theme="light"] .dx-logos__track img[src*="novus"],
+body.light .dx-logos__track img[src*="novus"] {
+  filter: invert(1);
+  opacity: 0.65;
+}
+html:not([data-theme="dark"]) .dx-logos__track img[src*="novus"]:hover,
+html[data-theme="light"] .dx-logos__track img[src*="novus"]:hover,
+body.light .dx-logos__track img[src*="novus"]:hover {
+  filter: invert(1);
+  opacity: 1;
+}

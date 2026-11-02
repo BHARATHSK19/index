@@ -56,7 +56,6 @@ export default function Header({ active }) {
                       <span className="eleks-subtab-label">
                         {p.name}
                       </span>
-                      {p.isNew ? <span className="eleks-subtab-new">New</span> : null}
                     </a>
                   ))}
                 </div>

@@ -576,6 +576,14 @@ export default function HomeMain() {
                   <img src="/assets/clients/nele.png" alt="Nele" loading="lazy" decoding="async" />
                 </li>
                 {" "}
+                <li>
+                  <img src="/assets/logos/6senai.png" alt="6SEN AI" className="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+                </li>
+                {" "}
+                <li>
+                  <img src="/assets/logos/novus.png" alt="Novus Apparel Limited" className="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+                </li>
+                {" "}
                 <li aria-hidden="true">
                   <img src="/assets/clients/anveshana-logo-big.png" alt="" loading="lazy" decoding="async" />
                 </li>
@@ -614,6 +622,14 @@ export default function HomeMain() {
                 {" "}
                 <li aria-hidden="true">
                   <img src="/assets/clients/nele.png" alt="" loading="lazy" decoding="async" />
+                </li>
+                {" "}
+                <li aria-hidden="true">
+                  <img src="/assets/logos/6senai.png" alt="" className="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+                </li>
+                {" "}
+                <li aria-hidden="true">
+                  <img src="/assets/logos/novus.png" alt="" className="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
                 </li>
               </ul>
             </div>
