@@ -91,7 +91,7 @@ export default function CompanyManagementSystem() {
                   {/* Desktop dashboard */}
                   <div className="pv-dashboard-image">
                     <img
-                      src="/assets/images/products/preview/campusos/campusos-desktop.png"
+                      src="assets/images/products/companyos/Executive-Center-website.png"
                       alt="Company Management System Desktop Dashboard"
                     />
                   </div>
@@ -114,7 +114,7 @@ export default function CompanyManagementSystem() {
 
                     <div className="pv-mobile-image">
                       <img
-                        src="/assets/images/products/preview/campusos/campusos-mobile.png"
+                        src="/assets/images/products/companyos/Company-os-mobile.jpeg"
                         alt="Company Management System Mobile Application"
                       />
                     </div>
