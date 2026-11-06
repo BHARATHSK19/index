@@ -28,6 +28,7 @@ export default function CompanyManagementSystem() {
           </a>
         </section>
         {" "}
+        
         <section className="pd-intro" id="pd-overview" aria-labelledby="pd-s1">
           <div className="shell pd-intro__grid">
             <div className="pd-intro__copy dx-reveal">
@@ -223,6 +224,7 @@ export default function CompanyManagementSystem() {
             </div>
           </div>
         </section>
+
         {" "}
         <section className="pd-stats" aria-label="Company Management System in numbers">
           <div className="shell">
