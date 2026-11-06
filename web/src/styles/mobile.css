@@ -185,49 +185,60 @@
 
 /* ==========================================================================
    HOMEPAGE PRODUCT SHOWCASE TABS — MOBILE HORIZONTAL TOUCH SCROLL (<= 768px)
-   Clean single horizontal line with momentum scrolling, no wrapping/stacking
+   Full-bleed image background with 3-layer scrim gradient overlay
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Parent card wrapping media stage & bottom dock */
+  /* Parent card wrapping media stage & floating dock */
   .ojx-hero__card-wrap {
     order: 1 !important;
     position: relative !important;
     overflow: hidden !important;
-    border-radius: 22px !important;
+    border-radius: 1rem !important; /* rounded-2xl */
+    aspect-ratio: 4 / 3 !important;
     margin: 0 !important;
     width: 100% !important;
   }
 
   .ojx-hero__card-wrap .ojx-hero__stage {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
     margin: 0 !important;
     border-radius: 0 !important;
-    width: 100% !important;
+    aspect-ratio: auto !important;
   }
 
-  /* Full-width bottom bar flush with card bottom corners */
+  .ojx-hero__stage::after {
+    display: none !important;
+  }
+
+  /* Controls wrapper behaves as contents so tabs-bar anchors to card */
   .ojx-hero__controls {
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
+    display: contents !important;
     margin: 0 !important;
     padding: 0 !important;
-    z-index: 10 !important;
-    display: block !important;
-    background: transparent !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
   }
 
+  /* Subtle upward dark gradient overlay anchored to bottom of card */
   .ojx-hero__tabs-bar {
+    position: absolute !important;
+    inset-inline: 0 !important;
+    bottom: 0 !important;
+    z-index: 10 !important;
     width: 100% !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-    background: rgba(15, 28, 46, 0.9) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    padding: 12px 16px !important;
+    border: none !important;
+    border-top: none !important;
+    background: linear-gradient(
+      to top,
+      rgba(9, 18, 30, 0.95) 0%,
+      rgba(9, 18, 30, 0.75) 45%,
+      rgba(9, 18, 30, 0.30) 75%,
+      transparent 100%
+    ) !important;
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+    padding: 48px 16px 16px !important; /* pt-12 pb-4 px-4 */
     box-sizing: border-box !important;
     display: flex !important;
     align-items: center !important;
@@ -264,15 +275,15 @@
     -ms-overflow-style: none !important;
   }
 
-  /* Inactive tab: text-slate-300 hover:text-white */
+  /* Inactive tab: readable light slate text (text-slate-200/80 or rgba(241, 245, 249, 0.75)) */
   .ojx-hero__tab {
     flex: 0 0 auto !important;
     white-space: nowrap !important;
     width: auto !important;
     min-width: max-content !important;
     scroll-snap-align: start;
-    color: #94A3B8 !important;
-    -webkit-text-fill-color: #94A3B8 !important;
+    color: rgba(241, 245, 249, 0.75) !important; /* text-slate-200/80 or rgba(241, 245, 249, 0.75) */
+    -webkit-text-fill-color: rgba(241, 245, 249, 0.75) !important;
     padding: 0 0 2px 0 !important;
     background: transparent !important;
     border: none !important;
@@ -287,10 +298,12 @@
     overflow: visible !important;
     text-overflow: clip !important;
     display: inline-block !important;
-    color: #94A3B8 !important;
-    -webkit-text-fill-color: #94A3B8 !important;
+    color: rgba(241, 245, 249, 0.75) !important;
+    -webkit-text-fill-color: rgba(241, 245, 249, 0.75) !important;
     font-size: 13px !important;
     font-weight: 500 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85) !important;
+    filter: drop-shadow(0 1.2px 2px rgba(0, 0, 0, 0.85)) !important;
     transition: color 0.2s ease, -webkit-text-fill-color 0.2s ease !important;
   }
 
@@ -300,26 +313,30 @@
     -webkit-text-fill-color: #FFFFFF !important;
   }
 
-  /* Active tab: Pure White (#F8FAFC) */
+  /* Active tab: Pure White (#FFFFFF / #F8FAFC) */
   .ojx-hero__tab.is-active,
   .ojx-hero__tab.is-active .ojx-hero__tab-label {
-    color: #F8FAFC !important;
-    -webkit-text-fill-color: #F8FAFC !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
     font-weight: 600 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85) !important;
+    filter: drop-shadow(0 1.2px 2px rgba(0, 0, 0, 0.85)) !important;
   }
 
-  /* Bottom accent line indicator directly below tab title */
+  /* Indicator line directly below tab title */
+  /* Inactive tab: subtle indicator track (bg-white/20 h-[2px]) */
   .ojx-hero__bar {
     width: 100% !important;
     height: 2px !important;
     margin-top: 6px !important;
-    background: transparent !important;
+    background: rgba(255, 255, 255, 0.2) !important; /* bg-white/20 */
     border-radius: 9999px !important;
     overflow: hidden !important;
   }
 
+  /* Active tab: active accent indicator line (bg-[#C9662F] h-[2px]) */
   .ojx-hero__tab.is-active .ojx-hero__bar {
-    background: rgba(201, 102, 47, 0.3) !important;
+    background: rgba(255, 255, 255, 0.2) !important;
   }
 
   .ojx-hero__tab.is-active .ojx-hero__bar i,
@@ -336,5 +353,15 @@
 
   .ojx-hero__tabs-bar {
     display: contents !important;
+    position: static !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+  }
+
+  .ojx-hero__tab-label {
+    text-shadow: none !important;
+    filter: none !important;
   }
 }

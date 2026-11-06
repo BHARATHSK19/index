@@ -186,6 +186,38 @@ index/
   - Harmonized payload mapping across frontend and backend for `{ name, full_name, email, phone, company, organization, service, interested_in, interest, interestedIn, message, requirement, consent_agreed, consent }`.
   - Encapsulated database queries and mail operations in isolated `try/catch` blocks in `/api/contact`, falling back seamlessly to local sovereign storage (`db.recordInquiry`) when PostgreSQL is unconfigured or offline.
   - Replaced masked generic 500 error strings with transparent `error: err.message` responses and connected frontend `res.error` rendering.
+- **Product Carousel Full-Bleed Hero Card & Upward Gradient Tabs Overlay** (`web/src/generated/HomeMain.jsx`, `web/src/styles/mobile.css`, `web/src/styles/carousel.css`):
+  - Refactored product carousel hero card container on mobile to retain `relative overflow-hidden rounded-2xl aspect-[4/3]` with full-bleed product images extending 100% across the card height.
+  - Replaced solid opaque bottom dock (`bg-[#0F1C2E]/90`, `border-t border-white/10`) with a subtle, low-opacity upward dark gradient overlay (`absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#09121E]/85 via-[#09121E]/40 to-transparent pt-10 pb-4 px-4`).
+  - Styled floating horizontal tab navigation with smooth momentum touch scrolling (`overflow-x-auto no-scrollbar flex gap-6`):
+    * Active tab: pure white text (`text-white`) with brand orange indicator line (`bg-[#C9662F] h-[2px]`).
+    * Inactive tabs: semi-transparent text (`text-slate-300/75 hover:text-white`) with subtle indicator track (`bg-white/20 h-[2px]`).
+  - Preserved top overlay link (product title and directional arrow) with `relative z-10` above the full-bleed image.
+  - Preserved desktop layout (`>= 768px`) completely untouched via `md:contents` and `md:relative md:aspect-[16/7]`.
+
+- **Mobile Hero Card 3-Layer Scrim Gradient & Text Drop-Shadow** (`web/src/generated/HomeMain.jsx`, `web/src/styles/mobile.css`):
+  - Applied 3-stop vertical scrim gradient (`from-[#09121E]/95 via-[#09121E]/75 via-45% to-transparent` with `backdrop-filter: blur(2px)` and `pt-12 pb-4 px-4`) to the mobile hero product tabs container (`.ojx-hero__tabs-bar`).
+  - Added subtle text drop-shadow (`drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)]` and `text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85)`) to product tab labels for high contrast over bright background imagery.
+  - Styled active tab with crisp pure white text (`text-white`) and `#C9662F` accent line, and inactive tabs with readable light slate text (`text-slate-200/80` / `rgba(241, 245, 249, 0.75)`).
+  - Scoped strictly to mobile viewports (`< 768px`) with desktop isolation resets under `md:` / `@media (min-width: 768px)` preserving desktop presentation.
+- **Novus Apparel Limited Logo Asset Update** (`web/public/assets/logos/novus-apparel-limited.png`, `web/src/generated/HomeMain.jsx`, `web/src/styles/styles.css`):
+  - Replaced legacy Novus logo with the official "Novus Apparel Limited" asset (globe emblem with serif typography) in both primary and infinite loop tracks in `.dx-logos__track`.
+  - Updated image `src` to `/assets/logos/novus-apparel-limited.png`, `alt` to `"Novus Apparel Limited"`, and applied `h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity`.
+  - Removed legacy `styles.css` light-mode inversion rule, aligning Novus with the universal client logo filter system (clean monochrome white in dark mode via `theme.css` and muted neutral grayscale in light mode via `home.css`).
+- **Vibhaas Health Care Client Logo Integration** (`web/public/assets/clients/vibhaas-healthcare.png`, `web/src/generated/HomeMain.jsx`):
+  - Converted the uploaded Vibhaas Health Care artwork to a clean transparent 32-bit PNG (`924 x 328`), isolating the house clinic emblem, green cross, cupping hands, and typography without outer border or white bounding box artifacts.
+  - Added Vibhaas Health Care into both primary and duplicate loop tracks in `.dx-logos__track` with `src="/assets/clients/vibhaas-healthcare.png"`, `alt="Vibhaas Health Care logo"`, and `className="h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"`.
+  - Seamlessly integrates with the global client logo system: clean monochrome white in dark mode (`theme.css`) and neutral grayscale in light mode with authentic colors on hover (`home.css`).
+- **Minimalist Monochrome Glass Social Pill Refactor & Hero Scaling** (`web/src/components/SocialDock.jsx`, `web/src/styles/home.css`):
+  - Scaled hero social dock with expanded glass pill geometry: increased padding to `px-5 py-2.5 md:px-6 md:py-3`, `backdrop-blur-md`, and `shadow-xl`.
+  - Scaled monochrome vector SVGs up to 20px on mobile and 24px on desktop (`w-5 h-5 md:w-6 md:h-6`) for high-contrast legibility against hero typography.
+  - Added responsive companion labels (`sm:inline-block text-xs font-semibold tracking-wide`) for "Instagram", "YouTube", and "Bengaluru HQ" with subtle dividers (`w-px h-4 bg-white/20`), falling back to clean icon-only pill on narrow mobile screens.
+  - Expanded interactive hover states with `p-2 rounded-xl hover:bg-white/10 transition-colors` and brand orange highlights.
+- **Hero Dock Migration & Global Footer Social Integration** (`web/src/generated/HomeMain.jsx`, `web/src/generated/SiteChrome.jsx`, `web/src/styles/home.css`, `web/src/styles/styles.css`):
+  - Completely removed `<SocialDock />` and unmounted `SocialDock.jsx` from the hero/intro fold.
+  - Fixed headline ascender clipping in the statement card (`.dx-intro__text`) by applying `pt-4 md:pt-6`, `padding-top: clamp(8px, 1.5vw, 16px)`, and `line-height: 1.1 !important;` (`leading-[1.1]`).
+  - Integrated `FOOTER_SOCIALS` data structure and accessible SVG vector icons for Instagram, YouTube, and Bengaluru HQ into the global footer (`SiteChrome.jsx` `.footer-bottom`).
+  - Styled with accessible responsive links (`text-slate-400 hover:text-[#C9662F] transition-colors`) with `target="_blank" rel="noopener noreferrer"`.
 
 ---
 

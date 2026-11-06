@@ -1,7 +1,6 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
 import { Suspense, lazy } from "react";
 import ProductRows from "../components/ProductRows.jsx";
-import SocialDock from "../components/SocialDock.jsx";
 import SecuritySwipeDeck from "../components/SecuritySwipeDeck.jsx";
 
 const InteractiveGlobe = lazy(() => import("../components/InteractiveGlobe.jsx"));
@@ -351,9 +350,9 @@ export default function HomeMain() {
               </div>
             </div>
             {" "}
-            <div className="ojx-hero__card-wrap relative overflow-hidden rounded-2xl md:rounded-3xl md:contents">
-            <div className="ojx-hero__stage">
-              <a href="/company-management-system" className="ojx-hero__overlay-link" id="ojx-overlay-link" aria-label="Explore Company Management System">
+            <div className="ojx-hero__card-wrap relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-auto md:rounded-3xl md:contents">
+            <div className="ojx-hero__stage absolute inset-0 w-full h-full md:relative md:inset-auto md:aspect-[16/7]">
+              <a href="/company-management-system" className="ojx-hero__overlay-link relative z-10" id="ojx-overlay-link" aria-label="Explore Company Management System">
                 <span className="ojx-hero__overlay-title" id="ojx-overlay-title">COMPANY MANAGEMENT SYSTEM</span>
                 <span className="ojx-hero__overlay-arrow" aria-hidden="true">→</span>
               </a>
@@ -424,105 +423,105 @@ export default function HomeMain() {
               </picture>
             </div>
             {" "}
-            <div className="ojx-hero__controls">
-              <div className="ojx-hero__tabs-bar w-full border-t border-white/10 bg-[#0F1C2E]/90 backdrop-blur-md px-4 py-3 md:contents md:border-0 md:bg-transparent md:backdrop-blur-none md:p-0 md:m-0">
-                <div className="ojx-hero__tabs flex items-center gap-6 overflow-x-auto no-scrollbar" role="tablist" aria-label="Choose a product">
-                <button type="button" className="ojx-hero__tab is-active text-white" role="tab" id="ojx-hero-tab-0" aria-controls="ojx-hero-panel-0" aria-selected="true" data-slide="0" data-product="company-management-system" data-product-slug="company-management-system" data-category="company-management-system">
-                  <span className="ojx-hero__tab-label text-white">
+            <div className="ojx-hero__controls contents md:flex md:items-center md:gap-6 md:mt-[22px]">
+              <div className="ojx-hero__tabs-bar absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#09121E]/95 via-[#09121E]/75 via-45% to-transparent pt-12 pb-4 px-4 backdrop-blur-[1.5px] md:contents md:static md:bg-none md:p-0 md:backdrop-blur-none">
+                <div className="ojx-hero__tabs flex items-center gap-6 overflow-x-auto no-scrollbar md:grid md:grid-cols-11 md:gap-[clamp(6px,1.1vw,16px)]" role="tablist" aria-label="Choose a product">
+                <button type="button" className="ojx-hero__tab is-active text-white flex-shrink-0" role="tab" id="ojx-hero-tab-0" aria-controls="ojx-hero-panel-0" aria-selected="true" data-slide="0" data-product="company-management-system" data-product-slug="company-management-system" data-category="company-management-system">
+                  <span className="ojx-hero__tab-label text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     Company Management System
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-1" aria-controls="ojx-hero-panel-1" aria-selected="false" tabIndex="-1" data-slide="1" data-product="legalos" data-product-slug="legalos" data-category="legalos">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-1" aria-controls="ojx-hero-panel-1" aria-selected="false" tabIndex="-1" data-slide="1" data-product="legalos" data-product-slug="legalos" data-category="legalos">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     Nyaya Sethu
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-2" aria-controls="ojx-hero-panel-2" aria-selected="false" tabIndex="-1" data-slide="2" data-product="procureos" data-product-slug="procureos" data-category="procureos">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-2" aria-controls="ojx-hero-panel-2" aria-selected="false" tabIndex="-1" data-slide="2" data-product="procureos" data-product-slug="procureos" data-category="procureos">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     ProcureOS
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-3" aria-controls="ojx-hero-panel-3" aria-selected="false" tabIndex="-1" data-slide="3" data-product="school-erp" data-product-slug="school-erp" data-category="school-erp">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-3" aria-controls="ojx-hero-panel-3" aria-selected="false" tabIndex="-1" data-slide="3" data-product="school-erp" data-product-slug="school-erp" data-category="school-erp">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     School ERP
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-4" aria-controls="ojx-hero-panel-4" aria-selected="false" tabIndex="-1" data-slide="4" data-product="university-management-system" data-product-slug="university-management-system" data-category="university-management-system">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-4" aria-controls="ojx-hero-panel-4" aria-selected="false" tabIndex="-1" data-slide="4" data-product="university-management-system" data-product-slug="university-management-system" data-category="university-management-system">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     University Management System
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-5" aria-controls="ojx-hero-panel-5" aria-selected="false" tabIndex="-1" data-slide="5" data-product="ai-proctoring" data-product-slug="ai-proctoring" data-category="ai-proctoring">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-5" aria-controls="ojx-hero-panel-5" aria-selected="false" tabIndex="-1" data-slide="5" data-product="ai-proctoring" data-product-slug="ai-proctoring" data-category="ai-proctoring">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     AI Proctoring
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-6" aria-controls="ojx-hero-panel-6" aria-selected="false" tabIndex="-1" data-slide="6" data-product="construction-hub" data-product-slug="construction-hub" data-category="construction-hub">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-6" aria-controls="ojx-hero-panel-6" aria-selected="false" tabIndex="-1" data-slide="6" data-product="construction-hub" data-product-slug="construction-hub" data-category="construction-hub">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     Construction Hub
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-7" aria-controls="ojx-hero-panel-7" aria-selected="false" tabIndex="-1" data-slide="7" data-product="property-intelligence" data-product-slug="property-intelligence" data-category="property-intelligence">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-7" aria-controls="ojx-hero-panel-7" aria-selected="false" tabIndex="-1" data-slide="7" data-product="property-intelligence" data-product-slug="property-intelligence" data-category="property-intelligence">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     Property Intelligence
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-8" aria-controls="ojx-hero-panel-8" aria-selected="false" tabIndex="-1" data-slide="8" data-product="travelos" data-product-slug="travelos" data-category="travelos">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-8" aria-controls="ojx-hero-panel-8" aria-selected="false" tabIndex="-1" data-slide="8" data-product="travelos" data-product-slug="travelos" data-category="travelos">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     TravelOS
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-9" aria-controls="ojx-hero-panel-9" aria-selected="false" tabIndex="-1" data-slide="9" data-product="fitos" data-product-slug="fitos" data-category="fitos">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-9" aria-controls="ojx-hero-panel-9" aria-selected="false" tabIndex="-1" data-slide="9" data-product="fitos" data-product-slug="fitos" data-category="fitos">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     FitOS
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 {" "}
-                <button type="button" className="ojx-hero__tab text-slate-300 hover:text-white" role="tab" id="ojx-hero-tab-10" aria-controls="ojx-hero-panel-10" aria-selected="false" tabIndex="-1" data-slide="10" data-product="dpdp-compliance" data-product-slug="dpdp-compliance" data-category="dpdp-compliance">
-                  <span className="ojx-hero__tab-label text-slate-300 hover:text-white">
+                <button type="button" className="ojx-hero__tab text-slate-200/80 hover:text-white flex-shrink-0" role="tab" id="ojx-hero-tab-10" aria-controls="ojx-hero-panel-10" aria-selected="false" tabIndex="-1" data-slide="10" data-product="dpdp-compliance" data-product-slug="dpdp-compliance" data-category="dpdp-compliance">
+                  <span className="ojx-hero__tab-label text-slate-200/80 hover:text-white drop-shadow-[0_1.2px_2px_rgba(0,0,0,0.85)] md:drop-shadow-none">
                     DPDP Privacy Vault
                   </span>
-                  <span className="ojx-hero__bar">
-                    <i />
+                  <span className="ojx-hero__bar w-full h-[2px] mt-1.5 rounded-full overflow-hidden bg-white/20">
+                    <i className="block h-full w-full bg-[#C9662F]" />
                   </span>
                 </button>
                 </div>
@@ -587,7 +586,11 @@ export default function HomeMain() {
                 </li>
                 {" "}
                 <li>
-                  <img src="/assets/logos/novus.png" alt="Novus Apparel Limited" className="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+                  <img src="/assets/logos/novus-apparel-limited.png" alt="Novus Apparel Limited" className="h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+                </li>
+                {" "}
+                <li>
+                  <img src="/assets/clients/vibhaas-healthcare.png" alt="Vibhaas Health Care logo" className="h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
                 </li>
                 {" "}
                 <li aria-hidden="true">
@@ -635,7 +638,11 @@ export default function HomeMain() {
                 </li>
                 {" "}
                 <li aria-hidden="true">
-                  <img src="/assets/logos/novus.png" alt="" className="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+                  <img src="/assets/logos/novus-apparel-limited.png" alt="" className="h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+                </li>
+                {" "}
+                <li aria-hidden="true">
+                  <img src="/assets/clients/vibhaas-healthcare.png" alt="" className="h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
                 </li>
               </ul>
             </div>
@@ -655,7 +662,7 @@ export default function HomeMain() {
                 Who we are
               </p>
               {" "}
-              <h2 className="dx-intro__text" id="dx-intro-title" data-dx-words="">
+              <h2 className="dx-intro__text pt-4 md:pt-6 leading-[1.1]" id="dx-intro-title" data-dx-words="">
                 <span className="dx-word">
                   Your business
                 </span>
@@ -724,8 +731,6 @@ export default function HomeMain() {
               <p className="dx-intro__sub ojx-entity-badge">
                 {"OJIX Engineering & Technology LLP · Bengaluru"}
               </p>
-              {" "}
-              <SocialDock />
             </div>
           </div>
         </section>

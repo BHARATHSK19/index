@@ -7580,6 +7580,33 @@ h2 em {
   color: #FB923C;
 }
 
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #94A3B8 !important;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: #C9662F !important;
+}
+
+.footer-social-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
 /* REVEAL & ACCESSIBILITY */
 .skip-link {
   position: absolute;
@@ -15698,18 +15725,4 @@ body.dxm .ojx-entity-badge,
 }
 
 
-/* ==========================================================================
-   White Logo Contrast in Light Mode
-   ========================================================================== */
-html:not([data-theme="dark"]) .dx-logos__track img[src*="novus"],
-html[data-theme="light"] .dx-logos__track img[src*="novus"],
-body.light .dx-logos__track img[src*="novus"] {
-  filter: invert(1);
-  opacity: 0.65;
-}
-html:not([data-theme="dark"]) .dx-logos__track img[src*="novus"]:hover,
-html[data-theme="light"] .dx-logos__track img[src*="novus"]:hover,
-body.light .dx-logos__track img[src*="novus"]:hover {
-  filter: invert(1);
-  opacity: 1;
-}
+

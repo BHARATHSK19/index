@@ -215,7 +215,7 @@
   position: absolute;
   top: clamp(20px, 4vw, 42px);
   left: clamp(20px, 4vw, 42px);
-  z-index: 3;
+  z-index: 10;
   display: inline-flex;
   align-items: center;
   gap: clamp(10px, 1.5vw, 18px);
@@ -411,25 +411,20 @@
   .ojx-hero__stage {
     order: 1;
     margin: 0;
-    aspect-ratio: 4 / 3.4;
+    aspect-ratio: 4 / 3;
     border-radius: 22px;
   }
   .ojx-hero__stage::after {
-    content: "";
-    position: absolute;
-    inset: 45% 0 0 0;
-    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.62));
-    pointer-events: none;
-    z-index: 1;
+    display: none;
   }
 
   /* tabs + progress sit on the bottom of the photo */
   .ojx-hero__controls {
     order: 2;
     position: relative;
-    z-index: 2;
-    margin: -64px 0 0;
-    padding: 0 14px 14px;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
     gap: 10px;
   }
   .ojx-hero__tabs { gap: 8px; }
