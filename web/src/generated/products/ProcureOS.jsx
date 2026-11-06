@@ -63,68 +63,187 @@ export default function ProcureOS() {
               </div>
             </div>
             {" "}
+
             <div className="pd-intro__visual dx-reveal">
               <div
-                className="pv"
-                aria-label="Company Management System desktop and mobile preview"
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  maxWidth: "820px",
+                  margin: "0 auto",
+                  padding: "25px 5px 25px",
+                  boxSizing: "border-box",
+                }}
               >
-                {/* Desktop browser */}
-                <div className="pv-win">
+                {/* Desktop website preview */}
+                <div
+                  style={{
+                    width: "94%",
+                    background: "#fff",
+                    borderRadius: "14px",
+                    overflow: "hidden",
+                    border: "1px solid #e5e5e5",
+                    boxShadow: "0 18px 45px rgba(0,0,0,0.13)",
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  {/* Browser header */}
+                  <div
+                    style={{
+                      height: "42px",
+                      display: "flex",
+                      alignItems: "center",
+                      padding: "0 15px",
+                      gap: "8px",
+                      background: "#fafafa",
+                      borderBottom: "1px solid #eee",
+                      boxSizing: "border-box",
+                    }}
+                  >
+                    <span style={{
+                      width: "10px",
+                      height: "10px",
+                      borderRadius: "50%",
+                      background: "#ff6058",
+                      flexShrink: 0,
+                    }} />
 
-                  <div className="pv-top">
-                    <span className="pv-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
+                    <span style={{
+                      width: "10px",
+                      height: "10px",
+                      borderRadius: "50%",
+                      background: "#ffbd2e",
+                      flexShrink: 0,
+                    }} />
 
-                    <span className="pv-url">
-                      app.ojix.in/company
-                    </span>
+                    <span style={{
+                      width: "10px",
+                      height: "10px",
+                      borderRadius: "50%",
+                      background: "#28c840",
+                      flexShrink: 0,
+                    }} />
 
-                    <span className="pv-live">
-                      Live
-                    </span>
-                  </div>
-
-                  {/* Desktop dashboard */}
-                  <div className="pv-dashboard-image">
-                    <img
-                      src="assets/images/products/procure/dashboard-website.png"
-                      alt="ProcureOS Desktop Dashboard"
-                    />
-                  </div>
-
-                </div>
-
-                {/* Mobile application */}
-                <div className="pv-phone">
-                  <div className="pv-phone__screen">
-
-                    <div className="pv-status">
-                      <span>9:41</span>
-
-                      <span className="pv-status__icons">
-                        <i />
-                        <i />
-                        <i />
-                      </span>
+                    <div
+                      style={{
+                        margin: "0 auto",
+                        background: "#eee",
+                        borderRadius: "6px",
+                        padding: "7px 35px",
+                        fontSize: "10px",
+                        color: "#777",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      app.ojix.in/company-management-system
                     </div>
 
-                    <div className="pv-mobile-image">
-                      <img
-                        src="assets/images/products/procure/procure-mobile.jpeg"
-                        alt="Procure Mobile Application"
+                    <span
+                      style={{
+                        fontSize: "10px",
+                        color: "#16834a",
+                        background: "#e8f7ee",
+                        padding: "6px 11px",
+                        borderRadius: "20px",
+                        fontWeight: 700,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      ● LIVE
+                    </span>
+                  </div>
+
+                  {/* Complete desktop dashboard - no cropping */}
+                  <img
+                    src="assets/images/products/procure/dashboard-website.png"
+                    alt="Company Management System Desktop Dashboard"
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                      objectPosition: "center",
+                    }}
+                  />
+                </div>
+
+                {/* Floating mobile preview */}
+                <div
+                  style={{
+                    position: "absolute",
+                    width: "138px",
+                    right: "1%",
+                    bottom: "10px",
+                    zIndex: 3,
+                    padding: "6px",
+                    background: "#171717",
+                    borderRadius: "27px",
+                    border: "2px solid #333",
+                    boxShadow: "0 16px 35px rgba(0,0,0,0.24)",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  <div
+                    style={{
+                      overflow: "hidden",
+                      borderRadius: "20px",
+                      background: "#fff",
+                    }}
+                  >
+                    {/* Mobile status bar */}
+                    <div
+                      style={{
+                        height: "23px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        padding: "0 11px",
+                        fontSize: "10px",
+                        fontWeight: 700,
+                        color: "#222",
+                        boxSizing: "border-box",
+                      }}
+                    >
+                      <span>9:41</span>
+                      <span>● ◔ ▰</span>
+                    </div>
+
+                    {/* Mobile dashboard */}
+                    <img
+                      src="assets/images/products/procure/procure-mobile.jpeg"
+                      alt="Company Management System Mobile Application"
+                      style={{
+                        display: "block",
+                        width: "100%",
+                        height: "auto",
+                      }}
+                    />
+
+                    {/* Home indicator */}
+                    <div
+                      style={{
+                        height: "12px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        background: "#fff",
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: "40px",
+                          height: "4px",
+                          borderRadius: "10px",
+                          background: "#222",
+                        }}
                       />
                     </div>
-
-                    <span className="pv-home" />
-
                   </div>
                 </div>
-
               </div>
             </div>
+
           </div>
         </section>
         {" "}
