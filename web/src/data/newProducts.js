@@ -8,6 +8,13 @@ export const UNIVERSITY = {
     description:
       "University Management System by OJIX: admissions, academics, outcome-based examinations, NAAC/NIRF data, fees and finance across every campus and department. DPDP-aligned, hosted in India.",
   },
+  images: {
+    desktop: "/assets/images/products/university/university-website.png",
+    desktopAlt: "University Management System Desktop Dashboard",
+    mobile: "/assets/images/products/university/university-mobile.jpeg",
+    mobileAlt: "University Management System Mobile Application",
+    url: "app.ojix.in/university-management-system",
+  },
   intro: {
     title: "One university.",
     span: "Every campus, college and department in sync.",
@@ -195,6 +202,13 @@ export const PROPERTY = {
     title: "Property Intelligence — Real Estate Portfolio, Leasing & Market Insights | OJIX",
     description:
       "Property Intelligence by OJIX: one live view of every property, unit, lease and rent payment, with price and demand insights, occupancy trends and maintenance tracking for Indian real estate.",
+  },
+  images: {
+    desktop: "/assets/images/products/property-intelligence/property-intelligence-website.jpeg",
+    desktopAlt: "Property Intelligence Desktop Dashboard",
+    mobile: "/assets/images/products/property-intelligence/property-intelligence-mobile.jpeg",
+    mobileAlt: "Property Intelligence Mobile Application",
+    url: "app.ojix.in/property-intelligence",
   },
   intro: {
     title: "Know every property you own,",

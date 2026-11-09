@@ -186,6 +186,12 @@ index/
   - Harmonized payload mapping across frontend and backend for `{ name, full_name, email, phone, company, organization, service, interested_in, interest, interestedIn, message, requirement, consent_agreed, consent }`.
   - Encapsulated database queries and mail operations in isolated `try/catch` blocks in `/api/contact`, falling back seamlessly to local sovereign storage (`db.recordInquiry`) when PostgreSQL is unconfigured or offline.
   - Replaced masked generic 500 error strings with transparent `error: err.message` responses and connected frontend `res.error` rendering.
+- **Product Overview Device Preview Responsive Transformation** (`web/src/components/ProductDevicePreview.jsx`, `web/src/styles/product.css`, `web/src/generated/products/CompanyManagementSystem.jsx`, `web/src/generated/products/ProcureOS.jsx`, `web/src/generated/products/SchoolERP.jsx`, `web/src/pages/ProductTemplate.jsx`, `web/src/data/newProducts.js`, `LegalOS.jsx`, `FitOS.jsx`, `TravelOS.jsx`, `ConstructionHub.jsx`, `DpdpMain.jsx`):
+  - Created reusable `ProductDevicePreview` component replacing duplicated inline-styled DOM blocks across product pages.
+  - Tagged all floating mobile previews with `.pd-mobile-device-preview` across all product pages.
+  - Preserved desktop composition (> 768px): 94% desktop browser preview with controls, URL, Live tag, and bottom-right floating mobile preview.
+  - Implemented mobile-only desktop view (<= 768px): Completely hides floating mobile smartphone preview via `.pd-mobile-device-preview { display: none !important; }` without removing JSX; expands desktop website preview to occupy 100% available container width with proper responsive scaling (`width: 100%; height: auto;`), zero horizontal overflow, and eliminated spacing left by the hidden mobile preview.
+  - Extended support to `university-management-system` and `property-intelligence` using their dedicated screenshot assets, while maintaining fallback illustrative rendering for products without mobile screenshots.
 
 ---
 

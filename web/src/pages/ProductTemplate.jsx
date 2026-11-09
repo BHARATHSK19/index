@@ -1,5 +1,6 @@
 import { PRODUCTS, productIndex } from "../data/products.jsx";
 import { ProductCounter, NextProduct } from "../components/ProductBits.jsx";
+import ProductDevicePreview from "../components/ProductDevicePreview.jsx";
 
 /** Product detail page built from data (used by the products added in Build 04).
  * Same sections and classes as the original product pages, so it shares their CSS and behaviour. */
@@ -38,65 +39,75 @@ export default function ProductTemplate({ data }) {
             </div>
           </div>
           <div className="pd-intro__visual dx-reveal">
-            <div className="pv" aria-label={p.name + " preview (illustrative)"} role="img">
-              <div className="pv-win">
-                <div className="pv-top">
-                  <span className="pv-dots"><i></i><i></i><i></i></span>
-                  <span className="pv-url">{d.pv.url}</span>
-                  <span className="pv-live">Live</span>
-                </div>
-                <div className="pv-head">
-                  <span className="pv-mark">{d.pv.mark}</span>
-                  <strong>{p.name}</strong>
-                  <span className="pv-badge">{d.pv.badge}</span>
-                </div>
-                <div className="pv-kpis">
-                  {d.pv.kpis.map(([v, l], k) => (
-                    <div className="pv-kpi" style={{ "--i": String(k) }} key={k}>
-                      <b>{v}</b>
-                      <span>{l}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="pv-panel">
-                  <p className="pv-panel__t">{d.pv.panel}</p>
-                  <div className="pv-bars">
-                    {d.pv.bars.map(([h, label], k) => (
-                      <div className="pv-bar" style={{ "--h": h + "%", "--i": String(k) }} key={k}>
-                        <i></i>
-                        <span>{label}</span>
+            {d.images ? (
+              <ProductDevicePreview
+                desktopImg={d.images.desktop}
+                desktopAlt={d.images.desktopAlt || `${p.name} Desktop Dashboard`}
+                mobileImg={d.images.mobile}
+                mobileAlt={d.images.mobileAlt || `${p.name} Mobile Application`}
+                url={d.images.url || d.pv?.url || `app.ojix.in/${p.slug}`}
+              />
+            ) : (
+              <div className="pv" aria-label={p.name + " preview (illustrative)"} role="img">
+                <div className="pv-win">
+                  <div className="pv-top">
+                    <span className="pv-dots"><i></i><i></i><i></i></span>
+                    <span className="pv-url">{d.pv.url}</span>
+                    <span className="pv-live">Live</span>
+                  </div>
+                  <div className="pv-head">
+                    <span className="pv-mark">{d.pv.mark}</span>
+                    <strong>{p.name}</strong>
+                    <span className="pv-badge">{d.pv.badge}</span>
+                  </div>
+                  <div className="pv-kpis">
+                    {d.pv.kpis.map(([v, l], k) => (
+                      <div className="pv-kpi" style={{ "--i": String(k) }} key={k}>
+                        <b>{v}</b>
+                        <span>{l}</span>
                       </div>
                     ))}
                   </div>
-                </div>
-              </div>
-              <div className="pv-phone">
-                <div className="pv-phone__screen">
-                  <div className="pv-status">
-                    <span>9:41</span>
-                    <span className="pv-status__icons"><i></i><i></i><i></i></span>
-                  </div>
-                  <div className="pv-papp">
-                    <span className="pv-mark pv-mark--sm">{d.pv.mark}</span>
-                    <b>{d.pv.app}</b>
-                  </div>
-                  <div className="pv-note">
-                    <span className="pv-note__dot"></span>
-                    <div>
-                      <strong>{d.pv.note[0]}</strong>
-                      <small>{d.pv.note[1]}</small>
+                  <div className="pv-panel">
+                    <p className="pv-panel__t">{d.pv.panel}</p>
+                    <div className="pv-bars">
+                      {d.pv.bars.map(([h, label], k) => (
+                        <div className="pv-bar" style={{ "--h": h + "%", "--i": String(k) }} key={k}>
+                          <i></i>
+                          <span>{label}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  {d.pv.kpis.slice(0, 2).map(([v, l], k) => (
-                    <div className="pv-pkpi" key={k}>
-                      <span>{l}</span>
-                      <b>{v}</b>
+                </div>
+                <div className="pv-phone pd-mobile-device-preview">
+                  <div className="pv-phone__screen">
+                    <div className="pv-status">
+                      <span>9:41</span>
+                      <span className="pv-status__icons"><i></i><i></i><i></i></span>
                     </div>
-                  ))}
-                  <span className="pv-home"></span>
+                    <div className="pv-papp">
+                      <span className="pv-mark pv-mark--sm">{d.pv.mark}</span>
+                      <b>{d.pv.app}</b>
+                    </div>
+                    <div className="pv-note">
+                      <span className="pv-note__dot"></span>
+                      <div>
+                        <strong>{d.pv.note[0]}</strong>
+                        <small>{d.pv.note[1]}</small>
+                      </div>
+                    </div>
+                    {d.pv.kpis.slice(0, 2).map(([v, l], k) => (
+                      <div className="pv-pkpi" key={k}>
+                        <span>{l}</span>
+                        <b>{v}</b>
+                      </div>
+                    ))}
+                    <span className="pv-home"></span>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
