@@ -10,8 +10,13 @@ export default function Header({ active }) {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isClosed, setIsClosed] = useState(false);
   const headerRef = useRef(null);
+  const leaveTimeoutRef = useRef(null);
 
   const closeMenu = useCallback(() => {
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
+      leaveTimeoutRef.current = null;
+    }
     setActiveDropdown(null);
     setIsClosed(true);
     if (typeof document !== "undefined") {
@@ -39,30 +44,46 @@ export default function Header({ active }) {
   }, []);
 
   const handleMouseEnter = useCallback((type) => {
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
+      leaveTimeoutRef.current = null;
+    }
     setIsClosed(false);
     setActiveDropdown(type);
     if (typeof document !== "undefined") {
       document.querySelectorAll(".nav-item-has-mega").forEach((el) => {
         el.classList.remove("is-closed");
       });
+      const header = document.querySelector(".eleks-header");
+      if (header) header.classList.add("has-mega-open");
+      const backdrop = document.querySelector(".eleks-header-backdrop");
+      if (backdrop) backdrop.classList.add("is-active");
     }
   }, []);
 
   const handleMouseLeave = useCallback(() => {
-    setActiveDropdown(null);
-    setIsClosed(false);
-    if (typeof document !== "undefined") {
-      document.querySelectorAll(".nav-item-has-mega").forEach((el) => {
-        el.classList.remove("is-mega-open");
-        el.classList.remove("is-closed");
-      });
-      document.querySelectorAll(".eleks-header").forEach((el) => {
-        el.classList.remove("has-mega-open");
-      });
-      document.querySelectorAll('.nav-top-link[aria-expanded="true"]').forEach((el) => {
-        el.setAttribute("aria-expanded", "false");
-      });
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
     }
+    leaveTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+      setIsClosed(false);
+      if (typeof document !== "undefined") {
+        document.querySelectorAll(".nav-item-has-mega").forEach((el) => {
+          el.classList.remove("is-mega-open");
+          el.classList.remove("is-closed");
+        });
+        document.querySelectorAll(".eleks-header").forEach((el) => {
+          el.classList.remove("has-mega-open");
+        });
+        document.querySelectorAll(".eleks-header-backdrop").forEach((el) => {
+          el.classList.remove("is-active");
+        });
+        document.querySelectorAll('.nav-top-link[aria-expanded="true"]').forEach((el) => {
+          el.setAttribute("aria-expanded", "false");
+        });
+      }
+    }, 200);
   }, []);
 
   // 1. Route Change Cleanup: listen to location.pathname and dismiss open menus
@@ -70,7 +91,7 @@ export default function Header({ active }) {
     closeMenu();
   }, [location.pathname, closeMenu]);
 
-  // 3. Outside Click: dismiss menu when clicking outside headerRef
+  // 3. Outside Click & Escape Key: dismiss menu when clicking outside or pressing Escape
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (headerRef.current && !headerRef.current.contains(e.target)) {
@@ -78,12 +99,20 @@ export default function Header({ active }) {
       }
     };
 
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    };
+
     document.addEventListener("mousedown", handleOutsideClick);
     document.addEventListener("touchstart", handleOutsideClick);
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
       document.removeEventListener("touchstart", handleOutsideClick);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [closeMenu]);
 
@@ -147,6 +176,13 @@ export default function Header({ active }) {
               id="products-mobile-submenu"
               role="region"
               aria-label="Products subtabs"
+              onMouseEnter={() => {
+                if (leaveTimeoutRef.current) {
+                  clearTimeout(leaveTimeoutRef.current);
+                  leaveTimeoutRef.current = null;
+                }
+              }}
+              onMouseLeave={handleMouseLeave}
               onClick={(e) => {
                 if (e.target.closest("a, button")) closeMenu();
               }}
@@ -240,6 +276,13 @@ export default function Header({ active }) {
               id="services-mobile-submenu"
               role="region"
               aria-label="Services catalog"
+              onMouseEnter={() => {
+                if (leaveTimeoutRef.current) {
+                  clearTimeout(leaveTimeoutRef.current);
+                  leaveTimeoutRef.current = null;
+                }
+              }}
+              onMouseLeave={handleMouseLeave}
               onClick={(e) => {
                 if (e.target.closest("a, button")) closeMenu();
               }}
@@ -313,12 +356,26 @@ export default function Header({ active }) {
             </svg>
           </button>
           {" "}
-          <Link className="nav-cta eleks-nav-cta" to="/contact" onClick={closeMenu}>
+          <button
+            type="button"
+            className="nav-cta eleks-nav-cta"
+            data-discuss=""
+            aria-haspopup="dialog"
+            style={{ border: "none", cursor: "pointer", fontFamily: "inherit" }}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              closeMenu();
+              if (typeof window !== "undefined" && typeof window.ojxOpenDiscussModal === "function") {
+                window.ojxOpenDiscussModal();
+              }
+            }}
+          >
             Discuss a project{" "}
             <span aria-hidden="true">
               ↗
             </span>
-          </Link>
+          </button>
         </nav>
       </div>
       {" "}

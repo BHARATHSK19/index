@@ -420,8 +420,7 @@ html body.dxm main .pd-faq h2.pd-h2:not(#ojx-x):not(#ojx-y) { font-size: clamp(4
   .pd-row { grid-template-columns: 1fr; gap: 14px; padding: 36px 0; }
   .pd-row__dot { justify-self: start; width: 10px; height: 10px; }
   .pd-row__title { max-width: none; font-size: clamp(34px, 10vw, 44px) !important; }
-  .pd-stats__grid, .pd-trust__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .pd-stat__num { font-size: clamp(30px, 9vw, 40px) !important; }
+  .pd-trust__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .pd-faq__item summary { font-size: 16px !important; }
   .pd-next__k { left: 20px; }
   .pd-next__name { left: 20px; font-size: clamp(48px, 15vw, 72px) !important; }
@@ -804,4 +803,515 @@ rect.pmk-bar.is-hot { fill: #C9662F; opacity: 1; }
   .pv-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .pv-kpi b { font-size: 19px !important; }
   .pv-url { display: none; }
+}
+
+
+
+
+
+.pv {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.pv-win {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #101e32;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+}
+
+.pv-dashboard-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.pv-dashboard-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile phone mockup */
+.pv-phone {
+  position: absolute;
+  z-index: 3;
+  right: -5%;
+  bottom: -8%;
+  width: 23%;
+  min-width: 155px;
+  max-width: 210px;
+  aspect-ratio: 9 / 19;
+  padding: 6px;
+  border-radius: 38px;
+  background: #080d16;
+  border: 2px solid #303847;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.pv-phone__screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 31px;
+  background: #101e32;
+}
+
+.pv-status {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  padding: 8px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  background: #101e32;
+}
+
+.pv-status__icons {
+  display: flex;
+  gap: 3px;
+}
+
+.pv-status__icons i {
+  width: 4px;
+  height: 8px;
+  border-radius: 2px;
+  background: white;
+}
+
+.pv-mobile-image {
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+}
+
+.pv-mobile-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.pv-home {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  height: 4px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 600px) {
+  .pv-phone {
+    right: -3%;
+    bottom: -5%;
+    width: 27%;
+    min-width: 115px;
+  }
+}
+
+/* ==========================================================================
+   Product Device Showcase (Desktop Dashboard + Floating Mobile Frame)
+   Responsive rule:
+   - Desktop (> 768px): Desktop preview (94% width) + floating mobile phone (bottom-right overlap).
+   - Mobile (<= 768px): Completely hide desktop preview; center mobile phone frame alone.
+   ========================================================================== */
+
+.ojx-device-preview {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 25px 5px 25px;
+  box-sizing: border-box;
+}
+
+/* Desktop website / dashboard container */
+.ojx-device-preview__desktop {
+  width: 94%;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.13);
+  position: relative;
+  z-index: 1;
+}
+
+/* Browser header bar */
+.ojx-device-preview__browser-bar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 8px;
+  background: #fafafa;
+  border-bottom: 1px solid #eeeeee;
+  box-sizing: border-box;
+}
+
+.ojx-device-preview__browser-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.ojx-device-preview__browser-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.ojx-device-preview__browser-dots .dot--red {
+  background: #ff6058;
+}
+
+.ojx-device-preview__browser-dots .dot--yellow {
+  background: #ffbd2e;
+}
+
+.ojx-device-preview__browser-dots .dot--green {
+  background: #28c840;
+}
+
+.ojx-device-preview__browser-url {
+  margin: 0 auto;
+  background: #eeeeee;
+  border-radius: 6px;
+  padding: 7px 35px;
+  font-size: 10px;
+  color: #777777;
+  white-space: nowrap;
+}
+
+.ojx-device-preview__browser-live {
+  font-size: 10px;
+  color: #16834a;
+  background: #e8f7ee;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ojx-device-preview__desktop-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Smartphone frame */
+.ojx-device-preview__mobile {
+  position: absolute;
+  width: 138px;
+  right: 1%;
+  bottom: 10px;
+  z-index: 3;
+  padding: 6px;
+  background: #171717;
+  border-radius: 27px;
+  border: 2px solid #333333;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.24);
+  box-sizing: border-box;
+}
+
+.ojx-device-preview__mobile-inner {
+  overflow: hidden;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.ojx-device-preview__mobile-status {
+  height: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 11px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #222222;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.ojx-device-preview__mobile-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ojx-device-preview__mobile-home {
+  height: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+.ojx-device-preview__mobile-home-bar {
+  width: 40px;
+  height: 4px;
+  border-radius: 10px;
+  background: #222222;
+}
+
+/* ==========================================================================
+   Mobile Responsive Overrides (768px and below)
+   - Completely hide the floating mobile smartphone preview (.pd-mobile-device-preview)
+   - Display ONLY the desktop website/dashboard preview across full container width
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Hide the floating mobile preview completely across all product previews */
+  .pd-mobile-device-preview,
+  .ojx-device-preview__mobile,
+  html body .pv .pv-phone {
+    display: none !important;
+  }
+
+  .ojx-device-preview {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  /* Desktop website preview expands to occupy the available mobile container width */
+  .ojx-device-preview__desktop {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  /* Maintain proper image proportions */
+  .ojx-device-preview__desktop-img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* Responsive header bar scaling */
+  .ojx-device-preview__browser-bar {
+    height: 36px;
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .ojx-device-preview__browser-dots {
+    gap: 5px;
+  }
+
+  .ojx-device-preview__browser-dots .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .ojx-device-preview__browser-url {
+    padding: 4px 10px;
+    font-size: 9px;
+    max-width: 58%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ojx-device-preview__browser-live {
+    font-size: 8.5px;
+    padding: 3px 7px;
+  }
+
+  /* Illustrative .pv preview desktop window takes full width without reserved phone margin */
+  html body .pv .pv-win {
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  html body .pv {
+    padding-bottom: 0 !important;
+    min-height: 0 !important;
+  }
+
+  /* ==========================================================================
+     2x2 Productivity Metrics Grid (768px and below)
+     - Preserves 2-column, 2-row layout with balanced symmetric padding
+     - Heading, label, and description scale responsively with natural wrapping
+     - Even dividers between cells with zero text overlapping or overflow
+     ========================================================================== */
+  .pd-stats {
+    padding: 0 0 clamp(40px, 8vw, 64px) !important;
+  }
+
+  .pd-stats__grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-top: 1px solid rgba(18, 18, 18, 0.15) !important;
+    border-bottom: 0 !important;
+  }
+
+  .pd-stat {
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Left column (odd items: 1 & 3): left flush with container, right divider */
+  .pd-stat:nth-child(odd) {
+    padding: 18px 14px 18px 0 !important;
+    border-right: 1px solid rgba(18, 18, 18, 0.1) !important;
+    border-left: 0 !important;
+  }
+
+  /* Right column (even items: 2 & 4): left padding, flush right, no right border */
+  .pd-stat:nth-child(even) {
+    padding: 18px 0 18px 14px !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+  }
+
+  /* Top row (items 1 & 2): horizontal divider below */
+  .pd-stat:nth-child(1),
+  .pd-stat:nth-child(2) {
+    border-bottom: 1px solid rgba(18, 18, 18, 0.1) !important;
+    padding-top: 20px !important;
+  }
+
+  /* Bottom row (items 3 & 4): no bottom border */
+  .pd-stat:nth-child(3),
+  .pd-stat:nth-child(4) {
+    border-bottom: 0 !important;
+  }
+
+  /* Heading: responsive scaling, natural wrapping, no overlapping lines */
+  .pd-stat__num {
+    margin: 0 !important;
+    font-family: var(--dx-display) !important;
+    font-stretch: 62% !important;
+    font-weight: 800 !important;
+    font-size: clamp(20px, 5.4vw, 28px) !important;
+    line-height: 1.1 !important;
+    text-transform: uppercase !important;
+    min-width: 0 !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+
+  /* Subheading / Label: clear spacing and readable font */
+  .pd-stat__label {
+    margin: 8px 0 6px !important;
+    font-size: clamp(12.5px, 3.4vw, 14.5px) !important;
+    line-height: 1.35 !important;
+    font-weight: 600 !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Description: natural wrapping, comfortable line height */
+  .pd-stat__desc {
+    display: block !important;
+    margin: 0 !important;
+    font-size: clamp(11.5px, 3vw, 13px) !important;
+    line-height: 1.45 !important;
+    color: #6e6e73 !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Theme divider adaptations */
+  html[data-theme="dark"] .pd-stats__grid {
+    border-top-color: rgba(226, 232, 240, 0.25) !important;
+  }
+  html[data-theme="dark"] .pd-stat:nth-child(odd) {
+    border-right-color: rgba(226, 232, 240, 0.14) !important;
+  }
+  html[data-theme="dark"] .pd-stat:nth-child(1),
+  html[data-theme="dark"] .pd-stat:nth-child(2) {
+    border-bottom-color: rgba(226, 232, 240, 0.14) !important;
+  }
+  html[data-theme="dark"] .pd-stat__desc {
+    color: #C2CCDA !important;
+  }
+
+  html:not([data-theme="dark"]) .pd-stats__grid {
+    border-top-color: rgba(15, 28, 46, 0.2) !important;
+  }
+  html:not([data-theme="dark"]) .pd-stat:nth-child(odd) {
+    border-right-color: rgba(15, 28, 46, 0.1) !important;
+  }
+  html:not([data-theme="dark"]) .pd-stat:nth-child(1),
+  html:not([data-theme="dark"]) .pd-stat:nth-child(2) {
+    border-bottom-color: rgba(15, 28, 46, 0.1) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .pd-stat:nth-child(odd) {
+    padding: 14px 8px 14px 0 !important;
+  }
+
+  .pd-stat:nth-child(even) {
+    padding: 14px 0 14px 8px !important;
+  }
+
+  .pd-stat__num {
+    font-size: clamp(18px, 5.2vw, 20px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .pd-stat__label {
+    font-size: 12px !important;
+    margin: 6px 0 4px !important;
+  }
+
+  .pd-stat__desc {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+  .ojx-device-preview__browser-bar {
+    height: 32px;
+    padding: 0 8px;
+    gap: 4px;
+  }
+
+  .ojx-device-preview__browser-dots .dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .ojx-device-preview__browser-url {
+    font-size: 8px;
+    padding: 3px 6px;
+    max-width: 52%;
+  }
+
+  .ojx-device-preview__browser-live {
+    font-size: 8px;
+    padding: 2px 6px;
+  }
 }

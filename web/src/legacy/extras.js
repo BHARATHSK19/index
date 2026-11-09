@@ -117,12 +117,12 @@ export default function init(__ctx) {
 
   /* OJIX — "Discuss a project" pop-up (v1.2.0). Posts to /api/project. */
   (function () {
-    var triggers = document.querySelectorAll('a.nav-cta, [data-discuss], a[href="/contact"], a[href$="#contact"], a[href$="#contact-advisory"]');
+    var triggers = document.querySelectorAll('button.nav-cta, a.nav-cta, [data-discuss], a[href="/contact"], a[href$="#contact"], a[href$="#contact-advisory"]');
     if (!triggers.length) return;
     var PRODUCTS = ['Not sure yet', 'OJIX OS — office, HR & accounts', 'Nyaya Sethu — law firms', 'ProcureOS — purchasing & stock',
       'AI proctX — schools & colleges', 'BuildOS — construction', 'TravelOS — travel agencies', 'FitOS — gyms & fitness',
       'DPDP Privacy Vault', 'Custom software', 'Website / web app', 'AI automation'];
-    var modal = null, lastFocus = null;
+    var modal = null, lastFocus = null, savedScrollY = 0;
 
     function build() {
       var opts = PRODUCTS.map(function (p) { return '<option class="bg-[#0F1C2E] text-white" value="' + p.replace(/"/g, '&quot;') + '">' + p + '</option>'; }).join('');
@@ -161,6 +161,11 @@ export default function init(__ctx) {
           var f = modal.querySelectorAll('button, input:not([tabindex="-1"]), select, textarea, a');
           f = Array.prototype.filter.call(f, function (x) { return x.offsetParent !== null; });
           if (!f.length) return;
+          if (!modal.contains(document.activeElement)) {
+            e.preventDefault();
+            f[0].focus();
+            return;
+          }
           if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
           else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
         }
@@ -168,42 +173,86 @@ export default function init(__ctx) {
       modal.querySelector('form').addEventListener('submit', submit);
     }
 
-    function open(e) {
-      if (e) e.preventDefault();
-      if (modal && !modal.querySelector('form')) { modal.remove(); modal = null; }   // fresh form after a sent one
-      if (!modal) build();
-      var t0 = e && e.currentTarget && e.currentTarget.getAttribute ? e.currentTarget : null;
-      var topic = t0 ? t0.getAttribute('data-topic') : '';
-      var demo = t0 && t0.getAttribute('data-mode') === 'demo';
-      var form = modal.querySelector('form');
-      form.elements.namedItem('mode').value = demo ? 'demo' : '';
-      modal.querySelector('.ojx-pm__k').textContent = demo ? 'Book a demo' + (topic ? ' · ' + topic : '') : 'Discuss a project';
-      modal.querySelector('.ojx-pm__title').innerHTML = demo ? 'Book a <span class="is-lit">' + (topic || 'live') + ' demo.</span>' : 'Tell us what <span class="is-lit">you need.</span>';
-      modal.querySelector('.ojx-pm__sub').textContent = demo
-        ? 'Pick a time that suits you and we’ll walk you through it on a call—usually within one working day.'
-        : 'A few details and our team will get back to you—usually within one working day.';
-      modal.querySelector('.ojx-pm__send').textContent = demo ? 'Request demo →' : 'Send requirement →';
-      var sel = form.elements.namedItem('interest');
-      if (topic) {
-        for (var i = 0; i < sel.options.length; i++) {
-          if (sel.options[i].text.indexOf(topic) === 0) { sel.selectedIndex = i; break; }
+    function open(e, directTrigger) {
+      if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+      }
+      try {
+        if (modal && !modal.querySelector('form')) { modal.remove(); modal = null; }   // fresh form after a sent one
+        if (!modal) build();
+        if (!modal) return;
+
+        // Record the current scroll position so opening modal preserves user's exact scroll offset
+        savedScrollY = window.scrollY || window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || 0;
+
+        var t0 = directTrigger || (e && e.currentTarget && typeof e.currentTarget.getAttribute === 'function' ? e.currentTarget : null);
+        if (!t0 && e && e.target && typeof e.target.closest === 'function') {
+          t0 = e.target.closest('[data-discuss], .nav-cta, a.ojx-hero__link, a[href="/contact"], a[href$="#contact"]');
         }
-      } else { sel.selectedIndex = 0; }
-      lastFocus = document.activeElement;
-      // close the phone menu if it is open
-      var t = document.querySelector('.menu-toggle[aria-expanded="true"]');
-      if (t) t.click();
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('ojx-pm-open');
-      setTimeout(function () { var n = modal.querySelector('input[name="name"]'); if (n) n.focus(); }, 350);
+        var topic = t0 && typeof t0.getAttribute === 'function' ? (t0.getAttribute('data-topic') || '') : '';
+        var demo = t0 && typeof t0.getAttribute === 'function' ? (t0.getAttribute('data-mode') === 'demo') : false;
+        var form = modal.querySelector('form');
+        if (!form) return;
+        var modeInput = form.elements['mode'] || (form.elements.namedItem && form.elements.namedItem('mode'));
+        if (modeInput) modeInput.value = demo ? 'demo' : '';
+        var k = modal.querySelector('.ojx-pm__k');
+        if (k) k.textContent = demo ? 'Book a demo' + (topic ? ' · ' + topic : '') : 'Discuss a project';
+        var title = modal.querySelector('.ojx-pm__title');
+        if (title) title.innerHTML = demo ? 'Book a <span class="is-lit">' + (topic || 'live') + ' demo.</span>' : 'Tell us what <span class="is-lit">you need.</span>';
+        var sub = modal.querySelector('.ojx-pm__sub');
+        if (sub) sub.textContent = demo
+          ? 'Pick a time that suits you and we’ll walk you through it on a call—usually within one working day.'
+          : 'A few details and our team will get back to you—usually within one working day.';
+        var sendBtn = modal.querySelector('.ojx-pm__send');
+        if (sendBtn) sendBtn.textContent = demo ? 'Request demo →' : 'Send requirement →';
+        var sel = form.elements['interest'] || (form.elements.namedItem && form.elements.namedItem('interest'));
+        if (sel && sel.options) {
+          if (topic) {
+            for (var i = 0; i < sel.options.length; i++) {
+              if (sel.options[i].text && sel.options[i].text.indexOf(topic) === 0) { sel.selectedIndex = i; break; }
+            }
+          } else { sel.selectedIndex = 0; }
+        }
+        lastFocus = document.activeElement;
+        // close the phone menu if it is open
+        var t = document.querySelector('.menu-toggle[aria-expanded="true"]');
+        if (t && typeof t.click === 'function') t.click();
+
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+
+        // Apply strict body and html scroll locking
+        document.body.classList.add('ojx-pm-open');
+        document.body.classList.add('modal-open');
+        document.documentElement.classList.add('modal-open');
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+
+        setTimeout(function () {
+          var n = modal.querySelector('input[name="name"]');
+          if (n && typeof n.focus === 'function') n.focus();
+        }, 350);
+      } catch (err) {
+        console.warn('[OJIX Modal]', err);
+      }
     }
 
     function close() {
       if (!modal) return;
       modal.classList.remove('is-open');
       modal.setAttribute('aria-hidden', 'true');
+
+      // Restore document.body and documentElement scroll styles
       document.body.classList.remove('ojx-pm-open');
+      document.body.classList.remove('modal-open');
+      document.documentElement.classList.remove('modal-open');
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+
+      // Confirm background page remains stationary at exact position
+      window.scrollTo(0, savedScrollY);
+
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
 
@@ -300,6 +349,31 @@ export default function init(__ctx) {
     }
 
     Array.prototype.forEach.call(triggers, function (t) { t.addEventListener('click', open); });
+
+    // Delegated click listener so any dynamically rendered [data-discuss] or CTA trigger opens modal
+    __on(document, 'click', function (e) {
+      if (!e || !e.target || typeof e.target.closest !== 'function') return;
+      var trigger = e.target.closest('[data-discuss], .nav-cta, a.ojx-hero__link, a[href$="#contact"], a[href$="#contact-advisory"]');
+      if (trigger) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        open(e, trigger);
+      }
+    });
+
+    // Dismiss modal on browser back or hash change so screen does not freeze
+    __on(window, 'popstate', close);
+    __on(window, 'hashchange', close);
+
+    if (typeof window !== 'undefined') {
+      window.ojxOpenDiscussModal = function (topic, mode) {
+        open(null, {
+          getAttribute: function (a) {
+            return a === 'data-topic' ? topic : (a === 'data-mode' ? mode : null);
+          }
+        });
+      };
+    }
   })();
 
   /* OJIX — light up headline highlights when they scroll into view (v1.3.0) */

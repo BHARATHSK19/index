@@ -1,5 +1,6 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
 import { ProductCounter, NextProduct } from "../../components/ProductBits.jsx";
+import ProductDevicePreview from "../../components/ProductDevicePreview.jsx";
 
 export default function CompanyManagementSystem() {
   return (
@@ -28,6 +29,7 @@ export default function CompanyManagementSystem() {
           </a>
         </section>
         {" "}
+        
         <section className="pd-intro" id="pd-overview" aria-labelledby="pd-s1">
           <div className="shell pd-intro__grid">
             <div className="pd-intro__copy dx-reveal">
@@ -63,166 +65,25 @@ export default function CompanyManagementSystem() {
               </div>
             </div>
             {" "}
+
+
+
             <div className="pd-intro__visual dx-reveal">
-              <div className="pv" aria-label="Company Management System preview (illustrative)" role="img">
-                <div className="pv-win">
-                  <div className="pv-top">
-                    <span className="pv-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span className="pv-url">
-                      app.ojix.in/company
-                    </span>
-                    <span className="pv-live">
-                      Live
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-head">
-                    <span className="pv-mark">
-                      O
-                    </span>
-                    <strong>
-                      Company Management System
-                    </strong>
-                    <span className="pv-badge">
-                      October payroll ready
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-kpis">
-                    <div className="pv-kpi" style={{"--i": "0"}}>
-                      <b>
-                        142/150
-                      </b>
-                      <span>
-                        Staff present
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "1"}}>
-                      <b>
-                        ₹18.4L
-                      </b>
-                      <span>
-                        Payroll · Oct
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "2"}}>
-                      <b>
-                        6
-                      </b>
-                      <span>
-                        Approvals waiting
-                      </span>
-                    </div>
-                  </div>
-                  {" "}
-                  <div className="pv-panel">
-                    <p className="pv-panel__t">
-                      Attendance this week
-                    </p>
-                    <div className="pv-bars">
-                      <div className="pv-bar" style={{"--h": "95%", "--i": "0"}}>
-                        <i />
-                        <span>
-                          Mon
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "98%", "--i": "1"}}>
-                        <i />
-                        <span>
-                          Tue
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "91%", "--i": "2"}}>
-                        <i />
-                        <span>
-                          Wed
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "100%", "--i": "3"}}>
-                        <i />
-                        <span>
-                          Thu
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "97%", "--i": "4"}}>
-                        <i />
-                        <span>
-                          Fri
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "73%", "--i": "5"}}>
-                        <i />
-                        <span>
-                          Sat
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {" "}
-                <div className="pv-phone">
-                  <div className="pv-phone__screen">
-                    <div className="pv-status">
-                      <span>
-                        9:41
-                      </span>
-                      <span className="pv-status__icons">
-                        <i />
-                        <i />
-                        <i />
-                      </span>
-                    </div>
-                    {" "}
-                    <div className="pv-papp">
-                      <span className="pv-mark pv-mark--sm">
-                        O
-                      </span>
-                      <b>
-                        Company Management System
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-note">
-                      <span className="pv-note__dot" />
-                      <div>
-                        <strong>
-                          Expense approved
-                        </strong>
-                        <small>
-                          ₹4,250 · Travel · Ravi K.
-                        </small>
-                      </div>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Staff present
-                      </span>
-                      <b>
-                        142/150
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Payroll · Oct
-                      </span>
-                      <b>
-                        ₹18.4L
-                      </b>
-                    </div>
-                    {" "}
-                    <span className="pv-home" />
-                  </div>
-                </div>
-              </div>
+              <ProductDevicePreview
+                desktopImg="/assets/images/products/companyos/Executive-Center-website.png"
+                desktopAlt="Company Management System Desktop Dashboard"
+                mobileImg="/assets/images/products/companyos/Company-os-mobile.jpeg"
+                mobileAlt="Company Management System Mobile Application"
+                url="app.ojix.in/company-management-system"
+              />
             </div>
+
+
+
+
           </div>
         </section>
+
         {" "}
         <section className="pd-stats" aria-label="Company Management System in numbers">
           <div className="shell">

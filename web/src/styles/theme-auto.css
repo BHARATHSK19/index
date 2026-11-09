@@ -3610,7 +3610,9 @@ html:not([data-theme="dark"]) .site-header.ojx-float {
   box-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.35) !important;
 }
 html:not([data-theme="dark"]) .ojx-pm__scrim {
-  background: rgba(10, 10, 10, 0.45);
+  background: rgba(9, 18, 30, 0.75);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 html:not([data-theme="dark"]) .ojx-pm__sheet {
   background: #f7f6f6;
@@ -8320,7 +8322,9 @@ html[data-theme="dark"] .site-header.ojx-float {
   box-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.65) !important;
 }
 html[data-theme="dark"] .ojx-pm__scrim {
-  background: rgba(226, 232, 240, 0.63);
+  background: rgba(9, 18, 30, 0.75);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 html[data-theme="dark"] .ojx-pm__sheet {
   background: #0B1626;

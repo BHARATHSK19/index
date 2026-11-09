@@ -1,5 +1,6 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
 import { ProductCounter, NextProduct } from "../../components/ProductBits.jsx";
+import ProductDevicePreview from "../../components/ProductDevicePreview.jsx";
 
 export default function SchoolERP() {
   return (
@@ -64,181 +65,13 @@ export default function SchoolERP() {
             </div>
             {" "}
             <div className="pd-intro__visual dx-reveal">
-              <div className="pv" aria-label="School ERP preview (illustrative)" role="img">
-                <div className="pv-win">
-                  <div className="pv-top">
-                    <span className="pv-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span className="pv-url">
-                      app.ojix.in/campus
-                    </span>
-                    <span className="pv-live">
-                      Live
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-head">
-                    <span className="pv-mark">
-                      A
-                    </span>
-                    <strong>
-                      School ERP
-                    </strong>
-                    <span className="pv-badge">
-                      Term 2 · 2026
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-kpis">
-                    <div className="pv-kpi" style={{"--i": "0"}}>
-                      <b>
-                        6,200
-                      </b>
-                      <span>
-                        Students
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "1"}}>
-                      <b>
-                        82%
-                      </b>
-                      <span>
-                        Fees collected
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "2"}}>
-                      <b>
-                        94%
-                      </b>
-                      <span>
-                        Attendance today
-                      </span>
-                    </div>
-                  </div>
-                  {" "}
-                  <div className="pv-panel">
-                    <p className="pv-panel__t">
-                      Fee collection by grade
-                    </p>
-                    <ul className="pv-prog">
-                      <li style={{"--i": "0"}}>
-                        <span>
-                          Grade 6
-                        </span>
-                        <b>
-                          91%
-                        </b>
-                        <i>
-                          <em style={{"--w": "91%"}} />
-                        </i>
-                      </li>
-                      <li style={{"--i": "1"}}>
-                        <span>
-                          Grade 7
-                        </span>
-                        <b>
-                          86%
-                        </b>
-                        <i>
-                          <em style={{"--w": "86%"}} />
-                        </i>
-                      </li>
-                      <li style={{"--i": "2"}}>
-                        <span>
-                          Grade 8
-                        </span>
-                        <b>
-                          78%
-                        </b>
-                        <i>
-                          <em style={{"--w": "78%"}} />
-                        </i>
-                      </li>
-                      <li style={{"--i": "3"}}>
-                        <span>
-                          Grade 9
-                        </span>
-                        <b>
-                          74%
-                        </b>
-                        <i>
-                          <em style={{"--w": "74%"}} />
-                        </i>
-                      </li>
-                      <li style={{"--i": "4"}}>
-                        <span>
-                          Grade 10
-                        </span>
-                        <b>
-                          88%
-                        </b>
-                        <i>
-                          <em style={{"--w": "88%"}} />
-                        </i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                {" "}
-                <div className="pv-phone">
-                  <div className="pv-phone__screen">
-                    <div className="pv-status">
-                      <span>
-                        9:41
-                      </span>
-                      <span className="pv-status__icons">
-                        <i />
-                        <i />
-                        <i />
-                      </span>
-                    </div>
-                    {" "}
-                    <div className="pv-papp">
-                      <span className="pv-mark pv-mark--sm">
-                        A
-                      </span>
-                      <b>
-                        School ERP
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-note">
-                      <span className="pv-note__dot" />
-                      <div>
-                        <strong>
-                          Fee paid · Grade 8B
-                        </strong>
-                        <small>
-                          ₹24,000 · Receipt sent to parent
-                        </small>
-                      </div>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Students
-                      </span>
-                      <b>
-                        6,200
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Fees collected
-                      </span>
-                      <b>
-                        82%
-                      </b>
-                    </div>
-                    {" "}
-                    <span className="pv-home" />
-                  </div>
-                </div>
-              </div>
+              <ProductDevicePreview
+                desktopImg="/assets/images/products/school/school-website.png"
+                desktopAlt="School ERP Desktop Dashboard"
+                mobileImg="/assets/images/products/school/school-mobile.jpeg"
+                mobileAlt="School ERP Mobile Application"
+                url="app.ojix.in/school-erp"
+              />
             </div>
           </div>
         </section>

@@ -559,8 +559,8 @@ html body .dx-arrow--hero.is-drawn .dx-arrow__head { stroke-dashoffset: 0; }
 }
 
 @media (max-width: 734px) {
-  /* product-page numbers: two clean columns, short */
-  .pd-stat__desc { display: none; }
+  /* product-page numbers: two clean columns with natural text wrapping */
+  .pd-stat__desc { display: block; }
   .pd-stat { padding-bottom: 20px !important; }
   /* assurance points: one column, no squeeze */
   .pd-trust__grid { grid-template-columns: 1fr !important; }

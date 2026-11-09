@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
 import Header from "./Header.jsx";
 import { Newsletter, Footer, Modals, MobileServicesModal } from "../generated/SiteChrome.jsx";
@@ -87,8 +87,55 @@ export default function Page({ meta, scripts, active, scrollProgress = false, ch
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Update document head & handle smooth section and anchor scrolling on route/hash changes
+  useEffect(() => {
+    applyHead(meta, location.pathname);
+
+    // Prevent background scrolling if an inquiry modal is currently active
+    const isModalOpen = typeof document !== "undefined" && (
+      document.body.classList.contains("ojx-pm-open") ||
+      document.body.classList.contains("modal-open") ||
+      Boolean(document.querySelector(".ojx-pm.is-open"))
+    );
+    if (isModalOpen) return;
+
+    const hash = location.hash ? location.hash.replace(/^#/, "") : null;
+    const path = location.pathname.replace(/\/$/, "") || "/";
+    const SECTION_MAP = {
+      "/about": "about",
+      "/contact": "contact",
+      "/discuss": "contact",
+      "/inquiry": "contact",
+      "/enquiry": "contact",
+      "/start-a-project": "contact",
+      "/process": "process",
+      "/who-we-are": "who-we-are",
+      "/security": "security-trust",
+      "/industries": "platforms"
+    };
+
+    const targetId = hash || SECTION_MAP[path];
+    if (targetId) {
+      const el = document.getElementById(targetId);
+      if (el) {
+        requestAnimationFrame(() => {
+          const modalActive = typeof document !== "undefined" && (
+            document.body.classList.contains("ojx-pm-open") ||
+            document.body.classList.contains("modal-open") ||
+            Boolean(document.querySelector(".ojx-pm.is-open"))
+          );
+          if (!modalActive) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      }
+    } else if (path === "/" && !hash && navType !== "POP") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.pathname, location.hash, meta, navType]);
+
   return (
-    <div className="ojx-page">
+    <div className="ojx-page" id="top">
       {showIntro ? (
         <div className="ojx-intro" id="ojx-intro" aria-hidden="true">
           <div className="ojx-intro__inner">

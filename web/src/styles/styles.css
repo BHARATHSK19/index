@@ -313,6 +313,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
   overflow-x: clip;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -10646,14 +10647,14 @@ body.modal-open {
   transition: opacity 0.24s ease, transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.24s;
 }
 
-/* Hover Bridge (Zero Flicker across 14px floating gap) */
+/* Hover Bridge (Zero Flicker across floating gap) */
 .eleks-mega-dropdown::before {
   content: '';
   position: absolute;
-  top: -14px;
+  top: -24px;
   left: 0;
   right: 0;
-  height: 14px;
+  height: 28px;
   background: transparent;
   pointer-events: auto;
 }
@@ -10662,11 +10663,12 @@ body.modal-open {
 
   .nav-item-has-mega:hover>.eleks-mega-dropdown,
   .nav-item-has-mega:focus-within>.eleks-mega-dropdown,
-  .nav-item-has-mega.is-mega-open>.eleks-mega-dropdown {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
+  .nav-item-has-mega.is-mega-open>.eleks-mega-dropdown,
+  .eleks-mega-dropdown:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
   }
 
   .nav-item-has-mega.is-closed>.eleks-mega-dropdown {

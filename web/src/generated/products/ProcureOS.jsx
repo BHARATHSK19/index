@@ -1,5 +1,6 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
 import { ProductCounter, NextProduct } from "../../components/ProductBits.jsx";
+import ProductDevicePreview from "../../components/ProductDevicePreview.jsx";
 
 export default function ProcureOS() {
   return (
@@ -63,167 +64,17 @@ export default function ProcureOS() {
               </div>
             </div>
             {" "}
+
             <div className="pd-intro__visual dx-reveal">
-              <div className="pv" aria-label="ProcureOS preview (illustrative)" role="img">
-                <div className="pv-win">
-                  <div className="pv-top">
-                    <span className="pv-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span className="pv-url">
-                      app.ojix.in/procure
-                    </span>
-                    <span className="pv-live">
-                      Live
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-head">
-                    <span className="pv-mark">
-                      P
-                    </span>
-                    <strong>
-                      ProcureOS
-                    </strong>
-                    <span className="pv-badge">
-                      3-way match on
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-kpis">
-                    <div className="pv-kpi" style={{"--i": "0"}}>
-                      <b>
-                        24
-                      </b>
-                      <span>
-                        Open orders
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "1"}}>
-                      <b>
-                        5
-                      </b>
-                      <span>
-                        Items low on stock
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "2"}}>
-                      <b>
-                        96%
-                      </b>
-                      <span>
-                        Bills matched
-                      </span>
-                    </div>
-                  </div>
-                  {" "}
-                  <div className="pv-panel">
-                    <p className="pv-panel__t">
-                      Order · delivery · bill check
-                    </p>
-                    <ul className="pv-list">
-                      <li style={{"--i": "0"}}>
-                        <div>
-                          <strong>
-                            PO-1182 · Steel coils
-                          </strong>
-                          <small>
-                            Delivered ✓ · Bill ✓
-                          </small>
-                        </div>
-                        <span className="pv-chip pv-chip--ok">
-                          Matched
-                        </span>
-                      </li>
-                      <li style={{"--i": "1"}}>
-                        <div>
-                          <strong>
-                            PO-1176 · Packing film
-                          </strong>
-                          <small>
-                            Delivered ✓ · Bill ✕ qty
-                          </small>
-                        </div>
-                        <span className="pv-chip pv-chip--on">
-                          Check
-                        </span>
-                      </li>
-                      <li style={{"--i": "2"}}>
-                        <div>
-                          <strong>
-                            PO-1190 · Cement 53 grade
-                          </strong>
-                          <small>
-                            In transit
-                          </small>
-                        </div>
-                        <span className="pv-chip pv-chip--off">
-                          Waiting
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                {" "}
-                <div className="pv-phone">
-                  <div className="pv-phone__screen">
-                    <div className="pv-status">
-                      <span>
-                        9:41
-                      </span>
-                      <span className="pv-status__icons">
-                        <i />
-                        <i />
-                        <i />
-                      </span>
-                    </div>
-                    {" "}
-                    <div className="pv-papp">
-                      <span className="pv-mark pv-mark--sm">
-                        P
-                      </span>
-                      <b>
-                        ProcureOS
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-note">
-                      <span className="pv-note__dot" />
-                      <div>
-                        <strong>
-                          Goods received
-                        </strong>
-                        <small>
-                          Gate 2 · PO-1182 · 18 coils
-                        </small>
-                      </div>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Open orders
-                      </span>
-                      <b>
-                        24
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Items low on stock
-                      </span>
-                      <b>
-                        5
-                      </b>
-                    </div>
-                    {" "}
-                    <span className="pv-home" />
-                  </div>
-                </div>
-              </div>
+              <ProductDevicePreview
+                desktopImg="/assets/images/products/procure/dashboard-website.png"
+                desktopAlt="ProcureOS Desktop Dashboard"
+                mobileImg="/assets/images/products/procure/procure-mobile.jpeg"
+                mobileAlt="ProcureOS Mobile Application"
+                url="app.ojix.in/procureos"
+              />
             </div>
+
           </div>
         </section>
         {" "}

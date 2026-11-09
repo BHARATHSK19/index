@@ -44,7 +44,19 @@ const SCRIPTS = {
 };
 
 // Home-page sections that also have their own URL (scrolls to the section).
-const HOME_SECTIONS = new Set(["/", "/about", "/contact", "/process", "/security", "/industries", "/who-we-are"]);
+const HOME_SECTIONS = new Set([
+  "/",
+  "/about",
+  "/contact",
+  "/discuss",
+  "/inquiry",
+  "/enquiry",
+  "/start-a-project",
+  "/process",
+  "/security",
+  "/industries",
+  "/who-we-are"
+]);
 
 const EXISTING_PRODUCT_PAGES = {
   "company-management-system": CompanyManagementSystem,

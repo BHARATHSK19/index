@@ -167,7 +167,7 @@ export default function LegalOS() {
                   </div>
                 </div>
                 {" "}
-                <div className="pv-phone">
+                <div className="pv-phone pd-mobile-device-preview">
                   <div className="pv-phone__screen">
                     <div className="pv-status">
                       <span>
