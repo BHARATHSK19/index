@@ -192,6 +192,12 @@ index/
   - Preserved desktop composition (> 768px): 94% desktop browser preview with controls, URL, Live tag, and bottom-right floating mobile preview.
   - Implemented mobile-only desktop view (<= 768px): Completely hides floating mobile smartphone preview via `.pd-mobile-device-preview { display: none !important; }` without removing JSX; expands desktop website preview to occupy 100% available container width with proper responsive scaling (`width: 100%; height: auto;`), zero horizontal overflow, and eliminated spacing left by the hidden mobile preview.
   - Extended support to `university-management-system` and `property-intelligence` using their dedicated screenshot assets, while maintaining fallback illustrative rendering for products without mobile screenshots.
+- **Productivity Metrics 2x2 Mobile Grid Optimization** (`web/src/styles/product.css`, `web/src/styles/extras.css`):
+  - Preserved desktop 4-column single row layout (`> 768px`) completely untouched.
+  - Optimized 2×2 grid layout on mobile viewports (`<= 768px`) using `grid-template-columns: repeat(2, minmax(0, 1fr))` with `min-width: 0` and `overflow-wrap: anywhere` to prevent track blowout.
+  - Implemented responsive fluid typography for `.pd-stat__num` using `clamp(20px, 5.4vw, 28px)` with `line-height: 1.1` to ensure long text (e.g. "PRODUCTIVITY", "ZERO FRICTION") fits cleanly inside individual grid cells without overflow or awkward line collision.
+  - Configured symmetrical internal padding (`padding: 18px 14px 18px 0` for odd column, `padding: 18px 0 18px 14px` for even column), aligned vertical and horizontal dividers with theme contrast, and removed duplicate bottom dividers on the second row.
+  - Restored natural description wrapping (`.pd-stat__desc`) across all screen widths down to 360px.
 
 ---
 
