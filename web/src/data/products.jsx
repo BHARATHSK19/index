@@ -104,7 +104,7 @@ export const PRODUCTS = [
     megaDesc: "Run secure online exams with identity checks, live webcam monitoring, browser lockdown and AI flags your invigilators can review in seconds.",
     megaImg: "/assets/images/products/proctoring-ui.webp",
     heroImg: "/assets/images/products/proctoring-hero.webp",
-    hoverImg: "/assets/images/products/ai-proctoring/proctoring-device.svg",
+    hoverImg: "/assets/images/products/ai-proctoring/ai-proctoring-device-v2.png",
     desktopImage: "/assets/images/products/ai-proctoring/proctoring-device.svg",
     mobileImage: "/assets/images/products/ai-proctoring/proctoring-mobile.svg",
     previewUrl: "app.ojix.in/ai-proctoring",
