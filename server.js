@@ -586,11 +586,6 @@ const PRODUCT_PAGES = [
 ];
 const SITE_PAGES = new Set(['/', '/about', '/contact', '/process', '/security', '/industries', '/who-we-are',
   '/products', '/services', '/cookies', ...PRODUCT_PAGES.map((p) => '/' + p)]);
-const SERVICE_SLUGS = new Set(
-  fs.existsSync(path.join(__dirname, 'web', 'src', 'data', 'serviceSlugs.json'))
-    ? JSON.parse(fs.readFileSync(path.join(__dirname, 'web', 'src', 'data', 'serviceSlugs.json'), 'utf8'))
-    : []
-);
 // Old URLs -> new ones (301). Covers renamed products and every old *.html address.
 const RENAMED = {
   '/companyos': '/company-management-system',
@@ -663,8 +658,7 @@ function sendApp(res, status) {
 
 app.get(/.*/, (req, res, next) => {
   if (req.path.startsWith('/api/')) return next();
-  const m = req.path.match(/^\/services\/([a-z0-9-]+)$/);
-  const known = SITE_PAGES.has(req.path) || (m && SERVICE_SLUGS.has(m[1]));
+  const known = SITE_PAGES.has(req.path);
   if (!known && /\.[a-z0-9]{2,5}$/i.test(req.path)) return next(); // missing file -> plain 404
   return sendApp(res, known ? 200 : 404);
 });

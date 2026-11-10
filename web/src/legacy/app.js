@@ -1410,16 +1410,16 @@ export default function init(__ctx) {
       badge: 'Build • Scale • Grow',
       icon: 'code',
       services: [
-        { title: 'Custom Software & Enterprise Applications', desc: 'Tailored applications for unique business requirements.', icon: 'code', href: '/services/custom-software-enterprise-applications', slug: 'custom-software-enterprise-applications' },
-        { title: 'Website & Mobile App Development', desc: 'Responsive websites and mobile applications.', icon: 'smartphone', href: '/services/website-mobile-app-development', slug: 'website-mobile-app-development' },
-        { title: 'Backend, API & Microservices Development', desc: 'Scalable backend systems and APIs.', icon: 'server', href: '/services/backend-api-microservices-development', slug: 'backend-api-microservices-development' },
-        { title: 'UI/UX Design & Prototyping', desc: 'User-focused interface design and interactive prototypes.', icon: 'palette', href: '/services/uiux-design-prototyping', slug: 'uiux-design-prototyping' },
-        { title: 'Website, Mobile App & Branding Design', desc: 'Consistent digital experiences and visual identity.', icon: 'layout', href: '/services/website-mobile-app-branding-design', slug: 'website-mobile-app-branding-design' },
-        { title: 'Usability & Accessibility Optimization', desc: 'More accessible and easier-to-use interfaces.', icon: 'accessibility', href: '/services/usability-accessibility-optimization', slug: 'usability-accessibility-optimization' },
-        { title: 'E-commerce Website & Marketplace Development', desc: 'Online stores and multi-vendor marketplaces.', icon: 'shopping-bag', href: '/services/e-commerce-website-marketplace-development', slug: 'e-commerce-website-marketplace-development' },
-        { title: 'Payment & Subscription Integration', desc: 'Payment gateways, recurring billing and subscriptions.', icon: 'credit-card', href: '/services/payment-subscription-integration', slug: 'payment-subscription-integration' },
-        { title: 'Online Store Maintenance & Optimization', desc: 'Improve store reliability, speed and usability.', icon: 'shopping-cart', href: '/services/online-store-maintenance-optimization', slug: 'online-store-maintenance-optimization' },
-        { title: 'Product Development', desc: 'Take software products from concept to release.', icon: 'cpu', href: '/services/product-development', slug: 'product-development' }
+        { title: 'Custom Software & Enterprise Applications', desc: 'Tailored applications for unique business requirements.', icon: 'code' },
+        { title: 'Website & Mobile App Development', desc: 'Responsive websites and mobile applications.', icon: 'smartphone' },
+        { title: 'Backend, API & Microservices Development', desc: 'Scalable backend systems and APIs.', icon: 'server' },
+        { title: 'UI/UX Design & Prototyping', desc: 'User-focused interface design and interactive prototypes.', icon: 'palette' },
+        { title: 'Website, Mobile App & Branding Design', desc: 'Consistent digital experiences and visual identity.', icon: 'layout' },
+        { title: 'Usability & Accessibility Optimization', desc: 'More accessible and easier-to-use interfaces.', icon: 'accessibility' },
+        { title: 'E-commerce Website & Marketplace Development', desc: 'Online stores and multi-vendor marketplaces.', icon: 'shopping-bag' },
+        { title: 'Payment & Subscription Integration', desc: 'Payment gateways, recurring billing and subscriptions.', icon: 'credit-card' },
+        { title: 'Online Store Maintenance & Optimization', desc: 'Improve store reliability, speed and usability.', icon: 'shopping-cart' },
+        { title: 'Product Development', desc: 'Take software products from concept to release.', icon: 'cpu' }
       ]
     },
     {
@@ -1432,16 +1432,16 @@ export default function init(__ctx) {
       badge: 'Automate • Streamline',
       icon: 'grid',
       services: [
-        { title: 'ERP Solutions', desc: 'Connect finance, purchasing, inventory and business operations.', icon: 'layers', href: '/services/erp-solutions', slug: 'erp-solutions' },
-        { title: 'CRM Solutions', desc: 'Manage customer records, sales pipelines and relationships.', icon: 'users', href: '/services/crm-solutions', slug: 'crm-solutions' },
-        { title: 'HR Management Systems', desc: 'Manage employees, recruitment, attendance and leave.', icon: 'user-check', href: '/services/hr-management-systems', slug: 'hr-management-systems' },
-        { title: 'Project & Task Management', desc: 'Coordinate projects, responsibilities and deadlines.', icon: 'check-square', href: '/services/project-task-management', slug: 'project-task-management' },
-        { title: 'Workflow Automation', desc: 'Automate approvals, reminders and repetitive processes.', icon: 'git-merge', href: '/services/workflow-automation', slug: 'workflow-automation' },
-        { title: 'Billing & Invoicing Systems', desc: 'Manage invoices, payments and financial records.', icon: 'receipt', href: '/services/billing-invoicing-systems', slug: 'billing-invoicing-systems' },
-        { title: 'Inventory Management', desc: 'Track stock, warehouses and inventory movements.', icon: 'archive', href: '/services/inventory-management', slug: 'inventory-management' },
-        { title: 'Document Management', desc: 'Organize business documents, versions and permissions.', icon: 'file-text', href: '/services/document-management', slug: 'document-management' },
-        { title: 'Booking & Reservation Systems', desc: 'Manage appointments, availability and reservations.', icon: 'calendar', href: '/services/booking-reservation-systems', slug: 'booking-reservation-systems' },
-        { title: 'Business Reporting Systems', desc: 'Present business performance and operational reports.', icon: 'bar-chart-2', href: '/services/business-reporting-systems', slug: 'business-reporting-systems' }
+        { title: 'ERP Solutions', desc: 'Connect finance, purchasing, inventory and business operations.', icon: 'layers' },
+        { title: 'CRM Solutions', desc: 'Manage customer records, sales pipelines and relationships.', icon: 'users' },
+        { title: 'HR Management Systems', desc: 'Manage employees, recruitment, attendance and leave.', icon: 'user-check' },
+        { title: 'Project & Task Management', desc: 'Coordinate projects, responsibilities and deadlines.', icon: 'check-square' },
+        { title: 'Workflow Automation', desc: 'Automate approvals, reminders and repetitive processes.', icon: 'git-merge' },
+        { title: 'Billing & Invoicing Systems', desc: 'Manage invoices, payments and financial records.', icon: 'receipt' },
+        { title: 'Inventory Management', desc: 'Track stock, warehouses and inventory movements.', icon: 'archive' },
+        { title: 'Document Management', desc: 'Organize business documents, versions and permissions.', icon: 'file-text' },
+        { title: 'Booking & Reservation Systems', desc: 'Manage appointments, availability and reservations.', icon: 'calendar' },
+        { title: 'Business Reporting Systems', desc: 'Present business performance and operational reports.', icon: 'bar-chart-2' }
       ]
     },
     {
@@ -1454,16 +1454,16 @@ export default function init(__ctx) {
       badge: 'Predict • Automate',
       icon: 'bot',
       services: [
-        { title: 'AI Integration', desc: 'Add AI capabilities to existing software.', icon: 'cpu', href: '/services/ai-integration', slug: 'ai-integration' },
-        { title: 'AI Assistants & Chatbots', desc: 'Build assistants for customer and employee support.', icon: 'bot', href: '/services/ai-assistants-chatbots', slug: 'ai-assistants-chatbots' },
-        { title: 'Enterprise Knowledge Systems', desc: 'Search company documents and internal knowledge.', icon: 'search', href: '/services/enterprise-knowledge-systems', slug: 'enterprise-knowledge-systems' },
-        { title: 'Machine Learning Development', desc: 'Build models for classification and prediction.', icon: 'git-branch', href: '/services/machine-learning-development', slug: 'machine-learning-development' },
-        { title: 'Predictive Analytics', desc: 'Identify trends and estimate future outcomes.', icon: 'trending-up', href: '/services/predictive-analytics', slug: 'predictive-analytics' },
-        { title: 'Database Engineering', desc: 'Design, migrate and optimize databases.', icon: 'database', href: '/services/database-engineering', slug: 'database-engineering' },
-        { title: 'Data Engineering & Pipelines', desc: 'Collect, transform and process business data.', icon: 'activity', href: '/services/data-engineering-pipelines', slug: 'data-engineering-pipelines' },
-        { title: 'Data Warehousing', desc: 'Consolidate data for reporting and analysis.', icon: 'hard-drive', href: '/services/data-warehousing', slug: 'data-warehousing' },
-        { title: 'Business Analytics', desc: 'Analyze sales, finance and operational performance.', icon: 'pie-chart', href: '/services/business-analytics', slug: 'business-analytics' },
-        { title: 'Data Reconciliation', desc: 'Detect inconsistencies between systems and records.', icon: 'check-circle', href: '/services/data-reconciliation', slug: 'data-reconciliation' }
+        { title: 'AI Integration', desc: 'Add AI capabilities to existing software.', icon: 'cpu' },
+        { title: 'AI Assistants & Chatbots', desc: 'Build assistants for customer and employee support.', icon: 'bot' },
+        { title: 'Enterprise Knowledge Systems', desc: 'Search company documents and internal knowledge.', icon: 'search' },
+        { title: 'Machine Learning Development', desc: 'Build models for classification and prediction.', icon: 'git-branch' },
+        { title: 'Predictive Analytics', desc: 'Identify trends and estimate future outcomes.', icon: 'trending-up' },
+        { title: 'Database Engineering', desc: 'Design, migrate and optimize databases.', icon: 'database' },
+        { title: 'Data Engineering & Pipelines', desc: 'Collect, transform and process business data.', icon: 'activity' },
+        { title: 'Data Warehousing', desc: 'Consolidate data for reporting and analysis.', icon: 'hard-drive' },
+        { title: 'Business Analytics', desc: 'Analyze sales, finance and operational performance.', icon: 'pie-chart' },
+        { title: 'Data Reconciliation', desc: 'Detect inconsistencies between systems and records.', icon: 'check-circle' }
       ]
     },
     {
@@ -1476,12 +1476,12 @@ export default function init(__ctx) {
       badge: 'Connect • Modernize',
       icon: 'workflow',
       services: [
-        { title: 'System Integration', desc: 'Connect business applications and enterprise systems.', icon: 'link', href: '/services/system-integration', slug: 'system-integration' },
-        { title: 'API & Webhook Integration', desc: 'Exchange data and trigger cross-system workflows.', icon: 'webhook', href: '/services/api-webhook-integration', slug: 'api-webhook-integration' },
-        { title: 'Legacy Software Modernization', desc: 'Upgrade outdated applications and technology.', icon: 'refresh-cw', href: '/services/legacy-software-modernization', slug: 'legacy-software-modernization' },
-        { title: 'Microservices Migration', desc: 'Restructure suitable systems into independently deployable services.', icon: 'grid', href: '/services/microservices-migration', slug: 'microservices-migration' },
-        { title: 'Data Migration', desc: 'Transfer data safely between platforms.', icon: 'corner-down-right', href: '/services/data-migration', slug: 'data-migration' },
-        { title: 'Platform Customization', desc: 'Adapt existing platforms to business requirements.', icon: 'sliders', href: '/services/platform-customization', slug: 'platform-customization' }
+        { title: 'System Integration', desc: 'Connect business applications and enterprise systems.', icon: 'link' },
+        { title: 'API & Webhook Integration', desc: 'Exchange data and trigger cross-system workflows.', icon: 'webhook' },
+        { title: 'Legacy Software Modernization', desc: 'Upgrade outdated applications and technology.', icon: 'refresh-cw' },
+        { title: 'Microservices Migration', desc: 'Restructure suitable systems into independently deployable services.', icon: 'grid' },
+        { title: 'Data Migration', desc: 'Transfer data safely between platforms.', icon: 'corner-down-right' },
+        { title: 'Platform Customization', desc: 'Adapt existing platforms to business requirements.', icon: 'sliders' }
       ]
     },
     {
@@ -1494,14 +1494,14 @@ export default function init(__ctx) {
       badge: 'Scale • 99.99% Uptime',
       icon: 'cloud',
       services: [
-        { title: 'Cloud Infrastructure Management', desc: 'Provision and manage cloud resources.', icon: 'cloud', href: '/services/cloud-infrastructure-management', slug: 'cloud-infrastructure-management' },
-        { title: 'Cloud Hosting & Deployment', desc: 'Host applications and manage releases.', icon: 'upload-cloud', href: '/services/cloud-hosting-deployment', slug: 'cloud-hosting-deployment' },
-        { title: 'DevOps Engineering', desc: 'Improve software delivery and operations.', icon: 'terminal', href: '/services/devops-engineering', slug: 'devops-engineering' },
-        { title: 'CI/CD Automation', desc: 'Automate builds, tests and deployments.', icon: 'play', href: '/services/cicd-automation', slug: 'cicd-automation' },
-        { title: 'Containerization & Orchestration', desc: 'Package and manage containerized applications.', icon: 'box', href: '/services/containerization-orchestration', slug: 'containerization-orchestration' },
-        { title: 'Network Management', desc: 'Configure and maintain network connectivity.', icon: 'wifi', href: '/services/network-management', slug: 'network-management' },
-        { title: 'IT Infrastructure Management', desc: 'Manage servers, devices and core IT systems.', icon: 'server', href: '/services/it-infrastructure-management', slug: 'it-infrastructure-management' },
-        { title: 'Cloud Cost Optimization', desc: 'Reduce waste and improve resource utilization.', icon: 'dollar-sign', href: '/services/cloud-cost-optimization', slug: 'cloud-cost-optimization' }
+        { title: 'Cloud Infrastructure Management', desc: 'Provision and manage cloud resources.', icon: 'cloud' },
+        { title: 'Cloud Hosting & Deployment', desc: 'Host applications and manage releases.', icon: 'upload-cloud' },
+        { title: 'DevOps Engineering', desc: 'Improve software delivery and operations.', icon: 'terminal' },
+        { title: 'CI/CD Automation', desc: 'Automate builds, tests and deployments.', icon: 'play' },
+        { title: 'Containerization & Orchestration', desc: 'Package and manage containerized applications.', icon: 'box' },
+        { title: 'Network Management', desc: 'Configure and maintain network connectivity.', icon: 'wifi' },
+        { title: 'IT Infrastructure Management', desc: 'Manage servers, devices and core IT systems.', icon: 'server' },
+        { title: 'Cloud Cost Optimization', desc: 'Reduce waste and improve resource utilization.', icon: 'dollar-sign' }
       ]
     },
     {
@@ -1514,14 +1514,14 @@ export default function init(__ctx) {
       badge: 'DPDP 2023 • ISO 27001',
       icon: 'shield-check',
       services: [
-        { title: 'Functional & Integration Testing', desc: 'Verify features and system interactions.', icon: 'check-square', href: '/services/functional-integration-testing', slug: 'functional-integration-testing' },
-        { title: 'Test Automation', desc: 'Automate repeatable software tests.', icon: 'repeat', href: '/services/test-automation', slug: 'test-automation' },
-        { title: 'API & End-to-End Testing', desc: 'Validate APIs and complete user journeys.', icon: 'navigation', href: '/services/api-end-to-end-testing', slug: 'api-end-to-end-testing' },
-        { title: 'Performance Testing', desc: 'Evaluate speed, concurrency and system capacity.', icon: 'zap', href: '/services/performance-testing', slug: 'performance-testing' },
-        { title: 'Security Auditing', desc: 'Identify security weaknesses and configuration problems.', icon: 'shield', href: '/services/security-auditing', slug: 'security-auditing' },
-        { title: 'Penetration Testing', desc: 'Perform authorized testing for exploitable vulnerabilities.', icon: 'key', href: '/services/penetration-testing', slug: 'penetration-testing' },
-        { title: 'Application Security', desc: 'Strengthen authentication, authorization and data protection.', icon: 'lock', href: '/services/application-security', slug: 'application-security' },
-        { title: 'Security Monitoring', desc: 'Detect suspicious activity and investigate alerts.', icon: 'eye', href: '/services/security-monitoring', slug: 'security-monitoring' }
+        { title: 'Functional & Integration Testing', desc: 'Verify features and system interactions.', icon: 'check-square' },
+        { title: 'Test Automation', desc: 'Automate repeatable software tests.', icon: 'repeat' },
+        { title: 'API & End-to-End Testing', desc: 'Validate APIs and complete user journeys.', icon: 'navigation' },
+        { title: 'Performance Testing', desc: 'Evaluate speed, concurrency and system capacity.', icon: 'zap' },
+        { title: 'Security Auditing', desc: 'Identify security weaknesses and configuration problems.', icon: 'shield' },
+        { title: 'Penetration Testing', desc: 'Perform authorized testing for exploitable vulnerabilities.', icon: 'key' },
+        { title: 'Application Security', desc: 'Strengthen authentication, authorization and data protection.', icon: 'lock' },
+        { title: 'Security Monitoring', desc: 'Detect suspicious activity and investigate alerts.', icon: 'eye' }
       ]
     },
     {
@@ -1534,13 +1534,13 @@ export default function init(__ctx) {
       badge: '24/7 • Active SLA',
       icon: 'settings',
       services: [
-        { title: 'Software Maintenance', desc: 'Keep applications stable and up to date.', icon: 'wrench', href: '/services/software-maintenance', slug: 'software-maintenance' },
-        { title: 'Bug Fixing & Enhancements', desc: 'Resolve defects and add improvements.', icon: 'tool', href: '/services/bug-fixing-enhancements', slug: 'bug-fixing-enhancements' },
-        { title: 'Technical Support', desc: 'Help users and teams solve technical problems.', icon: 'headphones', href: '/services/technical-support', slug: 'technical-support' },
-        { title: 'Incident Management', desc: 'Coordinate responses to production failures.', icon: 'alert-triangle', href: '/services/incident-management', slug: 'incident-management' },
-        { title: 'Application Monitoring', desc: 'Track errors, performance and availability.', icon: 'monitor', href: '/services/application-monitoring', slug: 'application-monitoring' },
-        { title: 'Managed Application Services', desc: 'Operate and maintain applications continuously.', icon: 'settings', href: '/services/managed-application-services', slug: 'managed-application-services' },
-        { title: 'Version Upgrades', desc: 'Upgrade software frameworks, dependencies and platforms.', icon: 'arrow-up-circle', href: '/services/version-upgrades', slug: 'version-upgrades' }
+        { title: 'Software Maintenance', desc: 'Keep applications stable and up to date.', icon: 'wrench' },
+        { title: 'Bug Fixing & Enhancements', desc: 'Resolve defects and add improvements.', icon: 'tool' },
+        { title: 'Technical Support', desc: 'Help users and teams solve technical problems.', icon: 'headphones' },
+        { title: 'Incident Management', desc: 'Coordinate responses to production failures.', icon: 'alert-triangle' },
+        { title: 'Application Monitoring', desc: 'Track errors, performance and availability.', icon: 'monitor' },
+        { title: 'Managed Application Services', desc: 'Operate and maintain applications continuously.', icon: 'settings' },
+        { title: 'Version Upgrades', desc: 'Upgrade software frameworks, dependencies and platforms.', icon: 'arrow-up-circle' }
       ]
     },
     {
@@ -1553,13 +1553,13 @@ export default function init(__ctx) {
       badge: 'Attract • Convert',
       icon: 'trending-up',
       services: [
-        { title: 'Digital Marketing', desc: 'Plan and manage digital marketing campaigns.', icon: 'send', href: '/services/digital-marketing', slug: 'digital-marketing' },
-        { title: 'Search Engine Optimization', desc: 'Improve organic search visibility.', icon: 'search', href: '/services/search-engine-optimization', slug: 'search-engine-optimization' },
-        { title: 'Marketing Analytics', desc: 'Measure campaigns, leads and conversions.', icon: 'bar-chart', href: '/services/marketing-analytics', slug: 'marketing-analytics' },
-        { title: 'Advertising Management', desc: 'Manage paid advertising campaigns.', icon: 'target', href: '/services/advertising-management', slug: 'advertising-management' },
-        { title: 'Content Marketing', desc: 'Develop content to attract and inform customers.', icon: 'feather', href: '/services/content-marketing', slug: 'content-marketing' },
-        { title: 'Email Automation', desc: 'Automate email campaigns and follow-ups.', icon: 'mail', href: '/services/email-automation', slug: 'email-automation' },
-        { title: 'Conversion Optimization', desc: 'Improve digital experiences and conversion rates.', icon: 'trending-up', href: '/services/conversion-optimization', slug: 'conversion-optimization' }
+        { title: 'Digital Marketing', desc: 'Plan and manage digital marketing campaigns.', icon: 'send' },
+        { title: 'Search Engine Optimization', desc: 'Improve organic search visibility.', icon: 'search' },
+        { title: 'Marketing Analytics', desc: 'Measure campaigns, leads and conversions.', icon: 'bar-chart' },
+        { title: 'Advertising Management', desc: 'Manage paid advertising campaigns.', icon: 'target' },
+        { title: 'Content Marketing', desc: 'Develop content to attract and inform customers.', icon: 'feather' },
+        { title: 'Email Automation', desc: 'Automate email campaigns and follow-ups.', icon: 'mail' },
+        { title: 'Conversion Optimization', desc: 'Improve digital experiences and conversion rates.', icon: 'trending-up' }
       ]
     },
     {
@@ -1572,16 +1572,16 @@ export default function init(__ctx) {
       badge: 'Industry-Grade Systems',
       icon: 'factory',
       services: [
-        { title: 'Healthcare Software', desc: 'Clinic, hospital, laboratory and patient applications.', icon: 'activity', href: '/services/healthcare-software', slug: 'healthcare-software' },
-        { title: 'Education Software', desc: 'School, college and learning management systems.', icon: 'book', href: '/services/education-software', slug: 'education-software' },
-        { title: 'Retail Software', desc: 'Point-of-sale, inventory and retail operations.', icon: 'shopping-cart', href: '/services/retail-software', slug: 'retail-software' },
-        { title: 'Logistics Software', desc: 'Shipment, delivery, fleet and warehouse management.', icon: 'truck', href: '/services/logistics-software', slug: 'logistics-software' },
-        { title: 'Manufacturing Software', desc: 'Production planning and quality management.', icon: 'settings', href: '/services/manufacturing-software', slug: 'manufacturing-software' },
-        { title: 'Financial Software', desc: 'Billing, reconciliation and financial operations.', icon: 'credit-card', href: '/services/financial-software', slug: 'financial-software' },
-        { title: 'Real Estate Software', desc: 'Property listings, tenant and facility management.', icon: 'home', href: '/services/real-estate-software', slug: 'real-estate-software' },
-        { title: 'Construction Software', desc: 'Project tracking, contractor coordination and cost management.', icon: 'hammer', href: '/services/construction-software', slug: 'construction-software' },
-        { title: 'Insurance Software', desc: 'Policy, claims and customer management.', icon: 'shield', href: '/services/insurance-software', slug: 'insurance-software' },
-        { title: 'Industrial IoT Solutions', desc: 'Device integration and equipment monitoring.', icon: 'cpu', href: '/services/industrial-iot-solutions', slug: 'industrial-iot-solutions' }
+        { title: 'Healthcare Software', desc: 'Clinic, hospital, laboratory and patient applications.', icon: 'activity' },
+        { title: 'Education Software', desc: 'School, college and learning management systems.', icon: 'book' },
+        { title: 'Retail Software', desc: 'Point-of-sale, inventory and retail operations.', icon: 'shopping-cart' },
+        { title: 'Logistics Software', desc: 'Shipment, delivery, fleet and warehouse management.', icon: 'truck' },
+        { title: 'Manufacturing Software', desc: 'Production planning and quality management.', icon: 'settings' },
+        { title: 'Financial Software', desc: 'Billing, reconciliation and financial operations.', icon: 'credit-card' },
+        { title: 'Real Estate Software', desc: 'Property listings, tenant and facility management.', icon: 'home' },
+        { title: 'Construction Software', desc: 'Project tracking, contractor coordination and cost management.', icon: 'hammer' },
+        { title: 'Insurance Software', desc: 'Policy, claims and customer management.', icon: 'shield' },
+        { title: 'Industrial IoT Solutions', desc: 'Device integration and equipment monitoring.', icon: 'cpu' }
       ]
     },
     {
@@ -1594,11 +1594,11 @@ export default function init(__ctx) {
       badge: 'Transparent • Zero Lock-In',
       icon: 'file-text',
       services: [
-        { title: 'Fixed-Price Projects', desc: 'Deliver an agreed scope for a defined price.', icon: 'tag', href: '/services/fixed-price-projects', slug: 'fixed-price-projects' },
-        { title: 'Time-Based Development', desc: 'Provide development services based on agreed effort.', icon: 'clock', href: '/services/time-based-development', slug: 'time-based-development' },
-        { title: 'Monthly Retainers', desc: 'Provide recurring support or development capacity.', icon: 'calendar', href: '/services/monthly-retainers', slug: 'monthly-retainers' },
-        { title: 'Managed Service Contracts', desc: 'Take responsibility for agreed systems and service levels.', icon: 'shield-check', href: '/services/managed-service-contracts', slug: 'managed-service-contracts' },
-        { title: 'Consulting Engagements', desc: 'Provide specialist advice and technical assessments.', icon: 'message-square', href: '/services/consulting-engagements', slug: 'consulting-engagements' }
+        { title: 'Fixed-Price Projects', desc: 'Deliver an agreed scope for a defined price.', icon: 'tag' },
+        { title: 'Time-Based Development', desc: 'Provide development services based on agreed effort.', icon: 'clock' },
+        { title: 'Monthly Retainers', desc: 'Provide recurring support or development capacity.', icon: 'calendar' },
+        { title: 'Managed Service Contracts', desc: 'Take responsibility for agreed systems and service levels.', icon: 'shield-check' },
+        { title: 'Consulting Engagements', desc: 'Provide specialist advice and technical assessments.', icon: 'message-square' }
       ]
     }
   ];
@@ -1658,7 +1658,7 @@ export default function init(__ctx) {
 
           <div class="services-items-grid">
             ${cat.services.map((svc) => `
-              <a href="${svc.href}" class="services-item-card" data-service-slug="${svc.slug}" data-cat-id="${cat.id}" title="${svc.title}">
+              <div class="services-item-card" data-cat-id="${cat.id}" title="${svc.title}">
                 <span class="services-item-icon" aria-hidden="true">
                   ${renderIcon(svc.icon)}
                 </span>
@@ -1666,7 +1666,7 @@ export default function init(__ctx) {
                   <strong class="services-item-title">${svc.title}</strong>
                   <span class="services-item-desc">${svc.desc}</span>
                 </span>
-              </a>
+              </div>
             `).join('')}
           </div>
 
@@ -1722,44 +1722,8 @@ export default function init(__ctx) {
       });
     });
 
-    // 4. Right panel click handling: Service item navigation & CTA click
+    // 4. Right panel click handling: CTA click
     rightPanel.addEventListener('click', (e) => {
-      const serviceLink = e.target.closest('.services-item-card');
-      if (serviceLink) {
-        const slug = serviceLink.getAttribute('data-service-slug');
-        const catId = serviceLink.getAttribute('data-cat-id');
-        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-
-        // Close dropdown
-        container.classList.remove('is-mega-open');
-        if (eleksHeader) eleksHeader.classList.remove('has-mega-open');
-        if (topLink) topLink.setAttribute('aria-expanded', 'false');
-
-        // If currently on /services, smooth scroll to the target service or category
-        if (currentPath === '/services') {
-          const target = document.getElementById(slug) || document.getElementById(catId);
-          if (target) {
-            e.preventDefault();
-            const gallery = document.getElementById('px-gallery');
-            const cards = gallery ? Array.from(gallery.querySelectorAll('.px-card')) : [];
-            const card = target.closest('.px-card') || target;
-            const cardIdx = cards.indexOf(card);
-            if (gallery && cardIdx !== -1) {
-              const total = gallery.offsetHeight - window.innerHeight;
-              const targetY = gallery.offsetTop + (cardIdx / Math.max(1, cards.length - 1)) * total;
-              window.scrollTo({ top: targetY, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-            } else {
-              target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-            }
-            try {
-              history.pushState(null, '', '/services#' + slug);
-            } catch (err) {}
-            return;
-          }
-        }
-        // Otherwise allow link interception / standard navigation to /services/:slug
-      }
-
       const ctaBtn = e.target.closest('.services-cta-button');
       if (ctaBtn) {
         container.classList.remove('is-mega-open');
@@ -2041,10 +2005,10 @@ export default function init(__ctx) {
             <!-- Compact Service List (Two-Column Grid) -->
             <div class="mobile-cat-services-grid" style="grid-template-rows: repeat(${rowCount}, auto);">
               ${cat.services.map((svc) => `
-                <a href="${svc.href}" class="mobile-cat-svc-item" title="${svc.title}">
+                <div class="mobile-cat-svc-item" title="${svc.title}">
                   <span class="mobile-cat-svc-icon" aria-hidden="true">${renderIcon(svc.icon)}</span>
                   <span class="mobile-cat-svc-name">${svc.title}</span>
-                </a>
+                </div>
               `).join('')}
             </div>
 

@@ -1,10 +1,9 @@
-import { lazy, Suspense, useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import Page from "./components/Page.jsx";
 import META from "./generated/pageMeta.json";
 import { PRODUCTS, PRODUCT_REDIRECTS } from "./data/products.jsx";
 import { NEW_PRODUCT_PAGES } from "./data/newProducts.js";
-import SERVICE_SLUG_LIST from "./data/serviceSlugs.json";
 
 import HomeMain from "./generated/HomeMain.jsx";
 import ProductsPage from "./pages/ProductsPage.jsx";
@@ -29,10 +28,6 @@ import product from "./legacy/product.js";
 import carousel from "./legacy/carousel.js";
 import theme from "./legacy/theme.js";
 import cookies from "./legacy/cookies.js";
-
-// The 81 service pages share one template; its data (~470 KB) loads only when a service page opens.
-const ServicePage = lazy(() => import("./pages/ServicePage.jsx"));
-const SERVICE_SLUGS = new Set(SERVICE_SLUG_LIST);
 
 // Behaviour modules per page type, in the same order the original pages loaded their scripts.
 const SCRIPTS = {
@@ -92,10 +87,6 @@ export function resolve(pathname) {
     const meta = { ...d.meta, canonical: "https://ojix.in" + path, ogImage: "https://ojix.in" + p.heroImg };
     return { key: path, kind: "detail", meta, active: "products", progress: true, el: <ProductTemplate data={d} /> };
   }
-  const m = path.match(/^\/services\/([a-z0-9-]+)$/);
-  if (m && SERVICE_SLUGS.has(m[1])) {
-    return { key: path, kind: "detail", meta: null, serviceSlug: m[1], active: "services", progress: true, el: <ServicePage slug={m[1]} /> };
-  }
   return { key: "404:" + path, kind: "plain", meta: { title: "Page not found | OJIX" }, el: <NotFound /> };
 }
 
@@ -140,14 +131,8 @@ export default function App() {
 
 function ServiceMetaPage({ r }) {
   return (
-    <Page meta={r.meta || serviceMeta(r.serviceSlug)} scripts={SCRIPTS[r.kind]} active={r.active} scrollProgress={!!r.progress}>
+    <Page meta={r.meta} scripts={SCRIPTS[r.kind]} active={r.active} scrollProgress={!!r.progress}>
       {r.el}
     </Page>
   );
-}
-
-// Service meta lives with the (lazy) service data; ServicePage registers it when its chunk loads.
-const serviceMetaCache = (window.__ojixServiceMeta = window.__ojixServiceMeta || {});
-function serviceMeta(slug) {
-  return slug ? serviceMetaCache[slug] || { title: "Services | OJIX" } : null;
 }

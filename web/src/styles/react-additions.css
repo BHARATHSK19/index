@@ -529,7 +529,7 @@ html:not([data-theme="dark"]) [data-mega="platforms"] .eleks-mega-right {
   box-shadow: none !important;
   box-sizing: border-box !important;
   transition: all 140ms ease !important;
-  cursor: pointer !important;
+  cursor: default !important;
 }
 
 .services-item-icon {
