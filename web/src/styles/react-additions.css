@@ -4,21 +4,6 @@
 .ojx-page { display: contents; }
 .ojx-page-loading { min-height: 100vh; }
 
-/* "New" tag on the products added in Build 04 (header mega-menu). */
-.eleks-subtab-new {
-  margin-left: auto;
-  padding: 2px 7px;
-  border-radius: 999px;
-  background: #C9662F;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  line-height: 1.5;
-  flex: none;
-}
-
 /* 404 page links */
 .ojx-notfound__links { margin-top: 18px; font-size: 17px; }
 .ojx-notfound__links a { color: #C9662F; font-weight: 600; }

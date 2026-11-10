@@ -214,6 +214,29 @@ index/
   - **Mid-Tier & Clipping Protection**: Enforced `overflow-x: clip;` on `.pd-intro` and added `@media (min-width: 769px) and (max-width: 1280px)` breakpoint protection in `product.css` to dock the overlapping phone companion cleanly without horizontal scrollbars.
   - **Build & Distribution Verification**: Verified exit code 0 on `npm test` and `npm run build`; confirmed all SVG assets bundle cleanly into `web/dist/`.
 
+- **Frontend Codebase Audit, Dead Code Removal & Structural Optimization** (`web/src/styles/home.css`, `web/src/styles/react-additions.css`, `web/src/App.jsx`, `web/src/components/*`):
+  - **Comprehensive Reference & Dependency Verification**: Audited package dependencies, component tree, stylesheets, legacy runtime modules, and public static assets. Verified 0 unused imports across all JS/JSX files in `web/src/`.
+  - **Dead Code & Residual Selector Elimination**:
+    - Removed obsolete `.eleks-subtab-new` declaration from `web/src/styles/react-additions.css`, matching the removal of "New" badges from `products.jsx` and `Header.jsx`.
+    - Removed residual `.dx-chapter`, `.dx-panel`, and `.dx-card` rules from an early experimental chapter layout in `web/src/styles/home.css` (lines 386–515, and corresponding responsive media queries).
+    - Removed dead `.hero.pillar-hero-21` and `.hero-21-title` styles in `web/src/styles/home.css`, superseding legacy selectors in favor of canonical `.pd-hero h1.pd-hero__name` in `product.css`.
+  - **Bundle Footprint Optimization**: Reduced the production CSS bundle from 653.65 kB to 649.62 kB (-4.03 kB net / -700 B gzipped) without altering UI/UX or responsive design.
+  - **Asset & Code Categorization**: Formally categorized assets into SAFE TO REMOVE, NEEDS MANUAL REVIEW (portfolio mockups, variant brand assets), and MUST KEEP.
+  - **Compilation & Test Verification**: Verified clean build and test suite passes via `npm test` and `npm run build` with exit code 0.
+- **Unused Static Image Assets Pruning & Storage Optimization** (`web/public/assets/`, `web/src/data/products.jsx`):
+  - **Comprehensive Image Reference Verification**: Traced all 173 static image files in `web/public/assets/` across code files, router tables, product catalogs, service catalogs, `index.html`, `manifest.webmanifest`, and dynamic theme swaps.
+  - **86 Unreferenced Image Files Removed**:
+    - Discarded generated hero & showcase mockups (13 files in `assets/generated/`, ~1.7 MB).
+    - Legacy portfolio mockups (8 files in `assets/images/portfolio/`, ~3.1 MB).
+    - Obsolete product `*-ui.webp` files replaced by modern UI mockups (8 files in `assets/images/products/`, ~617 KB).
+    - Redundant product directories and unused mockups (19 files across `construction/`, `nyaya-sethu/`, `travel/`, and draft mockups in `dpdp/`, `fitos/`, `ai-proctoring/`, ~3.6 MB).
+    - Unused partner logo duplicates (8 files in `assets/clients/` and `assets/logos/`, ~670 KB).
+    - Unreferenced brand identity renders and legacy favicon duplicates (24 files in `assets/`, ~1.4 MB).
+    - Removed empty residual subdirectories (`portfolio/`, `construction/`, `nyaya-sethu/`, `travel/`, and empty `darkmode` folders).
+  - **Case-Sensitivity Hardening**: Aligned `products.jsx` line 24 to use canonical lowercase `company-os-mobile.jpeg`, guarding against Linux/Unix deployment case-sensitivity mismatches.
+  - **Storage & Distribution Impact**: Freed **10.48 MB** of disk and bundle space; reduced image count in `web/public/` and `web/dist/` from 173 to exactly 86 actively referenced images.
+  - **Build Verification**: Verified zero missing asset regressions; `npm test` and `npm run build` passed with exit code 0.
+
 ---
 
 ## 6. Active Roadmap & Pending Tasks

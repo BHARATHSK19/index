@@ -21,7 +21,7 @@ export const PRODUCTS = [
     heroImg: "/assets/images/products/companyos-hero.webp",
     hoverImg: "/assets/images/products/companyos/Company-os-device.png",
     desktopImage: "/assets/images/products/companyos/Executive-Center-website.png",
-    mobileImage: "/assets/images/products/companyos/Company-os-mobile.jpeg",
+    mobileImage: "/assets/images/products/companyos/company-os-mobile.jpeg",
     previewUrl: "app.ojix.in/company-management-system",
     rowDesc: "Track attendance, process monthly salaries, manage accounts and GST bills, and approve team expenses without messy spreadsheets.",
     rowTags: ["Staff & payroll", "Accounts & GST billing", "Expense approvals", "Multi-branch"],
