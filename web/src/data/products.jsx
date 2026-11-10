@@ -121,7 +121,7 @@ export const PRODUCTS = [
     megaDesc: "Track daily work at construction sites, monitor cement and steel usage, verify contractor bills, and keep project budgets on track.",
     megaImg: "/assets/generated/ui-construction-system.jpg",
     heroImg: "/assets/images/products/buildos-hero.webp",
-    hoverImg: "/assets/images/products/construction-hub/construction-device.svg",
+    hoverImg: "/assets/images/products/construction-hub/construction-device-v2.png",
     desktopImage: "/assets/images/products/construction-hub/construction-device.svg",
     mobileImage: "/assets/images/products/construction-hub/construction-mobile.svg",
     previewUrl: "app.ojix.in/construction-hub",

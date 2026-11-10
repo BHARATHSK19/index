@@ -206,7 +206,7 @@ index/
   - **Standardized Vector Mockup Assets**: Generated production-grade, resolution-independent SVG desktop dashboards (16:10 aspect ratio, 1600x1000) and mobile companion screens (9:19 ratio, 400x860) across all previously missing platforms:
     - **Nyaya Sethu / Legal OS**: `nyaya-sethu-device.svg`, `OJIX-Analytics-Dashboard-Workspace.png`, `nyaya-sethu-mobile.svg`, `legalos-mobile.svg` (cause lists, CNR tracking, case matters, courtroom status).
     - **AI Proctoring**: `proctoring-device.svg`, `ai-proctoring-device.svg`, `proctoring-mobile.svg`, `ai-proctoring-mobile.svg` (live multi-camera wall, face-tracking bounding boxes, malpractice flags).
-    - **Construction Hub**: `construction-device.svg`, `construction-hub-device.svg`, `construction-mobile.svg`, `construction-hub-mobile.svg` (site logistics, BOQ tracking, transit mixer gate entries).
+    - **Construction Hub**: `construction-device-v2.png`, `construction-hub-device.svg`, `construction-mobile.svg`, `construction-hub-mobile.svg` (site logistics, BOQ tracking, transit mixer gate entries).
     - **TravelOS**: `travel-device.svg`, `travelos-device.svg`, `travel-mobile.svg`, `travelos-mobile.svg` (flight PNR live tracking, airport cab dispatch, corporate hotel vouchers).
     - **FitOS**: `fitos-device.svg`, `fitos-mobile.svg` (turnstile biometric telemetry, Indiranagar flagship, recurring UPI renewals).
     - **DPDP Privacy Vault**: `dpdp-device.svg`, `dpdp-mobile.svg` (sovereign data enclave, SHA-256 immutable ledger, verifiable citizen consent notices).
