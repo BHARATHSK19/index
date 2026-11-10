@@ -189,7 +189,7 @@ export const PRODUCTS = [
     megaDesc: "Store important company and customer files safely with clear access permissions and built-in Indian data privacy compliance.",
     megaImg: "/assets/generated/ui-privacy-vault.jpg",
     heroImg: "/assets/images/products/dpdp-hero.webp",
-    hoverImg: "/assets/images/products/dpdp/dpdp-device.svg",
+    hoverImg: "/assets/images/products/dpdp/dpdp-device-preview.jpg",
     desktopImage: "/assets/images/products/dpdp/dpdp-device.svg",
     mobileImage: "/assets/images/products/dpdp/dpdp-mobile.svg",
     previewUrl: "app.ojix.in/dpdp-compliance",
