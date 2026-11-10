@@ -66,7 +66,7 @@ export default function LegalOS() {
             {" "}
             <div className="pd-intro__visual dx-reveal">
               <ProductDevicePreview
-                desktopSrc="/assets/images/products/legalos/legalos-device.svg"
+                desktopSrc="/assets/images/products/ai-proctoring/proctoring-device.svg"
                 mobileSrc="/assets/images/products/legalos/legalos-mobile.svg"
                 alt="Nyaya Sethu Platform Architecture Preview"
                 url="app.ojix.in/legalos"
