@@ -1,5 +1,6 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
 import { ProductCounter, NextProduct } from "../components/ProductBits.jsx";
+import ProductDevicePreview from "../components/ProductDevicePreview.jsx";
 
 export default function DpdpMain() {
   return (
@@ -64,165 +65,14 @@ export default function DpdpMain() {
             </div>
             {" "}
             <div className="pd-intro__visual dx-reveal">
-              <div className="pv" aria-label="Privacy Vault preview (illustrative)" role="img">
-                <div className="pv-win">
-                  <div className="pv-top">
-                    <span className="pv-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span className="pv-url">
-                      app.ojix.in/vault
-                    </span>
-                    <span className="pv-live">
-                      Live
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-head">
-                    <span className="pv-mark">
-                      P
-                    </span>
-                    <strong>
-                      Privacy Vault
-                    </strong>
-                    <span className="pv-badge">
-                      DPDP ready
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-kpis">
-                    <div className="pv-kpi" style={{"--i": "0"}}>
-                      <b>
-                        18,420
-                      </b>
-                      <span>
-                        Consents on record
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "1"}}>
-                      <b>
-                        3
-                      </b>
-                      <span>
-                        Erasure requests
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "2"}}>
-                      <b>
-                        1,206
-                      </b>
-                      <span>
-                        File views today
-                      </span>
-                    </div>
-                  </div>
-                  {" "}
-                  <div className="pv-panel">
-                    <p className="pv-panel__t">
-                      Access log
-                    </p>
-                    <ul className="pv-list">
-                      <li style={{"--i": "0"}}>
-                        <div>
-                          <strong>
-                            HR / Salaries 2026.xlsx
-                          </strong>
-                          <small>
-                            Viewed by Anita R. · 10:42
-                          </small>
-                        </div>
-                        <span className="pv-chip pv-chip--ok">
-                          Allowed
-                        </span>
-                      </li>
-                      <li style={{"--i": "1"}}>
-                        <div>
-                          <strong>
-                            Clients / KYC folder
-                          </strong>
-                          <small>
-                            Download blocked · intern
-                          </small>
-                        </div>
-                        <span className="pv-chip pv-chip--on">
-                          Blocked
-                        </span>
-                      </li>
-                      <li style={{"--i": "2"}}>
-                        <div>
-                          <strong>
-                            Consent #CN-8812
-                          </strong>
-                          <small>
-                            Withdrawn by customer
-                          </small>
-                        </div>
-                        <span className="pv-chip pv-chip--off">
-                          Erase
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                {" "}
-                <div className="pv-phone pd-mobile-device-preview">
-                  <div className="pv-phone__screen">
-                    <div className="pv-status">
-                      <span>
-                        9:41
-                      </span>
-                      <span className="pv-status__icons">
-                        <i />
-                        <i />
-                        <i />
-                      </span>
-                    </div>
-                    {" "}
-                    <div className="pv-papp">
-                      <span className="pv-mark pv-mark--sm">
-                        P
-                      </span>
-                      <b>
-                        Privacy Vault
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-note">
-                      <span className="pv-note__dot" />
-                      <div>
-                        <strong>
-                          Erasure request
-                        </strong>
-                        <small>
-                          Due within 48 hours · auto-tracked
-                        </small>
-                      </div>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Consents on record
-                      </span>
-                      <b>
-                        18,420
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Erasure requests
-                      </span>
-                      <b>
-                        3
-                      </b>
-                    </div>
-                    {" "}
-                    <span className="pv-home" />
-                  </div>
-                </div>
-              </div>
+              <ProductDevicePreview
+                desktopSrc="/assets/images/products/dpdp/dpdp-device.svg"
+                mobileSrc="/assets/images/products/dpdp/dpdp-mobile.svg"
+                alt="DPDP Privacy Vault Platform Architecture Preview"
+                url="app.ojix.in/dpdp-compliance"
+                badgeText="● LIVE"
+                variant="dark"
+              />
             </div>
           </div>
         </section>

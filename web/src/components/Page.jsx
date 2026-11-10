@@ -48,9 +48,13 @@ export default function Page({ meta, scripts, active, scrollProgress = false, ch
     const key = location.key;
     if (navType === "POP" && scrollPositions.has(key)) {
       const y = scrollPositions.get(key);
-      requestAnimationFrame(() => window.scrollTo(0, y));
+      requestAnimationFrame(() => window.scrollTo({ top: y, left: 0, behavior: "instant" }));
     } else if (!location.hash) {
-      window.scrollTo(0, 0);
+      document.documentElement.style.scrollBehavior = "auto";
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      requestAnimationFrame(() => {
+        document.documentElement.style.scrollBehavior = "";
+      });
     }
     applyHead(meta, location.pathname);
 
@@ -80,6 +84,8 @@ export default function Page({ meta, scripts, active, scrollProgress = false, ch
       });
       html.className = htmlClass;
       body.className = bodyClass;
+      document.querySelectorAll(".px-open").forEach((el) => el.remove());
+      html.classList.remove("px-opening");
       html.removeAttribute("data-from-px");
       body.style.removeProperty("overflow");
       html.style.removeProperty("overflow");
@@ -129,8 +135,12 @@ export default function Page({ meta, scripts, active, scrollProgress = false, ch
           }
         });
       }
-    } else if (path === "/" && !hash && navType !== "POP") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (!targetId && !hash && navType !== "POP") {
+      document.documentElement.style.scrollBehavior = "auto";
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      requestAnimationFrame(() => {
+        document.documentElement.style.scrollBehavior = "";
+      });
     }
   }, [location.pathname, location.hash, meta, navType]);
 

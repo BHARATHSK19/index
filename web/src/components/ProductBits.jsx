@@ -15,7 +15,17 @@ export function NextProduct({ slug }) {
   const next = nextProduct(slug);
   return (
     <section className="pd-next" aria-label="Next product">
-      <a className="pd-next__link" href={"/" + next.slug} data-name={next.name}>
+      <a
+        className="pd-next__link"
+        href={"/" + next.slug}
+        data-name={next.name}
+        onClick={() => {
+          try {
+            document.documentElement.style.scrollBehavior = "auto";
+            window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          } catch (_) {}
+        }}
+      >
         <img src={next.heroImg} alt="" loading="lazy" decoding="async" />
         <span className="pd-next__k">Next product</span>
         <span className="pd-next__name">

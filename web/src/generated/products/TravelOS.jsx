@@ -1,5 +1,6 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
 import { ProductCounter, NextProduct } from "../../components/ProductBits.jsx";
+import ProductDevicePreview from "../../components/ProductDevicePreview.jsx";
 
 export default function TravelOS() {
   return (
@@ -64,158 +65,14 @@ export default function TravelOS() {
             </div>
             {" "}
             <div className="pd-intro__visual dx-reveal">
-              <div className="pv" aria-label="TravelOS preview (illustrative)" role="img">
-                <div className="pv-win">
-                  <div className="pv-top">
-                    <span className="pv-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span className="pv-url">
-                      app.ojix.in/travel
-                    </span>
-                    <span className="pv-live">
-                      Live
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-head">
-                    <span className="pv-mark">
-                      T
-                    </span>
-                    <strong>
-                      TravelOS
-                    </strong>
-                    <span className="pv-badge">
-                      126 trips this month
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-kpis">
-                    <div className="pv-kpi" style={{"--i": "0"}}>
-                      <b>
-                        126
-                      </b>
-                      <span>
-                        Trips this month
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "1"}}>
-                      <b>
-                        9
-                      </b>
-                      <span>
-                        Quotes pending
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "2"}}>
-                      <b>
-                        14
-                      </b>
-                      <span>
-                        Cabs on road
-                      </span>
-                    </div>
-                  </div>
-                  {" "}
-                  <div className="pv-panel">
-                    <p className="pv-panel__t">
-                      Mehta family · Goa · 4 nights
-                    </p>
-                    <ol className="pv-time">
-                      <li style={{"--i": "0"}}>
-                        <b>
-                          Day 1
-                        </b>
-                        <span>
-                          Flight BLR → GOI · Cab pickup 11:40
-                        </span>
-                      </li>
-                      <li style={{"--i": "1"}}>
-                        <b>
-                          Day 2
-                        </b>
-                        <span>
-                          North Goa tour · Lunch at Anjuna
-                        </span>
-                      </li>
-                      <li style={{"--i": "2"}}>
-                        <b>
-                          Day 3
-                        </b>
-                        <span>
-                          Dudhsagar falls · Jeep safari
-                        </span>
-                      </li>
-                      <li style={{"--i": "3"}}>
-                        <b>
-                          Day 5
-                        </b>
-                        <span>
-                          Check-out 11:00 · Drop to airport
-                        </span>
-                      </li>
-                    </ol>
-                  </div>
-                </div>
-                {" "}
-                <div className="pv-phone pd-mobile-device-preview">
-                  <div className="pv-phone__screen">
-                    <div className="pv-status">
-                      <span>
-                        9:41
-                      </span>
-                      <span className="pv-status__icons">
-                        <i />
-                        <i />
-                        <i />
-                      </span>
-                    </div>
-                    {" "}
-                    <div className="pv-papp">
-                      <span className="pv-mark pv-mark--sm">
-                        T
-                      </span>
-                      <b>
-                        TravelOS
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-note">
-                      <span className="pv-note__dot" />
-                      <div>
-                        <strong>
-                          Voucher sent on WhatsApp
-                        </strong>
-                        <small>
-                          Mehta family · 4 travellers
-                        </small>
-                      </div>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Trips this month
-                      </span>
-                      <b>
-                        126
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Quotes pending
-                      </span>
-                      <b>
-                        9
-                      </b>
-                    </div>
-                    {" "}
-                    <span className="pv-home" />
-                  </div>
-                </div>
-              </div>
+              <ProductDevicePreview
+                desktopSrc="/assets/images/products/travelos/travelos-device.svg"
+                mobileSrc="/assets/images/products/travelos/travelos-mobile.svg"
+                alt="TravelOS Platform Architecture Preview"
+                url="app.ojix.in/travelos"
+                badgeText="● LIVE"
+                variant="dark"
+              />
             </div>
           </div>
         </section>

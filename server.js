@@ -592,7 +592,29 @@ const SERVICE_SLUGS = new Set(
     : []
 );
 // Old URLs -> new ones (301). Covers renamed products and every old *.html address.
-const RENAMED = { '/companyos': '/company-management-system', '/campusos': '/school-erp', '/buildos': '/construction-hub', '/dpdp': '/dpdp-compliance' };
+const RENAMED = {
+  '/companyos': '/company-management-system',
+  '/campusos': '/school-erp',
+  '/buildos': '/construction-hub',
+  '/dpdp': '/dpdp-compliance',
+  '/nyaya-sethu': '/legalos',
+  '/products/company-management-system': '/company-management-system',
+  '/products/companyos': '/company-management-system',
+  '/products/legalos': '/legalos',
+  '/products/nyaya-sethu': '/legalos',
+  '/products/procureos': '/procureos',
+  '/products/school-erp': '/school-erp',
+  '/products/campusos': '/school-erp',
+  '/products/university-management-system': '/university-management-system',
+  '/products/ai-proctoring': '/ai-proctoring',
+  '/products/construction-hub': '/construction-hub',
+  '/products/buildos': '/construction-hub',
+  '/products/property-intelligence': '/property-intelligence',
+  '/products/travelos': '/travelos',
+  '/products/fitos': '/fitos',
+  '/products/dpdp-compliance': '/dpdp-compliance',
+  '/products/dpdp': '/dpdp-compliance',
+};
 
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next();

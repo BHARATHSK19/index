@@ -50,7 +50,13 @@ export default function init(__ctx) {
             o.classList.add('is-full');
           });
         });
-        setTimeout(function () { __navigate(next.href); }, 900);
+        setTimeout(function () {
+          try {
+            document.documentElement.style.scrollBehavior = 'auto';
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+          } catch (_) {}
+          __navigate(next.href);
+        }, 900);
       });
     }
     __on(window, 'pageshow', function () {

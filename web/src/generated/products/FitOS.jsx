@@ -1,5 +1,6 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
 import { ProductCounter, NextProduct } from "../../components/ProductBits.jsx";
+import ProductDevicePreview from "../../components/ProductDevicePreview.jsx";
 
 export default function FitOS() {
   return (
@@ -64,174 +65,14 @@ export default function FitOS() {
             </div>
             {" "}
             <div className="pd-intro__visual dx-reveal">
-              <div className="pv" aria-label="FitOS preview (illustrative)" role="img">
-                <div className="pv-win">
-                  <div className="pv-top">
-                    <span className="pv-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span className="pv-url">
-                      app.ojix.in/fit
-                    </span>
-                    <span className="pv-live">
-                      Live
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-head">
-                    <span className="pv-mark">
-                      F
-                    </span>
-                    <strong>
-                      FitOS
-                    </strong>
-                    <span className="pv-badge">
-                      4 branches
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-kpis">
-                    <div className="pv-kpi" style={{"--i": "0"}}>
-                      <b>
-                        3,840
-                      </b>
-                      <span>
-                        Members
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "1"}}>
-                      <b>
-                        412
-                      </b>
-                      <span>
-                        Check-ins today
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "2"}}>
-                      <b>
-                        37
-                      </b>
-                      <span>
-                        Renewals due
-                      </span>
-                    </div>
-                  </div>
-                  {" "}
-                  <div className="pv-panel">
-                    <p className="pv-panel__t">
-                      Check-ins by hour
-                    </p>
-                    <div className="pv-bars">
-                      <div className="pv-bar" style={{"--h": "67%", "--i": "0"}}>
-                        <i />
-                        <span>
-                          6
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "96%", "--i": "1"}}>
-                        <i />
-                        <span>
-                          7
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "73%", "--i": "2"}}>
-                        <i />
-                        <span>
-                          8
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "23%", "--i": "3"}}>
-                        <i />
-                        <span>
-                          12
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "60%", "--i": "4"}}>
-                        <i />
-                        <span>
-                          5p
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "100%", "--i": "5"}}>
-                        <i />
-                        <span>
-                          6p
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "84%", "--i": "6"}}>
-                        <i />
-                        <span>
-                          7p
-                        </span>
-                      </div>
-                      <div className="pv-bar" style={{"--h": "42%", "--i": "7"}}>
-                        <i />
-                        <span>
-                          8p
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {" "}
-                <div className="pv-phone pd-mobile-device-preview">
-                  <div className="pv-phone__screen">
-                    <div className="pv-status">
-                      <span>
-                        9:41
-                      </span>
-                      <span className="pv-status__icons">
-                        <i />
-                        <i />
-                        <i />
-                      </span>
-                    </div>
-                    {" "}
-                    <div className="pv-papp">
-                      <span className="pv-mark pv-mark--sm">
-                        F
-                      </span>
-                      <b>
-                        FitOS
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-note">
-                      <span className="pv-note__dot" />
-                      <div>
-                        <strong>
-                          Gate open
-                        </strong>
-                        <small>
-                          Priya S. · Annual member
-                        </small>
-                      </div>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Members
-                      </span>
-                      <b>
-                        3,840
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Check-ins today
-                      </span>
-                      <b>
-                        412
-                      </b>
-                    </div>
-                    {" "}
-                    <span className="pv-home" />
-                  </div>
-                </div>
-              </div>
+              <ProductDevicePreview
+                desktopSrc="/assets/images/products/fitos/fitos-device.svg"
+                mobileSrc="/assets/images/products/fitos/fitos-mobile.svg"
+                alt="FitOS Platform Architecture Preview"
+                url="app.ojix.in/fitos"
+                badgeText="● LIVE"
+                variant="dark"
+              />
             </div>
           </div>
         </section>

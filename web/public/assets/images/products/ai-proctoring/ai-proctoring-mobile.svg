@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 860" width="100%" height="100%">
+  
+    <defs>
+      <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#09121E"/>
+        <stop offset="100%" stop-color="#060C14"/>
+      </linearGradient>
+      <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#132238" stop-opacity="0.85"/>
+        <stop offset="100%" stop-color="#0B1524" stop-opacity="0.95"/>
+      </linearGradient>
+      <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#C9662F"/>
+        <stop offset="100%" stop-color="#F39C6B"/>
+      </linearGradient>
+      <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#F39C6B" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#C9662F" stop-opacity="0.0"/>
+      </linearGradient>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="8" result="blur"/>
+        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+      </filter>
+    </defs>
+  
+  <rect width="400" height="860" fill="#0A1422"/>
+  
+  <g transform="translate(24, 24)">
+    <rect x="0" y="0" width="36" height="36" rx="8" fill="#C9662F"/>
+    <text x="18" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="800" font-size="18" text-anchor="middle">P</text>
+    <text x="48" y="22" fill="#F8FAFC" font-family="system-ui, sans-serif" font-weight="700" font-size="15">AI Proctor Mobile</text>
+    <text x="48" y="34" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">Invigilator On-Duty</text>
+  </g>
+
+  <!-- Critical Alert Card -->
+  <g transform="translate(20, 84)">
+    <rect x="0" y="0" width="360" height="180" rx="14" fill="url(#cardGrad)" stroke="rgba(239,68,68,0.5)" stroke-width="1.5"/>
+    <circle cx="24" cy="28" r="5" fill="#EF4444"/>
+    <text x="38" y="32" fill="#F87171" font-family="system-ui, sans-serif" font-weight="700" font-size="11">CRITICAL AI FLAG · LIVE</text>
+    <text x="24" y="66" fill="#F8FAFC" font-family="system-ui, sans-serif" font-weight="700" font-size="17">Roll 21EC042: Face Mismatch</text>
+    <text x="24" y="90" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">Second person entered camera view (00:41:05)</text>
+    
+    <rect x="24" y="116" width="140" height="36" rx="8" fill="#EF4444"/>
+    <text x="94" y="139" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="700" font-size="12" text-anchor="middle">Issue Warning</text>
+
+    <rect x="180" y="116" width="140" height="36" rx="8" fill="#1E293B" stroke="rgba(255,255,255,0.1)"/>
+    <text x="250" y="139" fill="#CBD5E1" font-family="system-ui, sans-serif" font-weight="600" font-size="12" text-anchor="middle">Pause Paper</text>
+  </g>
+
+  <!-- Stats Grid -->
+  <g transform="translate(20, 284)">
+    <rect x="0" y="0" width="172" height="90" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.06)"/>
+    <text x="16" y="28" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="11">CANDIDATES</text>
+    <text x="16" y="64" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="28" font-weight="800">2,348</text>
+
+    <rect x="188" y="0" width="172" height="90" rx="12" fill="url(#cardGrad)" stroke="rgba(239,68,68,0.2)"/>
+    <text x="204" y="28" fill="#F87171" font-family="system-ui, sans-serif" font-size="11">FLAGS</text>
+    <text x="204" y="64" fill="#EF4444" font-family="system-ui, sans-serif" font-size="28" font-weight="800">17</text>
+  </g>
+</svg>

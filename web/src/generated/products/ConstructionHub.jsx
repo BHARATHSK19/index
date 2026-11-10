@@ -1,5 +1,6 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
 import { ProductCounter, NextProduct } from "../../components/ProductBits.jsx";
+import ProductDevicePreview from "../../components/ProductDevicePreview.jsx";
 
 export default function ConstructionHub() {
   return (
@@ -64,170 +65,14 @@ export default function ConstructionHub() {
             </div>
             {" "}
             <div className="pd-intro__visual dx-reveal">
-              <div className="pv" aria-label="Construction Hub preview (illustrative)" role="img">
-                <div className="pv-win">
-                  <div className="pv-top">
-                    <span className="pv-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span className="pv-url">
-                      app.ojix.in/build
-                    </span>
-                    <span className="pv-live">
-                      Live
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-head">
-                    <span className="pv-mark">
-                      B
-                    </span>
-                    <strong>
-                      Construction Hub
-                    </strong>
-                    <span className="pv-badge">
-                      8 sites live
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-kpis">
-                    <div className="pv-kpi" style={{"--i": "0"}}>
-                      <b>
-                        8
-                      </b>
-                      <span>
-                        Active sites
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "1"}}>
-                      <b>
-                        62%
-                      </b>
-                      <span>
-                        Budget used
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "2"}}>
-                      <b>
-                        340
-                      </b>
-                      <span>
-                        Cement bags today
-                      </span>
-                    </div>
-                  </div>
-                  {" "}
-                  <div className="pv-panel">
-                    <p className="pv-panel__t">
-                      Site progress
-                    </p>
-                    <ul className="pv-prog">
-                      <li style={{"--i": "0"}}>
-                        <span>
-                          Tower A · Whitefield
-                        </span>
-                        <b>
-                          78%
-                        </b>
-                        <i>
-                          <em style={{"--w": "78%"}} />
-                        </i>
-                      </li>
-                      <li style={{"--i": "1"}}>
-                        <span>
-                          Tower B · Whitefield
-                        </span>
-                        <b>
-                          54%
-                        </b>
-                        <i>
-                          <em style={{"--w": "54%"}} />
-                        </i>
-                      </li>
-                      <li style={{"--i": "2"}}>
-                        <span>
-                          Villa block · Hosur
-                        </span>
-                        <b>
-                          66%
-                        </b>
-                        <i>
-                          <em style={{"--w": "66%"}} />
-                        </i>
-                      </li>
-                      <li style={{"--i": "3"}}>
-                        <span>
-                          Warehouse · Tumkur
-                        </span>
-                        <b>
-                          31%
-                        </b>
-                        <i>
-                          <em style={{"--w": "31%"}} />
-                        </i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                {" "}
-                <div className="pv-phone pd-mobile-device-preview">
-                  <div className="pv-phone__screen">
-                    <div className="pv-status">
-                      <span>
-                        9:41
-                      </span>
-                      <span className="pv-status__icons">
-                        <i />
-                        <i />
-                        <i />
-                      </span>
-                    </div>
-                    {" "}
-                    <div className="pv-papp">
-                      <span className="pv-mark pv-mark--sm">
-                        B
-                      </span>
-                      <b>
-                        Construction Hub
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-note">
-                      <span className="pv-note__dot" />
-                      <div>
-                        <strong>
-                          RA bill #14 verified
-                        </strong>
-                        <small>
-                          Whitefield · from site photos
-                        </small>
-                      </div>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Active sites
-                      </span>
-                      <b>
-                        8
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Budget used
-                      </span>
-                      <b>
-                        62%
-                      </b>
-                    </div>
-                    {" "}
-                    <span className="pv-home" />
-                  </div>
-                </div>
-              </div>
+              <ProductDevicePreview
+                desktopSrc="/assets/images/products/construction-hub/construction-device.svg"
+                mobileSrc="/assets/images/products/construction-hub/construction-mobile.svg"
+                alt="Construction Hub Platform Architecture Preview"
+                url="app.ojix.in/construction-hub"
+                badgeText="● LIVE"
+                variant="dark"
+              />
             </div>
           </div>
         </section>

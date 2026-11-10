@@ -109,6 +109,13 @@ export const PROCTORING = {
     description:
       "AI Proctoring by OJIX: identity verification, live webcam and screen monitoring, browser lockdown and AI-flagged review reports for fair online exams. DPDP-aligned, hosted in India.",
   },
+  images: {
+    desktop: "/assets/images/products/ai-proctoring/proctoring-device.svg",
+    desktopAlt: "AI Proctoring Desktop Dashboard",
+    mobile: "/assets/images/products/ai-proctoring/proctoring-mobile.svg",
+    mobileAlt: "AI Proctoring Mobile Application",
+    url: "app.ojix.in/ai-proctoring",
+  },
   intro: {
     title: "Online exams you can trust,",
     span: "without an invigilator in every room.",

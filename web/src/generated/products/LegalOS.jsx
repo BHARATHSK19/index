@@ -1,5 +1,6 @@
 /* Auto-generated from the legacy HTML by tools/react-port/extract.py. */
 import { ProductCounter, NextProduct } from "../../components/ProductBits.jsx";
+import ProductDevicePreview from "../../components/ProductDevicePreview.jsx";
 
 export default function LegalOS() {
   return (
@@ -64,165 +65,14 @@ export default function LegalOS() {
             </div>
             {" "}
             <div className="pd-intro__visual dx-reveal">
-              <div className="pv" aria-label="Nyaya Sethu preview (illustrative)" role="img">
-                <div className="pv-win">
-                  <div className="pv-top">
-                    <span className="pv-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span className="pv-url">
-                      app.ojix.in/legal
-                    </span>
-                    <span className="pv-live">
-                      Live
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-head">
-                    <span className="pv-mark">
-                      N
-                    </span>
-                    <strong>
-                      Nyaya Sethu
-                    </strong>
-                    <span className="pv-badge">
-                      Cause list synced 7:00 PM
-                    </span>
-                  </div>
-                  {" "}
-                  <div className="pv-kpis">
-                    <div className="pv-kpi" style={{"--i": "0"}}>
-                      <b>
-                        7
-                      </b>
-                      <span>
-                        Hearings today
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "1"}}>
-                      <b>
-                        38
-                      </b>
-                      <span>
-                        Active matters
-                      </span>
-                    </div>
-                    <div className="pv-kpi" style={{"--i": "2"}}>
-                      <b>
-                        ₹1.2L
-                      </b>
-                      <span>
-                        Unbilled fees
-                      </span>
-                    </div>
-                  </div>
-                  {" "}
-                  <div className="pv-panel">
-                    <p className="pv-panel__t">
-                      Today’s cause list
-                    </p>
-                    <ul className="pv-list">
-                      <li style={{"--i": "0"}}>
-                        <div>
-                          <strong>
-                            10:30 · Court Hall 4 · Item 12
-                          </strong>
-                          <small>
-                            Apex Bank v. Horizon Infra
-                          </small>
-                        </div>
-                        <span className="pv-chip pv-chip--on">
-                          Listed
-                        </span>
-                      </li>
-                      <li style={{"--i": "1"}}>
-                        <div>
-                          <strong>
-                            11:15 · Court Hall 8 · Item 3
-                          </strong>
-                          <small>
-                            State v. Mehra
-                          </small>
-                        </div>
-                        <span className="pv-chip pv-chip--ok">
-                          Heard
-                        </span>
-                      </li>
-                      <li style={{"--i": "2"}}>
-                        <div>
-                          <strong>
-                            2:30 · Court Hall 2 · Item 21
-                          </strong>
-                          <small>
-                            Rao Builders arbitration
-                          </small>
-                        </div>
-                        <span className="pv-chip pv-chip--off">
-                          Adjourned
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                {" "}
-                <div className="pv-phone pd-mobile-device-preview">
-                  <div className="pv-phone__screen">
-                    <div className="pv-status">
-                      <span>
-                        9:41
-                      </span>
-                      <span className="pv-status__icons">
-                        <i />
-                        <i />
-                        <i />
-                      </span>
-                    </div>
-                    {" "}
-                    <div className="pv-papp">
-                      <span className="pv-mark pv-mark--sm">
-                        N
-                      </span>
-                      <b>
-                        Nyaya Sethu
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-note">
-                      <span className="pv-note__dot" />
-                      <div>
-                        <strong>
-                          Hearing in 30 min
-                        </strong>
-                        <small>
-                          Court Hall 4 · Item 12
-                        </small>
-                      </div>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Hearings today
-                      </span>
-                      <b>
-                        7
-                      </b>
-                    </div>
-                    {" "}
-                    <div className="pv-pkpi">
-                      <span>
-                        Active matters
-                      </span>
-                      <b>
-                        38
-                      </b>
-                    </div>
-                    {" "}
-                    <span className="pv-home" />
-                  </div>
-                </div>
-              </div>
+              <ProductDevicePreview
+                desktopSrc="/assets/images/products/legalos/legalos-device.svg"
+                mobileSrc="/assets/images/products/legalos/legalos-mobile.svg"
+                alt="Nyaya Sethu Platform Architecture Preview"
+                url="app.ojix.in/legalos"
+                badgeText="● LIVE"
+                variant="dark"
+              />
             </div>
           </div>
         </section>

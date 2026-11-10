@@ -41,11 +41,13 @@ export default function ProductTemplate({ data }) {
           <div className="pd-intro__visual dx-reveal">
             {d.images ? (
               <ProductDevicePreview
-                desktopImg={d.images.desktop}
+                desktopSrc={d.images.desktop}
                 desktopAlt={d.images.desktopAlt || `${p.name} Desktop Dashboard`}
-                mobileImg={d.images.mobile}
+                mobileSrc={d.images.mobile}
                 mobileAlt={d.images.mobileAlt || `${p.name} Mobile Application`}
+                alt={`${p.name} Platform Architecture Preview`}
                 url={d.images.url || d.pv?.url || `app.ojix.in/${p.slug}`}
+                variant="dark"
               />
             ) : (
               <div className="pv" aria-label={p.name + " preview (illustrative)"} role="img">
